@@ -2,7 +2,7 @@ Sobre nosotros: Somos una Tienda Online que ofrece una variada cantidad de artí
 Desde la comodidad de su casa, los clientes pueden acceder a nuestros productos. Nuestro principal objetivo es la conscientizacion, cuidado y protección de la integridad fisica personal
 ¡Gracias por visitarnos!
 
-Integrantes del proyecto:
+Integrantes del proyecto:<div>
 Franco Salas
 Camila Gutierrez
 Ricardo Vallejos
