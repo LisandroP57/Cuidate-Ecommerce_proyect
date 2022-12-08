@@ -24,8 +24,8 @@
 
       
 <h2>Sitios de inspiración:</h2>
-      <ol>
+      <ul>
         <li><a href="https://mamallegue.com.ar/">Mamá Llegué</a></li>
         <li><a href="https://www.avisamecuandollegues.com.ar/">Avisame cuando llegues</a><li>
-      </ol>
+      </ul>
       
