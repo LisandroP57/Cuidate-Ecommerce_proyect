@@ -16,4 +16,5 @@
 
   
 <h1>Link de trello:<h1>
-  <a href="https://trello.com/b/tPagskz9/sprint-pi-c19">Cuídate!</a>
+  <div>
+<a href="https://trello.com/b/tPagskz9/sprint-pi-c19">Cuídate!</a>
