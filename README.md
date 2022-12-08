@@ -13,3 +13,7 @@
     <li>Lisandro Palavecino</li>
     <div>
 <h1>Referencias:<h1>
+
+  
+<h1>Link de trello:<h1>
+  <a href="https://trello.com/b/tPagskz9/sprint-pi-c19">Cuídate!</a>
