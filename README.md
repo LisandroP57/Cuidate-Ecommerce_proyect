@@ -14,15 +14,13 @@
     <li>Ricardo Vallejos</li>
     <li>Maximiliano</li>
     <li>Lisandro Palavecino</li>
+    </ul>
     <div>
-<h2>Referencias:</h2>
 
-  
 <h2>Link de trello:</h2>
 <a href="https://trello.com/b/tPagskz9/sprint-pi-c19">Cuídate!</a>
 
 
-      
 <h2>Sitios de inspiración:</h2>
       <ul>
         <li><a href="https://mamallegue.com.ar/">Mamá Llegué</a></li>
