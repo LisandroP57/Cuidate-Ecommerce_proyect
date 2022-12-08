@@ -1,3 +1,6 @@
+
+<img src="https://cdn-icons-png.flaticon.com/512/4860/4860824.png">
+
 <h2>Sobre nosotros:</h2><div>
   Somos una Tienda Online que ofrece una variada cantidad de artículos de defensa personal, pensados para la necesidad -
   Desde la comodidad de su casa, los clientes pueden acceder a nuestros productos. Nuestro principal objetivo es la conscientizacion, cuidado y protección de 
