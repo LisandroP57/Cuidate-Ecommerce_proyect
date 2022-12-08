@@ -4,7 +4,7 @@
    la integridad fisica personal
   ¡Gracias por visitarnos!
   <div>
-<h1>Integrantes del proyecto:</h1><div>
+<h2>Integrantes del proyecto:</h2><div>
   <ul>
     <li>Franco Salas</li>
     <li>Camila Gutierrez</li>
@@ -12,12 +12,12 @@
     <li>Maximiliano</li>
     <li>Lisandro Palavecino</li>
     <div>
-<h1>Referencias:</h1>
+<h2>Referencias:</h2>
 
   
-<h1>Link de trello:</h1>
+<h2>Link de trello:</h2>
 <a href="https://trello.com/b/tPagskz9/sprint-pi-c19">Cuídate!</a>
 
 
       
-<h1>Sitios de inspiración:</h1>
+<h2>Sitios de inspiración:</h2>
