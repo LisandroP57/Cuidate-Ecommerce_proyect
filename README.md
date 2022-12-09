@@ -1,5 +1,5 @@
 <h1>Cuidate!</h1>
-<img src="https://us04web.zoom.us/j/8255694334?pwd=S2VSbVNSRWRmSnJlNlRmZThKaGFndz09">
+<img src="https://web.whatsapp.com/690a06b5-2c00-4e89-b01b-5b7f75460078">
 
 <h2>Sobre nosotros:</h2><div>
   Somos una Tienda Online que ofrece una variada cantidad de artículos de defensa personal, pensados para la necesidad -
