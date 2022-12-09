@@ -1,4 +1,4 @@
-<h1>https://Cuidate!</h1>
+<h1>Cuidate!</h1>
 <img src="https://us04web.zoom.us/j/8255694334?pwd=S2VSbVNSRWRmSnJlNlRmZThKaGFndz09">
 
 <h2>Sobre nosotros:</h2><div>
