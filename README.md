@@ -27,7 +27,18 @@
         <li><a href="https://mamallegue.com.ar/">Mamá Llegué</a></li>
         <li><a href="https://www.avisamecuandollegues.com.ar/">Avisame cuando llegues</a></li>
         <li><a href="https://www.instagram.com/defensa_femsj/?hl=es">Llaveros de defensa personal</a></li>
-        <li><a href=""></a></li>
+        <li><a href="https://www.instagram.com/siempreseguraar/?hl=es">Siempre segura llaveros</a></li>
         <li><a href=""></a></li>
       </ul>
       
+<h2>Por los clientes a los que apuntan:</h2>
+<ol>
+<ul>Lo pensamos con el fin de resolver la problemática que hay respecto a la violencia, desprotección y acoso callejero que sufrimos las personas en general, (independientemente del genero)</ul>
+<ul>Por la estética que presentan:</ul>
+https://www.nuskin.com/content/nuskin/es_AR/home.html
+https://mamallegue.com.ar/
+<ul>Por las funcionalidades implementadas:</ul>
+https://www.nuskin.com/content/nuskin/es_AR/home.html
+https://amaterasu.com.ar/
+</ol>
+Fueron elegidas por los productos que venden ya que son similares para nuestro proyecto. Otras por el diseño y las funcionalidades.
