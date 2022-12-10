@@ -1,6 +1,5 @@
 <h1>Cuidate!</h1>
-<img src="![logo](https://user-images.githubusercontent.com/86576860/206804385-7dcfd259-3f46-42d4-8e3c-ca986abf4a57.png)
-">
+<img src="https://drive.google.com/file/d/1b8feEObWX2Fz0PlmrDNJvhovqFqew4BC/view?usp=share_link">
 
 <h2>Sobre nosotros:</h2><div>
   Somos una Tienda Online que ofrece una variada cantidad de artículos de defensa personal, pensados para la necesidad -
