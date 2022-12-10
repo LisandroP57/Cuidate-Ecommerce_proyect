@@ -27,15 +27,14 @@
         <li><a href="https://www.avisamecuandollegues.com.ar/">Avisame cuando llegues</a></li>
         <li><a href="https://www.instagram.com/defensa_femsj/?hl=es">Llaveros de defensa personal</a></li>
         <li><a href="https://www.instagram.com/siempreseguraar/?hl=es">Siempre segura llaveros</a></li>
-        <li><a href=""></a></li>
       </ul>
       
-<h2>Por los clientes a los que apuntan:</h2>
+<h2>Referente al tipo de publico a alcanzar:</h2>
 Lo pensamos con el fin de resolver la problemática que hay respecto a la violencia, desprotección y acoso callejero que sufrimos las personas en general, (independientemente del genero)
-<h2>Por la estética que presentan:</h2>
+<h2>Referentes en cuanto a la estética:</h2>
 https://www.nuskin.com/content/nuskin/es_AR/home.html
 https://mamallegue.com.ar/
-<h2>Por las funcionalidades implementadas:</h2>
+<h2>Referente a las funcionalidades implementadas:</h2>
 https://www.nuskin.com/content/nuskin/es_AR/home.html
 https://amaterasu.com.ar/
 Fueron elegidas por los productos que venden ya que son similares para nuestro proyecto. Otras por el diseño y las funcionalidades.
