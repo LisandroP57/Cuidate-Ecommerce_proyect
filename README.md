@@ -32,13 +32,11 @@
       </ul>
       
 <h2>Por los clientes a los que apuntan:</h2>
-<ol>
-<ul>Lo pensamos con el fin de resolver la problemática que hay respecto a la violencia, desprotección y acoso callejero que sufrimos las personas en general, (independientemente del genero)</ul>
-<ul>Por la estética que presentan:</ul>
+Lo pensamos con el fin de resolver la problemática que hay respecto a la violencia, desprotección y acoso callejero que sufrimos las personas en general, (independientemente del genero)
+<h2>Por la estética que presentan:</h2>
 https://www.nuskin.com/content/nuskin/es_AR/home.html
 https://mamallegue.com.ar/
-<ul>Por las funcionalidades implementadas:</ul>
+<h2>Por las funcionalidades implementadas:</h2>
 https://www.nuskin.com/content/nuskin/es_AR/home.html
 https://amaterasu.com.ar/
-</ol>
 Fueron elegidas por los productos que venden ya que son similares para nuestro proyecto. Otras por el diseño y las funcionalidades.
