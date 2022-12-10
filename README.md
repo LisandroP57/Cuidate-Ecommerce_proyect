@@ -13,7 +13,7 @@
     <li>Franco Salas</li>
     <li>Camila Gutierrez</li>
     <li>Ricardo Vallejos</li>
-    <li>Maximiliano</li>
+    <li>Maximiliano Murua</li>
     <li>Lisandro Palavecino</li>
     </ul>
     <div>
