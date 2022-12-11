@@ -2,7 +2,7 @@
 <img src="https://i.postimg.cc/d1CRCvRj/logo.png">
 
 <h2>Sobre nosotros:</h2><div>
-  Somos una Tienda Online que ofrece una variada cantidad de artículos de defensa personal, pensados para la necesidad -
+  Somos una Tienda Online que ofrece una variada cantidad de artículos de defensa personal con el fin de resolver la problemática que hay respecto a la violencia, desprotección y acoso callejero que sufrimos las personas en general, (independientemente del genero).
   Desde la comodidad de su casa, los clientes pueden acceder a nuestros productos. Nuestro principal objetivo es la conscientizacion, cuidado y protección de 
    la integridad fisica personal
   ¡Gracias por visitarnos!
@@ -29,8 +29,6 @@
         <li><a href="https://www.instagram.com/siempreseguraar/?hl=es">Siempre segura llaveros</a></li>
       </ul>
       
-<h2>Referente al tipo de publico a alcanzar:</h2>
-Lo pensamos con el fin de resolver la problemática que hay respecto a la violencia, desprotección y acoso callejero que sufrimos las personas en general, (independientemente del genero)
 <h2>Referentes en cuanto a la estética:</h2>
 https://www.nuskin.com/content/nuskin/es_AR/home.html
 https://mamallegue.com.ar/
