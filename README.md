@@ -5,7 +5,7 @@
   Somos una Tienda Online que ofrece una variada cantidad de artículos de defensa personal con el fin de resolver la problemática que hay respecto a la violencia, desprotección y acoso callejero que sufrimos las personas en general, (independientemente del genero).
   Desde la comodidad de su casa, los clientes pueden acceder a nuestros productos. Nuestro principal objetivo es la conscientizacion, cuidado y protección de 
    la integridad fisica personal
-  ¡Gracias por visitarnos!
+  <div>¡Gracias por visitarnos!
   <div>
 <h2>Integrantes del proyecto:</h2><div>
   <ul>
