@@ -36,3 +36,5 @@ https://mamallegue.com.ar/
 https://www.nuskin.com/content/nuskin/es_AR/home.html
 https://amaterasu.com.ar/
 Fueron elegidas por los productos que venden ya que son similares para nuestro proyecto. Otras por el diseño y las funcionalidades.
+
+probando la caja negra aaaaah
