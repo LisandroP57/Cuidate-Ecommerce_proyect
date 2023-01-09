@@ -1,16 +1,30 @@
-let = "hola";
-let = "hola";
-let = "grupo null";
-let funciona = "FUNCIONAAAAAAA"
-let hola = "hola mundo";
+const express = require("express");
+const app = express();
+const path = require("path");
 
+app.use(express.static("app/public"));
 
+app.get("/404", (req,res) => {
+    return res.send("Error página no encontrada")
+})
 
+app.get("/Home", (req,res) => {
+    return res.sendFile(path.join(__dirname, "/views/Home.html"));
+})
 
+app.get("/Login", (req,res) => {
+    return res.sendFile(path.join(__dirname, "/views/Login.html"));
+})
 
+app.get("/Register", (req,res) => {
+    return res.sendFile(path.join(__dirname, "/views/Register.html"));
+})
 
+app.get("/vistaProducto", (req,res) => {
+    return res.sendFile(path.join(__dirname, "/views/VistaProducto.html"));
+})
+app.get("/carrito", (req,res) => {
+    return res.sendFile(path.join(__dirname, "/views/carrito.html"));
+})
 
-
-let = "NULL el vacio que te hacia falta "
-
-let mensaje = "porque no sube el codigo de franco"
+app.listen(3000, ()=>console.log("El servidor esta escuchando en el puerto 3000"));
