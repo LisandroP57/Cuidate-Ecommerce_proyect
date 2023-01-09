@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 
-app.use(express.static("app/public"));
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.get("/404", (req,res) => {
     return res.send("Error página no encontrada")
