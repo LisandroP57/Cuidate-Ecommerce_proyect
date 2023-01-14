@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const PORT = 3000;
 
 app.use(express.static(path.join(__dirname, 'public')))
 
@@ -27,4 +28,4 @@ app.get("/carrito", (req,res) => {
     return res.sendFile(path.join(__dirname, "/views/carrito.html"));
 })
 
-app.listen(3000, ()=>console.log("El servidor esta escuchando en el puerto 3000"));
+app.listen(PORT, ()=>console.log(`El servidor esta escuchando en el puerto ${PORT}\n http://localhost:${PORT}/home`));
