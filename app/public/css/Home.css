@@ -1,3 +1,146 @@
-body {
-    background-color: aqua;
+/* BANNER */
+
+section.banner {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+section.banner img {
+    width: 100%;
+}
+/* END BANNER */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --grey : #444444;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* Productos */
+
+section.photo-container{
+    background-color: var(--grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+}
+
+section.vip-products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+section.vip-products article.product {
+    width: 100%;
+    max-width: 380px;
+    margin-bottom: 30px;
+}
+
+section.vip-products article.product .photo-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #C8ABD0;
+    width: 300px;
+    height: 300px;
+    border-radius: 15%;
+
+}
+
+section.vip-products article.product .photo-container img.photo {
+    width: 200px;
+    height: 200px;
+
+}
+
+section.vip-products article.product .photo-container img.special {
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+section.vip-products article.product .photo-container a.zoom {
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    text-transform: uppercase;
+    padding: 5px;
+    text-align: center;
+}
+
+section.vip-products article.product h2 {
+    margin: 15px 0;
+}
+
+section.vip-products article.product p {
+    color: var(--grey);
+    margin-bottom: 20px;
+}
+
+section.vip-products article.product a.more{
+    background-color: var(--grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 030px;
+    width: 95px;
+}
+
+/* END PRODUCTS */
+
+/* Media queries */
+
+@media (min-width: 768px) {
+    div.container .banner img {
+        width: 100%;
+    }
+
+    header.main-header nav.main-nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header.main-header nav.main-nav ul li {
+        width: 120px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+   
+    section.vip-products {
+        justify-content: space-between;
+    }
+
+    section.vip-products article.product {
+        max-width: 370px;
+    }
+}
+
+@media (min-width: 1180px) {
+    header.main-header nav.main-nav ul li {
+        width: 180px;
+    }
+
+    section.vip-products article.product {
+        max-width: 380px;
+    }
 }
