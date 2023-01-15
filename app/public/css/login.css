@@ -21,7 +21,7 @@
     padding: 0;
 }
 
-body {
+main {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-image: url(/img/background.jpg);
     background-position: center;
@@ -311,7 +311,7 @@ label {
         max-width: 400px;
     }
 
-    body {
+    main {
         display: flex;
         justify-content: space-evenly;
     }
