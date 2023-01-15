@@ -288,7 +288,6 @@ label {
         max-width: 300px;
     }
 }
-
 /* FIN tablet */
 
 
@@ -298,6 +297,7 @@ label {
     .img-login {
         display: flex;
         height: 540px;
+        margin-top: 10.7rem;
     }
     .form-complete {
         order: 2;
