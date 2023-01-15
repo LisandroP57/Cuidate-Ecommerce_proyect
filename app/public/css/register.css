@@ -38,15 +38,18 @@
 @media (min-width: 1024px) {
     .register {
         background-image: url(/img/back.jpg);
-        background-position: -2.7rem -2.1rem;
-        background-size: 65rem 44.6rem;
-        margin-left: 45rem;
+        background-size:cover;
+        background-position: -12rem;
+        margin-left: 50rem;
     }
     .register .form-container {
         max-width: 600px;
     }
     .register .form-two {
         max-width: 600px;
+    }
+    .register main {
+        background-image: none;
     }
 }
 

@@ -23,15 +23,13 @@
 
 main {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url(/img/background.jpg);
-    background-position: center;
+    background-image: url(../background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3rem;
 }
 
 a {
