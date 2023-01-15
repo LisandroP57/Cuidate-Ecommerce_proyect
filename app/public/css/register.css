@@ -1,0 +1,52 @@
+.register .btn-submit-register {
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+    height: 1.8rem;
+    width: 100%;
+    border: solid 1px var(--gris);
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    background:  linear-gradient(45deg, --violeta-chillon 0%,  --violeta-oscuro 50%);
+    color: rgb(255, 255, 255);
+    background-color: var(--violeta-oscuro);
+    transition: all 2s ease;
+}
+
+.register .btn-submit-register:hover {
+    color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 10px rgba(255, 243, 243, 0.7);
+    background: linear-gradient(285deg, rgba(149, 0, 255, 0.452) 0%,  rgba(236, 95, 168, 0.623) 50%);
+    transition: all 1s ease;
+}
+
+.register .form-complete {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+}
+    
+.register .form-two a {
+    text-decoration:underline;
+
+}
+
+@media (min-width: 1024px) {
+    .register {
+        background-image: url(../back.jpg);
+        background-position: -2.7rem -2.1rem;
+        background-size: 65rem 44.6rem;
+        margin-left: 45rem;
+    }
+    .register .form-container {
+        max-width: 600px;
+    }
+    .register .form-two {
+        max-width: 600px;
+    }
+}
+
