@@ -283,7 +283,12 @@ label {
 
 /* Tablet */
 @media (min-width: 768px) {
-
+    .form-container {
+        max-width: 500px;
+    }
+    .form-two {
+        max-width: 300px;
+    }
 }
 
 /* FIN tablet */
