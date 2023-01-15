@@ -95,7 +95,6 @@ span.error-message {
     display: none;
     font-size: 13px;
     justify-content: center;
-    /* En los mensajes de error llevan un display:none ya que no son visibles a menos que falle */
 }
 
 input.input-style {
