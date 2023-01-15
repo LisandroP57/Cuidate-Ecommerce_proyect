@@ -171,10 +171,6 @@ div.container div.buscador {
 
         /* DESKTOP */
 @media (min-width: 1024px) {
-    
-    body {
-        background-color: rgb(255, 71, 111);
-    }
         /* MENU */
     div.container div.menu {
         display: none;
