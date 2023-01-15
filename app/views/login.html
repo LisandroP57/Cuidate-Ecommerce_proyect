@@ -29,40 +29,42 @@
 			<div class="carrito"><img src="/img/carrtio.png" alt=""></div>
 		</div>
 	</header> -->
-    
-    <div class="form-complete">
-        <div class="form-container">
-            <a href="/home"><h2>Cuidate!</h2></a>
-            <hr>
-            <form action="" method="">
-                <div class="form">
-                    <div class="input-container">
-                        <span class="top-message">E-mail</span>
-                        <input class="input-style" type="email" required name="email" placeholder="Ingrese su e-mail">
-                        <span class="error-message">E-mail incorrecto</span>
+
+    <main>
+        <div class="form-complete">
+            <div class="form-container">
+                <a href="/home"><h2>Cuidate!</h2></a>
+                <hr>
+                <form action="" method="">
+                    <div class="form">
+                        <div class="input-container">
+                            <span class="top-message">E-mail</span>
+                            <input class="input-style" type="email" required name="email" placeholder="Ingrese su e-mail">
+                            <span class="error-message">E-mail incorrecto</span>
+                        </div>
+                        <div class="input-container">
+                            <span class="top-message">Contraseña</span>
+                            <input class="input-style" required type="password" name="pass" placeholder="Ingrese su contraseña">
+                            <span class="error-message">Contraseña incorrecta</span>
+                        </div>
+                        <div class="checkbox-slider">
+                            <input type="checkbox" id="my-slider"> 
+                            <label for="my-slider">Recordar sesión</label>
+                        </div>
+                        <div class="button-container">
+                            <button type="submit" class="btn-submit">Acceder !</button>
+                            <span class="error-message">Credenciales inválidas</span>
+                        </div>
                     </div>
-                    <div class="input-container">
-                        <span class="top-message">Contraseña</span>
-                        <input class="input-style" required type="password" name="pass" placeholder="Ingrese su contraseña">
-                        <span class="error-message">Contraseña incorrecta</span>
-                    </div>
-                    <div class="checkbox-slider">
-                        <input type="checkbox" id="my-slider"> 
-                        <label for="my-slider">Recordar sesión</label>
-                    </div>
-                    <div class="button-container">
-                        <button type="submit" class="btn-submit">Acceder !</button>
-                        <span class="error-message">Credenciales inválidas</span>
-                    </div>
-                </div>
-            </form>
+                </form>
+            </div>
+            <div class="form-two">
+                <span><p>¿No tienes una cuenta?<a class="link" href="register"> Regístrate</a></p></span>
+            </div>
         </div>
-        <div class="form-two">
-            <span><p>¿No tienes una cuenta?<a class="link" href="register"> Regístrate</a></p></span>
+        <div class="img-login">
+            <img src="/img/img-login.png" alt="">
         </div>
-    </div>
-    <div class="img-login">
-        <img src="/img/img-login.png" alt="">
-    </div>
+    </main>
 </body>
 </html>
