@@ -105,9 +105,9 @@ div.container div.buscador {
         /* TABLET */
 @media (min-width: 768px) and (max-width: 1023px) {
     
-    body {
+  /*   body {
         background-color: rgb(169, 255, 71);
-    }
+    } */
 
     div.container {
         height: 90px;
