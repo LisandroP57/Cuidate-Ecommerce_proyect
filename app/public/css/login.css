@@ -176,7 +176,6 @@ label {
 }
 
 /* Buttons */
-
 .btn-submit {
     margin-top: 2.6rem;
     border: none;
@@ -199,33 +198,7 @@ label {
     box-shadow: 5px 5px 10px rgba(255, 243, 243, 0.7);
     background: linear-gradient(285deg, rgba(149, 0, 255, 0.452) 0%,  rgba(236, 95, 168, 0.623) 50%);
     transition: all 1s ease;
-}
-
-.btn-reset {
-    background:  linear-gradient(45deg, rgba(255,255,255,1) 0%,  rgba(36, 105, 208, 0.5) 50%);
-    color: rgb(75, 75, 75);
-    font-weight: bold;
-    transition: all 4s ease;
-}
-
-.btn-reset:hover {
-    color: rgb(172, 172, 172);
-    box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
-    background: linear-gradient(285deg, rgba(255,255,255,0.5) 0%,  rgba(39, 151, 255, 0.5) 50%);
-}
-
-.btn-edit {
-    background:  linear-gradient(45deg, rgba(255,255,255,1) 0%,  rgba(43, 236, 124, 0.5) 50%);
-    color: rgb(75, 75, 75);
-    font-weight: bold;
-}
-
-.btn-edit:hover {
-    color: rgb(172, 172, 172);
-    box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
-    background: linear-gradient(285deg, rgba(255,255,255,0.5) 0%,  rgba(43, 236, 124, 0.5) 50%);
-}
-/* Fin Buttons */
+}/* Fin Buttons */
 
 /* Checkbox deslizante */
 .checkbox-slider {
@@ -274,8 +247,7 @@ label {
 .checkbox-slider input:checked + label:before {
     background: #3d90da;
 }
-}
-/* Fin Checkbox deslizable */
+}/* Fin Checkbox deslizable */
         /* FIN Mobile version */
 
 
@@ -288,12 +260,10 @@ label {
     .form-two {
         max-width: 300px;
     }
-}
-/* FIN tablet */
+}/* FIN tablet */
 
 
 /* Desktop */
-
 @media (min-width: 1024px) {
     .img-login {
         display: flex;
@@ -315,5 +285,4 @@ label {
         justify-content: space-evenly;
     }
 }
-
 /* FIN Desktop */

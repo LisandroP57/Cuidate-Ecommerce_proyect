@@ -29,21 +29,19 @@
     width: 100%;
     max-width: 400px;
 }
-    
+
 .register .form-two a {
     text-decoration:underline;
-
 }
 
 @media (min-width: 1024px) {
-    .register {
-        background-image: url(/img/back.jpg);
-        background-size:cover;
-        background-position: -12rem;
-        margin-left: 50rem;
-    }
     .register .form-container {
         max-width: 600px;
+        margin-left: 52rem;
+    }
+    .register .form-two {
+        max-width: 600px;
+        margin-left: 52rem;
     }
     .register .form-two {
         max-width: 600px;
