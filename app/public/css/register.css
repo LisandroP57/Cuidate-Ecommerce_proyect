@@ -35,6 +35,11 @@
 }
 
 @media (min-width: 1024px) {
+    .register {
+        background-image: url(../back.jpg);
+        background-size:cover;
+        background-position: -3.5rem;
+    }
     .register .form-container {
         max-width: 600px;
         margin-left: 52rem;
