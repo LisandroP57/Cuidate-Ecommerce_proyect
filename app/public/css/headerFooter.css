@@ -1,0 +1,505 @@
+        /* GENERALES */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+li {
+    list-style: none;
+}
+
+footer.principal {
+    background-color: #724A81;
+}
+
+footer.principal div.footer-redes-data h3 {
+    background-color: black;
+    border-radius: 10px 0 10px 0;
+    color: #fff;
+    width: 120%;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+footer.principal div.links h3 {
+    background-color: black;
+    border-radius: 10px 0 10px 0;
+    color: #fff;
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+}
+
+header.container {
+    display: flex;
+    flex-direction: column;
+    background-color: #C8ABD0;
+    padding: 10px;
+}
+
+header.container div.primer-menu {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: .9%;
+}
+
+header.container div.primer-menu div.menu-hamburguesa img {
+    width: 50px;
+    height: 50px;
+}
+
+header.container div.primer-menu div.crear img {
+    width: 50px;
+    height: 50px;
+}
+
+header.container div.primer-menu div.lupa img {
+    width: 50px;
+    height: 50px;
+}
+
+header.container div.primer-menu div.iniciar img {
+    width: 50px;
+    height: 50px;
+}
+
+header.container div.primer-menu div.carrito img {
+    width: 50px;
+    height: 50px;
+}
+
+nav.navegador ul.menu {
+    display: flex;
+    justify-content: center;
+}
+
+nav.navegador ul.menu li {
+    width: 9%;
+    margin: 5px;
+    background-color: #724A81;
+    text-align: center;
+    border-radius: 150px 0 150px 0;
+}
+
+header.container div.primer-menu div.buscador {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #724A81;
+    border-radius: 20px 0 20px 0;
+}
+        /* FIN GENERALES */
+
+        /* MOBILE */
+@media (max-width: 767px) {
+
+    header.container div.logo a img {
+        width: 50px;
+        height: 50px;
+    }
+
+    header.container div.logo span {
+        display: none;
+    }
+
+    header.container div.crear {
+        display: none;
+    }
+
+    header.container div.iniciar {
+        display: none;
+    }
+
+    header.container nav.navegador {
+        display: none;
+    }
+
+    header.container div.primer-menu div.carrito a {
+        display: none;
+    }
+        
+    header.container div.primer-menu div.buscador {
+        width: 45%;
+        height: 33px;
+        justify-content: space-between;
+        font-size: 19px;
+    }
+
+    header.container div.primer-menu div.buscador span {
+        margin-left: 20px;
+    }
+
+    header.container div.primer-menu div.lupa img {
+        width: 19px;
+        height: 19px;
+        margin-right: 10px; 
+    }
+        /* FOOTER */
+    footer.principal {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    footer.principal div.footer-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer.principal div.footer-logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    footer.principal div.footer-logo span {
+        font-size: 10px;
+    }
+
+    footer.principal div.footer-redes-data {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer.principal div.footer-redes-data ul.redes {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 25px;
+        margin-top: 5px;
+    }
+
+    footer.principal div.footer-redes-data ul.redes img {
+        width: 30px;
+        height: 30px;
+    }
+
+    footer.principal div.footer-redes-data div.qr img {
+        width: 100%;
+        height: 50px;
+    }
+
+    footer.principal div.links {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+
+    footer.principal div.links div.sub-menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer.principal div.links div.sub-menu div.links-utiles ul.sub-menu2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    footer.principal div.links div.sub-menu div.links-utiles ul.sub-menu2 li {
+        background-color: #4e4b4e;
+        width: 90%;
+        margin-top: 5px;
+        text-align: center;
+        border-radius: 10px 0 10px 0;
+        font-size: 10px;
+    }
+
+    footer.principal div.footer-redes-data div.qr {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+
+
+
+}
+        /* FIN MOBILE */
+
+
+        /* TABLET */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    header.container div.primer-menu div.crear {
+        display: none;
+    }
+
+    header.container div.primer-menu div.iniciar {
+        display: none;
+    }
+
+    header.container nav.navegador {
+        display: none;
+    }
+
+    header.container div.primer-menu div.carrito a {
+        display: none;
+    }
+
+    header.container div.primer-menu div.logo img {
+        width: 60px;
+        height: 60px;
+    }
+
+    header.container div.primer-menu div.buscador {
+        width: 60%;
+        height: 40px;
+    }
+
+    header.container div.primer-menu div.buscador span {
+        margin-left: 50px;
+    }
+
+    header.container div.primer-menu div.buscador div.lupa img {
+        width: 25px;
+        height: 25px;
+        margin-right: 15px;
+    }
+
+    header.container div.primer-menu div.logo span{
+        display: none;
+    }
+    /* FOOTER */
+    footer.principal {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    footer.principal div.footer-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer.principal div.footer-logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    footer.principal div.footer-logo span {
+        font-size: 10px;
+    }
+
+    footer.principal div.footer-redes-data {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer.principal div.footer-redes-data ul.redes {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 25px;
+        margin-top: 5px;
+    }
+
+    footer.principal div.footer-redes-data ul.redes img {
+        width: 30px;
+        height: 30px;
+    }
+
+    footer.principal div.footer-redes-data div.qr img {
+        width: 100%;
+        height: 50px;
+    }
+
+    footer.principal div.links {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+
+    footer.principal div.links div.sub-menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer.principal div.links div.sub-menu div.links-utiles ul.sub-menu2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    footer.principal div.links div.sub-menu div.links-utiles ul.sub-menu2 li {
+        background-color: #4e4b4e;
+        width: 90%;
+        margin-top: 5px;
+        text-align: center;
+        border-radius: 10px 0 10px 0;
+        font-size: 10px;
+    }
+
+    footer.principal div.footer-redes-data div.qr {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+        /* FIN TABLET */
+
+
+        /* DESKTOP */
+@media (min-width: 1024px) {
+
+    header.container div.primer-menu div.menu-hamburguesa {
+        display: none;
+    }
+
+    header.container div.primer-menu div.logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    header.container div.primer-menu div.buscador div.lupa img {
+        width: 20px;
+        height: 20px;
+        margin-right: 15px;
+        margin-top: 3px;
+    }
+    
+    header.container div.primer-menu div.buscador {
+        width: 60%;
+        height: 25px;
+    }
+
+    header.container div.primer-menu div.buscador span {
+        margin-left: 30px;
+    }
+
+    header.container nav.navegador ul.menu{
+        justify-content: center;
+    }
+
+    header.container div.primer-menu div.crear {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 12px;
+    }
+
+    header.container div.primer-menu div.iniciar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 12px;
+    }
+
+    header.container div.primer-menu div.carrito {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 12px;
+    }
+
+    header.container div.primer-menu div.logo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        font-size: 30px;
+        font-family: 'Kaushan Script', cursive;
+    }
+
+        /*FOOTER*/
+    footer.principal {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    footer.principal div.footer-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        order: 2;
+    }
+
+    footer.principal div.footer-logo  img.logo{
+        width: 100px;
+        height: 100px;
+    }
+
+    footer.principal div.footer-redes-data ul.redes li img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    footer.principal div.footer-container-logo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    footer.principal div.footer-redes-data {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        order: 3;
+    }
+
+    footer.principal div.footer-redes-data ul.redes {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        margin-top: 10px;
+    }
+
+    footer.principal div.footer-redes-data div.qr {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: end;
+        margin-top: 15px;
+    }
+
+    footer.principal div.footer-redes-data div.qr img {
+        width: 90px;
+    }
+
+    footer.principal div.links {
+        width: 15% 
+    }
+
+    footer.principal div.links div.sub-menu {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    footer.principal div.links div.sub-menu div.links-utiles ul.sub-menu2 li {
+        background-color: #4e4b4e;
+        border-radius: 10px 0 10px 0;
+        margin: 5px;
+        text-align: center;
+    }
+
+    footer.principal div.links div.sub-menu div.links-utiles {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+        /* FIN DESKTOP */

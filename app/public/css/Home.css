@@ -68,6 +68,7 @@ section.vip-products article.product .photo-container {
 section.vip-products article.product .photo-container img.photo {
     width: 200px;
     height: 200px;
+    border-radius: 15%;
 
 }
 
