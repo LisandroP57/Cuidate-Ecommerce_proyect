@@ -144,8 +144,11 @@ select.input-select {
     width: 100%;
     margin-top: 1rem;
     font-size: 15px;
+    color: rgb(0, 0, 0);
 }
-
+.form-two a {
+    color: blue;
+}
 
 input.input-style::placeholder {
     color: var(--gris);
@@ -262,7 +265,6 @@ label {
     }
     .form-two {
         max-width: 500px;
-        color: blue;
     }
 }/* FIN tablet */
 
