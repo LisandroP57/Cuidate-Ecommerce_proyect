@@ -95,6 +95,7 @@ header.container div.primer-menu div.buscador {
     align-items: center;
     background-color: #724A81;
     border-radius: 20px 0 20px 0;
+    box-shadow: #4e4b4e 2px 2px 2px;
 }
         /* FIN GENERALES */
 
