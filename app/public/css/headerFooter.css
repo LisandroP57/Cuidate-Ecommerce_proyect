@@ -87,6 +87,7 @@ nav.navegador ul.menu li {
     background-color: #724A81;
     text-align: center;
     border-radius: 150px 0 150px 0;
+    box-shadow: #4e4b4e 2px 2px 2px;
 }
 
 header.container div.primer-menu div.buscador {
