@@ -9,42 +9,65 @@
     <!-- <link rel="stylesheet" href="css/header.css"> -->
 </head>
 <body class="register">
-    <div class="form-complete">
-        <div class="form-container">
-            <a href="/home" target="_blank"><h2>Cuidate!</h2></a>
-            <hr>
-            <form action="" method="">
-                <div class="form">
-                    <div class="input-container">
-                        <span class="top-message">E-mail</span>
-                        <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
-                        <span class="error-message">Debe ingresar su email</span>
+    <header>
+		<div class="container">
+			<div class="menu"><img src="/img/menu.png" alt=""></div>
+			<div class="logo"><img src="/img/logo.png" alt=""></div>
+			<div class="buscador">
+				<span>Buscador...</span>
+				<img src="/img/lupa.png" alt="">
+			</div>
+			<div class="desplegable">
+				<ul class="menu-desplegable">
+					<li><a href="#"></a>menu</li>
+					<li><a href="#"></a>menu</li>
+					<li><a href="#"></a>menu</li>
+					<li><a href="#"></a>menu</li>
+					<li><a href="#"></a>menu</li>
+				</ul>
+			</div>
+			<div class="carrito"><img src="/img/carrtio.png" alt=""></div>
+		</div>
+	</header>
+
+    <main>
+        <div class="form-complete">
+            <div class="form-container">
+                <a href="/home"><h2>Cuidate!</h2></a>
+                <hr>
+                <form action="" method="">
+                    <div class="form">
+                        <div class="input-container">
+                            <span class="top-message">E-mail</span>
+                            <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
+                            <span class="error-message">Debe ingresar su email</span>
+                        </div>
+                        <div class="input-container">
+                            <span class="top-message">Contraseña</span>
+                            <input class="input-style" type="password" name="pass" placeholder="Ingrese su contraseña">
+                            <span class="error-message">Debe ingresar su contraseña</span>
+                        </div>
+                        <div class="input-container">
+                            <span class="top-message">Contraseña</span>
+                            <input class="input-style" type="password" name="pass2" placeholder="Re-ingrese su contraseña">
+                            <span class="error-message">Debe re-ingresar su contraseña</span>
+                        </div>
+                        <div class="terms-conditions">
+                            <label for="recordar">  Acepto los <a href="">términos y condiciones</a> </label>
+                            <input type="checkbox" name="terms" id="recordar"> 
+                            <span class="error-message">Debe aceptar los términos y condiciones</span>
+                        </div>
+                        <div class="button-container">
+                            <span class="error-message">Credenciales inválidas</span>
+                            <button type="btn-submit" class="btn-submit-register">Registrarme</button>
+                        </div> 
                     </div>
-                    <div class="input-container">
-                        <span class="top-message">Contraseña</span>
-                        <input class="input-style" type="password" name="pass" placeholder="Ingrese su contraseña">
-                        <span class="error-message">Debe ingresar su contraseña</span>
-                    </div>
-                    <div class="input-container">
-                        <span class="top-message">Contraseña</span>
-                        <input class="input-style" type="password" name="pass2" placeholder="Re-ingrese su contraseña">
-                        <span class="error-message">Debe re-ingresar su contraseña</span>
-                    </div>
-                    <div class="terms-conditions">
-                        <label for="recordar">  Acepto los <a href="">términos y condiciones</a> </label>
-                        <input type="checkbox" name="terms" id="recordar"> 
-                        <span class="error-message">Debe aceptar los términos y condiciones</span>
-                    </div>
-                    <div class="button-container">
-                        <span class="error-message">Credenciales inválidas</span>
-                        <button type="btn-submit" class="btn-submit-register">Registrarme</button>
-                    </div> 
                 </div>
+            </form>
+            <div class="form-two">
+                <span><a href="login">Ya tengo una cuenta</a></span>
             </div>
-        </form>
-        <div class="form-two">
-            <span><a href="login">Ya tengo una cuenta</a></span>
         </div>
-    </div>
+    </main>
 </body>
 </html>
