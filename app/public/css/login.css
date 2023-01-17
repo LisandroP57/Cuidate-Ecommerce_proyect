@@ -164,6 +164,10 @@ label {
     justify-content: space-evenly;
 }
 
+.terms-conditions a {
+    color: blue;
+}
+
 .form-container {
     background-color: var(--violeta-claro);
     border: solid 1px black;
@@ -258,6 +262,7 @@ label {
     }
     .form-two {
         max-width: 500px;
+        color: blue;
     }
 }/* FIN tablet */
 
