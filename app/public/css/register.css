@@ -41,7 +41,7 @@
         background-position: -3.5rem;
     }
     .register .form-container {
-        width: auto;
+        width:fit-content;
         max-width: 600px;
         margin-left: 52rem;
     }
