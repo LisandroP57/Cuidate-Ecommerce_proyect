@@ -118,6 +118,7 @@ select.input-select {
     align-items: center;
     width: 100%;
     max-width: 400px;
+    padding: 1rem;
 }
 
 .input-file-container {
