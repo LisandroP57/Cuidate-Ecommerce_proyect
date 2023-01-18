@@ -270,7 +270,7 @@ label {
 
 
 /* Desktop */
-@media (min-width: 1024px) {
+@media (min-width: 1180px) {
     .img-login {
         display: flex;
         height: 540px;
@@ -278,6 +278,7 @@ label {
     }
     .form-complete {
         order: 2;
+        width: 100%;
     }
     .form-container {
         max-width: 600px;
