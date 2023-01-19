@@ -290,6 +290,7 @@ label {
     main {
         display: flex;
         justify-content: space-evenly;
+        background-image: none;
     }
 }
 /* FIN Desktop */
