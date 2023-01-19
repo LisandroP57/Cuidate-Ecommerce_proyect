@@ -1,0 +1,125 @@
+@import url('headerFooter.css');
+
+.container {
+    background-color: #d9d9d9;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+
+.producto {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.imagen {
+    margin: 5px;
+}
+
+.descripcion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.controladores-precio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    .producto {
+        width: 95%;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+    }
+
+    .carritoFavorito {
+        display: none;
+    }
+    
+    }
+
+    .comprar {
+        text-align: center;
+        margin: 15px;
+    }
+    .comprar-eliminar {
+      display: flex;
+      background-color: transparent;
+      cursor: pointer;
+   }
+
+@media (min-width: 768px) and (max-width: 1023px){
+    .carritoFavorito {
+        display: none;
+    }
+
+    .comprar {
+        text-align: center;
+        margin: 15px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .controladores-precio {
+        flex-direction: row;
+        gap: 10px;
+        font-size: 20px;
+    }
+
+    .controladores-precio .masmenos button{
+        width: 25px;
+        height: 25px;
+    }
+
+    .producto {
+        width: 80%;
+        margin: auto;
+    }
+
+    .descripcion {
+        font-size: 2rem
+    }
+
+    .comprar-eliminar button {
+        width: 150px;
+    }
+
+    img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .comprar {
+        text-align: right;
+        margin: 15px;
+    }
+
+    .comprar button {
+        width: 130px;
+        height: 40px;
+        font-size: 20px;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    .carritoFavorito {
+        display: flex;
+        gap: 5px;
+        margin-left: 10%;
+    }
+
+    .carritoFavorito button {
+        width: 100px;
+    }
+}
