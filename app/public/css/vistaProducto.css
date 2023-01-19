@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap");
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+}
+body {
+      /*  display: flex;
+    justify-content: center;
+    align-items: center; */
+      /* min-height: 100vh;  */
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      /* padding: 15px 10px 0px; */
+      background: linear-gradient(180deg, #C8ABD0, #C8ABD0 50%,#fff 100%,#fff 100%);
+      background-repeat: no-repeat;
+      
+}
+
+main.card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+}
+
+.container-title{
+      margin-top: 30px;
+      height: 30px;
+      
+}
+
+.container-title i {
+      align-items: center;
+      background-color: #C8ABD0;
+      font-style: italic;
+      font-size: 10px;
+}
+.titulo {
+      margin: 5px 0;
+      text-align: center;
+}
+.titulo h3 {
+      font-size: 15px;
+}
+
+
+
+main.card div.detalles div.imgBox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+main.card div.detalles img {
+      width: 240px;
+      height: 100%;
+      transform: rotate(90deg);
+      position: relative;
+      transition: 0.5s;
+      background-color: aliceblue;
+      border-radius: 20px;
+      transition: 0.5s;
+     
+}
+
+.card:hover .imgBox{
+      transform: rotate(35deg);
+   }
+   
+   .card:hover .imgBox img {
+      width: 80%;
+   }
+
+
+main.card div.detalles div.container-title {
+      font-size: 10px;
+      width: 100%;
+}
+
+.div-descripcion.descripcion{
+      background-color: aliceblue;
+}
+.container-quantity input {
+      margin: 10px 0;
+      height: 25px;
+      border: 1px;
+      border-radius: 5px;
+}
+.container-add-cart button {
+      margin: 10px 0;
+      height: 30px;
+}
+div.size ul {
+      display: flex;
+      justify-content: space-around;
+}
+div.size ul div {
+      margin: 10px 0;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      border: none;
+}
+div.size ul div.amarillo {
+      background-color: yellow;
+}
+div.size ul div.violeta {
+      background-color: violet;
+}
+div.size ul div.rosa {
+      background-color: pink;
+}
+div.size ul div.negro {
+      background-color: black;
+}
+.precio {
+      font-size: 20px;
+      color: black;
+      margin: 10px 0;
+}
+h4 {
+      font-size: 15px;
+}
+p {
+      font-size: 10px;
+}
+
+ul {
+      list-style: none;
+}
+.imgBoxMini {
+      display: none;
+}
+
+.btn  {
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      background-color: #C8ABD0;
+      height: 50px;
+      width: 90%;
+      box-shadow: 0 15px 45px rgba(0,0, 0,0.25);
+      border-radius:10px;
+}
+
+.btn a {
+      text-align: center;
+      color: black;
+}
+
+
+
+
+
+@media screen and (min-width: 768px) {
+      main.card div.detalles img {
+            width: 240px;
+            height: 240px;
+      }
+      main.card {
+            flex-direction: row;
+            width: max-content;
+      }
+      .detalles {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            margin: 10px;
+            background-color: aliceblue;
+      }
+
+      
+}
+
+@media screen and (min-width: 1024px){
+      main.card div.detalles img {
+            width: 240px;
+            height: 240px;
+            
+      }
+      main.card {
+            flex-direction: row;
+      }
+}
