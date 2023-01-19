@@ -1,5 +1,5 @@
-@import url(/app/public/css/);  
-  
+@import url('headerFooter.css');
+
   /* GENERALES */
 * {
     margin: 0;
