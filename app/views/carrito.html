@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cuidate! Iniciar sesión</title>
-    <link rel="stylesheet" href="./css/login.css"> 
-    <!-- <link rel="stylesheet" href="/css/header.css"> -->
+    <link rel="stylesheet" href="./css/carrito.css">
+    <title>Carrito de Compras</title>
 </head>
 <body>
     <header class="container">
@@ -40,7 +39,7 @@
 
             <div class="crear">
                 <img src="/img/create.png" alt="">
-                <a href="register">Crear usuario</a>
+                <a href="/register">Crear usuario</a>
             </div>
 
             <div class="iniciar">
@@ -66,43 +65,57 @@
         </nav>
     </header>
 
-    <main>
-        <div class="form-complete">
-            <div class="form-container">
-                <a href="/home"><h2>Cuidate!</h2></a>
-                <hr>
-                <form action="" method="">
-                    <div class="form">
-                        <div class="input-container">
-                            <span class="top-message">E-mail</span>
-                            <input class="input-style" type="email" required name="email" placeholder="Ingrese su e-mail">
-                            <span class="error-message">E-mail incorrecto</span>
-                        </div>
-                        <div class="input-container">
-                            <span class="top-message">Contraseña</span>
-                            <input class="input-style" required type="password" name="pass" placeholder="Ingrese su contraseña">
-                            <span class="error-message">Contraseña incorrecta</span>
-                        </div>
-                        <div class="checkbox-slider">
-                            <input type="checkbox" id="my-slider"> 
-                            <label for="my-slider">Recordar sesión</label>
-                        </div>
-                        <div class="button-container">
-                            <button type="submit" class="btn-submit">Acceder !</button>
-                            <span class="error-message">Credenciales inválidas</span>
-                        </div>
-                    </div>
-                </form>
+    <div class="container">
+        <div class="carritoFavorito">
+            <button>Carrito</button>
+            <button>Favorito</button>
+        </div>
+        <div class="producto">
+            <div class="imagen">
+                <img src="/img/2manopla.jpeg" alt="">
             </div>
-            <div class="form-two">
-                <span><p>¿No tienes una cuenta?<a class="link" href="register"> Regístrate</a></p></span>
+            <div class="descripcion">
+                <span>Manopla</span>
+                <div class="comprar-eliminar">
+                    <button>Comprar Ahora</button>
+                    <button>Eliminar</button>
+                </div>
+            </div>
+            <div class="controladores-precio">
+                <div class="masmenos">
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </div>
+                <span>$X.XXX</span>
             </div>
         </div>
-        <div class="img-login">
-            <img src="/img/img-login.png" alt="">
-        </div>
-    </main>
 
+        <div class="producto">
+            <div class="imagen">
+                <img src="/img/1gas-Pimienta.jpeg" alt="">
+            </div>
+            <div class="descripcion">
+                <span>Gas Pimienta</span>
+                <div class="comprar-eliminar">
+                    <button>Comprar Ahora</button>
+                    <button>Eliminar</button>
+                </div>
+            </div>
+            <div class="controladores-precio">
+                <div class="masmenos">
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                </div>
+                <span>$X.XXX</span>
+            </div>
+        </div>
+
+    </div>
+    <div class="comprar">
+        <button>COMPRAR</button>
+    </div>
     <footer class="principal">
 
         <div class="footer-logo">
@@ -128,18 +141,16 @@
        <div class="footer-redes-data">
             <h3>Seguinos en nuestras redes</h3>
             <ul class="redes">
-                <ul class="redes">
-                    <ul class="redes">
-                        <li class="instagram"><a href="https://www.instagram.com/"><img src="/img/instagram.png" alt=""></a></li>
-                        <li class="facebook"><a href="https://www.facebook.com/"><img src="/img/facebook.png" alt=""></a></li>
-                        <li class="youtube"><a href="https://www.youtube.com/"><img src="/img/youtube.png" alt=""></a></li>
-                    </ul>
-            </ul>
+                <li class="instagram"><a href="https://www.instagram.com/"><img src="/img/instagram.png" alt=""></a></li>
+                <li class="facebook"><a href="https://www.facebook.com/"><img src="/img/facebook.png" alt=""></a></li>
+                <li class="youtube"><a href="https://www.youtube.com/"><img src="/img/youtube.png" alt=""></a></li>
             </ul>
             <div class="qr">
                 <img src="/img/fiscal.png" alt="">
             </div>
        </div>
+
     </footer>
+
 </body>
 </html>
