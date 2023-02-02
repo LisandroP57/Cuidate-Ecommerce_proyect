@@ -1,35 +1,3 @@
-/* BANNER */
-
-section.banner {
-    display: flex;
-    margin-bottom: 30px;
-}
-
-section.banner img {
-    width: 100%;
-}
-/* END BANNER */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-:root {
-    --grey : #444444;
-}
-
-a {
-    color: white;
-    text-decoration: none;
-}
-
-ul {
-    list-style: none;
-}
-
-
 /* Productos */
 
 section.photo-container{
