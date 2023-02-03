@@ -3,10 +3,10 @@ const controller = {
         return res.render('home');
     },
     login: (req, res) => {
-        return res.render('login');
+        return res.render('users/login');
     },
     register: (req, res) => {
-        return res.render('register');
+        return res.render('users/register');
     },
     vistaProducto: (req, res) => {
         return res.render('vistaProducto');
