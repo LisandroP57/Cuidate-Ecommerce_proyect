@@ -1,28 +1,10 @@
 @import url('register.css');
 @import url('headerFooter.css');
-@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
-
-:root {
-    /* Variables */
-    --violeta-intermedio: #9977A6;
-    --violeta-oscuro: #724A81;
-    --violeta-claro: #C8ABD0;
-    --violeta-chillon: #8C52FF;
-    --gris: #504949;
-    --fuente-principal: 'Roboto', sans-serif;
-}
-   
 
    /* Mobile version */
 @media (min-width: 320px) {
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-main {
+.main-log-reg{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-image: url(/img/background.jpg);
     background-size: cover;
@@ -30,22 +12,6 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-a {
-    color: rgb(255, 255, 255);
-    font-size: 0.9rem;
-    text-decoration:none;
-}
-
-h2 {
-    color: black;
-    text-shadow: 5px 5px 10px rgba(89, 89, 89, 0.5);
-    text-align: center;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-    font-family: 'Kaushan Script', cursive;
-    font-size: 2.3rem;
 }
 
 hr {
@@ -155,7 +121,7 @@ input.input-style::placeholder {
     font-size: 15px;
 }
 
-label {
+.checkbox-slider label {
     font-size: 0.9rem;
     color: black;
     padding: 1rem 1rem 1rem 6px;
@@ -179,6 +145,16 @@ label {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     max-width: 360px;
     width: 100%;
+}
+
+.form-container a h2 {
+    color: black;
+    text-shadow: 5px 5px 10px rgba(89, 89, 89, 0.5);
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 2.3rem;
 }
 
 /* Buttons */
@@ -287,10 +263,9 @@ label {
         max-width: 400px;
     }
 
-    main {
+    .main-log-reg {
         display: flex;
         justify-content: space-evenly;
-        background-image: none;
     }
 }
 /* FIN Desktop */
