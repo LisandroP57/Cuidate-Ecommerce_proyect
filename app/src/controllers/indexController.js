@@ -5,6 +5,9 @@ const controller = {
     vistaProducto: (req, res) => {
         return res.render('vistaProducto');
     },
+    carrito: (req, res) => {
+        return res.render('carrito');
+    },
     login: (req, res) => {
         return res.render('users/login');
     },

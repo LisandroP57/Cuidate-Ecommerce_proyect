@@ -8,8 +8,9 @@ const controller = require("../controllers/indexController");
 router.get('/home', controller.index);
 router.get('/', controller.index);
 
+router.get('/vistaProducto', controller.vistaProducto);
+router.get('/carrito', controller.carrito);
 router.get('/login', controller.login);
 router.get('/register', controller.register);
-router.get('/vistaProducto', controller.vistaProducto);
 
 module.exports = router;
