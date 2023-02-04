@@ -9,9 +9,7 @@ router.get('/home', controller.index);
 router.get('/', controller.index);
 
 router.get('/login', controller.login);
-
 router.get('/register', controller.register);
-
 router.get('/vistaProducto', controller.vistaProducto);
 
 module.exports = router;

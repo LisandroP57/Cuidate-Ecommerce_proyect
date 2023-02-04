@@ -16,10 +16,6 @@ section.banner img {
     padding: 0;
 }
 
-:root {
-    --grey : #444444;
-}
-
 a {
     color: white;
     text-decoration: none;
