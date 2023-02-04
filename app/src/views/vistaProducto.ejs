@@ -1,76 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="/css/vistaProducto.css">
-      <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-      <script src="https://kit.fontawesome.com/4925a93360.js" crossorigin="anonymous"></script>
-      <title>Conectado</title>
-</head>
+<%- include ('partials/head.ejs') %>
 
 <body>
       <!--ESPACIO -->
-      <header class="container">
-        
-        <div class="primer-menu">
-
-            <div class="menu-hamburguesa">
-                <a href="#">
-                    <img src="/img/menu.png" alt="">
-                </a>
-            </div>
-
-            <div class="logo">
-                <a href="/home">
-                    <img src="/img/logo.png" alt="">
-                </a>
-                <span>Cuidate!</span>
-            </div>
-
-            <div class="buscador">
-                <span>
-                    Buscar...
-                </span>
-
-                <div class="lupa">
-                    <a href="#">
-                        <img src="/img/lupa.png" alt="">
-                    </a>
-                </div>
-            </div>
-
-            <div class="crear">
-                <img src="/img/create.png" alt="">
-                <a href="/register">Crear usuario</a>
-            </div>
-
-            <div class="iniciar">
-                <img src="/img/login.png" alt="">
-                <a href="/login">Iniciar sesion</a>
-            </div>
-
-            <div class="carrito">
-                <img src="/img/carrito.png" alt="">
-                <a href="/carrito">Ver compra</a>
-            </div>
-
-        </div>
-
-        <nav class="navegador">
-            <ul class="menu">
-                <li><a href="/home">Home</a></li>
-                <li><a href="/home">Ofertas</a></li>
-                <li><a href="/home">Destacados</a></li>
-                <li><a href="/home">contacto</a></li>
-                <li><a href="/home">Quienes somos</a></li>
-            </ul>
-        </nav>
-    </header>
-
+     <%- include ('partials/header.ejs')%>
       <!--Titulo -->
 
 
@@ -139,41 +74,8 @@
 
             </div>
       </main>
-      <footer class="principal">
 
-        <div class="footer-logo">
-            <img class="logo" src="/img/logo.png" alt="">
-            <span>Copyright © 2023 Todos los derechos reservados ®</span>
-        </div>
-       
-       <div class="links">
-            <h3>Links Utiles</h3>
-            <div class="sub-menu">
-                <div class="links-utiles">
-                    <ul class="sub-menu2">
-                        <li><a href="/home">LINKS</a></li>
-                        <li><a href="/home">LINKS</a></li>
-                        <li><a href="/home">LINKS</a></li>
-                        <li><a href="/home">LINKS</a></li>
-                    </ul>
-                </div>
-                
-            </div>
-       </div>
-
-       <div class="footer-redes-data">
-            <h3>Seguinos en nuestras redes</h3>
-            <ul class="redes">
-                <li class="instagram"><a href="https://www.instagram.com/"><img src="/img/instagram.png" alt=""></a></li>
-                <li class="facebook"><a href="https://www.facebook.com/"><img src="/img/facebook.png" alt=""></a></li>
-                <li class="youtube"><a href="https://www.youtube.com/"><img src="/img/youtube.png" alt=""></a></li>
-            </ul>
-            <div class="qr">
-                <img src="/img/fiscal.png" alt="">
-            </div>
-       </div>
-
-    </footer>
+      <%- include ('partials/footer.ejs')%>
 
 
 
