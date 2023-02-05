@@ -57,9 +57,11 @@
 .conteCarrouselController > a{
     text-decoration: none;
     font-size: 2em;
-    color: rgb(95, 93, 93);
+    color: rgb(42, 38, 38);
+    position: relative;
+    bottom: 2rem;
 }
 
 .itemCarrouselArrows > a > i{
-    color: rgb(107, 105, 105);
+    color: rgb(100, 99, 99);
 }
