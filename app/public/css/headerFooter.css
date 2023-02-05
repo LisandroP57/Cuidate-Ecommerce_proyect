@@ -25,6 +25,10 @@ footer.principal div.links h3 {
     text-align: center;
 }
 
+header {
+    border: 1px solid rgb(166, 166, 166);
+}
+
 header.container {
     display: flex;
     flex-direction: column;
