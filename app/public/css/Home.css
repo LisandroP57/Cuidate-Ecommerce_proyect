@@ -3,6 +3,15 @@
 body.homeBody {
     background-image: url(/img/background.jpg);
 }
+
+body.homeBody div p {
+color:white;
+font-size: 40px;
+font-family: 'Kaushan Script', cursive;
+text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
+}
+
 section.photo-container{
     background-color: var(--grey);
     display: flex;
