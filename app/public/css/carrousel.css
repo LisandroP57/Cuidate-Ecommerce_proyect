@@ -48,7 +48,7 @@
     justify-content: center;
 }
 
-.conteCarrouselController{
+/* .conteCarrouselController{
     width: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -60,7 +60,7 @@
     color: rgb(42, 38, 38);
     position: relative;
     bottom: 2rem;
-}
+} */
 
 .itemCarrouselArrows > a > i{
     color: rgb(100, 99, 99);
