@@ -1,5 +1,7 @@
 /* Productos */
-
+body.homeBody {
+    background-image: url(/img/background.jpg);
+}
 section.photo-container{
     background-color: var(--grey);
     display: flex;
@@ -29,14 +31,26 @@ section.vip-products article.product .photo-container {
     width: 300px;
     height: 300px;
     border-radius: 15%;
+    transition: 1s;
 
+}
+
+section.vip-products article.product .photo-container:hover {
+    box-shadow: 5px 5px 5px white;
+    width: 308px;
+    height: 308px;
 }
 
 section.vip-products article.product .photo-container img.photo {
     width: 200px;
     height: 200px;
     border-radius: 15%;
+    transition: 1s;
+}
 
+section.vip-products article.product .photo-container img.photo:hover {
+    width: 205px;
+    height: 205px;
 }
 
 section.vip-products article.product .photo-container img.special {
@@ -57,10 +71,13 @@ section.vip-products article.product .photo-container a.zoom {
 section.vip-products article.product h2 {
     margin: 15px 0;
     display: flex;
+    color: white;
+    text-shadow: 5px 5px 10px rgba(89, 89, 89, 0.5);
+    font-family: 'Kaushan Script', cursive;
 }
 
 section.vip-products article.product p {
-    color: var(--grey);
+    color: white;
     margin-bottom: 20px;
     display: flex;
 }
