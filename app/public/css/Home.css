@@ -16,7 +16,6 @@ section.vip-products {
 }
 
 section.vip-products article.product {
-    width: 100%;
     max-width: 380px;
     margin-bottom: 30px;
 }
@@ -84,7 +83,7 @@ section.vip-products article.product a.more{
 
     header.main-header nav.main-nav ul {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
     }
 
     header.main-header nav.main-nav ul li {
@@ -96,7 +95,7 @@ section.vip-products article.product a.more{
     }
    
     section.vip-products {
-        justify-content: space-between;
+        justify-content: space-around;
     }
 
     section.vip-products article.product {
