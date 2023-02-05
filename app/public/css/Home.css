@@ -56,20 +56,29 @@ section.vip-products article.product .photo-container a.zoom {
 
 section.vip-products article.product h2 {
     margin: 15px 0;
+    display: flex;
 }
 
 section.vip-products article.product p {
     color: var(--grey);
     margin-bottom: 20px;
+    display: flex;
 }
 
 section.vip-products article.product a.more{
-    background-color: var(--grey);
+    background-color: blueviolet;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 030px;
     width: 95px;
+    border-radius: 10px;
+}
+
+section.vip-products article.product a.more img.carritoAdd {
+    margin-left: 5px;
+    width: 25px;
+    height: 25px;
 }
 
 /* END PRODUCTS */
@@ -108,7 +117,7 @@ section.vip-products article.product a.more{
         width: 180px;
     }
 
-    section.vip-products article.product {
+    /* section.vip-products article.product {
         width: 380px;
-    }
+    } */
 }
