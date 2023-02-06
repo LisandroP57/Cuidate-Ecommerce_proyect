@@ -1,8 +1,8 @@
 module.exports = {
     creacion: (req, res) => {
-        return res.render("products/creacion")
+        return res.render("products/product-create")
     },
     edicion: (req, res) => {
-        return res.render("products/edicion")
+        return res.render("products/product-edit")
     },
 }

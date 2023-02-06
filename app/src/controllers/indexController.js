@@ -1,6 +1,6 @@
 module.exports = {
     index: (req, res) => {
-      res.render("products/index")
+      res.render("index")
     },
     carrito: (req, res) => {
       res.render("products/carrito")
