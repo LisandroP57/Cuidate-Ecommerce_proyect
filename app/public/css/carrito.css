@@ -1,78 +1,92 @@
+
 @import url('headerFooter.css');
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap");
 
-.container1 {
-    background-color: #d9d9d9;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    justify-content: center;
-}
-
-.producto {
-    border: 1px solid black;
-    border-radius: 10px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.imagen {
-    margin: 5px;
-}
-
-.descripcion {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-.controladores-precio {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-@media (max-width: 767px) {
+/* Mobile version */
+@media (min-width: 320px) {
+    .container1 {
+        background-color: #d9d9d9;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+    }
     .producto {
-        width: 95%;
-        justify-content: space-between;
+        border: 1px solid black;
+        border-radius: 10px;
+        width: 80%;
+        display: flex;
         align-items: center;
+        justify-content: space-around;
         margin: auto;
     }
 
-    .carritoFavorito {
-        display: none;
+    .imagen {
+        margin: 5px;
+        border-radius: 10px;
+        overflow: hidden;
+        max-height: 120px;
     }
     
+    .imagen img {
+        width: 150px;
+        height: 150px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        object-fit: cover;
     }
 
-    .comprar {
-        text-align: center;
-        margin: 15px;
-    }
-    .comprar-eliminar {
-      display: flex;
-      background-color: transparent;
-      cursor: pointer;
-   }
-
-@media (min-width: 768px) and (max-width: 1023px){
-    .carritoFavorito {
-        display: none;
-    }
-
-    .comprar {
-        text-align: center;
-        margin: 15px;
-    }
 }
 
-@media (min-width: 1024px) {
+/* Tablet */
+@media (min-width: 768px) {
+
+
+}
+
+/* Desktop */
+@media (min-width: 1180px) {
+    .container1 {
+        background-color: #d9d9d9;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+    }
+    
+    .producto {
+        border: 1px solid black;
+        border-radius: 10px;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: auto;
+    }
+  
+    .imagen {
+        margin: 5px;
+        border-radius: 10px;
+        overflow: hidden;
+        max-height: 120px;
+    }
+    
+    .imagen img {
+        width: 150px;
+        height: 150px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        object-fit: cover;
+    }
+    
     .controladores-precio {
-        flex-direction: row;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         gap: 10px;
         font-size: 20px;
     }
@@ -82,22 +96,12 @@
         height: 25px;
     }
 
-    .producto {
-        width: 80%;
-        margin: auto;
-    }
-
     .descripcion {
         font-size: 2rem
     }
 
     .comprar-eliminar button {
         width: 150px;
-    }
-
-    .imagen img {
-        width: 150px;
-        height: 150px;
     }
 
     .comprar {
