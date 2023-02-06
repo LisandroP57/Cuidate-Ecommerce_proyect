@@ -6,13 +6,6 @@ const router = express.Router();
 const controller = require("../controllers/indexController");
 
 router.get('/home', controller.index);
-router.get('/', controller.index);
-
-router.get('/vistaProducto', controller.vistaProducto);
-router.get('/carrito', controller.carrito);
-
-        /* User Router */
-router.get('/login', controller.login);
-router.get('/register', controller.register);
+router.get('/', controller.index); 
 
 module.exports = router;
