@@ -10,6 +10,8 @@ router.get('/', controller.index);
 
 router.get('/vistaProducto', controller.vistaProducto);
 router.get('/carrito', controller.carrito);
+
+        /* User Router */
 router.get('/login', controller.login);
 router.get('/register', controller.register);
 
