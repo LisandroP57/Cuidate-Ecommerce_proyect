@@ -1,4 +1,4 @@
-/* const controller = {
+module.exports = {
     login: (req, res) => {
         return res.render('users/login');
     },
@@ -6,5 +6,3 @@
             return res.render('users/register');
     },
 }
-
-module.exports = controller; */
