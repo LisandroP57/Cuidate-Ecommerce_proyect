@@ -11,13 +11,13 @@ app.set("views", "./src/views");
 
     /* Routers */
 const indexRouter = require("./routes");
-const usersRouter = require('./routes/users');
 const productsRouter = require("./routes/products");
+const usersRouter = require('./routes/users');
 
     /* Routes Middlewares */
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-app.use("/carrito", productsRouter);
+app.use("/product", productsRouter);
 app.use("/vistaProducto", productsRouter);
 
 app.listen(PORT, () => console.log(`Server listen in port ${PORT}\nhttp://localhost:${PORT}`));
