@@ -13,10 +13,7 @@
 }
 
 main.card {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      margin: auto;
 }
 
 .container-title{
@@ -54,7 +51,7 @@ main.card div.detalles img {
       position: relative;
       transition: 0.5s;
       background-color: aliceblue;
-      border-radius: 20px;
+      border-radius: 90px;
       transition: 0.5s;
      
 }
@@ -176,6 +173,7 @@ ul {
             
       }
       main.card {
-            flex-direction: row;
+            flex-direction: column;
+            justify-content: start;
       }
 }
