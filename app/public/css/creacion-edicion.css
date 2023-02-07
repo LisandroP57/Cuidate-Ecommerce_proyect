@@ -1,0 +1,81 @@
+@import url('style.css');
+
+main.addProduct {
+    display: flex;
+    justify-content: center;
+    background-image: url(/img/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.createForm {
+    padding: 0rem 1rem;
+    background-color: var(--violeta-claro);
+    margin: 1rem;
+    width: 100%;
+    max-width: 400px;
+}
+      
+
+.createForm .row .col-12 h2{
+    color: black;
+    text-shadow: 5px 5px 10px rgba(89, 89, 89, 0.5);
+    text-align: center;
+    margin-top: 1rem;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 2rem;
+}
+
+.createForm div {
+    padding: 0.5rem 0rem;
+}
+
+.col-12 {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+}
+
+.col-12 .products-title {
+    display: flex;
+    justify-content: center;
+}
+
+.addInput {
+    display: flex;
+    align-items: start;
+}
+
+.addInput input {
+    display: flex;
+    align-items: start;
+}
+
+.Addform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.addInput {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.addInput input {
+    margin: 3px;
+    width: 100%;
+}
+
+.description1 {
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.sendButton {
+
+}
