@@ -18,16 +18,27 @@ main.card {
 }
 
 .container-title{
-      margin-top: 30px;
+      margin-top: auto;
       height: 30px;
+      width: 100%;
+      align-items:center;
       
 }
 
 .container-title i {
-      align-items: center;
-      background-color: #C8ABD0;
+      margin: auto;
+      height: 40px;
+      width: 100%;
+      background-color: whitesmoke;
+      margin-top: auto;
       font-style: italic;
       font-size: 10px;
+      align-items: center;
+      /*  
+      font-style: italic;
+      font-size: 10px;
+      height: 70px; */
+  
 }
 .titulo {
       margin: 5px 0;
@@ -154,7 +165,9 @@ ul {
       }
       main.card {
             flex-direction: row;
-            width: max-content;
+            width: 100%;
+            height: 500px;
+
       }
 
 
@@ -163,8 +176,10 @@ ul {
             justify-content: space-around;
             align-items: center;
             width: 100%;
+            height: 100%;
             margin: 10px;
             background-color: aliceblue;
+
       }
 
       
