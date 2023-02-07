@@ -6,6 +6,6 @@ const router = express.Router();
 const controller = require("../controllers/indexController");
 
 router.get('/home', controller.index);
-router.get('/', controller.index); 
+router.get('/', controller.index);
 
 module.exports = router;

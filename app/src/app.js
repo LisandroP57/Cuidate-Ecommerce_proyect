@@ -7,17 +7,16 @@ app.use(express.static("public"));
 
     /* Template engine */
 app.set("view engine", "ejs");
-app.set("views", "./src/views");
+app.set('views', path.join(__dirname, 'views'))
 
     /* Routers */
-const indexRouter = require("./routes");
-const usersRouter = require('./routes/users');
+const indexRouter = require("./routes/index");
 const productsRouter = require("./routes/products");
+const usersRouter = require('./routes/users');
 
     /* Routes Middlewares */
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-app.use("/carrito", productsRouter);
-app.use("/vistaProducto", productsRouter);
+app.use("/products", productsRouter);
 
 app.listen(PORT, () => console.log(`Server listen in port ${PORT}\nhttp://localhost:${PORT}`));
