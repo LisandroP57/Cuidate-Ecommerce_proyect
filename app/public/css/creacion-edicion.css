@@ -10,18 +10,31 @@ main.addProduct {
 }
 
 .createForm {
-    padding: 1rem 1rem;
+    padding: 0rem 1rem;
     background-color: var(--violeta-claro);
     margin: 1rem;
-    width: 40%;
+    width: 100%;
+    max-width: 400px;
 }
+      
 
 .createForm .row .col-12 h2{
+    color: black;
+    text-shadow: 5px 5px 10px rgba(89, 89, 89, 0.5);
+    text-align: center;
+    margin-top: 1rem;
     font-family: 'Kaushan Script', cursive;
+    font-size: 2rem;
 }
 
 .createForm div {
     padding: 0.5rem 0rem;
+}
+
+.col-12 {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
 }
 
 .col-12 .products-title {
@@ -29,19 +42,40 @@ main.addProduct {
     justify-content: center;
 }
 
-.col-12-col-md-6 {
+.addInput {
     display: flex;
     align-items: start;
 }
 
-.col-12-col-md-6 input {
+.addInput input {
     display: flex;
     align-items: start;
 }
 
-/* Desktop */
-@media (min-width: 1180px) {
-    .createForm {
-        width: 30%;
-    }
-    }
+.Addform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.addInput {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.addInput input {
+    margin: 3px;
+    width: 100%;
+}
+
+.description1 {
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.sendButton {
+
+}
