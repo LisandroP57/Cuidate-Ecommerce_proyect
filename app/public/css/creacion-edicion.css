@@ -1,0 +1,47 @@
+@import url('style.css');
+
+main.addProduct {
+    display: flex;
+    justify-content: center;
+    background-image: url(/img/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.createForm {
+    padding: 1rem 1rem;
+    background-color: var(--violeta-claro);
+    margin: 1rem;
+    width: 40%;
+}
+
+.createForm .row .col-12 h2{
+    font-family: 'Kaushan Script', cursive;
+}
+
+.createForm div {
+    padding: 0.5rem 0rem;
+}
+
+.col-12 .products-title {
+    display: flex;
+    justify-content: center;
+}
+
+.col-12-col-md-6 {
+    display: flex;
+    align-items: start;
+}
+
+.col-12-col-md-6 input {
+    display: flex;
+    align-items: start;
+}
+
+/* Desktop */
+@media (min-width: 1180px) {
+    .createForm {
+        width: 30%;
+    }
+    }
