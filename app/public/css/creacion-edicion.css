@@ -79,6 +79,11 @@ main.addProduct {
     gap: 10px;
 }
 
+.description1 label {
+    flex-wrap: wrap;
+    width: 100%;
+}
+
 .form-input {
     border: 1px solid black;
     height: 40px;
@@ -86,6 +91,9 @@ main.addProduct {
 }
 
 .buy-now-button{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
     border-radius: 0.5rem;
     cursor: pointer;
     font-size: 15px;
@@ -98,6 +106,10 @@ main.addProduct {
     color: rgb(255, 255, 255);
     background-color: var(--violeta-oscuro);
     transition: all 2s ease;
+}
+
+div.sendButton {
+    padding: 1.2rem;
 }
 
 .buy-now-button:hover {
