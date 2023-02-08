@@ -33,6 +33,14 @@
     text-decoration:underline;
 }
 
+.register .form-container{
+    background: #9977A6;
+}
+
+.register .form-two{
+    background: #9977A6;
+}
+
 @media (min-width: 1024px) {
     .register {
         background-image: url(/img/back.jpg);

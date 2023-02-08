@@ -102,7 +102,6 @@ select.input-select {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--violeta-claro);
     border: solid 1px black;
     padding: 1.2rem;
     box-shadow: 5px 5px 10px rgb(0 0 0 / 50%);
@@ -110,7 +109,7 @@ select.input-select {
     width: 100%;
     margin-top: 1rem;
     font-size: 15px;
-    color: rgb(0, 0, 0);
+    background: linear-gradient(0deg,transparent,transparent);
 }
 .form-two a {
     color: blue;
@@ -145,6 +144,7 @@ input.input-style::placeholder {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     max-width: 360px;
     width: 100%;
+    background: linear-gradient(0deg,transparent,transparent, #9977A6);
 }
 
 .form-container a h2 {
