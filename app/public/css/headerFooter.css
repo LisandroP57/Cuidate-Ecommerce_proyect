@@ -53,6 +53,12 @@ header.container div.primer-menu div.menu-hamburguesa img {
 header.container div.primer-menu div.crear img {
     width: 30px;
     height: 30px;
+    transition: 1s;
+}
+
+header.container div.primer-menu div.crear img:hover {
+    transform: rotateY(360deg);
+    cursor: pointer;
 }
 
 header.container div.primer-menu div.lupa img {
@@ -63,11 +69,23 @@ header.container div.primer-menu div.lupa img {
 header.container div.primer-menu div.iniciar img {
     width: 30px;
     height: 30px;
+    transition: 1s;
+}
+
+header.container div.primer-menu div.iniciar img:hover {
+transform: rotateY(360deg);
+cursor: pointer;
 }
 
 header.container div.primer-menu div.carrito img {
     width: 30px;
     height: 30px;
+    transition: 1s;
+}
+
+header.container div.primer-menu div.carrito img:hover {
+    transform: rotateY(360deg);
+    cursor: pointer;
 }
 
 nav.navegador ul.menu {
