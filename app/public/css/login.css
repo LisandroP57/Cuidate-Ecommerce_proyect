@@ -144,7 +144,13 @@ input.input-style::placeholder {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     max-width: 360px;
     width: 100%;
-    background: linear-gradient(0deg,transparent,transparent, #9977A6);
+    background: linear-gradient(365deg,transparent, #9977A6);
+    transition: all 1s ease;
+}
+
+.form-container:hover {
+    background: linear-gradient(300deg,transparent, #9977A6 70%);
+    transition: all 4s ease;
 }
 
 .form-container a h2 {

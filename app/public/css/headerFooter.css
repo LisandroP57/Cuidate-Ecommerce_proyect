@@ -81,6 +81,12 @@ nav.navegador ul.menu li {
     text-align: center;
     border-radius: 150px 0 150px 0;
     box-shadow: #4e4b4e 2px 2px 2px;
+    transition: all 1s ease;
+}
+
+nav.navegador ul.menu li:hover{
+    width: 11%;
+    transform: scale(1.2);
 }
 
 header.container div.primer-menu div.buscador {
