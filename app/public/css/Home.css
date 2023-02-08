@@ -61,6 +61,7 @@ section.vip-products article.product .photo-container img.photo {
 section.vip-products article.product .photo-container img.photo:hover {
     width: 205px;
     height: 205px;
+    transform: scale(1.2);
 }
 
 section.vip-products article.product .photo-container img.special {
