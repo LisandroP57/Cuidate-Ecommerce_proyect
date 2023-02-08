@@ -88,9 +88,10 @@ section.vip-products article.product h2 {
 }
 
 section.vip-products article.product p {
-    color: white;
+    color: black;
     margin-bottom: 20px;
     display: flex;
+    font-size: 35px;
 }
 
 section.vip-products article.product a.more{
@@ -101,6 +102,12 @@ section.vip-products article.product a.more{
     height: 030px;
     width: 95px;
     border-radius: 10px;
+    padding: 20px 100px;
+    transition: 1s;
+}
+
+section.vip-products article.product a.more:hover{
+    transform: rotateY(360deg);
 }
 
 section.vip-products article.product a.more img.carritoAdd {
