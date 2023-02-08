@@ -5,7 +5,7 @@
 /* Mobile version */
 @media (min-width: 320px) {
     .container1 {
-        background-color: #d9d9d9;
+    
         padding: 5px;
         display: flex;
         flex-direction: column;
@@ -21,21 +21,35 @@
         justify-content: space-around;
         margin: auto;
     }
-
     .imagen {
         margin: 5px;
         border-radius: 10px;
-        overflow: hidden;
-        max-height: 120px;
+        width: 70px;
+        height: 70px;
     }
-    
     .imagen img {
-        width: 150px;
-        height: 150px;
+        width: 70px;
+        height: 70px;
+        border-radius: 5px;
+        border: 1px solid black;
         display: block;
         margin-left: auto;
         margin-right: auto;
-        object-fit: cover;
+    
+    }
+    .comprar {
+        text-align: center;
+        margin: 15px;
+    }
+    .producto {
+        border: 1px solid black;
+        border-radius: 10px;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: auto;
+        font-family: 'Kaushan Script', cursive;
     }
 
 }
@@ -49,7 +63,8 @@
 /* Desktop */
 @media (min-width: 1180px) {
     .container1 {
-        background-color: #d9d9d9;
+        background-image: url(/img/backg.jpg);
+        background-size: cover;
         padding: 5px;
         display: flex;
         flex-direction: column;
@@ -61,26 +76,30 @@
         border: 1px solid black;
         border-radius: 10px;
         width: 80%;
+        height: 100%;
         display: flex;
         align-items: center;
         justify-content: space-around;
         margin: auto;
+        font-family: 'Kaushan Script', cursive;
     }
   
     .imagen {
+        width: 200px;
+        height: 200px;
         margin: 5px;
+        display: flex;
+        align-items: center;
         border-radius: 10px;
         overflow: hidden;
-        max-height: 120px;
+        max-height: 100px;
     }
     
     .imagen img {
-        width: 150px;
-        height: 150px;
-        display: block;
+        
+        display: flex;
         margin-left: auto;
         margin-right: auto;
-        object-fit: cover;
     }
     
     .controladores-precio {
