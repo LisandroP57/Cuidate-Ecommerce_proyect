@@ -40,7 +40,7 @@ header.container {
 header.container div.primer-menu {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     margin-top: .9%;
 }
@@ -95,17 +95,18 @@ nav.navegador ul.menu {
 
 nav.navegador ul.menu li {
     width: 9%;
-    margin: 5px;
+    margin: 4px;
     background-color: #724A81;
     text-align: center;
     border-radius: 150px 0 150px 0;
     box-shadow: #4e4b4e 2px 2px 2px;
     transition: all 1s ease;
+    padding: 0px 5px;
 }
 
 nav.navegador ul.menu li:hover{
     width: 11%;
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 header.container div.primer-menu div.buscador {
@@ -277,7 +278,7 @@ header.container div.primer-menu div.buscador {
     }
 
     header.container div.primer-menu div.buscador {
-        width: 60%;
+        width: 50%;
         height: 40px;
     }
 
@@ -400,8 +401,12 @@ header.container div.primer-menu div.buscador {
     }
     
     header.container div.primer-menu div.buscador {
-        width: 60%;
+        width: 55%;
         height: 25px;
+    }
+
+    header.container div.primer-menu div.logo {
+        padding: 0.5rem;
     }
 
     header.container div.primer-menu div.buscador span {
@@ -433,16 +438,21 @@ header.container div.primer-menu div.buscador {
         font-size: 12px;
     }
 
-    header.container div.primer-menu div.logo {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
+    header.container div.primer-menu div.logo span {
         font-size: 30px;
         font-family: 'Kaushan Script', cursive;
+        color: black;
     }
 
+    header.container div.primer-menu div.logo a {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    header.container div.primer-menu div.logo a img {
+        margin: 10px 25px 10px 0px;
+    }
         /*FOOTER*/
     footer.principal {
         display: flex;

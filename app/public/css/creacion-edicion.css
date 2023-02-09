@@ -3,7 +3,7 @@
 main.addProduct {
     display: flex;
     justify-content: center;
-    background-image: url(/img/background.jpg);
+    background-image: url(/img/backg-edit.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -11,7 +11,7 @@ main.addProduct {
 
 .createForm {
     padding: 0rem 1rem;
-    background-color: var(--violeta-claro);
+    background-color: rgba(82, 25, 157, 0.868);
     margin: 1rem;
     width: 100%;
     max-width: 400px;
@@ -23,7 +23,6 @@ main.addProduct {
     text-shadow: 5px 5px 10px rgba(89, 89, 89, 0.5);
     text-align: center;
     margin-top: 1rem;
-    font-family: 'Kaushan Script', cursive;
     font-size: 2rem;
 }
 
@@ -113,8 +112,8 @@ div.sendButton {
 }
 
 .buy-now-button:hover {
-    color: rgb(255, 255, 255);
-    box-shadow: 5px 5px 10px rgba(255, 243, 243, 0.7);
-    background: linear-gradient(285deg, rgba(149, 0, 255, 0.452) 0%,  rgba(236, 95, 168, 0.623) 50%);
+    color: black;
+    box-shadow: 5px 5px 10px rgba(45, 34, 61, 0.7);
+    background-color: white;
     transition: all 1s ease;
 }
