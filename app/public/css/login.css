@@ -6,7 +6,7 @@
 
 .main-log-reg{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url(/img/backg.jpg);
+    background-image: url(/img/123.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -113,6 +113,12 @@ select.input-select {
 }
 .form-two a {
     color: blue;
+    text-shadow:5px 5px 10px rgba(132, 128, 128, 0.762) ;
+}
+
+.form-two span {
+    color: white;
+    text-shadow:5px 5px 10px black;
 }
 
 input.input-style::placeholder {
@@ -144,12 +150,12 @@ input.input-style::placeholder {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     max-width: 360px;
     width: 100%;
-    background: linear-gradient(365deg,transparent, #9977A6);
+    background: linear-gradient(36deg,transparent, #8d6e9898);
     transition: all 1s ease;
 }
 
 .form-container:hover {
-    background: linear-gradient(300deg,transparent, #9977A6 70%);
+    background: linear-gradient(300deg,transparent, #9977a68a 70%);
     transition: all 4s ease;
 }
 
