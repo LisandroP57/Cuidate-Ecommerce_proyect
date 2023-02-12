@@ -3,7 +3,7 @@
 
 .bodyError {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url(/img/404error.jpg);
+    background-image: url(/images/backgrounds/404error.jpg);
     background-size:cover;
     background-position: 30%;
     background-repeat: no-repeat;
@@ -13,7 +13,7 @@
 }
 
 .textError {
-    background-color: rgba(139, 131, 143, 0.486);
+    background-color: rgba(165, 159, 168, 0.705);
     text-align: center;
     border: solid 1px black;
     margin:2rem 2rem;
@@ -28,12 +28,15 @@
 
 .textError p {
     padding: 1rem;
+    font-size: 17px;
+    text-shadow: 5px 5px 10px rgb(11, 22, 88);
+    font-weight: 600;
 }
 
 .textError a {
     color: black;
     margin: 0.5rem;
-    text-shadow: 5px 5px 10px rgba(89, 89, 89, 0.5);
+    text-shadow: 5px 5px 10px rgba(89, 89, 89, 0.637);
     text-align: center;
     font-family: 'Kaushan Script', cursive;
     font-size: 1.5rem;

@@ -3,18 +3,16 @@
 main.addProduct {
     display: flex;
     justify-content: center;
-    background-image: url(/img/backg-edit.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color:rgb(255, 255, 255);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .createForm {
     padding: 0rem 1rem;
-    background-color: rgba(82, 25, 157, 0.868);
-    margin: 1rem;
+    background-color: rgba(59, 57, 61, 0.664);
+    margin: 3rem;
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
 }
       
 

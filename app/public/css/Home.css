@@ -1,7 +1,7 @@
 @import url('carousel.css');
 /* Productos */
 body.homeBody {
-    background-image: url(/img/backg.jpg);
+    background-image: url(/images/backgrounds/backg.jpg);
 }
 
 body.homeBody div p {

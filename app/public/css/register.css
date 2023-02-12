@@ -44,7 +44,7 @@
 
 @media (min-width: 1024px) {
     .register {
-        background-image: url(/img/back.jpg);
+        background-image: url(/images/backgrounds/back.jpg);
         background-size:cover;
         background-repeat: no-repeat;
         background-position: -3.5rem;
