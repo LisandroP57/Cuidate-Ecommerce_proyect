@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+    <title>Cuidate! Error 404</title>
+<body>
+    <%- include('partials/header') %>
+    <div class="bodyError">
+        <div class="textError">
+            <h4>Error 404</h4>
+            <hr>
+            <p>La pagina que intentas solicitar no se encuentra en el servidor</p>
+            <p>Proba mejor en estos links:</p>
+            <ul>
+                <a href="/home"><li>Home</li></a>
+                <a href="/users/login"><li>Login</li></a>
+                <a href="/users/register"><li>Registro</li></a>
+                <a href="/products/"><li>Productos</li></a>
+            </ul>
+        </div>
+    </div>
+    <%- include('partials/footer') %>
+</body>
+</html>

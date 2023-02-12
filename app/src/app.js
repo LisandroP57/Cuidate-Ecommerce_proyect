@@ -5,7 +5,7 @@ const PORT = 3000;
 
 app.use(express.static("public"));
 /* app.use(express.urlencoded({ extended: false }));
-app.use(express.json); */
+app.use(express.json()); */
 
     /* Template engine */
 app.set("view engine", "ejs");
@@ -20,5 +20,10 @@ const usersRouter = require('./routes/users');
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
+
+        /* Error 404 */
+app.use((req, res, next) => {
+    res.status(404).render('not-found')
+})
 
 app.listen(PORT, () => console.log(`Server listen in port ${PORT}\nhttp://localhost:${PORT}`));
