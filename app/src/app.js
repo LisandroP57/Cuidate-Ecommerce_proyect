@@ -4,6 +4,8 @@ const path = require("path");
 const PORT = 3000;
 
 app.use(express.static("public"));
+/* app.use(express.urlencoded({ extended: false }));
+app.use(express.json); */
 
     /* Template engine */
 app.set("view engine", "ejs");

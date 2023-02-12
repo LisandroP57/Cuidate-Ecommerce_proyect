@@ -5,4 +5,7 @@ module.exports = {
     register: (req, res) => {
         return res.render('users/register');
     },
+/*     search: (req, res) => {
+        return res.render('users/search');
+    }, */    
 }
