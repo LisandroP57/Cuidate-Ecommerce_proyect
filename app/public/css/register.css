@@ -27,6 +27,7 @@
     align-items: center;
     width: 100%;
     max-width: 400px;
+    margin: 3rem;
 }
 
 .register .form-two a {
@@ -45,20 +46,24 @@
     .register {
         background-image: url(/img/back.jpg);
         background-size:cover;
+        background-repeat: no-repeat;
         background-position: -3.5rem;
     }
     .register .form-container {
         max-width: 600px;
-        margin-left: 52rem;
     }
     .register .form-two {
         max-width: 600px;
-        margin-left: 52rem;
     }
     .register .form-two {
         max-width: 600px;
     }
     .register main {
         background-image: none;
+        display: flex;
+        justify-content: flex-end;
+    }
+    .register .form-complete {
+        margin: 3rem 6rem 3rem 3rem
     }
 }
