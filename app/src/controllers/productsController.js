@@ -6,9 +6,9 @@ module.exports = {
         return res.render("products/vistaProducto")
     },
     creacion: (req, res) => {
-        return res.render("products/creacion")
+        return res.render("products/create")
     },
     edicion: (req, res) => {
-        return res.render("products/edicion")
+        return res.render("products/edit")
     },
 }
