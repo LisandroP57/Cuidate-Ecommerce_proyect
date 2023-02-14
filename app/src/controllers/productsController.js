@@ -5,10 +5,10 @@ module.exports = {
     vistaProducto: (req, res) => {
         return res.render("products/vistaProducto")
     },
-    creacion: (req, res) => {
+    create: (req, res) => {
         return res.render("products/create")
     },
-    edicion: (req, res) => {
+    edit: (req, res) => {
         return res.render("products/edit")
     },
 }
