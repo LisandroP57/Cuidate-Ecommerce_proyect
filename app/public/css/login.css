@@ -102,7 +102,8 @@ select.input-select {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid 1px black;
+    border-radius: 0.5rem;
+    border: solid 1px rgb(255, 255, 255);
     padding: 1.2rem;
     box-shadow: 5px 5px 10px rgb(0 0 0 / 50%);
     max-width: 360px;
@@ -110,7 +111,15 @@ select.input-select {
     margin-top: 1rem;
     font-size: 15px;
     background: linear-gradient(0deg,transparent,transparent);
+    transition: 1s ease;
 }
+
+.form-two:hover {
+    background: linear-gradient(300deg,transparent, #9977a68a 70%);
+    transition: all 4s ease;
+}
+
+
 .form-two a {
     color: blue;
     text-shadow:5px 5px 10px rgba(132, 128, 128, 0.762) ;
@@ -144,14 +153,14 @@ input.input-style::placeholder {
 
 .form-container {
     background-color: var(--violeta-claro);
-    border: solid 1px black;
+    border: solid 1px rgb(255, 255, 255);
     padding: 2rem;
-    border-radius: 0rem;
+    border-radius: 1rem;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     max-width: 360px;
     width: 100%;
-    background: linear-gradient(36deg,transparent, #8d6e9898);
-    transition: all 1s ease;
+    background: linear-gradient(36deg,transparent, #8d6e9898); 
+    transition:all 1s ease;
 }
 
 .form-container:hover {
