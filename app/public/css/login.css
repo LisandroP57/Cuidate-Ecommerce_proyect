@@ -117,6 +117,7 @@ select.input-select {
 .form-two:hover {
     background: linear-gradient(300deg,transparent, #9977a68a 70%);
     transition: all 4s ease;
+    font-size: 17px;
 }
 
 

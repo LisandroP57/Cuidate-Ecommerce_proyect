@@ -20,18 +20,29 @@
     transition: all 1s ease;
 }
 
+.register hr {
+    margin-bottom: 0rem;
+}
+
 .register .form-complete {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     margin: 3rem;
 }
 
 .register .form-two a {
-    text-decoration:underline;
+    color: white;
+    text-decoration:none;
+    transition: 1s;
+}
+
+.register .form-two a:hover {
+    font-size: 16px;
+    color: rgba(240, 208, 248, 0.623);
 }
 
 .register .form-container{
@@ -40,6 +51,20 @@
 
 .register .form-two{
     background: #9977A6;
+}
+
+.register .input-container-names {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 6px 8px;
+    font-size: 10px;
+}
+
+.register .top-message {
+    color: black;
+    font-size: 15px;
+    padding-top: 20px;
 }
 
 @media (min-width: 1024px) {

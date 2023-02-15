@@ -15,6 +15,15 @@
                 <hr>
                 <form action="/users/register" method="POST">
                     <div class="form">
+                        <div class="input-container-names">
+                            <span class="top-message">Nombre</span>
+                            <input class="input-style" type="firstName" name="firstName" placeholder="Ingrese su nombre">
+                            <span class="error-message">Debe ingresar su nombre</span>
+
+                            <span class="top-message">Apellido</span>
+                            <input class="input-style" type="lastName" name="lastName" placeholder="Ingrese su apellido">
+                            <span class="error-message">Debe ingresar su apellido</span>
+                        </div>
                         <div class="input-container">
                             <span class="top-message">E-mail</span>
                             <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
@@ -24,11 +33,6 @@
                             <span class="top-message">Contraseña</span>
                             <input class="input-style" type="password" name="pass" placeholder="Ingrese su contraseña">
                             <span class="error-message">Debe ingresar su contraseña</span>
-                        </div>
-                        <div class="input-container">
-                            <span class="top-message">Contraseña</span>
-                            <input class="input-style" type="password" name="pass2" placeholder="Re-ingrese su contraseña">
-                            <span class="error-message">Debe re-ingresar su contraseña</span>
                         </div>
                         <div class="terms-conditions">
                             <label for="recordar">  Acepto los <a href="">términos y condiciones</a> </label>
