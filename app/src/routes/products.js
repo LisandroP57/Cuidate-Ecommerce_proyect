@@ -9,6 +9,7 @@ const productsController = require("../controllers/productsController");
 router
         .get('/carrito', productsController.carrito)
         .get('/vistaProducto', productsController.vistaProducto)
+        /* .get('/description/:id', controller.description) */
 
         /* Detail product
 router.get('/detail/:id/', productsController.detail); */
@@ -16,7 +17,7 @@ router.get('/detail/:id/', productsController.detail); */
 
         /* Create product */
 router.get('/create', productsController.create);
-/* router.post('/', productsController.store);  */
+/* router.post('/', productsController.store); */
 
         /* Edit product */
 router.get('/edit/:id', productsController.edit);
