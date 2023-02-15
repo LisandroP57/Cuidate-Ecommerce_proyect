@@ -5,13 +5,18 @@ const router = express.Router();
         /* Controller Require */
 const usersController = require('../controllers/usersController')
 
-/* router.post('/save', usersController.saveUser) */
+/* router
+        .post('/save', usersController.saveUser) */
 
-router.get('/login', usersController.login);
-/* router.post('/login', usersController.create); */
+router
+        .get('/login', usersController.login);
+/* router
+        .post('/login', usersController.create); */
 
-router.get('/register', usersController.register);
-/* router.post('/register', usersController.createUser); */
+router
+        .get('/register', usersController.register);
+/* router
+        .post('/register', usersController.createUser); */
 
 
 

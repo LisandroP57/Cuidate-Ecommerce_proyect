@@ -6,8 +6,9 @@ const router = express.Router();
 const productsController = require("../controllers/productsController");
 
         /* Vistas productos */
-router.get('/carrito', productsController.carrito);
-router.get('/vistaProducto', productsController.vistaProducto);
+router
+        .get('/carrito', productsController.carrito)
+        .get('/vistaProducto', productsController.vistaProducto)
 
         /* Detail product
 router.get('/detail/:id/', productsController.detail); */
