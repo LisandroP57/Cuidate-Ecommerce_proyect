@@ -11,17 +11,23 @@ router
         .get('/vistaProducto', productsController.vistaProducto)
         /* .get('/description/:id', controller.description) */
 
-        /* Detail product
-router.get('/detail/:id/', productsController.detail); */
+
+        /* Detail product */
+/* router
+        .get('/detail/:id/', productsController.detail); */
 // Crear detail, store, destroy y update en productsController.
 
+
         /* Create product */
-router.get('/create', productsController.create);
-/* router.post('/', productsController.store); */
+router
+        .get('/create', productsController.create);
+        /* .post('/', productsController.store); */
+
 
         /* Edit product */
-router.get('/edit/:id', productsController.edit);
-/* router.put('/edit/:id', productsController.update);  */
+router
+        .get('/edit/:id', productsController.edit);
+/*      .put('/edit/:id', productsController.update);  */
 
 
         /* Delete product

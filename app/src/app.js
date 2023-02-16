@@ -2,17 +2,17 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const PORT = 3000;
-/* const methodOverride = require('method-override'); */
 
+
+/* const methodOverride = require('method-override'); */
 app.use(express.static("public"));
 /* app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride("_method"));
 app.use(express.json()); */
 
     /* Template engine */
 app.set("view engine", "ejs");
-app.set('views', path.join(__dirname, 'views'))
-
-/* app.use(methodOverride("_method")); */
+app.set("views", "./src/views");
 
     /* Routers */
 const indexRouter = require("./routes/index");
