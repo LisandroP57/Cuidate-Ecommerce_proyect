@@ -26,8 +26,8 @@ router
 
         /* Edit product */
 router
-        .get('/edit/:id', productsController.edit);
-/*      .put('/edit/:id', productsController.update);  */
+        .get('/edit/:id', productsController.edit)
+        .put('/edit/:id', productsController.update)
 
 
         /* Delete product
