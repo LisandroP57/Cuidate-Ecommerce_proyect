@@ -29,4 +29,4 @@ app.use((req, res, next) => {
     res.status(404).render('not-found')
 })
 
-app.listen(PORT, () => console.log(`Server listen in port ${PORT}\nhttp://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Server listen in port ${PORT} - Click next ->\nhttp://localhost:${PORT}`));

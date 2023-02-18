@@ -1,10 +1,16 @@
 module.exports = {
   
-  carrito: (req, res) => res.render("products/carrito"),
+  carrito: (req, res) => {
+    res.render("products/carrito");
+  },
   
-  vistaProducto: (req, res) => res.render("products/vistaProducto"),
+  vistaProducto: (req, res) => {
+    res.render("products/vistaProducto");
+  },
 
-  create: (req, res) => res.render("products/create"),
+  create: (req, res) => {
+      res.render("products/create");
+    },
 
 
 
