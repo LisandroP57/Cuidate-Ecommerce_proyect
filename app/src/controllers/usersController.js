@@ -6,6 +6,9 @@ module.exports = {
     register: (req, res) => {
         return res.render('users/register')
         },
+    forgetPassword: (req, res) => {
+        return res.render('users/forgetPassword')
+    },
 /*     search: (req, res) => res.render('users/search');    
 
     edit: function(req, res)

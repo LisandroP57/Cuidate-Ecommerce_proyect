@@ -208,6 +208,10 @@ input.input-style::placeholder {
     transition: all 1s ease;
 }/* Fin Buttons */
 
+.lost-pass {
+    text-align: center;
+}
+
 /* Checkbox deslizante */
 .checkbox-slider {
     width: 100%;

@@ -6,18 +6,18 @@ module.exports = {
 
   create: (req, res) => res.render("products/create"),
 
+
+
   edit: (req, res) => {
 		let productId = Number( req.params.id);
 
 		let productToEdit = products.find(product => product.id === productId);
 		res.render("edit",{
-			productToEdit,
-  });
+			productToEdit, });
   },
 
   update: (req, res) => {
     let productId = Number( req.params.id);
-    
     products.forEach(product => {
     if (product.id === productId){
       product.name = req.body.name;
@@ -29,5 +29,9 @@ module.exports = {
     });
     writeJson(products);
     res.send('Producto modificado exitosamente.');
+  },
+
+  search: (req, res) => {
+    return res.send(req.query)
   },
 }

@@ -9,14 +9,16 @@ const usersController = require('../controllers/usersController')
         0.post('/save', usersController.saveUser) */
 
 router
-        .get('/login', usersController.login);
+        .get('/login', usersController.login)
+        .get('/forgetPassword', usersController.forgetPassword)
 /* router
         .post('/login', usersController.create); */
 
 router
-        .get('/register', usersController.register);
+        .get('/register', usersController.register)
 /* router
         .post('/register', usersController.createUser); */
+
 
 
 
