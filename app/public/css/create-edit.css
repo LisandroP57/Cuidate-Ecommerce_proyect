@@ -3,13 +3,13 @@
 main.addProduct {
     display: flex;
     justify-content: center;
-    background-color:rgb(255, 255, 255);
+    background-color:rgb(148, 148, 148);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .createForm {
     padding: 0rem 1rem;
-    background-color: rgba(59, 57, 61, 0.664);
+    background-color: rgb(255, 255, 255);
     margin: 3rem;
     width: 100%;
     max-width: 500px;
@@ -17,8 +17,7 @@ main.addProduct {
       
 
 .createForm .row .col-12 h2{
-    color: black;
-    text-shadow: 5px 5px 10px rgba(89, 89, 89, 0.5);
+    color: rgb(102, 99, 99);
     text-align: center;
     margin-top: 1rem;
     font-size: 2rem;
@@ -64,8 +63,10 @@ main.addProduct {
 }
 
 .addInput input {
+    height: 34px;
     margin: 3px;
     width: 100%;
+    padding-left: 0.3rem;
 }
 
 .description1 {
@@ -81,8 +82,14 @@ main.addProduct {
     width: 100%;
 }
 
+.description1 textarea {
+    max-width: 395px;
+    max-height: 90px;
+    padding-left: 0.4rem;
+}
+
 .form-input {
-    border: 1px solid black;
+    border: 1px solid gray;
     height: 40px;
     border-radius: 5px;
 }

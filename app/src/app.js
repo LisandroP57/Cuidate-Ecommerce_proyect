@@ -1,20 +1,24 @@
+    /* Require's */
 const express = require("express");
-const app = express();
 const path = require("path");
+/* const methodOverride = require('method-override'); */
 const PORT = 3000;
 
+    /* Express */
+const app = express();
 
-/* const methodOverride = require('method-override'); */
-app.use(express.static("public"));
-/* app.use(express.urlencoded({ extended: false }));
-app.use(methodOverride("_method"));
-app.use(express.json()); */
+
+    /* Middlewares */
+    app.use(express.static(path.join(__dirname, '../public')));
+    /* app.use(express.urlencoded({ extended: false }));
+    app.use(methodOverride("_method"));
+    app.use(express.json());*/
 
     /* Template engine */
 app.set("view engine", "ejs");
-app.set("views", "./src/views");
+app.set('views', path.join(__dirname, '/views'));
 
-    /* Routers */
+    /* Routes  */
 const indexRouter = require("./routes/index");
 const productsRouter = require("./routes/products");
 const usersRouter = require('./routes/users');
@@ -29,4 +33,6 @@ app.use((req, res, next) => {
     res.status(404).render('not-found')
 })
 
+
+    /* Listen port */
 app.listen(PORT, () => console.log(`Server listen in port ${PORT} - Click next ->\nhttp://localhost:${PORT}`));

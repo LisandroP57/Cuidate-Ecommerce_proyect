@@ -5,6 +5,7 @@ const router = express.Router();
         /* Controller Require */
 const productsController = require("../controllers/productsController");
 
+
         /* Vistas productos */
 router
         .get('/carrito', productsController.carrito)
@@ -27,7 +28,7 @@ router
         /* Edit product */
 router
         .get('/edit/:id', productsController.edit)
-        .put('/edit/:id', productsController.update)
+        .put('/edit/:id', productsController.update);
 
 
         /* Delete product

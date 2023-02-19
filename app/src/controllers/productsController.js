@@ -13,7 +13,6 @@ module.exports = {
     },
 
 
-
   edit: (req, res) => {
 		let productId = Number( req.params.id);
 
