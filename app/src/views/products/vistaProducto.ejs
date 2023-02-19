@@ -4,84 +4,71 @@
 <%- include ('../partials/head') %>
 <title>Cuidate! Producto</title>
 
-<body class="bodyVistaProd">
-      <!--ESPACIO -->
-     <%- include ('../partials/header')%>
-      <!--Titulo -->
-
-
-      <div class="container-title">
-            <i class="fa-solid fa-arrow-left-long">VOLVER AL LISTADO >> Manoplas</i>
-      </div>
-      <main class="card">
-            <div class="detalles">
-
-                  <div>
-
-                        <div class=imagenes>
-
-                              <div class="imgBox">
-                                    <img src="/images/products/manoplaNegra.png"
-                                          alt="">
-                              </div>
-                        </div>
+<body>
+      <section class="contenido">
+          <div class="mostrador" id="mostrador">
+              <div class="fila">
+                  <div class="item" onclick="cargar(this)">
+                      <div class="contenedor-foto">
+                          <img src="/images/products/manoplaVerde.jpg" alt="">
+                      </div>
+                      <p class="descripcion">MANOPLA 1</p>
+                      <span class="precio">$ 1.300</span>
                   </div>
-                  <div class="titulo">
-                        <h3>MANOPLA GATITO</h3>
-                        <small>Manopla para defensa personal</small>
-                 
-                  <div class="div-descripcion">
-                        <div class="descripcion">
-                              <h4 class="h4">Descripción</h4>
-                        </div>
-                        <div>
-                              <div class="descripcion">
-                                    <p>Lorem ipsum dolor sit amet,
-                                          repudiandae iste quas dicta quod.</p>
-                              </div>
-                        </div>
-
-                        <div class="size">
-                              <h4 class="h4">COLORES</h4>
-                              <ul>
-                                    <div class="amarillo">
-                                    </div>
-                                    <div class="violeta">
-                                    </div>
-                                    <div class="rosa">
-                                    </div>
-                                    <div class="negro">
-                                    </div>
-                              </ul>
-                        </div>
-
-                        <div class="container-add-cart">
-                              <div class="container-quantity">
-                                    <input type="number" name="" id="" placeholder="1" value="1" min="1" class="input-quantity" />
-                              </div>
-                              <button class="btn-clean">Limpiar</button>
-
-                             
-                              <div class="buy">
-                                    <div class="precio">
-                                          <sup>$</sup><span>15500.<small>55</small></span>
-                                    </div>
-                                    <div class="btn">
-                                          <a href="#">Agregar al carrito</a>
-                                    </div>
-                                    
-                              </div>
-                        </div>
+                  <div class="item" onclick="cargar(this)">
+                      <div class="contenedor-foto">
+                          <img src="/images/products/manoplaVioleta.jpg" alt="">
+                      </div>
+                      <p class="descripcion" id>MANOPLA 2</p>
+                      <span class="precio">$ 1.800</span>
                   </div>
-               </div>
-            </div>
-      </main>
-
-      <%- include ('../partials/footer')%>
-
-
-
-
-</body>
+              </div>
+              <div class="fila">
+                  <div class="item" onclick="cargar(this)">
+                      <div class="contenedor-foto">
+                          <img src="img/3.jpeg" alt="">
+                      </div>
+                      <p class="descripcion">MANOPLA 3</p>
+                      <span class="precio">$ 130</span>
+                  </div>
+                  <div class="item" onclick="cargar(this)">
+                      <div class="contenedor-foto">
+                          <img src="img/3jpeg" alt="">
+                      </div>
+                      <p class="descripcion">MANOPLA 4</p>
+                      <span class="precio">$ 2.000</span>
+                  </div>            
+              </div> 
+          </div>
+          <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
+          <div class="seleccion" id="seleccion" style="width: 100%;">
+              <div class="cerrar" onclick="cerrar()">
+                  &#x2715
+              </div>
+              <div class="info">
+                  <img src="img/1.png" alt="" id="img">
+                  <h2 id="modelo">MANOPLA4</h2>
+                  <p id="descripcion">Descripción Modelo 1</p>
+  
+                  <span class="precio" id="precio">$ 130</span>
+  
+                  <div class="fila">
+                      <div class="size">
+                          <label for="">Cantidad Por Mayor</label>
+                          <select name="" id="">
+                              <option value="">5</option>
+                              <option value="">10</option>
+                              <option value="">15</option>
+                              <option value="">20</option>
+                          </select>
+                      </div>
+                      <button>AGREGAR AL CARRITO</button>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <script src="/js/script.js"></script>
+  </body>
 
 </html>
