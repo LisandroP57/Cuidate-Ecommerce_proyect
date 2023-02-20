@@ -3,10 +3,21 @@ const path = require('path');
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const writeJson = (productos) => {
+  fs.writeFileSync(productsFilePath, JSON.stringify(products) , 'utf-8')
+}
 
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-module.exports = {
+const controller = {
   
+  index: (req, res) => {
+		res.render("products",{
+			products,
+			toThousand
+		})
+	},
+
   carrito: (req, res) => {
     res.render("products/carrito");
   },
@@ -15,10 +26,10 @@ module.exports = {
     res.render("products/vistaProducto");
   },
 
-  allProducts: (req, res) => {
+/*   allProducts: (req, res) => {
     let products = products.filter(product => product.category === "visited");
     res.render("products/allProducts", {products});
-  },
+  }, */
 
   create: (req, res) => {
       res.render("products/create");
@@ -35,6 +46,7 @@ module.exports = {
 
   update: (req, res) => {
     let productId = Number( req.params.id);
+
     products.forEach(product => {
     if (product.id === productId){
       product.name = req.body.name;
@@ -45,10 +57,12 @@ module.exports = {
     }
     });
     writeJson(products);
-    res.send('Producto modificado exitosamente.');
+    res.send('Producto modificado exitosamente!');
   },
 
   search: (req, res) => {
     return res.send(req.query)
   },
 }
+
+module.exports = controller;

@@ -1,69 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('partials/head') %>
-	<title>Cuidate! Home</title>
+	<title>Cuidate! Inicio</title>
 <body class="homeBody">
+		<!-- Header -->
     <%- include('partials/header') %>
+		<!-- Fin Header -->
 
+		<!-- Carrousel -->
     <%- include('partials/carrousel') %>
+		<!-- Fin Carrousel -->
+
 
 	<!-- productos -->
-	<div><a name="destacados" id="destacados"></a><p>Productos destacados:</p></div>
-	<section class="vip-products">
-		<article class="product">
-			<div class="photo-container">
-				<a href="/products/vistaProducto"><img class="photo" src="/images/products/manoplagatito.jpeg" alt="pdto 01"></a>
+	<div class="container-allProducts">
+        <div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Destacados</h2>
 			</div>
-			<h2>Producto</h2>
-			<p>Precio $xxxxx</p>
-			<a class="more" href="#">Añadir<img class="carritoAdd"src="/images/header/carrito.png"></a>
-		</article>
-		<article class="product">
-			<div class="photo-container">
-				<a href="/products/vistaProducto"><img class="photo" src="/images/products/manoplagatito.jpeg" alt="pdto 02"></a>	
+			<% productsVisited.forEach(product => { %>
+				<div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<a href="/products/detail/<%- product.id %>">
+							<figure class="product-box_image">
+								<img src="/images/products/<%- product.image %>" alt="imagen de producto">
+							</figure>
+							<article class="product-box_data">
+								<h2><%- toThousand(product.price) %></h2>
+								<p><%- product.name %></p>
+								<i class="fas fa-truck"></i>
+							</article>
+						</a>
+					</section>
+				</div>
+			<% }) %>
+		</div>
+	</div>
+
+    <!-- Ofertas -->
+    <div class="container-allProducts">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="title-products">Ofertas</h2>
 			</div>
-			<h2>Producto</h2>
-			<p>Precio $xxxxx</p>
-			<a class="more" href="#">Añadir<img class="carritoAdd"src="/images/header/carrito.png"></a>
-		</article>
-		<article class="product">
-			<div class="photo-container">
-				<a href="/products/vistaProducto"><img class="photo" src="/images/products/manoplagatito.jpeg" alt="pdto 03"></a>
-			</div>
-			<h2>Producto</h2>
-			<p>Precio $xxxxx</p>
-			<a class="more" href="#">Añadir<img class="carritoAdd"src="/images/header/carrito.png"></a>
-		</article>
-	
-	</section>
-	<a name="offers" id="offers"></a><div alt="offers"><p>Ofertas:</p></div>
-	<section  class="vip-products">
-		<article class="product">
-			<div class="photo-container">
-				<a href="/products/vistaProducto"><img class="photo" src="/images/products/gaspimienta.jpeg" alt="pdto 01"></a>
-			</div>
-			<h2>Producto</h2>
-			<p>Precio $xxxxx</p>
-			<a class="more" href="#">Añadir<img class="carritoAdd"src="/images/header/carrito.png"></a>
-		</article>
-		<article class="product">
-			<div class="photo-container">
-				<a href="/products/vistaProducto"><img class="photo" src="/images/products/gaspimienta.jpeg" alt="pdto 02"></a>
-			</div>
-			<h2>Producto</h2>
-			<p>Precio $xxxxx</p>
-			<a class="more" href="#">Añadir<img class="carritoAdd"src="/images/header/carrito.png"></a>
-		</article>
-		<article class="product">
-			<div class="photo-container">
-				<a href="/products/vistaProducto"><img class="photo" src="/images/products/gaspimienta.jpeg" alt="pdto 03"></a>
-			</div>
-			<h2>Producto</h2>
-			<p>Precio $xxxxx</p>
-			<a class="more" href="#">Añadir<img class="carritoAdd"src="/images/header/carrito.png"></a>
-		</article>
-	</section>
-	<!-- Fin productos -->
+			<% productsInSale.forEach(product => { %>
+				<div class="col-12 col-sm-6 col-lg-3">
+					<section class="product-box">
+						<a href="/products/detail/<%- product.id %>">
+							<figure class="product-box_image">
+								<img src="/images/products/<%- product.image %>" alt="imagen de producto">
+							</figure>
+							<article class="product-box_data">
+								<h2><%- toThousand(product.price) %></h2>
+								<p><%- product.name %></p>
+								<i class="fas fa-truck"></i>
+							</article>
+						</a>
+					</section>
+				</div>
+			<% }) %>
+		</div>
+	</div>
+		<!-- Fin productos -->
+
+		<!-- Footer -->
 	<%- include('partials/footer') %>
+		<!-- Fin Footer -->
 </body>
 </html>

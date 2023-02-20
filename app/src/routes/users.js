@@ -6,7 +6,7 @@ const router = express.Router();
 const usersController = require('../controllers/usersController')
 
 /* router
-        0.post('/save', usersController.saveUser) */
+        .post('/save', usersController.saveUser) */
 
 router
         .get('/login', usersController.login)

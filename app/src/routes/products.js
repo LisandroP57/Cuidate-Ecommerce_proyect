@@ -11,7 +11,7 @@ router
         /*PRODUCTOS EN GENERAL FRANCO*/
         .get('/carrito', productsController.carrito)
         .get('/vistaProducto', productsController.vistaProducto)
-        .get('/products', productsController.allProducts)
+        .get('/products', productsController.index)
         /* .get('/description/:id', controller.description) */
 
 
@@ -32,7 +32,7 @@ router
         .get('/edit/:id', productsController.edit)
         .put('/edit/:id', productsController.update);
 
-
+        
         /* Delete product
         router.delete('/delete/:id', productsController.destroy);  */
 
