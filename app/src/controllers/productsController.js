@@ -1,6 +1,9 @@
-const controller = {
-  
-}
+const fs = require('fs');
+const path = require('path');
+
+const productsFilePath = path.join(__dirname, '../data/products.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
 
 module.exports = {
   
@@ -10,6 +13,11 @@ module.exports = {
   
   vistaProducto: (req, res) => {
     res.render("products/vistaProducto");
+  },
+
+  allProducts: (req, res) => {
+    let products = products.filter(product => product.category === "visited");
+    res.render("products/allProducts", {products});
   },
 
   create: (req, res) => {

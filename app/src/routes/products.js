@@ -11,6 +11,7 @@ router
         /*PRODUCTOS EN GENERAL FRANCO*/
         .get('/carrito', productsController.carrito)
         .get('/vistaProducto', productsController.vistaProducto)
+        .get('/products', productsController.allProducts)
         /* .get('/description/:id', controller.description) */
 
 
