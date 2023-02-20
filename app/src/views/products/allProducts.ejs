@@ -13,9 +13,9 @@
         <% productsVisited.forEach(product => { %>
             <div class="col-12 col-sm-6 col-lg-3">
                 <section class="product-box">
-                    <a href="/public/images/products/<%- product.image %>">
+                    <a href="/products/detail/<%- product.id %>">
                         <figure class="product-box_image">
-                            <img src="/public/images/products/<%- product.image %>" alt="imagen de producto">
+                            <img src="/images/products/<%- product.image %>" alt="imagen de producto">
                         </figure>
                         <article class="product-box_data">
                             <h2><%- toThousand(product.price) %></h2>
@@ -35,9 +35,9 @@
         <% productsInSale.forEach(product => { %>
             <div class="col-12 col-sm-6 col-lg-3">
                 <section class="product-box">
-                    <a href="/public/images/products/<%- product.image %>">
+                    <a href="/products/detail/<%- product.id %>">
                         <figure class="product-box_image">
-                            <img src="/public/images/products/<%- product.image %>" alt="imagen de producto">
+                            <img src="/images/products/<%- product.image %>" alt="imagen de producto">
                         </figure>
                         <article class="product-box_data">
                             <h2><%- toThousand(product.price) %></h2>
@@ -49,7 +49,6 @@
             </div>
         <% }) %>
     </div>
-
     <%- include('../partials/footer') %>
 </body>
 </html>
