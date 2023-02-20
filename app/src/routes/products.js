@@ -8,6 +8,7 @@ const productsController = require("../controllers/productsController");
 
         /* Vistas productos */
 router
+        /*PRODUCTOS EN GENERAL FRANCO*/
         .get('/carrito', productsController.carrito)
         .get('/vistaProducto', productsController.vistaProducto)
         /* .get('/description/:id', controller.description) */
