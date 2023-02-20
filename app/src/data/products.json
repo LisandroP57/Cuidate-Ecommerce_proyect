@@ -12,7 +12,7 @@
         "name": "Kit Llavero",
         "description": "Kit LLavero, contiene gas pimienta, boton de panico, manopla gatito",
         "image": "kitllavero.PNG",
-        "category": "visited",
+        "category": "offer",
         "price": 12000
     },
     {
@@ -84,7 +84,7 @@
         "name": "Kit guerra",
         "description": "Contine alarma de 140db con linterna, Manopla gatito, gas pimienta, rompecritales, tarjeta navaja",
         "image": "kitGuerra.jpg",
-        "category": "visited",
+        "category": "offer",
         "price": 17850
     },
     {
@@ -92,7 +92,7 @@
         "name": "Kit niños",
         "description": "Contiene, localizador Bluetooth, alarma 140db con linterna, llavero de unicarnio, llavero cinta",
         "image": "kitninos.jpg",
-        "category": "visited",
+        "category": "offer",
         "price": 6534
     },
     {
@@ -100,7 +100,7 @@
         "name": "Kit basico",
         "description": "Contiene Kubotan metalico, alarma 140db con linterna, gas pimienta",
         "image": "kitBasico.jpg",
-        "category": "visited",
+        "category": "offer",
         "price": 12350
     }
 ]
