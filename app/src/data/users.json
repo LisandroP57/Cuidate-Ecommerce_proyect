@@ -1,4 +1,41 @@
-[
-    {
-    }
-]
+[{
+    "id": 1,
+    "firstName": "Ricky",
+    "lastName": "Vallejos",
+    "email": "wharback0@friendfeed.com",
+    "password": "123456null",
+    "type": "user",
+    "avatar": "/images/avatars/pletzale.jpg"
+  }, {
+    "id": 2,
+    "firstName": "sed ante",
+    "lastName": "mollis molestie",
+    "email": "dbrimfield1@networkadvertising.org",
+    "password": "hgsBFTyvRf",
+    "type": "Customer",
+    "avatar": ""
+  }, {
+    "id": 3,
+    "firstName": "id mauris",
+    "lastName": "turpis",
+    "email": "ovanderson2@lycos.com",
+    "password": "72ws4o",
+    "type": "Admin",
+    "avatar": ""
+  }, {
+    "id": 4,
+    "firstName": "integer",
+    "lastName": "erat",
+    "email": "llimrick3@upenn.edu",
+    "password": "0K0tzbQ",
+    "type": "Customer",
+    "avatar": "/images/avatars/kipa.jpg"
+  }, {
+    "id": 5,
+    "firstName": "pede",
+    "lastName": "augue",
+    "email": "telsmore4@exblog.jp",
+    "password": "Tv472XJVV",
+    "type": "Admin",
+    "avatar": "/images/avatars/polloCorazon.jpg"
+  }]
