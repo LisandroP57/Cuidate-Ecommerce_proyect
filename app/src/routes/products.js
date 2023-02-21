@@ -16,15 +16,15 @@ router
 
 
         /* Detail product */
-/* router
-        .get('/detail/:id/', productsController.detail); */
+//router
+        //.get('/detail/:id/', productsController.detail);
 // Crear detail, store, destroy y update en productsController.
 
 
         /* Create product */
 router
         .get('/create', productsController.create);
-        /* .post('/', productsController.store); */
+        router.post('/', productsController.store);
 
 
         /* Edit product */

@@ -6,13 +6,13 @@
     <%- include('partials/header')%>
 
     <!-- All Products -->
-    <div class="container-allProducts">
+    <div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Basado en tu última visita</h2>
+				<h2 class="products-title">Todos los productos:</h2>
 			</div>
 			<!-- Show the "visited" products -->
-			<% products.forEach(product => { %>
+			<% productsVisited.forEach(product => { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
 						<a href="/products/detail/<%- product.id %>">
@@ -23,8 +23,8 @@
 								<!-- <h2><%- toThousand(product.price) %></h2> -->
 								<h2><%- toThousand (product.price - (product.price * product.discount/100)) %></h2>
 								<% if(product.discount > 0){ %>
-									<span><%- product.discount %> %OFF</span>
-								<%}%>
+									<span><%- product.discount %>%OFF</span>
+								<% } %>
 								<p><%- product.name%></p>
 								<i class="fas fa-truck"></i>
 							</article>
@@ -37,7 +37,8 @@
 	</div>
     <!-- Fin All Products -->
 
+	<!-- Footer -->
     <%- include('partials/footer')%>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+	<!-- Fin footer -->
 </body>
 </html>

@@ -21,6 +21,8 @@ const controller = {
   carrito: (req, res) => {
     res.render("products/carrito");
   },
+
+  
   
   vistaProducto: (req, res) => {
     res.render("products/vistaProducto");
@@ -35,6 +37,24 @@ const controller = {
       res.render("products/create");
     },
 
+    store: (req, res) => {
+      // Do the magic
+      const id = Math.max(...products.map(el => el.id))
+      
+      const newProduct = {
+        id: id + 1,
+        name: req.body.name,
+        price: req.body.price,
+        discount: req.body.discount,
+        category: req.body.category,
+        description: req.body.description,
+        image: 'default-image.png'
+      }
+  
+      products.push(newProduct)
+      writeJson(products)
+      res.redirect('/products')
+    }, 
 
   edit: (req, res) => {
 		let productId = Number( req.params.id);
