@@ -52,7 +52,7 @@ figure {
     overflow: hidden;
     transition: 300ms;
     margin: 20px 0;
-    border-radius: 1rem 1rem 3rem 3rem;
+    border-radius: 1rem 1rem 2rem 2rem;
   }
 
   .product-box:hover {
