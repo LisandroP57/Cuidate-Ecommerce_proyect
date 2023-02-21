@@ -23,13 +23,16 @@ const controller = {
   },
 
   detail: (req, res) => {
-    const { id } = req.params/* el objeto  */
-    const product = products.find(product => product.id === +id)
-    res.render("products/detail", {
-      product,
-      toThousand,
-    })
-  },
+		let productId = req.params.id;
+
+		let product = products.find(product => product.id == productId);
+
+		res.render("detail", {
+			product,
+			toThousand
+		})
+
+	},
 
   create: (req, res) => {
       res.render("products/create");

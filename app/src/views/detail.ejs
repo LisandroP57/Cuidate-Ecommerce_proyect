@@ -1,81 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+<!-- Include Head -->
+<%- include('partials/head') %>
 
-<%- include ('../partials/head, {title: product.name}) %>
+	<body>
+		<!-- Header -->
+		<%- include('partials/header') %>
+			<!-- /Header -->
 
+			<!-- product detail -->
+			<div class="container products-wrapper">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="products-title">Detalle del producto: <%= product.name %>
+						</h2>
+					</div>
+				</div>
+				<div class="product-detail">
+					<div class="row">
+						<div class="col-12 col-lg-8">
+							<img src="/images/products/<%= product.image %>" alt="product image"
+								class="product-detail-img">
+							<p class="product-detail-description">
+								<%= product.description %>
+							</p>
+						</div>
+						<div class="col-12 col-lg-4">
+							<article class="product-detail-info">
+								<h2 class="product-detail-title">
+									<%= product.name %>
+								</h2>
 
-<body>
-    <%- include ('../partials/header') %>
-    <h2>SELECCIONE SU MODELO Y COLOR</h2>
-      <section class="contenido">
-          <div class="mostrador" id="mostrador">
-              <div class="fila">
-                  <div class="item" onclick="cargar(this)">
-                      <div class="contenedor-foto">
-                          <img src="/images/products/manoplaVerde.jpg" alt="">
-                      </div>
-                      <p class="descripcion">MANOPLA 1</p>
-                      <span class="precio">$ 1.300</span>
-                  </div>
-                  <div class="item" onclick="cargar(this)">
-                      <div class="contenedor-foto">
-                          <img src="/images/products/manoplaVioleta.jpg" alt="">
-                      </div>
-                      <p class="descripcion" id>MANOPLA 2</p>
-                      <span class="precio">$ 1.800</span>
-                  </div>
-              </div>
-              <div class="fila">
-                  <div class="item" onclick="cargar(this)">
-                      <div class="contenedor-foto">
-                          <img src="img/3.jpeg" alt="">
-                      </div>
-                      <p class="descripcion">MANOPLA 3</p>
-                      <span class="precio">$ 130</span>
-                  </div>
-                  <div class="item" onclick="cargar(this)">
-                      <div class="contenedor-foto">
-                          <img src="img/3jpeg" alt="">
-                      </div>
-                      <p class="descripcion">MANOPLA 4</p>
-                      <span class="precio">$ 2.000</span>
-                  </div>            
-              </div> 
-          </div>
-          <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
-          <div class="seleccion" id="seleccion" style="width: 100%;">
-              <div class="cerrar" onclick="cerrar()">
-                  &#x2715
-              </div>
-              <div class="info">
-                  <img src="img/1.png" alt="" id="img">
-                  <h2 id="modelo">MANOPLA4</h2>
-                  <p id="descripcion">Descripción Modelo 1</p>
-  
-                  <span class="precio" id="precio">$ 130</span>
-  
-                  <div class="fila">
-                      <div class="size">
-                          <label for="">Cantidad Por Mayor</label>
-                          <select name="" id="">
-                              <option value="">5</option>
-                              <option value="">10</option>
-                              <option value="">15</option>
-                              <option value="">20</option>
-                          </select>
-                      </div>
-                      <button>AGREGAR AL CARRITO</button>
-                    </div>
-                </div>
-                <a href="/products/edit" class="action-button edit">EDITAR PRODUCTO</a>
-                <form  method="POST" style="display: inline-flex">
-                    <button type="submit" class="action-button delete">ELIMINAR</button><!--  DELETE me lleva a eliminar todo, hace http, GET post -->
-                </form>
-          </div>
-      </section>
-  
-      <script src="/js/script.js"></script>
-      <%- include ('../partials/footer') %>
-  </body>
+								<% if (product.discount> 0) { %>
+									<p class="product-detail-price small">
+										<span>
+											<%= toThousand(product.price) %>
+										</span>
+										/
+										<b>
+											<%= product.discount %>% OFF
+										</b>
+									</p>
+									<p class="product-detail-price">
+										<%= toThousand(product.price - (product.price * product.discount / 100)) %>
+									</p>
+								<% } else{ %>
+										 <p class="product-detail-price">
+											<%= toThousand(product.price) %>
+										</p>
+									 <% } %> 
+
+									<ul class="actions-list">
+										<li>
+											<i class="fas fa-credit-card"></i>
+												<p>Pagá en 12 cuotas sin interes</p>
+										</li>
+										<li>
+											<i class="fas fa-store"></i>
+												<p>Retiro gratis en locales del vendedor</p>
+										</li>
+									</ul>
+
+									<a href="#" class="buy-now-button">COMPRAR AHORA</a>
+									<hr>
+
+									<a href="/products/edit/<%= product.id %> " class="action-button edit">EDITAR PRODUCTO</a>
+										<form  style="display: inline-flex">
+											<button type="submit" class="action-button delete">ELIMINAR</button>
+										</form>
+							</article>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /product detail -->
+
+			<!-- footer -->
+			<%- include('partials/footer') %>
+				<!-- /footer -->
+
+	</body>
 
 </html>
