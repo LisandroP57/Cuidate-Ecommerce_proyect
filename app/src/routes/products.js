@@ -15,7 +15,7 @@ router
 
         /* Detail product */
 router
-        .get('/vistaProducto/:id/', productsController.vistaProducto)
+        .get('/detail/:id/', productsController.detail)
         
         /* Create product */
 router

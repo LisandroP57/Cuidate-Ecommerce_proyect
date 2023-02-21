@@ -22,10 +22,10 @@ const controller = {
     res.render("products/carrito");
   },
 
-  vistaProducto: (req, res) => {
+  detail: (req, res) => {
     const { id } = req.params/* el objeto  */
     const product = products.find(product => product.id === +id)
-    res.render("vistaProducto", {
+    res.render("products/detail", {
       product,
       toThousand
     })
