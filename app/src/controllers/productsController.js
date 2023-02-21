@@ -22,15 +22,18 @@ const controller = {
     res.render("products/carrito");
   },
 
-  
-  
   vistaProducto: (req, res) => {
-    res.render("products/vistaProducto");
+    const { id } = req.params/* el objeto  */
+    const product = products.find(product => product.id === +id)
+    res.render("vistaProducto", {
+      product,
+      toThousand
+    })
   },
 
   create: (req, res) => {
       res.render("products/create");
-    },
+    }, 
 
     store: (req, res) => {
       const lastId = products[products.length -1].id;
