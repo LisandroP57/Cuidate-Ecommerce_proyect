@@ -28,7 +28,7 @@ const controller = {
 
 /*   allProducts: (req, res) => {
     let products = products.filter(product => product.category === "visited");
-    res.render("products/allProducts", {products});
+    res.render("products/products", {products});
   }, */
 
   create: (req, res) => {
