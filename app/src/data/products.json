@@ -30,7 +30,7 @@
         "image": "kubotanmetalico.jpg",
         "category": "in-sale",
         "price": 4950
-    },    
+    },
     {
         "id": 5,
         "name": "Rompe-cristales",
@@ -102,5 +102,22 @@
         "image": "kitBasico.jpg",
         "category": "visited",
         "price": 12350
+    },
+    {
+        "id": 14,
+        "image": "default-image.png"
+    },
+    {
+        "id": 15,
+        "image": "default-image.png"
+    },
+    {
+        "id": 16,
+        "name": "Maximiliano",
+        "price": "1231",
+        "discount": "50",
+        "category": "in-sale",
+        "description": "sdfsdfsdfsdf",
+        "image": "default-image.png"
     }
 ]

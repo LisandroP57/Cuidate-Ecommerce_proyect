@@ -1,7 +1,7 @@
     /* Require's */
 const express = require("express");
 const path = require("path");
-/* const methodOverride = require('method-override'); */
+const methodOverride = require('method-override');
 const PORT = 3000;
 
     /* Express */
@@ -10,9 +10,9 @@ const app = express();
 
     /* Middlewares */
     app.use(express.static(path.join(__dirname, '../public')));
-    /* app.use(express.urlencoded({ extended: false }));
+    app.use(express.urlencoded({ extended: false }));
     app.use(methodOverride("_method"));
-    app.use(express.json());*/
+    app.use(express.json());
 
     /* Template engine */
 app.set("view engine", "ejs");
