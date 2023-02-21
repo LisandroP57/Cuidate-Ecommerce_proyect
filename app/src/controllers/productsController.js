@@ -44,11 +44,7 @@ const controller = {
       
       const newProduct = {
         id: id + 1,
-        name: req.body.name,
-        price: req.body.price,
-        discount: req.body.discount,
-        category: req.body.category,
-        description: req.body.description,
+        ...req.body,
         image: 'default-image.png'
       }
       products.push(newProduct);
