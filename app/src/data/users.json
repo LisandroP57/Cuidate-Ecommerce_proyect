@@ -8,12 +8,12 @@
     "avatar": "/images/avatars/pletzale.jpg"
   }, {
     "id": 2,
-    "firstName": "sed ante",
-    "lastName": "mollis molestie",
-    "email": "dbrimfield1@networkadvertising.org",
-    "password": "hgsBFTyvRf",
-    "type": "Customer",
-    "avatar": ""
+    "firstName": "Lisan",
+    "lastName": "2023",
+    "email": "digitalhouse@gmail.com",
+    "password": "12345678",
+    "type": "user",
+    "avatar": "/images/avatars/default.jpg"
   }, {
     "id": 3,
     "firstName": "id mauris",

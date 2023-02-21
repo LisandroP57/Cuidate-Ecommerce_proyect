@@ -119,10 +119,19 @@
     {
         "id": 14,
         "name": "Maximiliano",
-        "image": "default.jpg",
+        "image": "default-image.png",
         "description": "sdfsdfsdfsdf",
         "category": "in-sale",
         "price": 1231,
         "discount": 50
+    },
+    {
+        "id": 15,
+        "name": "Probando la caja negra",
+        "price": 777,
+        "discount": 0,
+        "category": "in-sale",
+        "description": "Aaaaa",
+        "image": "default-image.png"
     }
 ]
