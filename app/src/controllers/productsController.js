@@ -39,20 +39,17 @@ const controller = {
     }, 
 
     store: (req, res) => {
-      const lastId = products[products.length -1].id;
+      // Do the magic
+      const id = Math.max(...products.map(el => el.id))
       
-      let newProduct = {
-        id: lastId + 1,
-        name: req.body.name,
-        price: req.body.price,
-        discount: req.body.discount,
-        category: req.body.category,
-        description: req.body.description,
-        image: "default-image.png",
+      const newProduct = {
+        id: id + 1,
+        ...req.body,
+        image: 'default-image.png'
       }
       products.push(newProduct);
       writeJson(products)
-      res.redirect('/products')
+      res.redirect('products')
     }, 
 
   edit: (req, res) => {
