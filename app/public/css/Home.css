@@ -21,13 +21,6 @@ body.homeBody img:hover {
     transform: scale(1.1);
 }
 
-
-/* body.homeBody div p {
-color:white;
-font-size: 40px;
-font-family: 'Kaushan Script', cursive;
-text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); */
-
 figure {
     margin: 0;
     padding: 0;
