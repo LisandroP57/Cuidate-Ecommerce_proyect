@@ -13,7 +13,7 @@ module.exports = {
 		res.render("index",{
 			productsVisited,
 			productsInSale,
-			toThousand,
+			toThousand
         })
     }
 };
