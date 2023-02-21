@@ -2,7 +2,7 @@
 <html lang="en">
     <%- include('partials/head') %>
 	<title>Cuidate! Inicio</title>
-<body class="homeBody">
+<body>
 		<!-- Header -->
     <%- include('partials/header') %>
 		<!-- Fin Header -->
@@ -12,13 +12,13 @@
 		<!-- Fin Carrousel -->
 
 
-	<!-- productos -->
-	<div class="container-allProducts">
+	<!-- productos - ultima visita -->
+	<div class="container products-wrapper">
         <div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Destacados</h2>
+				<h2 class="products-title">Según tus ultimas visitas:</h2>
 			</div>
-			<% productsVisited.forEach(product => { %>
+			<%productsVisited.forEach(product => { %>
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
 						<a href="/products/detail/<%- product.id %>">
@@ -26,7 +26,10 @@
 								<img src="/images/products/<%- product.image %>" alt="imagen de producto">
 							</figure>
 							<article class="product-box_data">
-								<h2><%- toThousand(product.price) %></h2>
+								<h2><%- toThousand(product.price - (product.price * product.discount /100)) %></h2>
+								<% if (product.discount > 0) { %>							 
+									<span><%- product.discount %>% OFF</span>
+								<% } %>
 								<p><%- product.name %></p>
 								<i class="fas fa-truck"></i>
 							</article>
@@ -38,7 +41,7 @@
 	</div>
 
     <!-- Ofertas -->
-    <div class="container-allProducts">
+    <div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
 				<h2 class="title-products">Ofertas</h2>
@@ -51,7 +54,10 @@
 								<img src="/images/products/<%- product.image %>" alt="imagen de producto">
 							</figure>
 							<article class="product-box_data">
-								<h2><%- toThousand(product.price) %></h2>
+								<h2><%- toThousand(product.price - (product.price * product.discount /100)) %></h2>
+								<% if (product.discount > 0) { %>							 
+									<span><%- product.discount %>% OFF</span>
+								<% } %>
 								<p><%- product.name %></p>
 								<i class="fas fa-truck"></i>
 							</article>
