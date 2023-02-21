@@ -31,14 +31,14 @@ header {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-header.container {
+header.containerHeader {
     display: flex;
     flex-direction: column;
     background-color: #C8ABD0;
     padding: 10px;
 }
 
-header.container div.primer-menu {
+header.containerHeader div.primer-menu {
     display: flex;
     width: 100%;
     justify-content: space-around;
@@ -46,50 +46,50 @@ header.container div.primer-menu {
     margin-top: .9%;
 }
 
-header.container div.primer-menu div.menu-hamburguesa img {
+header.containerHeader div.primer-menu div.menu-hamburguesa img {
     width: 40px;
     height: 40px;
 }
 
-header.container div.primer-menu div.crear img {
+header.containerHeader div.primer-menu div.crear img {
     width: 40px;
     height: 40px;
     transition: 1s;
 }
 
-header.container div.primer-menu div.crear img:hover {
+header.containerHeader div.primer-menu div.crear img:hover {
     transform: rotateY(360deg);
     cursor: pointer;
 }
 
-header.container div.primer-menu div.lupa img {
+header.containerHeader div.primer-menu div.lupa img {
     width: 50px;
     height: 50px;
 }
 
-header.container div.primer-menu div.iniciar img {
+header.containerHeader div.primer-menu div.iniciar img {
     width: 40px;
     height: 40px;
     transition: 1s;
 }
 
-header.container div.primer-menu div.iniciar img:hover {
+header.containerHeader div.primer-menu div.iniciar img:hover {
 transform: rotateY(360deg);
 cursor: pointer;
 }
 
-header.container div.primer-menu div.carrito img {
+header.containerHeader div.primer-menu div.carrito img {
     width: 40px;
     height: 40px;
     transition: 1s;
 }
 
-header.container div.primer-menu div.carrito img:hover {
+header.containerHeader div.primer-menu div.carrito img:hover {
     transform: rotateY(360deg);
     cursor: pointer;
 }
 
-header.container div.primer-menu a {
+header.containerHeader div.primer-menu a {
     font-size: 13px;
     padding-top: 10px;
     font-weight: 600;
@@ -116,7 +116,7 @@ nav.navegador ul.menu li:hover{
     transform: scale(1.1);
 }
 
-header.container div.primer-menu div.buscador {
+header.containerHeader div.primer-menu div.buscador {
     display: flex;
     align-items: center;
     border-radius: 20px 2px 20px 2px;
@@ -125,7 +125,7 @@ header.container div.primer-menu div.buscador {
     margin: 0rem 0.5rem;
 }
 
-header.container div.primer-menu div.buscador .input-header {
+header.containerHeader div.primer-menu div.buscador .input-header {
     background-color: #724A81;
     border: solid 1px var(--light-gray);
     border-radius: 20px 2px 20px 2px;
@@ -134,11 +134,11 @@ header.container div.primer-menu div.buscador .input-header {
     padding: 7px 35px 7px 25px;
 }
 
-header.container div.primer-menu div.buscador .input-header::placeholder {
+header.containerHeader div.primer-menu div.buscador .input-header::placeholder {
     color: white;
 }
 
-header.container div.primer-menu div.buscador button{
+header.containerHeader div.primer-menu div.buscador button{
     background-color: #724A81;
     color: white;
     border: none;
@@ -148,7 +148,7 @@ header.container div.primer-menu div.buscador button{
     border-left: solid 1px white;
 }
 
-header.container div.primer-menu div.buscador i{
+header.containerHeader div.primer-menu div.buscador i{
     margin-left: 10px;
 }
 
@@ -157,28 +157,28 @@ header.container div.primer-menu div.buscador i{
         /* MOBILE */
 @media (max-width: 767px) {
 
-    header.container div.logo a img {
+    header.containerHeader div.logo a img {
         width: 50px;
         height: 50px;
     }
 
-    header.container div.logo span {
+    header.containerHeader div.logo span {
         display: none;
     }
 
-    header.container div.crear {
+    header.containerHeader div.crear {
         display: none;
     }
 
-    header.container div.iniciar {
+    header.containerHeader div.iniciar {
         display: none;
     }
 
-    header.container nav.navegador {
+    header.containerHeader nav.navegador {
         display: none;
     }
 
-    header.container div.primer-menu div.carrito a {
+    header.containerHeader div.primer-menu div.carrito a {
         display: none;
     }
     
@@ -275,28 +275,28 @@ header.container div.primer-menu div.buscador i{
         /* TABLET */
 @media (min-width: 768px) and (max-width: 1023px) {
 
-    header.container div.primer-menu div.crear {
+    header.containerHeader div.primer-menu div.crear {
         display: none;
     }
 
-    header.container div.primer-menu div.iniciar {
+    header.containerHeader div.primer-menu div.iniciar {
         display: none;
     }
 
-    header.container nav.navegador {
+    header.containerHeader nav.navegador {
         display: none;
     }
 
-    header.container div.primer-menu div.carrito a {
+    header.containerHeader div.primer-menu div.carrito a {
         display: none;
     }
 
-    header.container div.primer-menu div.logo img {
+    header.containerHeader div.primer-menu div.logo img {
         width: 60px;
         height: 60px;
     }
 
-    header.container div.primer-menu div.logo span{
+    header.containerHeader div.primer-menu div.logo span{
         display: none;
     }
     /* FOOTER */
@@ -388,23 +388,23 @@ header.container div.primer-menu div.buscador i{
         /* DESKTOP */
 @media (min-width: 1024px) {
 
-    header.container div.primer-menu div.menu-hamburguesa {
+    header.containerHeader div.primer-menu div.menu-hamburguesa {
         display: none;
     }
 
-    header.container div.primer-menu div.logo img {
+    header.containerHeader div.primer-menu div.logo img {
         width: 65px;
         height: 65px;
     }
     
-    header.container div.primer-menu div.buscador{
+    header.containerHeader div.primer-menu div.buscador{
         position: relative;
         display: flex;
         align-items: center;
         width: 55%;
     }
 
-    header.container div.primer-menu div.buscador .input-header {
+    header.containerHeader div.primer-menu div.buscador .input-header {
         background-color: #724A81;
         border: solid 1px gray;
         display: block;
@@ -413,54 +413,54 @@ header.container div.primer-menu div.buscador i{
         border-radius: 20px 2px 20px 2px;
     }
 
-    header.container div.primer-menu div.buscador button{
+    header.containerHeader div.primer-menu div.buscador button{
         position: absolute;
         right: 2px;
         height: 50%;
     }
 
-    header.container div.primer-menu div.logo {
+    header.containerHeader div.primer-menu div.logo {
         padding: 0.5rem;
     }
 
-    header.container nav.navegador ul.menu{
+    header.containerHeader nav.navegador ul.menu{
         justify-content: center;
     }
 
-    header.container div.primer-menu div.crear {
+    header.containerHeader div.primer-menu div.crear {
         display: flex;
         flex-direction: column;
         align-items: center;
         font-size: 12px;
     }
 
-    header.container div.primer-menu div.iniciar {
+    header.containerHeader div.primer-menu div.iniciar {
         display: flex;
         flex-direction: column;
         align-items: center;
         font-size: 12px;
     }
 
-    header.container div.primer-menu div.carrito {
+    header.containerHeader div.primer-menu div.carrito {
         display: flex;
         flex-direction: column;
         align-items: center;
         font-size: 12px;
     }
 
-    header.container div.primer-menu div.logo span {
+    header.containerHeader div.primer-menu div.logo span {
         font-size: 30px;
         font-family: 'Kaushan Script', cursive;
         color: black;
     }
 
-    header.container div.primer-menu div.logo a {
+    header.containerHeader div.primer-menu div.logo a {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
 
-    header.container div.primer-menu div.logo a img {
+    header.containerHeader div.primer-menu div.logo a img {
         margin: 10px 25px 10px 0px;
     }
         /*FOOTER*/
@@ -487,7 +487,7 @@ header.container div.primer-menu div.buscador i{
         height: 40px;
     }
     
-    footer.principal div.footer-container-logo {
+    footer.principal div.footer-containerHeader-logo {
         display: flex;
         flex-direction: column;
         justify-content: center;
