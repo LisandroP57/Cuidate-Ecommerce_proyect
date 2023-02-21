@@ -205,7 +205,7 @@ html {
     max-width: 91.666667%;
 }
 .col-12 {
-    background-color: rgb(155, 149, 149);
+    background-color: rgba(255, 255, 255, 0.571);
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
