@@ -2,6 +2,7 @@
 /* Productos */
 body.homeBody {
     background-image: url(/images/backgrounds/backg.jpg);
+    background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100vh;
@@ -12,6 +13,12 @@ body.homeBody {
 
 body.homeBody img {
     width: 100%;
+    transition: 1s ease;
+    max-height: 14rem;
+}
+
+body.homeBody img:hover {
+    transform: scale(1.1);
 }
 
 
@@ -33,18 +40,24 @@ figure {
   }
   
   .products-title {
-    font-size: 2.4em;
+    color:rgb(95, 94, 94);
+    font-size: 40px;
+    font-family: 'Kaushan Script', cursive;
     font-weight: 400;
-    color: var(--gray);
   }
   
   .product-box {
-    background-color: #6f2382;
+    background-color: #7141d0c4;
     border-radius: 5px;
     overflow: hidden;
     transition: 300ms;
     margin: 20px 0;
+    border-radius: 1rem 1rem 3rem 3rem;
   }
+
+  .product-box:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  } 
   
   .product-box a {
     display: block;
@@ -63,33 +76,35 @@ figure {
   }
   
   .product-box_data h2 {
-    font-size: 2.4em;
+    display: flex;
+    justify-content: center;
+    width: 100%;
     font-weight: 300;
+    font-size: 2.4em;
     margin: 0;
   }
   
   .product-box_data span {
     font-size: 1.5em;
     font-weight: 300;
-    color: var(--green);
     margin: 0 0 0 10px;
   }
   
   .product-box_data p {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
     font-size: 1.5em;
     width: 100%;
-    color: var(--gray);
+    color: black;
     margin: 0;
     height: 0;
     transition: 300ms;
   }
   
-  .product-box:hover {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  }
-  
   .product-box:hover p {
-    height: 40px;
-    margin-top: 15px;
+    height: 45px;
+    margin-top: 25px;
   }
   

@@ -27,7 +27,7 @@
 								<img src="/images/products/<%- product.image %>" alt="imagen de producto">
 							</figure>
 							<article class="product-box_data">
-								<h2><%- toThousand(product.price - (product.price * product.discount /100)) %></h2>
+								<h2>$ <%- toThousand(product.price - (product.price * product.discount /100)) %></h2>
 								<% if (product.discount > 0) { %>							 
 									<span><%- product.discount %>% OFF</span>
 								<% } %>
@@ -44,7 +44,7 @@
     <div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="title-products">Ofertas</h2>
+				<h2 class="products-title">Ofertas</h2>
 			</div>
 			
 			<% productsInSale.forEach(product => { %>
@@ -55,7 +55,7 @@
 								<img src="/images/products/<%- product.image %>" alt="imagen de producto">
 							</figure>
 							<article class="product-box_data">
-								<h2><%- toThousand(product.price - (product.price * product.discount /100)) %></h2>
+								<h2>$ <%- toThousand(product.price - (product.price * product.discount /100)) %></h2>
 								<% if (product.discount > 0) { %>							 
 									<span><%- product.discount %>% OFF</span>
 								<% } %>

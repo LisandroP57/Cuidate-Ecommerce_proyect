@@ -50,7 +50,7 @@
         "description": "Adoptar nueva tecnología Bluetooth 4,0 el consumo de energía es muy bajo, botón de la batería CR2032 fuente de alimentación, compatible con Sistema IOS y sistema ANDROID 4,3 o superior (Bluetooth 4,0), la apariencia del dispositivo antipérdida es bonita y elegante.",
         "image": "localizador.jpg",
         "category": "in-sale",
-        "price": 1188,
+        "price": 1200,
         "discount": 34
     },
     {
@@ -104,8 +104,8 @@
         "description": "Contiene, localizador Bluetooth, alarma 140db con linterna, llavero de unicarnio, llavero cinta",
         "image": "kitninos.jpg",
         "category": "visited",
-        "price": 6534,
-        "discount": 99
+        "price": 6500,
+        "discount": 50
     },
     {
         "id": 13,
