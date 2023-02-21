@@ -16,23 +16,31 @@
         </div>
 
         <div class="buscador">
-            <input class="input-header" type="text" required name="search" placeholder="Buscar ...">
-            <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
+            <form action="/search" method="GET" class="search-form"></form>
+                <input class="input-header" type="text" name="keywords" placeholder="Buscar productos, marcas y más">
+                <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
+            </form>
         </div>
 
         <div class="crear">
-            <img src="/images/header/create.png" alt="">
-            <a href="/users/register">Registrarse</a>
+            <a href="/users/register">
+                <img src="/images/header/create.png" alt="">
+                <a href="/users/register">Registrarse</a>
+            </a>
         </div>
 
         <div class="iniciar">
-            <img src="/images/header/login.png" alt="">
-            <a href="/users/login">Iniciar sesion</a>
+            <a href="/users/login">
+                <img src="/images/header/login.png" alt="">
+                <a href="/users/login">Iniciar sesion</a>
+            </a>
         </div>
 
         <div class="carrito">
-            <img src="/images/header/carrito.png" alt="">
-            <a href="/products/carrito">Ver compra</a>
+            <a href="/products/carrito">
+                <img src="/images/header/carrito.png" alt="">
+                <a href="/products/carrito">Ver compra</a>
+            </a>
         </div>
 
     </div>
@@ -41,9 +49,9 @@
         <ul class="menu">
             <li><a href="/products/products">Productos</a></li>
             <li><a href="/#offers">Ofertas</a></li>
-            <li><a href="/#destacados">Destacados</a></li>
-            <li><a href="/products/create">Vender $</a></li>
-            <li><a href="/productos/edit/ " class="edit-button edit">Editar $</a></li>
+            <li><a href="/#redes">Contactanos</a></li>
+            <li><a href="/products/create">Crear $</a></li>
+            <li><a href="/products/edit" class="edit-button edit">Editar $</a></li>
         </ul>
     </nav>
 </header>

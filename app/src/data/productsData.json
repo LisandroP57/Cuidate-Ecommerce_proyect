@@ -5,7 +5,8 @@
         "description": "Incapacita al atacante por 10 a 15 minutos. Los efectos son inmediatos, provocando ardor en la piel, los ojos, tos y dificultad para respirar.",
         "image": "gaspimienta.jpeg",
         "category": "in-sale",
-        "price": 4500
+        "price": 4500,
+        "discount": 76 
     },
     {
         "id": 2,
@@ -13,7 +14,8 @@
         "description": "Kit LLavero, contiene gas pimienta, boton de panico, manopla gatito",
         "image": "kitllavero.PNG",
         "category": "visited",
-        "price": 12000
+        "price": 12000,
+        "discount": 12
     },
     {
         "id": 3,
@@ -21,7 +23,8 @@
         "description": "Cat Ring ® Llavero de Emergencia Defensa Personal Survival Tool es un práctico arma que permite el acceso rápidamente en tiempos de crisis. Es sumamente liviano comodo.",
         "image": "manoplagatito.jpeg",
         "category": "in-sale",
-        "price": 1853
+        "price": 1853,
+        "discount": 2
     },
     {
         "id": 4,
@@ -29,7 +32,8 @@
         "description": "El Kubotan es un arma increíble de autodefensa que ha ayudado a miles de personas a defenderse efectivamente. Hombres, mujeres, agentes de la ley, militares y profesionales de la seguridad, aprecian esta pequeña y discreta herramienta de autodefensa.",
         "image": "kubotanmetalico.jpg",
         "category": "in-sale",
-        "price": 4950
+        "price": 4950,
+        "discount": 87
     },
     {
         "id": 5,
@@ -37,7 +41,8 @@
         "description": "El llavero es un dispositivo que permite cortar un cinturón de seguridad y romper una ventanilla lateral del vehículo. Si te quedas bloqueado después de un accidente, te permitirá salir rápidamente del vehículo",
         "image": "rompe-cristal.jpg",
         "category": "in-sale",
-        "price": 1815
+        "price": 1815,
+        "discount": 0
     },
     {
         "id": 6,
@@ -45,7 +50,8 @@
         "description": "Adoptar nueva tecnología Bluetooth 4,0 el consumo de energía es muy bajo, botón de la batería CR2032 fuente de alimentación, compatible con Sistema IOS y sistema ANDROID 4,3 o superior (Bluetooth 4,0), la apariencia del dispositivo antipérdida es bonita y elegante.",
         "image": "localizador.jpg",
         "category": "in-sale",
-        "price": 1188
+        "price": 1200,
+        "discount": 34
     },
     {
         "id": 7,
@@ -53,7 +59,8 @@
         "description": "Esta Lapicera contiene oculta una navaja para desfensa personal, de diseño elegante y discreto",
         "image": "lapiceranavaja.jpg",
         "category": "in-sale",
-        "price": 1599
+        "price": 1599,
+        "discount": 17
     },
     {
         "id": 8,
@@ -61,7 +68,8 @@
         "description": "Cuchillo súper ligero de supervivencia en formato tarjeta de crédito Totalmente desplegable.Está construido en caucho antideslizante, Con un cierre de seguridad único y a prueba de niños.",
         "image": "tarjetanavaja.jpg",
         "category": "in-sale",
-        "price": 983
+        "price": 983,
+        "discount": 10
     },
     {
         "id": 9,
@@ -69,7 +77,8 @@
         "description": "Alto decibelio Esta alarma de seguridad personal Guardian Angel para mujeres, niños  y ancianos, utiliza un potenciador más grande de alta precisión para hacer su grito de hasta 100dB.",
         "image": "llaveroAlarma.jpg",
         "category": "in-sale",
-        "price": 2500
+        "price": 2500,
+        "discount": 3
     },
     {
         "id": 10,
@@ -77,7 +86,8 @@
         "description": "Elegante llavero cinta",
         "image": "llaveroCinta.jpg",
         "category": "in-sale",
-        "price": 1620
+        "price": 1620,
+        "discount": 50
     },
     {
         "id": 11,
@@ -85,7 +95,8 @@
         "description": "Contine alarma de 140db con linterna, Manopla gatito, gas pimienta, rompecritales, tarjeta navaja",
         "image": "kitGuerra.jpg",
         "category": "visited",
-        "price": 17850
+        "price": 17850,
+        "discount": 10
     },
     {
         "id": 12,
@@ -93,7 +104,8 @@
         "description": "Contiene, localizador Bluetooth, alarma 140db con linterna, llavero de unicarnio, llavero cinta",
         "image": "kitninos.jpg",
         "category": "visited",
-        "price": 6534
+        "price": 6500,
+        "discount": 50
     },
     {
         "id": 13,
@@ -101,23 +113,25 @@
         "description": "Contiene Kubotan metalico, alarma 140db con linterna, gas pimienta",
         "image": "kitBasico.jpg",
         "category": "visited",
-        "price": 12350
+        "price": 12350,
+        "discount": 5
     },
     {
         "id": 14,
-        "image": "default-image.png"
+        "name": "Maximiliano",
+        "image": "default-image.png",
+        "description": "sdfsdfsdfsdf",
+        "category": "in-sale",
+        "price": 1231,
+        "discount": 50
     },
     {
         "id": 15,
-        "image": "default-image.png"
-    },
-    {
-        "id": 16,
-        "name": "Maximiliano",
-        "price": "1231",
-        "discount": "50",
+        "name": "Probando la caja negra",
+        "price": 777,
+        "discount": 0,
         "category": "in-sale",
-        "description": "sdfsdfsdfsdf",
+        "description": "Aaaaa",
         "image": "default-image.png"
     }
 ]

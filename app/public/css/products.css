@@ -5,6 +5,17 @@ html {
     box-sizing: border-box;
     -ms-overflow-style: scrollbar;
 }
+
+body.productBody img {
+    width: 100%;
+    transition: 1s ease;
+    max-height: 14rem;
+}
+
+body.productBody img:hover {
+    transform: scale(1.1);
+}
+
 *,
 ::after,
 ::before {
@@ -205,6 +216,7 @@ html {
     max-width: 91.666667%;
 }
 .col-12 {
+    background-color: rgba(255, 255, 255, 0.571);
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
