@@ -27,7 +27,7 @@ const controller = {
     const product = products.find(product => product.id === +id)
     res.render("products/detail", {
       product,
-      toThousand
+      toThousand,
     })
   },
 
