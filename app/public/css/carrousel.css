@@ -1,69 +1,86 @@
-.carrousel{
-    display: flex;
-    justify-content: center;
-    width: 100%;
+@media (min-width: 100px) {
+
+    .carrousel{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .conteCarrousel{
+        width: 100%;
+        height: 130px;
+        overflow: hidden;
+    }
+
+    .itemCarrousel{
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .itemCarrouselTarjeta{
+        width: 100%;
+        height: 100%;
+    }
+
+    .itemCarrouselTarjeta img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .itemCarrouselArrows{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%; 
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5rem 2rem; 
+    }
+
+    .itemCarrouselArrows > i:hover {
+        cursor: pointer;
+    }
+
+    #itemCarrousel-3{
+        background-color: var(--violeta-claro);
+        display: flex;
+        justify-content: center;
+    }
+
+    /* .conteCarrouselController{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .conteCarrouselController > a{
+        text-decoration: none;
+        font-size: 2em;
+        color: rgb(42, 38, 38);
+        position: relative;
+        bottom: 2rem;
+    } */
+
+    .itemCarrouselArrows > a > i{
+        color: rgb(100, 99, 99);
+    }
+
 }
 
-.conteCarrousel{
-    width: 70%;
-    height: 200px;
-    overflow: hidden;
+@media (min-width: 768px ) {
+    .conteCarrousel{
+        width: 70%;
+        height: 200px;
+    }
 }
 
-.itemCarrousel{
-    position: relative;
-    width: 100%;
-    height: 100%;
+@media (min-width: 1180px) {
+    .conteCarrousel{
+        height: 200px;
 }
-
-.itemCarrouselTarjeta{
-    width: 100%;
-    height: 100%;
-}
-
-.itemCarrouselTarjeta img {
-    width: 100%;
-    height: 100%;
-}
-
-.itemCarrouselArrows{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%; 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5rem 2rem; 
-}
-
-.itemCarrouselArrows > i:hover {
-    cursor: pointer;
-}
-
-#itemCarrousel-3{
-    background-color: var(--violeta-claro);
-    display: flex;
-    justify-content: center;
-}
-
-/* .conteCarrouselController{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.conteCarrouselController > a{
-    text-decoration: none;
-    font-size: 2em;
-    color: rgb(42, 38, 38);
-    position: relative;
-    bottom: 2rem;
-} */
-
-.itemCarrouselArrows > a > i{
-    color: rgb(100, 99, 99);
 }

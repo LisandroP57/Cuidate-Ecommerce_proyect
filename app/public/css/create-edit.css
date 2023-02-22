@@ -3,13 +3,18 @@
 main.addProduct {
     display: flex;
     justify-content: center;
-    background-color:rgb(148, 148, 148);
+    background-size:60%;
+    background-position: -10rem 3rem; 
+    background-repeat:repeat;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .createForm {
     padding: 0rem 1rem;
-    background-color: rgb(255, 255, 255);
+    border-radius: 1rem;
+    background-color: white;
+    border: 1px solid rgb(80, 67, 67);
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 50%);
     margin: 3rem;
     width: 100%;
     max-width: 500px;
@@ -17,7 +22,7 @@ main.addProduct {
       
 
 .createForm .row .col-12 h2{
-    color: rgb(102, 99, 99);
+    color: rgb(0, 0, 0);
     text-align: center;
     margin-top: 1rem;
     font-size: 2rem;
@@ -83,6 +88,8 @@ main.addProduct {
 }
 
 .description1 textarea {
+    width: 250px;
+    height: 50px;
     max-width: 395px;
     max-height: 90px;
     padding-left: 0.4rem;
