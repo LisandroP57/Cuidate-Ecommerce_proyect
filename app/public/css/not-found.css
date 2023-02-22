@@ -3,54 +3,86 @@
 
 .bodyError {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url(/images/backgrounds/404error.jpg);
-    background-size:cover;
-    background-position: 30%;
-    background-repeat: no-repeat;
+    background-image: url(/images/backgrounds/404error3.png);
+    background-size:contain;
+    background-repeat: repeat;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .textError {
-    background-color: rgba(165, 159, 168, 0.705);
+    background-color: rgba(96, 95, 96, 0.799);
     text-align: center;
     border: solid 1px black;
-    margin:2rem 2rem;
+    margin:1rem 1rem;
     border-radius: 0rem;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    max-width: 560px;
+    max-width: 400px;
 }
 
 .textError h4 {
-    font-size: 60px;
+    font-size: 50px;
 }
 
 .textError p {
     padding: 1rem;
-    font-size: 17px;
-    text-shadow: 5px 5px 10px rgb(11, 22, 88);
+    font-size: 18px;
     font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.467);
+    margin-bottom: 0.5rem;
 }
 
-.textError a {
+.errorLinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.errorLinks a {
+    margin-top: 0.5rem;
     color: black;
-    margin: 0.5rem;
-    text-shadow: 5px 5px 10px rgba(89, 89, 89, 0.637);
-    text-align: center;
-    font-family: 'Kaushan Script', cursive;
+    text-align:center;
     font-size: 1.5rem;
+    transition: 1s ease;
 }
-.textError a li {
-    transition: 1s;
-}
-.textError a li:hover {
+.errorLinks a:hover {
     transform: scale(1.3);
 }
+.errorLinks a p {
+    border-radius: 2rem;
+    transition: 1s;
+    background-color: white;
+    width: 180px;
+}
+.errorLinks a img {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 3.2rem;
+    left: 1rem;
+}
 }
 
+@media (min-width: 720px) {
+.bodyError {
+    justify-content: flex-end;
+    padding-right: 5rem;
+}
+
+    .textError {
+        max-width: 500px;
+}
+.textError h4 {
+    font-size: 60px;
+}
+}
 @media (min-width: 1024px) {
     .textError {
-        margin: 5rem 2rem;
+        margin: 3rem 2rem;
+        max-width: 560px;
     }
 }

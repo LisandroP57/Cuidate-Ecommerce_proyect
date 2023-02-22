@@ -6,17 +6,37 @@
     <%- include('partials/header') %>
     <div class="bodyError">
         <div class="textError">
-            <h4>Error 404</h4>
+            <h4>Error 404 :(</h4>
             <hr>
-            <p>La pagina que intentas solicitar no se encuentra en el servidor</p>
+            <p>La pagina que intentás solicitar no se encuentra en el servidor</p>
             <p>Intenta mejor en estos links:</p>
-            <ul>
-                <a href="/home"><li>Home</li></a>
-                <a href="/users/login"><li>Login</li></a>
-                <a href="/users/register"><li>Registro</li></a>
-                <a href="/products/"><li>Productos</li></a>
-            </ul>
-        </div>
+            <div class="errorLinks">
+                <a href="/home">
+                    <p>Inicio</p>
+                    <img src="/images/icons/home.jfif" alt="">
+                </a>
+                <a href="/users/login">
+                    <p>Acceder</p>
+                    <img src="/images/header/login.png" alt="">
+                </a>
+                <a href="/users/register">
+                    <p>Registro</p>
+                    <img src="/images/header/create.png" alt="">
+                </a>
+                <a href="/products/products">
+                    <p> Productos</p>
+                    <img src="/images/icons/products.png" alt="">
+                </a>
+                <a href="#offers">
+                    <p>Ofertas</p>
+                    <img src="/images/icons/offers.png" alt="">
+                </a>
+                <a href="/carrito">
+                    <p>Carrito</p>
+                    <img src="/images/header/carrito.png" alt="">
+                </a>
+            </div>
+        </div> 
     </div>
     <%- include('partials/footer') %>
 </body>
