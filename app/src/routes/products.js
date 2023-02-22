@@ -29,8 +29,8 @@ router
         .put('/edit/:id', productsController.update)
 
         
-        /* Delete product
+        /* Delete product*/
 
-        router.delete('/delete/:id', productsController.destroy);  */
+router.delete('/delete/:id', productsController.destroy);  
 
 module.exports = router;

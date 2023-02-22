@@ -3,7 +3,7 @@
 <!-- Include Head -->
 <%- include('partials/head') %>
 
-	<body>
+	<body class=" ">
 		<!-- Header -->
 		<%- include('partials/header') %>
 			<!-- /Header -->
@@ -64,10 +64,10 @@
 									<a href="#" class="buy-now-button">COMPRAR AHORA</a>
 									<hr>
 
-									<a href="/products/edit/<%= product.id %> " class="action-button edit">EDITAR PRODUCTO</a>
-										<form  style="display: inline-flex">
-											<button type="submit" class="action-button delete">ELIMINAR</button>
-										</form>
+									<a href="/products/edit/<%= product.id %> " class="action-button edit" style="background-color: brown;">EDITAR PRODUCTO</a>
+                                    <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+                                        <button type="submit" class="action-button delete">ELIMINAR</button><!--  DELETE me lleva a eliminar todo, hace http, GET post -->
+                                    </form>
 							</article>
 						</div>
 					</div>

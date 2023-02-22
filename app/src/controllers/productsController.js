@@ -38,7 +38,7 @@ const controller = {
       res.render("products/create");
     }, 
 
-    store: (req, res) => {
+  store: (req, res) => {
       const lastId = products[products.length -1].id;
       
       let newProduct = {
@@ -79,6 +79,27 @@ const controller = {
     writeJson(products);
     res.send('Producto modificado exitosamente!');
   },
-}
+
+  destroy : (req, res) => {
+    // Do the magic:obtener el id del req params
+    let productId = Number(req.params.id); /*  */
+  
+    //Busco el producto eliminar y lo borro del array
+    products.forEach( product => {
+      if(product.id === productId){
+        let productToDestroy = products.indexOf(product);
+        products.splice(productToDestroy, 1) 
+      }
+    })
+    writeJson(products)
+    
+    // retorno un mensaje de exito 
+    res.send("El producto fue destruido")
+  
+    } 
+  };
+
+
+
 
 module.exports = controller;
