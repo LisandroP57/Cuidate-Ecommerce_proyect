@@ -93,6 +93,16 @@ main.addProduct {
     height: 40px;
     border-radius: 5px;
 }
+.multer {
+    height: 34px;
+    margin: 3px;
+    width: 100%;
+    padding-left: 0.3rem;
+}
+.multer.label {
+    flex-wrap: wrap;
+    width: 100%;
+}
 
 .buy-now-button{
     display: flex;
