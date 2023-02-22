@@ -38,14 +38,9 @@ const controller = {
       res.render("products/create");
     }, 
 
-<<<<<<< HEAD
-  store: (req, res) => {
-      const lastId = products[products.length -1].id;
-=======
     store: (req, res) => {
       // Do the magic
       const id = Math.max(...products.map(el => el.id))
->>>>>>> b4ba83933a9f88e85d1d94e203fe0660153f6d6f
       
       const newProduct = {
         id: id + 1,
