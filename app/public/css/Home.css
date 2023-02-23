@@ -48,6 +48,12 @@ figure {
     border-radius: 1rem 1rem 2rem 2rem;
   }
 
+  .product-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   .product-box:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   } 
@@ -58,10 +64,11 @@ figure {
   
   .product-box_image {
     border-bottom: 1px solid var(--light-gray);
+    object-fit: cover;
   }
   
   .product-box_data {
-    padding: 15px;
+    padding: 25px;
     position: relative;
     display: flex;
     align-items: center;
@@ -79,7 +86,7 @@ figure {
   }
   
   .product-box_data span {
-    font-size: 1.5em;
+    font-size: 1.05em;
     font-weight: 300;
     margin-bottom: 0.5rem;
     background-color: rgb(216, 33, 33);

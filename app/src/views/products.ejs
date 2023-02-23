@@ -16,9 +16,9 @@
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
 						<a href="/products/detail/<%= product.id %>">
-							<figure class="product-box_image">
+							<div class="product-box_image">
 								<img src="/images/products/<%= product.image %>" alt="imagen de producto">
-							</figure>
+							</div>
 							<article class="product-box_data">
 								<h2>$ <%- toThousand(product.price - (product.price * product.discount /100)) %></h2>
 								<% if (product.discount > 0) { %>							 
