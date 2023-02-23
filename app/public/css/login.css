@@ -85,6 +85,8 @@ select.input-select {
     width: 100%;
     max-width: 400px;
     padding: 1rem;
+    background: transparent;
+    backdrop-filter: blur(2px);
 }
 
 .input-file-container {
@@ -112,6 +114,8 @@ select.input-select {
     font-size: 15px;
     background: linear-gradient(0deg,transparent,transparent);
     transition: 1s ease;
+    background: transparent;
+    backdrop-filter: blur(2px);
 }
 
 .form-two:hover {

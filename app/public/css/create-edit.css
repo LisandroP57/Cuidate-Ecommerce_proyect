@@ -85,6 +85,7 @@ main.addProduct {
 .description1 label {
     flex-wrap: wrap;
     width: 100%;
+    margin-bottom: -0.6rem;
 }
 
 .description1 textarea {
@@ -100,15 +101,22 @@ main.addProduct {
     height: 40px;
     border-radius: 5px;
 }
+
 .multer {
-    height: 34px;
-    margin: 3px;
-    width: 100%;
-    padding-left: 0.3rem;
+    position: relative;
+    right: 7px;
 }
-.multer.label {
+
+.multer label {
     flex-wrap: wrap;
     width: 100%;
+    margin-left: 4px;
+}
+
+.multer input {
+    margin: 3px;
+    width: 83%;
+    padding-left: 0.3rem;
 }
 
 .buy-now-button{
@@ -130,7 +138,7 @@ main.addProduct {
 }
 
 div.sendButton {
-    padding: 1.2rem;
+    margin: 1rem;
 }
 
 .buy-now-button:hover {

@@ -12,7 +12,8 @@
 }
 
 .textError {
-    background-color: rgba(96, 95, 96, 0.799);
+    background: transparent;
+    backdrop-filter: blur(2px);
     text-align: center;
     border: solid 1px black;
     margin:1rem 1rem;
