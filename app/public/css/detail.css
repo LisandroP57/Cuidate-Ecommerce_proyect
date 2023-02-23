@@ -74,19 +74,6 @@ hr {
 }
 
 
-
-
-
-/*====== Banner ======*/
-.banner {
-  background-image: url(/images/img-home-banner.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  height: 100px;
-}
-
-
 /*====== Products ======*/
 section .container {
   width: auto;
