@@ -27,7 +27,7 @@
 						</div>
 						<div class="addInput">
 							<label for="discount" class="form-label">Descuento:  (Opcional)</label>
-							<input type="text" id="discount" name="discount" placeholder="Ej: 57%" value="<%= productToEdit.discount %>%" class="form-input">
+							<input type="text" id="discount" name="discount" placeholder="Ej: 57%" value="<%= productToEdit.discount %>" class="form-input">
 						</div>
 						<div class="addInput">
 							<label for="category" class="form-label">Categoría:</label>
@@ -42,13 +42,35 @@
 							<textarea name="description" id="description" class="form-input"><%= productToEdit.description %></textarea>
 						</div>
 						<div class="sendButton">
-							<button type="submit" class="buy-now-button">Modificar producto</button>
+							<button type="submit" class="buy-now-button" data-bs-toggle="modal" data-bs-target="#miModal">Modificar producto</button>
+
+							<!-- Modal -->
+							<div class="modal fade" id="miModal" tabindex="-1" aria-hidden="true" aria-labelledby="modalTitle">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h4 class="modal-title" id="modalTitle">Producto Modificado!</h4>
+											<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+										</div>
+										<div class="modal-body">
+											<p> Se ha modificado su producto con exito! a continuacion puede volver al inicio o seguir editando su producto.</p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+											<button type="button" class="btn btn-primary" ><a href="/home">Volver a inicio</a></button>
+										</div>
+									</div> 
+								</div>
+							</div>
+							<!-- Fin Modal -->
+
 						</div>
 					</div>
 				</form>
 			</div>
 		</div>
 	</main>
+
 	<!-- footer -->
 	<%- include('partials/footer') %>
 </body>	

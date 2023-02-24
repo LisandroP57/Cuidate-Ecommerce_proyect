@@ -74,7 +74,7 @@ const controller = {
       }
     });
     writeJson(products);
-    res.send('Producto modificado exitosamente!');
+    res.send('El producto fue modificado con exito!');
   },
 
   destroy : (req, res) => {
@@ -95,8 +95,5 @@ const controller = {
   
     } 
   };
-
-
-
 
 module.exports = controller;

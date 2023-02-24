@@ -45,7 +45,7 @@ figure {
     overflow: hidden;
     transition: 300ms;
     margin: 20px 0;
-    border-radius: 1rem 1rem 2rem 2rem;
+    border-radius: 1rem 1rem 1rem 1rem;
   }
 
   .product-box img {
@@ -68,7 +68,7 @@ figure {
   }
   
   .product-box_data {
-    padding: 25px;
+    padding: 20px;
     position: relative;
     display: flex;
     align-items: center;
@@ -95,20 +95,19 @@ figure {
   }
   
   .product-box_data p {
-    margin-top: 1rem;
     display: flex;
     justify-content: center;
     font-weight: 600;
     font-size: 1.5em;
     width: 100%;
     color: black;
-    margin: 0;
+    margin-bottom: 1rem;
     height: 0;
     transition: 300ms;
   }
   
   .product-box:hover p {
-    height: 40px;
-    margin-top: 25px;
+    height: 30px;
+    margin-top: 20px;
   }
   
