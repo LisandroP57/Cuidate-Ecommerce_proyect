@@ -396,12 +396,13 @@ header.containerHeader div.primer-menu div.buscador i{
         width: 65px;
         height: 65px;
     }
-    
+    /*  */
     header.containerHeader div.primer-menu div.buscador{
         position: relative;
         display: flex;
         align-items: center;
-        width: 50%;
+        justify-content: center;
+        width: 100%;
     }
 
     header.containerHeader div.primer-menu div.buscador .input-header {
