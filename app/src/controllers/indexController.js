@@ -10,7 +10,7 @@ module.exports = {
 	index: (req, res) => {
 		let productsInSale = products.filter(product => product.category === "in-sale");
 		let productsVisited = products.filter(product => product.category === "visited");
-		res.render("index",{
+		res.render('index',{
 			productsVisited,
 			productsInSale,
 			toThousand
@@ -20,7 +20,7 @@ module.exports = {
 	search: (req, res) => {
 		let { keywords } = req.query
 		let results = products.filter(product => product.name.toLowerCase() === keywords.toLowerCase())
-		res.render(`results`, {
+		res.render("results", {
 			keywords,
 			results,
 			toThousand,
