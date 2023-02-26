@@ -54,7 +54,6 @@ const controller = {
 
   edit: (req, res) => {
 		let productId = Number( req.params.id);
-
 		let productToEdit = products.find(product => product.id === productId);
 		res.render("edit", {
 			productToEdit,
@@ -74,7 +73,7 @@ const controller = {
       }
     });
     writeJson(products);
-    res.send('El producto fue modificado con exito!');
+    res.redirect('/products/products')
   },
 
   destroy : (req, res) => {

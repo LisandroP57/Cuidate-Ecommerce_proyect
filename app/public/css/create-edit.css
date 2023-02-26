@@ -19,7 +19,6 @@ main.addProduct {
     width: 100%;
     max-width: 500px;
 }
-      
 
 .createForm .row .col-12 h2{
     color: rgb(0, 0, 0);
@@ -41,6 +40,7 @@ main.addProduct {
 .col-12 .products-title {
     display: flex;
     justify-content: center;
+    margin: 1rem;
 }
 
 .addInput {
@@ -53,11 +53,12 @@ main.addProduct {
     align-items: start;
 }
 
-.Addform {
+.addForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 1.5rem;
 }
 
 .addInput {
