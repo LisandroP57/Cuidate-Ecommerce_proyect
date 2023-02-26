@@ -62,7 +62,6 @@ const controller = {
 
   update: (req, res) => {
     let productId = Number(req.params.id);
-
     products.forEach(product => {
       if (product.id === productId){
         product.name = req.body.name;
@@ -70,10 +69,11 @@ const controller = {
         product.discount = req.body.discount;
         product.category = req.body.category;
         product.description = req.body.description;
+        product.image = req.body.image;
       }
     });
     writeJson(products);
-    res.redirect('/products/products')
+    res.redirect('/')
   },
 
   destroy : (req, res) => {
