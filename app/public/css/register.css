@@ -56,16 +56,30 @@
 .register .input-container-names {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 70%;
     padding: 6px 8px;
-    font-size: 10px;
+    font-size: 16px;
 }
 
 .register .top-message {
     color: black;
     font-size: 15px;
-    padding-top: 20px;
+    padding-top: 10px;
 }
+
+.register .input-file {
+    margin: 6px 8px;
+}
+
+.register .input-file p {
+    margin: 0;
+}
+
+.register .terms-conditions {
+    margin-top: 15px;
+}
+
+
 /* .input-file #input-file-file {
     position: absolute;
     width: 100%;
@@ -80,7 +94,7 @@
         background-image: url(/images/backgrounds/back.jpg);
         background-size:cover;
         background-repeat: no-repeat;
-        background-position: -3.5rem;
+        background-position: -15rem;
     }
     .register .form-container {
         max-width: 600px;
@@ -97,6 +111,8 @@
         justify-content: flex-end;
     }
     .register .form-complete {
+        max-width: 600px;
+        width: 500px;
         margin: 3rem 6rem 3rem 3rem
     }
 }
