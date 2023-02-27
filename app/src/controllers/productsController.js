@@ -58,7 +58,6 @@ const controller = {
     });
 		res.render("edit", { productToEdit });
   },
-
   update: (req, res) => {
     let productId = Number(req.params.id);
     products.forEach(product => {
@@ -68,7 +67,8 @@ const controller = {
         product.discount = req.body.discount;
         product.category = req.body.category;
         product.description = req.body.description;
-        product.image = req.file ? req.file.filename : product.image;
+        /* product.image = req.file ? req.file.filename : product.image; */
+        product.image = req.body.image;
       }
     }),
     writeJson(products);

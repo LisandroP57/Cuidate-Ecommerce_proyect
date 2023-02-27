@@ -5,6 +5,7 @@ const router = express.Router();
         /* Controller Require */
 const { carrito, index, detail, create, store, edit, update, destroy }= require("../controllers/productsController");
 const {uploadImageProduct} = require("../middlewares/upload");
+const productValidator = require("../validations/productsValidator");
 
         /* Vistas productos */
 router
@@ -16,6 +17,7 @@ router
         
         /* Create product */
         .get('/create', create)
+        /* .post('/', upload.single('image'), productValidator, store) */
         .post('/', store)
 
         /* Edit product */
