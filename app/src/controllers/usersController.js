@@ -9,6 +9,10 @@ module.exports = {
     register: (req, res) => {
         return res.render('users/register')
         },
+    forgetPassword: (req, res) => {
+        return res.render('users/forgetPassword')
+        },
+
     processRegister: (req, res) => {
         let errors = validationResult(req);
         if(errors.isEmpty()) {
@@ -32,7 +36,6 @@ module.exports = {
                 errors: errors.mapped(),
                 old: req.body
             })
-    
         }
 
        let lastId = 0;/* que arranque en cero */
@@ -42,13 +45,5 @@ module.exports = {
             lastId = user.id;
         }
        });
-  
-
     }
 }
-/*     search: (req, res) => res.render('users/search');    
-
-        Edicion de usuarios futura
-    edit: function(req, res)
-        let idUser = req.params.idUser;
-        res.send(idUser); */

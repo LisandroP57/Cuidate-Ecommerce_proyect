@@ -3,26 +3,26 @@ const express = require("express");
 const router = express.Router();
 
         /* Controller Require */
-const productsController = require("../controllers/productsController");
+const { carrito, index, detail, create, store, edit, update, destroy }= require("../controllers/productsController");
 const {uploadImageProduct} = require("../middlewares/upload");
 
         /* Vistas productos */
 router
-        .get('/carrito', productsController.carrito)
-        .get('/products', productsController.index)
+        .get('/carrito', carrito)
+        .get('/products', index)
 
         /* Detail product */
-        .get('/detail/:id/', productsController.detail)
+        .get('/detail/:id/', detail)
         
         /* Create product */
-        .get('/create', productsController.create)
-        .post('/', productsController.store)
+        .get('/create', create)
+        .post('/', store)
 
         /* Edit product */
-        .get('/edit/:id', productsController.edit)
-        .put('/edit/:id', uploadImageProduct.single("image"), productsController.update)
+        .get('/edit/:id', edit)
+        .put('/edit/:id', uploadImageProduct.single("image"), update)
 
         /* Delete product*/
-        .delete('/delete/:id', productsController.destroy); 
+        .delete('/delete/:id', destroy); 
 
 module.exports = router;
