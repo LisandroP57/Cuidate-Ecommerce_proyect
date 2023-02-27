@@ -130,7 +130,7 @@ header.containerHeader div.primer-menu div.buscador {
     border-radius: 20px 2px 20px 2px;
     box-shadow: #4e4b4e 1px 1px 1px;
     background-color: #724A81;
-    margin: 0rem 0.5rem;
+    margin: 0rem 1rem 0rem 1rem;
 }
 
 header.containerHeader div.primer-menu div.buscador .input-header {
@@ -299,6 +299,15 @@ header.containerHeader div.primer-menu div.buscador i{
     header.containerHeader div.primer-menu div.logo span{
         display: none;
     }
+
+    header.containerHeader div.primer-menu div.buscador {
+        width: 50%;
+    }
+
+    header.containerHeader div.primer-menu div.buscador button{
+        position: absolute;
+        right: 9.8rem;
+    }
     /* FOOTER */
     footer.principal {
         display: flex;
@@ -402,15 +411,15 @@ header.containerHeader div.primer-menu div.buscador i{
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 100%;
+        width: 50%;
+        margin: 0rem 2rem 0rem 2rem;
     }
 
-    header.containerHeader div.primer-menu div.buscador .input-header {
+    header.containerHeader div.primer-menu div.buscador .search-form {
         background-color: #724A81;
        /*  border: solid 1px gray; */
         display: block;
         width: 100%;
-        padding: 7px 35px 7px 25px;
         border-radius: 20px 2px 20px 2px;
     }
 

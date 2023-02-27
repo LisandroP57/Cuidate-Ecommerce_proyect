@@ -39,31 +39,28 @@ const controller = {
     }, 
 
     store: (req, res) => {
-      // Do the magic
       const id = Math.max(...products.map(el => el.id))
       
       const newProduct = {
         id: id + 1,
         ...req.body,
-        image: 'default-image.png'
-      }
+        image: req.file ? req.file.filename : "default-image.png",
+      };
       products.push(newProduct);
       writeJson(products)
       res.redirect('products')
-    }, 
+    },  
 
   edit: (req, res) => {
-		let productId = Number( req.params.id);
-
-		let productToEdit = products.find(product => product.id === productId);
-		res.render("edit", {
-			productToEdit,
-    })
+		let productId = Number(req.params.id);
+		let productToEdit = products.find((product) => {
+      return product.id === productId;
+    });
+		res.render("edit", { productToEdit });
   },
 
   update: (req, res) => {
     let productId = Number(req.params.id);
-
     products.forEach(product => {
       if (product.id === productId){
         product.name = req.body.name;
@@ -71,10 +68,11 @@ const controller = {
         product.discount = req.body.discount;
         product.category = req.body.category;
         product.description = req.body.description;
+        product.image = req.file ? req.file.filename : product.image;
       }
-    });
+    }),
     writeJson(products);
-    res.send('El producto fue modificado con exito!');
+    res.redirect('/');
   },
 
   destroy : (req, res) => {
