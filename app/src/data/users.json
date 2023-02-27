@@ -1,4 +1,5 @@
-[{
+[
+  {
     "id": 1,
     "firstName": "Ricky",
     "lastName": "Vallejos",
@@ -6,7 +7,8 @@
     "password": "123456null",
     "type": "user",
     "avatar": "/images/avatars/pletzale.jpg"
-  }, {
+  },
+  {
     "id": 2,
     "firstName": "Lisan",
     "lastName": "2023",
@@ -14,7 +16,8 @@
     "password": "12345678",
     "type": "user",
     "avatar": "/images/avatars/default.jpg"
-  }, {
+  },
+  {
     "id": 3,
     "firstName": "id mauris",
     "lastName": "turpis",
@@ -22,7 +25,8 @@
     "password": "72ws4o",
     "type": "Admin",
     "avatar": ""
-  }, {
+  },
+  {
     "id": 4,
     "firstName": "integer",
     "lastName": "erat",
@@ -30,7 +34,8 @@
     "password": "0K0tzbQ",
     "type": "Customer",
     "avatar": "/images/avatars/kipa.jpg"
-  }, {
+  },
+  {
     "id": 5,
     "firstName": "pede",
     "lastName": "augue",
@@ -38,4 +43,49 @@
     "password": "Tv472XJVV",
     "type": "Admin",
     "avatar": "/images/avatars/polloCorazon.jpg"
-  }]
+  },
+  {
+    "id": 1,
+    "firstName": "camila",
+    "lastName": "gutierrez",
+    "email": "gutierrezcamilamilagros02@gmail.com",
+    "type": "USER",
+    "avatar": "/images/avatars/pletzale.jpg"
+  },
+  {
+    "id": 1,
+    "firstName": "camilacamila",
+    "lastName": "gutierrez",
+    "email": "gutierrezcamilamilagros02@gmail.com",
+    "pass": "",
+    "type": "USER",
+    "avatar": "/images/avatars/pletzale.jpg"
+  },
+  {
+    "id": 1,
+    "firstName": "camila",
+    "lastName": "gutierrez",
+    "email": "gutierrezcamilamilagros02@gmail.com",
+    "pass": "1234",
+    "type": "USER",
+    "avatar": "1677386116890_avatar_.jpg"
+  },
+  {
+    "id": 1,
+    "firstName": "camila mimi",
+    "lastName": "naguila",
+    "email": "gutierrezcamilamilagros@gmail.com",
+    "pass": "12345",
+    "type": "USER",
+    "avatar": "1677386201899_avatar_.jpg"
+  },
+  {
+    "id": 6,
+    "firstName": " mimi",
+    "lastName": "naguila",
+    "email": "gutierrezcamila@gmail.com",
+    "pass": "asafafasda",
+    "type": "USER",
+    "avatar": "1677386459987_avatar_.jpeg"
+  }
+]

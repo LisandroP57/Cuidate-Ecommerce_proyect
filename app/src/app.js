@@ -1,27 +1,29 @@
     /* Require's */
 const express = require("express");
 const path = require("path");
-const methodOverride = require('method-override');
 const PORT = 3000;
+const methodOverride = require('method-override');
 
     /* Express */
 const app = express();
 
-
-    /* Middlewares */
-    app.use(express.static(path.join(__dirname, '../public')));
-    app.use(express.urlencoded({ extended: false }));
-    app.use(methodOverride("_method"));
-    app.use(express.json());
-
-    /* Template engine */
+/* Template engine */
 app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, '/views'));
+
+    /* Middlewares */
+    app.use(express.json());
+    app.use(express.urlencoded({ extended: false }));
+    app.use(methodOverride("_method"));
+    app.use(express.static(path.join(__dirname, '../public')));
+
+
 
     /* Routes  */
 const indexRouter = require("./routes/index");
 const productsRouter = require("./routes/products");
 const usersRouter = require('./routes/users');
+
 
     /* Routes Middlewares */
 app.use("/", indexRouter);

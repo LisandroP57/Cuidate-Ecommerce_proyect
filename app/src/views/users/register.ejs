@@ -11,7 +11,7 @@
             <div class="form-container">
                 <a href="/home"><h2>Cuidate!</h2></a>
                 <hr>
-                <form action="/users/register" method="POST">
+                <form action="/users/register" method="POST" enctype="multipart/form-data">
                     <div class="form">
                         <div class="input-container-names">
                             <span class="top-message">Nombre</span>
@@ -31,6 +31,11 @@
                             <span class="top-message">Contraseña</span>
                             <input class="input-style" type="password" name="pass" placeholder="Ingrese su contraseña">
                             <span class="error-message">Debe ingresar su contraseña</span>
+                        </div>
+
+                        <div class="input-file">
+                            <p>Agregar foto</p>
+                            <input id="input-file-file" type="file" name="avatar">
                         </div>
                         <div class="terms-conditions">
                             <label for="recordar">  Acepto los <a href="">términos y condiciones</a> </label>
