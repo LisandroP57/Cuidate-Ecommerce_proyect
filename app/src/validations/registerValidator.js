@@ -1,13 +1,17 @@
-/* Hacemos las validaciones del lado del backend/servidor, es decir que con estas reglas de seguriridad no podran entrar y robar informacion, traficar datos, hackear nuestra informacion de la pagina. Las pueden romper, pero solo en caso de que el atacante tenga acceso a los archivos y a las validadciones */
+/* Hacemos las validaciones del lado del backend/servidor, 
+es decir que con estas reglas de seguriridad no podran entrar
+ y robar informacion, traficar datos, hackear nuestra informacion 
+ de la pagina. Las pueden romper, pero solo en caso de que el 
+ atacante tenga acceso a los archivos y a las validadciones */
 const { check, body} = require("express-validator");
-const {users} = require("../data");
+const { users } = require("../data");
 
 module.exports = [
-    check("name")
+    check("firstName")
     .notEmpty()
     .withMessage("Nombre es obligatorio"),
 
-    check("last_name")
+    check("lastName")
     .notEmpty()
     .withMessage("El apellido es obligatorio"),
 
@@ -23,6 +27,7 @@ module.exports = [
 
         return user === undefined;
     })
+
     .withMessage("Email ya registrado"),
 
     check('pass')
