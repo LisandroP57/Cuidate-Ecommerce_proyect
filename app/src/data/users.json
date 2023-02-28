@@ -87,5 +87,23 @@
     "pass": "asafafasda",
     "type": "USER",
     "avatar": "1677386459987_avatar_.jpeg"
+  },
+  {
+    "id": 7,
+    "firstName": "camila",
+    "lastName": "gutierrez",
+    "email": "gutierrez@gmail.com",
+    "pass": "erergergerg",
+    "type": "USER",
+    "avatar": "/images/avatars/default-image.png"
+  },
+  {
+    "id": 8,
+    "firstName": "camilamila",
+    "lastName": "gutierrezsdfsdv",
+    "email": "gutierrezqqqq@gmail.com",
+    "pass": "123123123",
+    "type": "USER",
+    "avatar": "/images/avatars/default-image.png"
   }
 ]
