@@ -39,6 +39,7 @@ const controller = {
     }, 
 
     store: (req, res) => {
+      
       const id = Math.max(...products.map(el => el.id))
       
       const newProduct = {
@@ -58,6 +59,7 @@ const controller = {
     });
 		res.render("edit", { productToEdit });
   },
+  
   update: (req, res) => {
     let productId = Number(req.params.id);
     products.forEach(product => {
