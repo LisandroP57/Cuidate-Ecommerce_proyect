@@ -502,6 +502,7 @@ header.containerHeader div.primer-menu div.buscador i{
     footer.principal div.footer-logo  img.logo{
         width: 100px;
         height: 100px;
+        cursor: pointer;
     }
 
     footer.principal div.footer-redes-data ul.redes li img {
