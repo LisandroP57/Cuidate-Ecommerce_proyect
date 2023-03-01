@@ -2,7 +2,7 @@
 <html lang="es">
 <!-- Head -->
 <%- include('partials/head', {title: 'Editar producto'}) %>
-<title>Cuidate! Editar producto</title>
+
 <body>
 	<!-- Header -->
 	<%- include('partials/header') %>
@@ -15,7 +15,7 @@
 				</div>
 			</div>
 			<div class="col-12">
-				<form action="/products/edit/<%= productToEdit.id%>?_method=PUT" method="POST">
+				<form action="/products/edit/<%= productToEdit.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
 					<div class="addForm">
 						<div class="addInput">
 							<label for="name" class="form-label">Nombre del producto:</label>

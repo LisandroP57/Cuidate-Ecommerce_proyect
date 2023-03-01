@@ -20,15 +20,4 @@ module.exports = [
     .isInt({ min: 0, max: 90 })
     .withMessage("Error en el descuento, lo recomendable es entre 0 y 90%"),
     
-    check('image')
-    .custom((value, {req}) => {
-        const file = req.file;
-        const acceptedExtensions = [".jpg", ".png", ".gif"];
-        if (!file) {
-            throw new Error("Tiene que subir una imagen");
-        } else if (!acceptedExtensions.includes(path.extname(file.originalname))) {
-            throw new Error("Las extensiones requeridas son: png y jpg");
-        }
-        return true;
-    }),
 ];
