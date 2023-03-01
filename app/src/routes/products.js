@@ -17,8 +17,7 @@ router
         
         /* Create product */
         .get('/create', create)
-        /* .post('/', upload.single('image'), productValidator, store) */
-        .post('/', store)
+        .post("/", uploadImageProduct.single("image"), store)
 
         /* Edit product */
         .get('/edit/:id', edit)

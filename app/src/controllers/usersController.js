@@ -4,13 +4,13 @@ const { validationResult } = require("express-validator");
 module.exports = {
 
     login: (req, res) => {
-        return res.render('users/login')
+        return res.render('users/login');
         },
     register: (req, res) => {
-        return res.render('users/register')
+        return res.render('users/register');
         },
     forgetPassword: (req, res) => {
-        return res.render('users/forgetPassword')
+        return res.render('users/forgetPassword');
         },
 
     processRegister: (req, res) => {

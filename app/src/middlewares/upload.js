@@ -10,10 +10,9 @@ const storeImageProduct = multer.diskStorage({
     }
 });
 
-
 const uploadImageProduct = multer({
     storage: storeImageProduct });
 
 module.exports = {
     uploadImageProduct,
-}
+};
