@@ -6,7 +6,7 @@
     "email": "wharback0@friendfeed.com",
     "password": "123456null",
     "type": "user",
-    "avatar": "/images/avatars/pletzale.jpg"
+    "avatar": "/images/avatar/pletzale.jpg"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "email": "digitalhouse@gmail.com",
     "password": "12345678",
     "type": "user",
-    "avatar": "/images/avatars/default.jpg"
+    "avatar": "/images/avatar/default.jpg"
   },
   {
     "id": 3,
@@ -33,7 +33,7 @@
     "email": "llimrick3@upenn.edu",
     "password": "0K0tzbQ",
     "type": "Customer",
-    "avatar": "/images/avatars/kipa.jpg"
+    "avatar": "/images/avatar/kipa.jpg"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "email": "telsmore4@exblog.jp",
     "password": "Tv472XJVV",
     "type": "Admin",
-    "avatar": "/images/avatars/polloCorazon.jpg"
+    "avatar": "/images/avatar/polloCorazon.jpg"
   },
   {
     "id": 1,
@@ -50,7 +50,7 @@
     "lastName": "gutierrez",
     "email": "gutierrezcamilamilagros02@gmail.com",
     "type": "USER",
-    "avatar": "/images/avatars/pletzale.jpg"
+    "avatar": "/images/avatar/pletzale.jpg"
   },
   {
     "id": 1,
@@ -59,7 +59,7 @@
     "email": "gutierrezcamilamilagros02@gmail.com",
     "pass": "",
     "type": "USER",
-    "avatar": "/images/avatars/pletzale.jpg"
+    "avatar": "/images/avatar/pletzale.jpg"
   },
   {
     "id": 1,
@@ -95,7 +95,7 @@
     "email": "gutierrez@gmail.com",
     "pass": "erergergerg",
     "type": "USER",
-    "avatar": "/images/avatars/default-image.png"
+    "avatar": "/images/avatar/default-image.png"
   },
   {
     "id": 8,
@@ -104,7 +104,7 @@
     "email": "gutierrezqqqq@gmail.com",
     "pass": "123123123",
     "type": "USER",
-    "avatar": "/images/avatars/default-image.png"
+    "avatar": "/images/avatar/default-image.png"
   },
   {
     "id": 9,

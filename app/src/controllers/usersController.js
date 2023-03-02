@@ -31,7 +31,7 @@ module.exports = {
         email: req.body.email,
         pass: req.body.pass,
         type: "USER",/* address, Lo dejo asi, porque los usuarios que entren a la aplicacion van a ser usuarios */
-        avatar: req.file ? req.file.filename : "/images/avatars/default-image.png"
+        avatar: req.file ? req.file.filename : "/images/avatar/default-image.png"
        };
 
        users.push(newUser);/* tengo creado el usuario le digo que lo pushe en el json */
