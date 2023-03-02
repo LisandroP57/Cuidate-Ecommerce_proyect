@@ -105,5 +105,14 @@
     "pass": "123123123",
     "type": "USER",
     "avatar": "/images/avatars/default-image.png"
+  },
+  {
+    "id": 9,
+    "firstName": "camilamimimi",
+    "lastName": "gutierrezmimimimi",
+    "email": "amilamilagros02@gmail.com",
+    "pass": ["12345789", "12345789"],
+    "type": "USER",
+    "avatar": "1677725667671_avatar_.jpeg"
   }
 ]
