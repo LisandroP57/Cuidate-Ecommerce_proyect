@@ -12,7 +12,7 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controller = {
   
   index: (req, res) => {
-		res.render("products",{
+		res.render("products/products",{
 			products,
 			toThousand
 		})
@@ -27,7 +27,7 @@ const controller = {
 
 		let product = products.find(product => product.id == productId);
 
-		res.render("detail", {
+		res.render("products/detail", {
 			product,
 			toThousand
 		})
@@ -57,7 +57,7 @@ const controller = {
 		let productToEdit = products.find((product) => {
       return product.id === productId;
     });
-		res.render("edit", { productToEdit });
+		res.render("products/edit", { productToEdit });
   },
   
   update: (req, res) => {

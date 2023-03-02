@@ -20,7 +20,7 @@ app.set('views', path.join(__dirname, '/views'));
 
 
     /* Routes  */
-const indexRouter = require("./routes/index");
+const indexRouter = require("./routes");
 const productsRouter = require("./routes/products");
 const usersRouter = require('./routes/users');
 
