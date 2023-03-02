@@ -12,7 +12,7 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controller = {
   
   index: (req, res) => {
-		res.render("products",{
+		res.render("products/products",{
 			products,
 			toThousand
 		})
@@ -27,7 +27,7 @@ const controller = {
 
 		let product = products.find(product => product.id == productId);
 
-		res.render("detail", {
+		res.render("products/detail", {
 			product,
 			toThousand
 		})
@@ -39,6 +39,7 @@ const controller = {
     }, 
 
     store: (req, res) => {
+      
       const id = Math.max(...products.map(el => el.id))
       
       const newProduct = {
@@ -56,8 +57,9 @@ const controller = {
 		let productToEdit = products.find((product) => {
       return product.id === productId;
     });
-		res.render("edit", { productToEdit });
+		res.render("products/edit", { productToEdit });
   },
+  
   update: (req, res) => {
     let productId = Number(req.params.id);
     products.forEach(product => {
@@ -67,8 +69,7 @@ const controller = {
         product.discount = req.body.discount;
         product.category = req.body.category;
         product.description = req.body.description;
-        /* product.image = req.file ? req.file.filename : product.image; */
-        product.image = req.body.image;
+        product.image = req.file ? req.file.filename : product.image;
       }
     }),
     writeJson(products);

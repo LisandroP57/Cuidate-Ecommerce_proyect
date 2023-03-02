@@ -4,20 +4,27 @@ const { validationResult } = require("express-validator");
 module.exports = {
 
     login: (req, res) => {
-        return res.render('users/login')
+        return res.render('users/login');
         },
     register: (req, res) => {
-        return res.render('users/register')
+        return res.render('users/register');
         },
     forgetPassword: (req, res) => {
-        return res.render('users/forgetPassword')
+        return res.render('users/forgetPassword');
         },
 
     processRegister: (req, res) => {
+        
         let errors = validationResult(req);
         if(errors.isEmpty()) {
-                  /* .. aca guardamos el nuevo obejtoq ue contendra las nuevas propiedades en el json*/
-    let newUser = {
+            let lastId = 0;
+                  users.forEach(user => {
+                    if(user.id > lastId) {
+                        lastId = user.id;
+                    }
+                   });
+        let newUser = {
+        
         id: lastId + 1,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
@@ -31,19 +38,14 @@ module.exports = {
        writeUsersJson(users);/* Los persisto o creo */
        res.send("Usuario creado")
         } else {
-            res.render("register",{
-
+            res.send( errors.mapped())
+           /*  res.render("users/register", {
                 errors: errors.mapped(),
                 old: req.body
-            })
+            }) */
+      
         }
 
-       let lastId = 0;/* que arranque en cero */
-       /* y que entre a la variable users y recorra cada usuario, si el id de ese usuario es mayor al anterior se crea...un nuevo usuario y va a obetener unnuevo id*/
-       users.forEach(user => {
-        if(user.id > lastId) {
-            lastId = user.id;
-        }
-       });
+      
     }
 }
