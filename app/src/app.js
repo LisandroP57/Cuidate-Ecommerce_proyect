@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const PORT = 3000;
 const methodOverride = require('method-override');
+const session = require('express-session');
 
     /* Express */
 const app = express();
@@ -16,6 +17,7 @@ app.set('views', path.join(__dirname, '/views'));
     app.use(express.urlencoded({ extended: false }));
     app.use(methodOverride("_method"));
     app.use(express.static(path.join(__dirname, '../public')));
+    app.use(session( {secret: "Cuidate Null", resave: false, saveUninitialized: true}));
 
 
 

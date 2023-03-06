@@ -6,6 +6,17 @@ module.exports = {
     login: (req, res) => {
         return res.render('users/login');
         },
+    processLogin: (req, res) => {
+        let errors = validationResult(req);
+
+        if (errors.isEmpty()){
+            res.send("Usuario logueado")
+        } else {
+            return res.render("users/login", {
+                errors: errors.mapped(),
+            })
+        }
+        },
     register: (req, res) => {
         return res.render('users/register');
         },
