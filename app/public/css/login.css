@@ -41,6 +41,14 @@ hr {
     width: 100%;
 }
 
+.input-container img {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 18.1rem;
+    right: 4rem;
+}
+
 .button-container-register {
     display: flex;
     flex-direction: column;

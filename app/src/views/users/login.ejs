@@ -8,27 +8,25 @@
     <main class="main-log-reg">
         <div class="form-complete">
             <div class="form-container">
-                <a href="/home"><h2>Cuidate!</h2></a>
+                <a href="/"><h2>Cuidate!</h2></a>
                 <hr>
                 <form action="/data/users" method="POST">
                     <div class="form">
                         <div class="input-container">
                             <span class="top-message">E-mail</span>
                             <input class="input-style" type="email" required name="email" placeholder="Ingrese su e-mail">
-                            <span class="error-message">E-mail incorrecto</span>
                         </div>
                         <div class="input-container">
                             <span class="top-message">Contraseña</span>
-                            <input class="input-style" required type="password" name="pass" placeholder="Ingrese su contraseña">
-                            <span class="error-message">Contraseña incorrecta</span>
+                            <input class="input-style" required type="password" name="pass" id="passwordInput" placeholder="Ingrese su contraseña">
+                            <img src="/images/icons/show-password.png" onclick="showPassword()" id="showPasswordImg" alt="">
                         </div>
                         <div class="checkbox-slider">
-                            <input type="checkbox" id="my-slider"> 
+                            <input type="checkbox" id="my-slider">
                             <label for="my-slider">Recordar sesión</label>
                         </div>
                         <div class="button-container">
                             <button type="submit" class="btn-submit">Acceder !</button>
-                            <span class="error-message">Credenciales inválidas</span>
                         </div>
                         <div class="lost-pass">
                             <a class="link" href="forgetPassword">¿Has olvidado tu contraseña?</a>
@@ -44,7 +42,19 @@
             <img src="/images/img-login.png" alt="">
         </div>
     </main>
-
+    <script>
+        function showPassword() {
+          var x = document.getElementById("passwordInput");
+          var y = document.getElementById("showPasswordImg");
+          if (x.type === "password") {
+            x.type = "text";
+            y.src = "/images/icons/hide-password.png";
+          } else {
+            x.type = "password";
+            y.src = "/images/icons/show-password.png";
+          }
+        }
+        </script>
     <%- include("../partials/footer") %>
 </body>
 </html>

@@ -63,6 +63,14 @@
     font-size: 16px;
 }
 
+.register .input-container img {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+
 .register .top-message {
     color: black;
     font-size: 15px;
