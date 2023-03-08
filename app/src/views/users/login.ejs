@@ -15,17 +15,24 @@
                         <div class="input-container">
                             <span class="top-message">E-mail</span>
                             <input class="input-style" type="email" required name="email" placeholder="Ingrese su e-mail">
-                            <span class="error-message">E-mail incorrecto</span>
+                            <% if (locals.errors && errors.email) { %>
+                                <small class="text-danger"><%= errors.email.msg %> </small>
+                            <% } %>
                         </div>
                         <div class="input-container">
                             <span class="top-message">Contraseña</span>
                             <input class="input-style" required type="password" name="pass" placeholder="Ingrese su contraseña">
-                            <span class="error-message">Contraseña incorrecta</span>
+                            <% if (locals.errors && errors.pass) { %>
+                                <small class="text-danger"><%= errors.pass.msg %> </small>
+                            <% } %>
                         </div>
                         <div class="checkbox-slider">
                             <input type="checkbox" id="my-slider"> 
                             <label for="my-slider">Recordar sesión</label>
                         </div>
+                        <% if (locals.errorMsg ) { %>
+                            <small class="text-danger"><%= errorMsg %> </small>
+                        <% } %>
                         <div class="button-container">
                             <button type="submit" class="btn-submit">Acceder !</button>
                             <span class="error-message">Credenciales inválidas</span>

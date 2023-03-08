@@ -16,11 +16,11 @@ module.exports = [
     })
     .withMessage("Email no esta registrado"),
 
-    check('pass1')
+    check('pass')
     .notEmpty()
     .withMessage('Debes escribir tu contraseña'),
 
-    body("pass1")
+    body("pass")
     .custom((value, { req }) => {
         let user = users.find (user=> user.email === req.body.email)
 
