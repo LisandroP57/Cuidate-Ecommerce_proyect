@@ -15,13 +15,13 @@
                     <div class="form">
                         <div class="input-container-names">
                             <span class="top-message">Nombre</span>
-                            <input class="input-style" type="name" name="firstName" placeholder="Ingrese su nombre">
+                            <input class="input-style" type="text" name="name" placeholder="Ingrese su nombre" value="<%= locals.old && old.name %>">
                             <% if (locals.errors && errors.name) { %>
                                 <small class="text-danger"><%= errors.name.msg %> </small>
                             <% } %>
 
                             <span class="top-message">Apellido</span>
-                            <input class="input-style" type="lastName" name="lastName" placeholder="Ingrese su apellido">
+                            <input class="input-style" type="lastName" name="last_name" placeholder="Ingrese su apellido" value="<%= locals.old && old.last_name %>">
                             <% if (locals.errors && errors.last_name) { %>
                                 <small class="text-danger"><%= errors.last_name.msg %> </small>
                             <% } %>

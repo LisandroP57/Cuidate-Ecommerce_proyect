@@ -17,11 +17,11 @@ module.exports = [
     })
     .withMessage("Email no registrado"),
 
-    check('pass1')
+    check('pass')
     .notEmpty()
     .withMessage('Debes escribir tu contraseña'),
 
-    body("pass1")
+    body("pass")
     .custom((value, { req }) => {
         let user = users.find (user=> user.email === req.body.email)
 
@@ -29,7 +29,3 @@ module.exports = [
     })
     .withMessage('Contraseña invalida'),
 ]
-
-
-
-

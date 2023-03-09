@@ -11,7 +11,9 @@ module.exports = {
         let errors = validationResult(req);
 
         if (errors.isEmpty()){
+
             res.send("Usuario logueado")
+            
         } else {
             return res.render("users/login", {
                 errors: errors.mapped(),
@@ -19,7 +21,7 @@ module.exports = {
         }
         },
     register: (req, res) => {
-        return res.render('users/register');
+        return res.render('users/register', {session: req.session})
         },
     forgetPassword: (req, res) => {
         return res.render('users/forgetPassword');
@@ -49,7 +51,7 @@ module.exports = {
 
        users.push(newUser);/* tengo creado el usuario le digo que lo pushe en el json */
        writeUsersJson(users);/* Los persisto o creo */
-       res.send("Usuario creado")
+       res.redirect("/users/login");
         } else {
             res.render("user/register", {
                 errors: errors.mapped(),

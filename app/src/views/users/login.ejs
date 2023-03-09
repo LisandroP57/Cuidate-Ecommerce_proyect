@@ -27,9 +27,10 @@
                             <% } %>
                         </div>
                         <div class="checkbox-slider">
-                            <input type="checkbox" id="my-slider"> 
+                            <input type="checkbox" name="remember" id="my-slider"> 
                             <label for="my-slider">Recordar sesión</label>
                         </div>
+                        
                         <% if (locals.errorMsg ) { %>
                             <small class="text-danger"><%= errorMsg %> </small>
                         <% } %>
