@@ -15,27 +15,37 @@
                     <div class="form">
                         <div class="input-container-names">
                             <span class="top-message">Nombre</span>
-                            <input class="input-style" type="firstName" name="firstName" placeholder="Ingrese su nombre">
-                            <span class="error-message">Debe ingresar su nombre</span>
+                            <input class="input-style" type="name" name="firstName" placeholder="Ingrese su nombre">
+                            <% if (locals.errors && errors.name) { %>
+                                <small class="text-danger"><%= errors.name.msg %> </small>
+                            <% } %>
 
                             <span class="top-message">Apellido</span>
                             <input class="input-style" type="lastName" name="lastName" placeholder="Ingrese su apellido">
-                            <span class="error-message">Debe ingresar su apellido</span>
+                            <% if (locals.errors && errors.last_name) { %>
+                                <small class="text-danger"><%= errors.last_name.msg %> </small>
+                            <% } %>
                         </div>
                         <div class="input-container">
                             <span class="top-message">E-mail</span>
                             <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
-                            <span class="error-message">Debe ingresar su email</span>
+                            <% if (locals.errors && errors.email) { %>
+                                <small class="text-danger"><%= errors.email.msg %> </small>
+                            <% } %>
                         </div>
                         <div class="input-container">
                             <span class="top-message">Contraseña</span>
-                            <input class="input-style" type="password" name="pass" placeholder="Ingrese su contraseña">
-                            <span class="error-message">Debe ingresar su contraseña</span>
+                            <input class="input-style" type="password" name="pass1" placeholder="Ingrese su contraseña">
+                            <% if (locals.errors && errors.pass1) { %>
+                                <small class="text-danger"><%= errors.pass1.msg %> </small>
+                            <% } %>
                         </div>
                         <div class="input-container">
                             <span class="top-message">Vuelve a escribir la contraseña</span>
-                            <input class="input-style" type="password" name="pass" placeholder="Re-ingrese su contraseña">
-                            <span class="error-message">Debe re-ingresar su contraseña</span>
+                            <input class="input-style" type="password" name="pass2" placeholder="Re-ingrese su contraseña">
+                            <% if (locals.errors && errors.pass2) { %>
+                                <small class="text-danger"><%= errors.pass2.msg %> </small>
+                            <% } %>
                         </div>
 
                         <div class="input-file">
@@ -45,7 +55,9 @@
                         <div class="terms-conditions">
                             <label for="recordar">  Acepto los <a href="">términos y condiciones</a> </label>
                             <input type="checkbox" name="terms" id="recordar"> 
-                            <span class="error-message">Debe aceptar los términos y condiciones</span>
+                            <% if (locals.errors && errors.terms) { %>
+                                <small class="text-danger"><%= errors.terms.msg %> </small>
+                            <% } %>
                         </div>
                         <div class="button-container">
                             <span class="error-message">Credenciales inválidas</span>

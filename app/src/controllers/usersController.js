@@ -1,5 +1,6 @@
 const { users, writeUsersJson } = require("../data");
 const { validationResult } = require("express-validator");
+const bcrypt = require("bcryptjs");
 
 module.exports = {
 
@@ -27,36 +28,32 @@ module.exports = {
     processRegister: (req, res) => {
         
         let errors = validationResult(req);
+
         if(errors.isEmpty()) {
             let lastId = 0;
+
                   users.forEach(user => {
                     if(user.id > lastId) {
                         lastId = user.id;
                     }
                    });
         let newUser = {
-        
         id: lastId + 1,
-        firstName: req.body.firstName,
+        name: req.body.name,
         lastName: req.body.lastName,
         email: req.body.email,
-        pass: req.body.pass,
+        pass: bcrypt.hashSync(req.body.pass1, 12),
+        avatar: req.file ? req.file.filename : "/images/avatar/default-image.png",
         type: "USER",/* address, Lo dejo asi, porque los usuarios que entren a la aplicacion van a ser usuarios */
-        avatar: req.file ? req.file.filename : "/images/avatar/default-image.png"
        };
 
        users.push(newUser);/* tengo creado el usuario le digo que lo pushe en el json */
        writeUsersJson(users);/* Los persisto o creo */
        res.send("Usuario creado")
         } else {
-            res.send( errors.mapped())
-           /*  res.render("users/register", {
+            res.render("user/register", {
                 errors: errors.mapped(),
-                old: req.body
-            }) */
-      
+        })
         }
-
-      
     }
 }

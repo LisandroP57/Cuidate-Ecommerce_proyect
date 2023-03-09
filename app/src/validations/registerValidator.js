@@ -6,6 +6,7 @@ es decir que con estas reglas de seguriridad no podran entrar
 const { check, body} = require("express-validator");
 const { users } = require("../data");
 
+
 module.exports = [
     check("firstName")
     .notEmpty()
@@ -30,12 +31,17 @@ module.exports = [
 
     .withMessage("Email ya registrado"),
 
-    check('pass')
+    check('pass1')
     .notEmpty()
     .withMessage('Debes escribir tu contraseña').bail()
     .isLength({
         min: 6
-    }),
+    })
+    .withMessage('La contraseña debe tener como mínimo 6 caracteres'),
+    
+    body('pass2')
+    .custom((value, {req}) => value !== req.body.pass1 ? false : true)
+    .withMessage('Las contraseñas no coinciden'),
 
     check('terms')
     .isString('on')
