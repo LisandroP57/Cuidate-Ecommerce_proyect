@@ -14,12 +14,13 @@ const controller = {
   index: (req, res) => {
 		res.render("products/products",{
 			products,
+      session: req.session,
 			toThousand
 		})
 	},
 
   carrito: (req, res) => {
-    res.render("products/carrito");
+    res.render("products/carrito", { session: req.session });
   },
 
   detail: (req, res) => {
@@ -29,13 +30,14 @@ const controller = {
 
 		res.render("products/detail", {
 			product,
+      session: req.session,
 			toThousand
 		})
 
 	},
 
   create: (req, res) => {
-      res.render("products/create");
+      res.render("products/create", { session: req.session });
     }, 
 
     store: (req, res) => {
@@ -57,7 +59,7 @@ const controller = {
 		let productToEdit = products.find((product) => {
       return product.id === productId;
     });
-		res.render("products/edit", { productToEdit });
+		res.render("products/edit", { productToEdit, session: req.session });
   },
   
   update: (req, res) => {
@@ -95,4 +97,4 @@ const controller = {
     } 
   };
 
-module.exports = controller;
+  module.exports = controller;

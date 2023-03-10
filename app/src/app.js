@@ -34,9 +34,8 @@ app.use("/products", productsRouter);
 
         /* Error 404 */
 app.use((req, res, next) => {
-    res.status(404).render('not-found')
+    res.status(404).render('not-found', { session: req.session })
 })
-
 
     /* Listen port */
 app.listen(PORT, () => console.log(`Server listen in port ${PORT} - Click next ->\nhttp://localhost:${PORT}`));

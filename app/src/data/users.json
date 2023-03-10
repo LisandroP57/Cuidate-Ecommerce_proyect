@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "firstName": "Lisan",
+        "name": "Lisan",
         "lastName": "prueba",
         "email": "lisan@gmail.com",
         "type": "USER",
@@ -9,14 +9,16 @@
     },
     {
         "id": 2,
-        "firstName": "uno",
+        "name": "uno",
         "lastName": "dos",
         "email": "tres@gmail.com",
+        "pass": "$2a$12$njaYnjzFf55L7f1RBG7G0efNuw4k8IaGV0Nbv/a4GfR1j0bQnbdCK",
         "type": "USER",
         "avatar": "1678327284828_avatar_.jpg"
     },
     {
         "id": 3,
+        "name": "una",
         "lastName": "prueba",
         "email": "user@gmail.com",
         "pass": "$2a$12$njaYnjzFf55L7f1RBG7G0efNuw4k8IaGV0Nbv/a4GfR1j0bQnbdCK",

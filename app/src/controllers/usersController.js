@@ -5,26 +5,37 @@ const bcrypt = require("bcryptjs");
 module.exports = {
 
     login: (req, res) => {
-        return res.render('users/login');
+        return res.render('users/login', { session: req.session });
         },
     processLogin: (req, res) => {
         let errors = validationResult(req);
 
         if (errors.isEmpty()){
+            /* Si no hay errores en el login el usuario ya fue validado entrando asi en la condicion de la busqueda por find */
+            let user = users.find(user => user.email === req.body.email);
 
-            res.send("Usuario logueado")
-            
+            req.session.user = {
+                name: user.name,
+                avatar: user.avatar,
+                type: user.type,
+            }
+
+            res.locals.user = req.session.user
+
+            res.redirect("/")
         } else {
             return res.render("users/login", {
                 errors: errors.mapped(),
+                session: req.session
             })
         }
         },
+
     register: (req, res) => {
-        return res.render('users/register', {session: req.session})
+        return res.render('users/register', { session: req.session })
         },
     forgetPassword: (req, res) => {
-        return res.render('users/forgetPassword');
+        return res.render('users/forgetPassword', { session: req.session });
         },
 
     processRegister: (req, res) => {
@@ -55,6 +66,7 @@ module.exports = {
         } else {
             res.render("user/register", {
                 errors: errors.mapped(),
+                session: req.session
         })
         }
     }
