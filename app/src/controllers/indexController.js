@@ -13,6 +13,7 @@ module.exports = {
 		res.render('home',{
 			productsVisited,
 			productsInSale,
+			session: req.session,
 			toThousand
         })
     },
@@ -23,6 +24,7 @@ module.exports = {
 		res.render("results", {
 			keywords,
 			results,
+			session: req.session,
 			toThousand,
 		})
 	},

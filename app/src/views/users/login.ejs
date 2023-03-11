@@ -10,51 +10,63 @@
             <div class="form-container">
                 <a href="/"><h2>Cuidate!</h2></a>
                 <hr>
-                <form action="/data/users" method="POST">
+                <form action="/users/login" method="POST">
                     <div class="form">
                         <div class="input-container">
                             <span class="top-message">E-mail</span>
                             <input class="input-style" type="email" required name="email" placeholder="Ingrese su e-mail">
+                            <% if (locals.errors && errors.email) { %>
+                                <small class="text-danger"><%= errors.email.msg %> </small>
+                            <% } %>
                         </div>
                         <div class="input-container">
                             <span class="top-message">Contraseña</span>
-                            <input class="input-style" required type="password" name="pass" id="passwordInput" placeholder="Ingrese su contraseña">
-                            <img src="/images/icons/show-password.png" onclick="showPassword()" id="showPasswordImg" alt="">
+                            <div class="input-container">
+                                <span class="top-message">Contraseña</span>
+                                <input class="input-style" required type="password" name="pass" id="passwordInput" placeholder="Ingrese su contraseña">
+                                <img src="/images/icons/show-password.png" onclick="showPassword()" id="showPasswordImg" alt="">
+                                <% if (locals.errors && errors.pass) { %>
+                                    <small class="text-danger"><%= errors.pass.msg %> </small>
+                                <% } %>
+                            </div>
+                            <div class="checkbox-slider">
+                                <input type="checkbox" name="remember" id="my-slider"> 
+                                <label for="my-slider">Recordar sesión</label>
+                            </div>
+                            
+                            <% if (locals.errorMsg ) { %>
+                                <small class="text-danger"><%= errorMsg %> </small>
+                            <% } %>
+                            <div class="button-container">
+                                <button type="submit" class="btn-submit">Acceder !</button>
+                            </div>
+                            <div class="lost-pass">
+                                <a class="link" href="forgetPassword">¿Has olvidado tu contraseña?</a>
+                            </div>
                         </div>
-                        <div class="checkbox-slider">
-                            <input type="checkbox" id="my-slider">
-                            <label for="my-slider">Recordar sesión</label>
-                        </div>
-                        <div class="button-container">
-                            <button type="submit" class="btn-submit">Acceder !</button>
-                        </div>
-                        <div class="lost-pass">
-                            <a class="link" href="forgetPassword">¿Has olvidado tu contraseña?</a>
-                        </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
+                <div class="form-two">
+                    <span><p>¿No tienes una cuenta?<a class="link" href="register"> Regístrate</a></p></span>
+                </div>
             </div>
-            <div class="form-two">
-                <span><p>¿No tienes una cuenta?<a class="link" href="register"> Regístrate</a></p></span>
+            <div class="img-login">
+                <img src="/images/img-login.png" alt="">
             </div>
-        </div>
-        <div class="img-login">
-            <img src="/images/img-login.png" alt="">
-        </div>
-    </main>
-    <script>
-        function showPassword() {
-          var x = document.getElementById("passwordInput");
-          var y = document.getElementById("showPasswordImg");
-          if (x.type === "password") {
-            x.type = "text";
-            y.src = "/images/icons/hide-password.png";
-          } else {
-            x.type = "password";
-            y.src = "/images/icons/show-password.png";
-          }
-        }
-        </script>
-    <%- include("../partials/footer") %>
-</body>
-</html>
+        </main>
+        <script>
+            function showPassword() {
+              var x = document.getElementById("passwordInput");
+              var y = document.getElementById("showPasswordImg");
+              if (x.type === "password") {
+                x.type = "text";
+                y.src = "/images/icons/hide-password.png";
+              } else {
+                x.type = "password";
+                y.src = "/images/icons/show-password.png";
+              }
+            }
+            </script>
+        <%- include("../partials/footer") %>
+    </body>
+    </html>
