@@ -19,16 +19,16 @@
 						<div class="addInput">
 							<label for="name" class="form-label">Nombre:</label>
 							<input type="text" id="name" name="name" placeholder="Ej: Gas pimienta" class="form-input">
-							<span class="error-message">
-								<%= locals.errors && locals.errors.name ? locals.errors.name.msg : null %>
-							</span>
+							<% if(locals.errors && errors.name) {%>
+								<small class="text-danger"><%= errors.name.msg %></small>
+							<% } %>
 						</div>
 						<div class="addInput">
 							<label for="price" class="form-label">Precio:</label>
 							<input type="text" id="price" name="price" placeholder="Ej: $123" class="form-input">
-							<span class="error-message">
-								<%= locals.errors && locals.errors.price ? locals.errors.price.msg : null %>
-						  	</span>
+							<% if(locals.errors && errors.price) {%>
+								<small class="text-danger"><%= errors.price.msg %></small>
+							<% } %>
 						</div>
 						<div class="addInput">
 							<label for="discount" class="form-label">Descuento:</label>
