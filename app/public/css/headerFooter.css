@@ -80,13 +80,9 @@ header.containerHeader div.primer-menu div.iniciar .user .img-avatar {
     border-radius: 50%;
 }
 
-.user {
-    position: relative;
-    margin-top: 0.5rem;
-}
-
 .user .online {
     color: rgb(31, 148, 31);
+    margin-top: 0.5rem;
 }
 
 .menu-user {
@@ -495,6 +491,7 @@ header.containerHeader div.primer-menu div.buscador i{
     header.containerHeader div.primer-menu div.iniciar .user img {
         margin-bottom: 2px;
     }
+
     header.containerHeader div.primer-menu div.carrito {
         display: flex;
         flex-direction: column;

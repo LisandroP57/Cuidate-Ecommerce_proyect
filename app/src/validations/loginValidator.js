@@ -27,5 +27,5 @@ module.exports = [
 
         return bcrypt.compareSync(value, user.pass);
     })
-    .withMessage('Contraseña invalida'),
+    .withMessage('Contraseña inválida'),
 ]

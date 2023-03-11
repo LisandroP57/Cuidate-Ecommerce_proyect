@@ -1,13 +1,5 @@
 [
     {
-        "id": 1,
-        "name": "Lisan",
-        "lastName": "prueba",
-        "email": "lisan@gmail.com",
-        "type": "USER",
-        "avatar": "1678326651934_avatar_.jpg"
-    },
-    {
         "id": 2,
         "name": "uno",
         "lastName": "dos",
