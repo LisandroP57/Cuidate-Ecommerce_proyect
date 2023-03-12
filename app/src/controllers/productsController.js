@@ -38,7 +38,7 @@ const controller = {
 	},
 
   create: (req, res) => {
-      res.render("products/create", { session: req.session });
+      res.render("products/adminProductCreate", { session: req.session });
     }, 
 
     store: (req, res) => {
@@ -60,7 +60,7 @@ const controller = {
 		let productToEdit = products.find((product) => {
       return product.id === productId;
     });
-		res.render("products/edit", { productToEdit, session: req.session });
+		res.render("products/adminProductEdit", { productToEdit, session: req.session });
   },
   
   update: (req, res) => {

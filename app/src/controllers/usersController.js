@@ -79,5 +79,13 @@ module.exports = {
             /* user: usserInSession, */
             session: req.session
         })
+    },
+    editProfile: (req, res) => {
+        /* let userInSessionId = req.session.user.id;
+        let userInSession = users.find(user => user.id === userInSessionId); */
+        res.render("users/userProfileEdit", {
+            /* user: userInSession, */
+            session: req.session
+        })
     }
 }

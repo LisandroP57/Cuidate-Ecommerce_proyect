@@ -1,0 +1,50 @@
+.container-users-edit {
+    display: flex;
+    justify-content: center;
+    background-size:60%;
+    background-position: -10rem 3rem; 
+    background-repeat:repeat;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.edit-user-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0rem 1rem;
+    border-radius: 1rem;
+    background-color: white;
+    border: 1px solid rgb(80, 67, 67);
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 50%);
+    margin: 3rem;
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-ad-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    padding: 0.5rem;
+}
+.form-ad-input input {
+    width: 90%;
+}
+
+.form-ad-input select {
+    width: 90%;
+}
+
+.btn-edit-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+
+.btn-guardar {
+    padding: 0.5rem;
+    border-radius: 1rem;
+    background-color: blueviolet;
+}
