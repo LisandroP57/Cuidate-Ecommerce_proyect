@@ -8,7 +8,8 @@ const {
         register,
         processRegister,
         forgetPassword,
-        processLogin
+        processLogin,
+        profile
  } = require('../controllers/usersController');
 
 const uploadAvatar = require("../middlewares/uploadAvatar");
@@ -22,6 +23,8 @@ router
         
         .get('/login', login)
         .post('/login', loginValidator, processLogin)
+
+        .get("/profile", profile)
 
         .get('/forgetPassword', forgetPassword)
         .get('/processRegister', processRegister)

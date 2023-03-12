@@ -25,13 +25,13 @@ hr {
     display: none;
 }
 
-.input-container {
+.input-container, .password-container {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
-    padding: 6px 8px;
     box-sizing: border-box;
+    padding: 0.2rem 0 0.7rem 0;
 }
 
 .button-container {
@@ -41,12 +41,12 @@ hr {
     width: 100%;
 }
 
-.input-container img {
+.password-container img {
     width: 30px;
     height: 30px;
     position: absolute;
-    bottom: 18.1rem;
-    right: 4rem;
+    right: 3.5rem;
+    top: 15.8rem;
 }
 
 .button-container-register {
@@ -141,6 +141,10 @@ select.input-select {
 .form-two span {
     color: white;
     text-shadow:5px 5px 10px black;
+}
+
+.form-two p {
+    margin: 0;
 }
 
 input.input-style::placeholder {

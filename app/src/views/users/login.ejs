@@ -21,8 +21,10 @@
                         </div>
                         <div class="input-container">
                             <span class="top-message">Contraseña</span>
-                            <input class="input-style" required type="password" name="pass" id="passwordInput" placeholder="Ingrese su contraseña">
-                            <img src="/images/icons/show-password.png" onclick="showPassword()" id="showPasswordImg" alt="">
+                            <div class="password-container">
+                                <input class="input-style" type="password" name="pass" id="passwordInput" placeholder="Ingrese su contraseña">
+                                <img src="/images/icons/show-password.png" onclick="showPassword()" id="showPasswordImg" alt="">
+                            </div>
                             <% if (locals.errors && errors.pass) { %>
                                 <small class="text-danger"><%= errors.pass.msg %> </small>
                             <% } %>
@@ -31,6 +33,7 @@
                             <input type="checkbox" name="remember" id="my-slider"> 
                             <label for="my-slider">Recordar sesión</label>
                         </div>
+                        <!-- Agregar la funcion de recordar al usuario -->
                         
                         <% if (locals.errorMsg ) { %>
                             <small class="text-danger"><%= errorMsg %> </small>

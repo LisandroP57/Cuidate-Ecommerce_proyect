@@ -69,5 +69,15 @@ module.exports = {
                 session: req.session
         })
         }
+    },
+
+    profile: (req, res) => {
+        /* let usserInSessionId = req.session.user.id;
+        let usserInSession = users.find(user => user.id === usserInSessionId); */
+
+        res.render("users/userProfile", {
+            /* user: usserInSession, */
+            session: req.session
+        })
     }
 }
