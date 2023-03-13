@@ -76,18 +76,22 @@
         border: 1px solid rgba(137, 43, 226, 0.445);
         width: 100%;
     }
-
+    
     .profile-card .info-container .btn-edit {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #ffffff;
-        text-transform: uppercase;
-        background-color: rgb(160, 76, 160);
-        padding: 10px 12px;
-        border: 1px solid gray;
-        border-radius: 4px;
-        cursor: pointer;
+        color: #ecf0f1;
+        font-size: 17px;
+        background-color: #8C52FF;
+        border: 1px solid #4e12f3;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0px 6px 0px #9977A6;
+        transition: all .1s;
+    }
+    
+    .profile-card .info-container .btn-edit:active {
+        box-shadow: 0px 2px 0px #724A81;
+        position: relative;
+        top: 2px;
     }
 
     .profile-card .info-container a img {
