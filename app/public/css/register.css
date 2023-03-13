@@ -34,6 +34,10 @@
     margin: 3rem;
 }
 
+.register .form-container {
+    padding-top: 1rem;
+}
+
 .register .form-two a {
     color: white;
     text-decoration:none;
@@ -112,6 +116,6 @@
     .register .form-complete {
         max-width: 600px;
         width: 470px;
-        margin: 3rem 6rem 3rem 3rem
+        margin: 1rem 6rem 1rem 3rem;
     }
 }

@@ -2,6 +2,16 @@
 
   /* GENERALES */
 
+header {
+    position: relative;
+    z-index: 1;
+}
+
+footer {
+    position: relative;
+    z-index: 1;
+}
+  
 footer.principal {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #724A81;
