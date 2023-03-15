@@ -1,5 +1,6 @@
 const { users, writeUsersJson } = require("../data");
 const { validationResult } = require("express-validator");
+const bcrypt = require("bcryptjs");
 
 
 module.exports = {
@@ -56,7 +57,7 @@ module.exports = {
         name: req.body.name,
         last_name: req.body.last_name,
         email: req.body.email,
-        pass: bcrypt.hashSync(req.body.pass1, 12),
+        pass: bcrypt.hashSync(req.body.pass1, 10),
         avatar: req.file ? req.file.filename : "/images/avatar/default-image.png",
         type: "USER",/* address, Lo dejo asi, porque los usuarios que entren a la aplicacion van a ser usuarios */
        };
@@ -65,7 +66,8 @@ module.exports = {
        writeUsersJson(users);/* Los persisto o creo */
        res.redirect("/users/login");
         } else {
-            res.render("user/register", {
+            /* res.send(errors.mapped()) */
+            res.render("/users/register", {
                 errors: errors.mapped(),
                 session: req.session
         })
