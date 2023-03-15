@@ -2,12 +2,12 @@
 <html lang="en">
 
 <%- include('partials/head', {title: 'Resultados de la busqueda'}) %>
-<body>
+<body class="BodyResults">
 	<%- include('partials/header') %>
-
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Resultados de la búsqueda: <%= keywords %></h2>
+	<main>
+		<div class="resultsPadre">
+			<div class="results">
+				<h2>Resultados de la búsqueda: <%= keywords %></h2>
 			</div>
 				<% if (results.length != 0) { %>
 					<% results.forEach((product) => { %>		 
@@ -28,11 +28,12 @@
 						</div>
 					<% }) %>
 					<% }else{ %>	
-						<div class="col-12">
-							<h2 class="products-title" style="color:tomato;">No hay productos que coincidan con esa búsqueda</h2>
+						<div class="noResults">
+							<h2>No hay productos que coincidan con esa búsqueda</h2>
 						</div>
 					<% } %>
-	</div>
+		</div>
+	</main>
 
 	<%- include('partials/footer') %>
 </body>	

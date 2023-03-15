@@ -11,7 +11,7 @@ module.exports = [
     .notEmpty()
     .withMessage("Nombre es obligatorio"),
 
-    check("lastName")
+    check("last_name")
     .notEmpty()
     .withMessage("El apellido es obligatorio"),
 

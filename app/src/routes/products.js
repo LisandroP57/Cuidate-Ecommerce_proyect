@@ -15,7 +15,7 @@ const {
  } = require("../controllers/productsController");
 
 const {uploadImageProduct} = require("../middlewares/upload");
-const productsValidator = require("../validations/productsValidator");
+const productValidator = require("../validations/productValidator");
 
         /* Vistas productos */
 router
@@ -27,11 +27,11 @@ router
         
         /* Create product */
         .get('/create', create)
-        .post("/", uploadImageProduct.single("image"), store)
+        .post("/", uploadImageProduct.single("image"), productValidator, store)
 
         /* Edit product */
         .get('/edit/:id', edit)
-        .put('/edit/:id', uploadImageProduct.single("image"), update)
+        .put('/edit/:id', uploadImageProduct.single("image"), productValidator, update)
 
         /* Delete product*/
         .delete('/delete/:id', destroy); 

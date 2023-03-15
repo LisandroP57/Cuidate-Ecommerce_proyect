@@ -3,18 +3,34 @@ const express = require('express');
 const router = express.Router();
 
         /* Controller Require */
-        /* con este destructuring cada vez que tenga un metodo nuevo lo voy agregando en esta constante, para no repetir *controller* tantas veces */
-const { login, register, processRegister, forgetPassword } = require('../controllers/usersController');
-/* middleware que me permitira subir el archivoo=> voy a userController */
+const {
+        login,
+        register,
+        processRegister,
+        forgetPassword,
+        processLogin,
+        profile,
+        editProfile,
+        updateProfile
+ } = require('../controllers/usersController');
+
 const uploadAvatar = require("../middlewares/uploadAvatar");
 const registerValidator = require("../validations/registerValidator");
+const loginValidator = require("../validations/loginValidator");
+const updateUserValidator = require("../validations/updateUserValidator");
 
 router
+/* POST: creando usuario: createUser*/
         .get('/register', register)
-                /* POST: creando usuario: createUser*/
         .post('/register', uploadAvatar.single("avatar"), registerValidator, processRegister)
         
         .get('/login', login)
+        .post('/login', loginValidator, processLogin)
+
+        .get('/profile', profile) /* Agregar en ambas el userInSessionCheck** */
+        .get('/profile/edit', editProfile) /* !important */
+        .put("/profile/edit", uploadAvatar.single("avatar"), updateUserValidator, updateProfile)
+
         .get('/forgetPassword', forgetPassword)
         .get('/processRegister', processRegister)
 
