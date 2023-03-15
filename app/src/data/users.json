@@ -20,5 +20,12 @@
     "postal_code": "",
     "province": "",
     "city": ""
+  },
+  {
+    "id": 4,
+    "email": "gutierrezcamilamilagros02@gmail.com",
+    "pass": "$2a$12$V3/JL3BORUGjG7n2nd4KueP3xD5ytY9yTEj8II5NznNGg4wzpBz1O",
+    "avatar": "/images/avatar/default-image.png",
+    "type": "USER"
   }
 ]

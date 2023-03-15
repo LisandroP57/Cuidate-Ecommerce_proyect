@@ -65,7 +65,8 @@ module.exports = {
        writeUsersJson(users);/* Los persisto o creo */
        res.redirect("/users/login");
         } else {
-            res.render("user/register", {
+            //return res.send(errors)
+            res.render("users/register", {
                 errors: errors.mapped(),
                 session: req.session
         })
