@@ -1,6 +1,6 @@
 const { users, writeUsersJson } = require("../data");
 const { validationResult } = require("express-validator");
-const bcrypt = require("bcryptjs");
+
 
 module.exports = {
 
