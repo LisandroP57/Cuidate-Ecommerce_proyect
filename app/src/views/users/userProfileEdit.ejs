@@ -9,28 +9,28 @@
             <h3 class="userTitle">Edita tu perfil</h3>
             <form action="/users/profile/edit?_method=PUT" method="POST" enctype="multipart/form-data" class="form-ad" >
                 <div class="form-ad-input">
-                    <input type="text" name="name" placeholder="Nombre" value="">
+                    <input type="text" name="name" placeholder="Nombre" value="<%= locals.old ? old.name : user.name %>">
                     <% if (locals.errors && errors.name) { %>
                         <small class="text-danger"><%= errors.name.msg %> </small>
                     <% } %>
                 </div>
                 <div class="form-ad-input">
-                    <input type="text" name="last_name" placeholder="Apellido" value="">
+                    <input type="text" name="last_name" placeholder="Apellido" value="<%= locals.old ? old.last_name : user.last_name %>">
                     <% if (locals.errors && errors.last_name) { %>
                         <small class="text-danger"><%= errors.last_name.msg %> </small>
                     <% } %>
                 </div>
                 <div class="form-ad-input">
-                    <input type="email" name="email" placeholder="Ingresá tu email" readonly value="">
+                    <input type="email" name="email" placeholder="Ingresá tu email" readonly value="<%= locals.old ? old.email : user.email %>">
                     <% if (locals.errors && errors.email) { %>
                         <small class="text-danger"><%= errors.email.msg %> </small>
                     <% } %>
                 </div>
                 <div class="form-ad-input">
-                    <input type="text" name="address" placeholder="Domicilio" value="Domicilio">
+                    <input type="text" name="address" placeholder="Domicilio" value="<%= user.address ? user.address : "" %>">
                 </div>
                 <div class="form-ad-input">
-                    <input type="text" name="postal_code" placeholder="Código postal" value="Codigo postal">
+                    <input type="text" name="postal_code" placeholder="Código postal" value="<%= user.postal_code ? user.postal_code : "" %>">
                 </div>
                 <div class="form-ad-input">
                     <select name="province" id="">

@@ -29,7 +29,7 @@ router
 
         .get('/profile', profile) /* Agregar en ambas el userInSessionCheck** */
         .get('/profile/edit', editProfile) /* !important */
-        /* .put("/profile/edit", uploadAvatar.single("avatar"), updateUserValidator, updateProfile); */
+        .put("/profile/edit", uploadAvatar.single("avatar"), updateUserValidator, updateProfile)
 
         .get('/forgetPassword', forgetPassword)
         .get('/processRegister', processRegister)

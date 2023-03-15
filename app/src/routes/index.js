@@ -3,10 +3,13 @@ const express = require("express");
 const router = express.Router();
 
         /* Controller Require */
-const indexController = require("../controllers/indexController");
+const {
+        index,
+        search
+} = require("../controllers/indexController");
 
 router
-        .get('/', indexController.index)
-        .get('/search', indexController.search);
+        .get('/', index)
+        .get('/search', search);
         
 module.exports = router;
