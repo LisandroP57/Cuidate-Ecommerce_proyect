@@ -2,7 +2,7 @@
     {
         "id": 2,
         "name": "uno",
-        "lastName": "dos",
+        "last_name": "dos",
         "email": "tres@gmail.com",
         "pass": "$2a$12$njaYnjzFf55L7f1RBG7G0efNuw4k8IaGV0Nbv/a4GfR1j0bQnbdCK",
         "type": "USER",
@@ -11,7 +11,7 @@
     {
         "id": 3,
         "name": "una",
-        "lastName": "prueba",
+        "last_name": "prueba",
         "email": "user@gmail.com",
         "pass": "$2a$12$njaYnjzFf55L7f1RBG7G0efNuw4k8IaGV0Nbv/a4GfR1j0bQnbdCK",
         "avatar": "/images/avatar/default-image.png",

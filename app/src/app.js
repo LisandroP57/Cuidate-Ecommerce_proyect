@@ -17,8 +17,11 @@ app.set('views', path.join(__dirname, '/views'));
     app.use(express.urlencoded({ extended: false }));
     app.use(methodOverride("_method"));
     app.use(express.static(path.join(__dirname, '../public')));
-    app.use(session( {secret: "Cuidate Null", resave: false, saveUninitialized: true}));
-
+    app.use(session({
+        secret: "Cuidate",
+        resave: false,
+        saveUninitialized: true
+    }));
 
 
     /* Routes  */

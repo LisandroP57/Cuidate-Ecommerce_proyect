@@ -22,16 +22,16 @@
                             <div class="user-profile-box">
                                 <h3 class="user-profile-title">Datos de la cuenta</h3>
                                 <hr>
-                                <p class="user-profile-item">Nombre:  <!-- ejs user.name --> </p>
-                                <p class="user-profile-item">Email: <!-- ejs user.email --></p>
+                                <p class="user-profile-item">Nombre: <%= user.name %></p>
+                                <p class="user-profile-item">Email: <%= user.email %></p>
                             </div>
                             <div class="user-profile-box">
                                 <h3 class="user-profile-title">Datos fiscales</h3>
                                 <hr>
-                                <p class="userProfile_item">Dirección:</p>
-                                <p class="userProfile_item">Código postal:</p>
-                                <p class="userProfile_item">Provincia:</p>
-                                <p class="userProfile_item">Localidad:</p>
+                                <p class="userProfile_item">Dirección: <%= user.address ? user.address : "______" %></p>
+                                <p class="userProfile_item">Código postal: <%= user.postal_code ? user.postal_code : "______" %></p>
+                                <p class="userProfile_item">Provincia: <%= user.province ? user.province : "______" %></p>
+                                <p class="userProfile_item">Localidad: <%= user.city ? user.city : "______" %></p>
                                 <!-- Una vez que requiramos la informacion de domicilio, usar los p con ejs -->
                             </div>
                             <a href="/users/profile/edit" class="btn-edit">

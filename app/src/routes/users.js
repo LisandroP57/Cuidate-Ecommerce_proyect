@@ -10,12 +10,14 @@ const {
         forgetPassword,
         processLogin,
         profile,
-        editProfile
+        editProfile,
+        updateProfile
  } = require('../controllers/usersController');
 
 const uploadAvatar = require("../middlewares/uploadAvatar");
 const registerValidator = require("../validations/registerValidator");
 const loginValidator = require("../validations/loginValidator");
+const updateUserValidator = require("../validations/updateUserValidator");
 
 router
 /* POST: creando usuario: createUser*/
@@ -27,6 +29,7 @@ router
 
         .get('/profile', profile) /* Agregar en ambas el userInSessionCheck** */
         .get('/profile/edit', editProfile) /* !important */
+        /* .put("/profile/edit", uploadAvatar.single("avatar"), updateUserValidator, updateProfile); */
 
         .get('/forgetPassword', forgetPassword)
         .get('/processRegister', processRegister)
