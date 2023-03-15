@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
+const { validationResult } = require("express-validator")
 const productsFilePath = path.join(__dirname, '../data/productsData.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const writeJson = (products) => {
@@ -12,14 +13,15 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const controller = {
   
   index: (req, res) => {
-		res.render("products",{
+		res.render("products/products",{
 			products,
+      session: req.session,
 			toThousand
 		})
 	},
 
   carrito: (req, res) => {
-    res.render("products/carrito");
+    res.render("products/carrito", { session: req.session });
   },
 
   detail: (req, res) => {
@@ -27,15 +29,16 @@ const controller = {
 
 		let product = products.find(product => product.id == productId);
 
-		res.render("detail", {
+		res.render("products/detail", {
 			product,
+      session: req.session,
 			toThousand
 		})
 
 	},
 
   create: (req, res) => {
-      res.render("products/create");
+      res.render("products/adminProductCreate", { session: req.session });
     }, 
 
     store: (req, res) => {
@@ -57,7 +60,7 @@ const controller = {
 		let productToEdit = products.find((product) => {
       return product.id === productId;
     });
-		res.render("edit", { productToEdit });
+		res.render("products/adminProductEdit", { productToEdit, session: req.session });
   },
   
   update: (req, res) => {
@@ -95,4 +98,4 @@ const controller = {
     } 
   };
 
-module.exports = controller;
+  module.exports = controller;

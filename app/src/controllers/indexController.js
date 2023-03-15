@@ -10,9 +10,10 @@ module.exports = {
 	index: (req, res) => {
 		let productsInSale = products.filter(product => product.category === "in-sale");
 		let productsVisited = products.filter(product => product.category === "visited");
-		res.render('index',{
+		res.render('home',{
 			productsVisited,
 			productsInSale,
+			session: req.session,
 			toThousand
         })
     },
@@ -23,6 +24,7 @@ module.exports = {
 		res.render("results", {
 			keywords,
 			results,
+			session: req.session,
 			toThousand,
 		})
 	},

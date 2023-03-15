@@ -1,0 +1,34 @@
+.BodyResults main {
+    background-color: rgb(219, 218, 218);
+    padding: 9rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+.BodyResults .resultsPadre {
+    max-width: 40%;
+}
+
+.BodyResults .results h2{
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    padding: 0rem 1rem 5rem 1rem;
+}
+
+.BodyResults .noResults h2{
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    margin: 5rem 1rem;
+    color: rgb(245, 75, 45) ;
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 1024px) {
+}

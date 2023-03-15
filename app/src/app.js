@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const PORT = 3000;
 const methodOverride = require('method-override');
+const session = require('express-session');
 
     /* Express */
 const app = express();
@@ -16,11 +17,15 @@ app.set('views', path.join(__dirname, '/views'));
     app.use(express.urlencoded({ extended: false }));
     app.use(methodOverride("_method"));
     app.use(express.static(path.join(__dirname, '../public')));
-
+    app.use(session({
+        secret: "Cuidate",
+        resave: false,
+        saveUninitialized: true
+    }));
 
 
     /* Routes  */
-const indexRouter = require("./routes/index");
+const indexRouter = require("./routes");
 const productsRouter = require("./routes/products");
 const usersRouter = require('./routes/users');
 
@@ -32,9 +37,8 @@ app.use("/products", productsRouter);
 
         /* Error 404 */
 app.use((req, res, next) => {
-    res.status(404).render('not-found')
+    res.status(404).render('not-found', { session: req.session })
 })
-
 
     /* Listen port */
 app.listen(PORT, () => console.log(`Server listen in port ${PORT} - Click next ->\nhttp://localhost:${PORT}`));

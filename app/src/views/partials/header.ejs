@@ -9,7 +9,7 @@
         </div>
 
         <div class="logo">
-            <a href="/home">
+            <a href="/">
                 <img src="/images/logo/logo.png" alt="">
                 <span>Cuidate!</span>
             </a>
@@ -30,10 +30,26 @@
         </div>
 
         <div class="iniciar">
-            <a href="/users/login">
-                <img src="/images/header/login.png" alt="">
-                <a href="/users/login">Iniciar sesion</a>
-            </a>
+            <div class="user">
+                <% if (typeof session.user != "undefined") { %>
+                    <img class="session" src="/images/header/login-online.png" alt="">
+                    <a class="online" href="#">• Online</a>
+                    
+                    <!-- Aca insertar a futuro el nombre del usuario logeado -->
+                    <div class="menu-user">
+                        <a href="/users/profile">Mi perfil</a>
+                        <a href="/users/logout">Cerrar sesión</a>
+                        <% if (session.user.type === "ADMIN") { %>
+                            <a href="/admin/index">ADMIN</a>
+                        <% } %>
+                    </div>
+                <% } else {%>
+                    <a href="/users/login">
+                        <img src="/images/header/login.png" alt="">
+                        <a href="/users/login">Iniciar sesion</a>
+                    </a>
+                <% } %>
+            </div>
         </div>
 
         <div class="carrito">
