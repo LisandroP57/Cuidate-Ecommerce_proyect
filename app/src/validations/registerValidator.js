@@ -7,11 +7,11 @@ es decir que con estas reglas de seguriridad no podran entrar
  const { users } = require("../data");
  
  module.exports = [
-     check("firstName")
+     check("name")
      .notEmpty()
      .withMessage("Nombre es obligatorio"),
  
-     check("lastName")
+     check("last_name")
      .notEmpty()
      .withMessage("El apellido es obligatorio"),
  

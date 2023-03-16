@@ -87,9 +87,13 @@ module.exports = {
         })
         }
     },
+    logOut: (req, res) => {
+        req.session.destroy();
+        res.redirect("/");
 
+    },
     profile: (req, res) => {
-        let usserInSessionId = req.session.user.id;
+        const usserInSessionId = req.session.user.id;/*  */
         let usserInSession = users.find(user => user.id === usserInSessionId);
 
         res.render("users/userProfile", {

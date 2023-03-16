@@ -4,6 +4,8 @@ const path = require("path");
 const PORT = 3000;
 const methodOverride = require('method-override');
 const session = require('express-session');
+const cookieParser = require("cookie-parser");
+
 
 const cookieCheck = require("./middlewares/cookieCheck");
 
@@ -27,6 +29,7 @@ app.set('views', path.join(__dirname, '/views'));
 
     app.use(cookieCheck);
 
+    app.use(cookieParser());
 
     /* Routes  */
 const indexRouter = require("./routes");
