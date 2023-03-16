@@ -72,8 +72,12 @@ module.exports = {
         last_name: req.body.last_name,
         email: req.body.email,
         pass: bcrypt.hashSync(req.body.pass1, 12),
-        avatar: req.file ? req.file.filename : "/images/avatar/default-image.png",
+        avatar: req.file ? req.file.filename : "default-image.png",
         type: "USER",/* address, Lo dejo asi, porque los usuarios que entren a la aplicacion van a ser usuarios */
+        address: "",
+        postal_code: "",
+        province: "",
+        city: ""
        };
 
        users.push(newUser);/* tengo creado el usuario le digo que lo pushe en el json */
