@@ -45,7 +45,7 @@ module.exports = {
                 session: req.session
             })
         }
-        },
+    },
 
     register: (req, res) => {
         return res.render('users/register', { session: req.session })
