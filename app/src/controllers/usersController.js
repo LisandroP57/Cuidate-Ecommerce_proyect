@@ -21,9 +21,24 @@ module.exports = {
                 type: user.type,
             }
 
+            let cookieLifeTime = new Date(Date.now() + 60000);
+            let rememberMe = req.body.remember;
+
+            if(rememberMe) {
+                res.cookie(
+                    "userCuidate", 
+                    req.session.user, 
+                    {
+                        expires: cookieLifeTime,
+                        httpOnly: true
+                    });
+            } else {
+                res.clearCookie("userCuidate");
+            }
+
             res.locals.user = req.session.user
 
-            res.redirect("/")
+            res.redirect("/");
         } else {
             return res.render("users/login", {
                 errors: errors.mapped(),
