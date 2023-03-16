@@ -4,6 +4,8 @@ const path = require("path");
 const PORT = 3000;
 const methodOverride = require('method-override');
 const session = require('express-session');
+const cookieParser = require("cookie-parser");
+
 
     /* Express */
 const app = express();
@@ -22,7 +24,7 @@ app.set('views', path.join(__dirname, '/views'));
         resave: false,
         saveUninitialized: true
     }));
-
+    app.use(cookieParser());
 
     /* Routes  */
 const indexRouter = require("./routes");
