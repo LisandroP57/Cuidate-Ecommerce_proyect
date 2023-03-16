@@ -222,7 +222,7 @@ textarea {
   margin: 10px 0;
 }
 
-.small {
+.bodyDetail .small {
   font-size: 1.8em;
   color: var(--green);
 }
@@ -288,13 +288,13 @@ textarea {
 
 
 /*====== Formularios ======*/
-.form-label {
+.bodyDetail .form-label {
   display: inline-block;
   font-size: 1.6em;
   margin: 10px 0;
 }
 
-.form-input {
+.bodyDetail .form-input {
   display: block;
   width: 100%;
   height: 45px;
@@ -306,7 +306,7 @@ textarea {
   padding: 0 15px;
 }
 
-textarea.form-input {
+.bodyDetail textarea.form-input {
   min-height: 140px;
   resize: vertical;
   padding: 15px;

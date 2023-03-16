@@ -11,12 +11,12 @@
 		<div class="createForm">
 			<div class="row">
 				<div class="col-12">
-					<h2 class="products-title">Estas modificando <i>: <%= productToEdit.name %></i></h2>
+					<h2 class="products-title">Estas modificando: <i> <%= productToEdit.name %></i></h2>
 				</div>
 			</div>
 			<div class="col-12">
 				<form action="/products/edit/<%= productToEdit.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
-					<div class="addForm">
+					<div class="addFormEdit">
 						<div class="addInput">
 							<label for="name" class="form-label">Nombre del producto:</label>
 							<input type="text" id="name" name="name" placeholder="Ej: Gas pimienta" value="<%= productToEdit.name %>" class="form-input">
@@ -42,7 +42,7 @@
 							<textarea name="description" id="description" class="form-input"><%= productToEdit.description %></textarea>
 						</div>
 						<div class="edit-img">
-							<label for="image" class="form-label">Imagen de su producto:</label>
+							<label for="image" class="form-label">Imagen del producto:</label>
 							<input class="form-control" type="file" id="image" name="image">
 						</div>
 
