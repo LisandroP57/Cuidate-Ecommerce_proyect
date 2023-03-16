@@ -11,7 +11,8 @@ const {
         processLogin,
         profile,
         editProfile,
-        updateProfile
+        updateProfile,
+        logOut
  } = require('../controllers/usersController');
 
 const uploadAvatar = require("../middlewares/uploadAvatar");
@@ -26,6 +27,8 @@ router
         
         .get('/login', login)
         .post('/login', loginValidator, processLogin)
+
+        .get('/logout', logOut)
 
         .get('/profile', profile) /* Agregar en ambas el userInSessionCheck** */
         .get('/profile/edit', editProfile) /* !important */
