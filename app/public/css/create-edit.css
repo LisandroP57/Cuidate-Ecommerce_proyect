@@ -7,6 +7,9 @@ main.addProduct {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.create-edit-body .form-label {
+    margin-bottom: 0;
+}
 .createForm {
     padding: 0rem 1rem;
     border-radius: 1rem;
@@ -25,10 +28,6 @@ main.addProduct {
     font-size: 2rem;
 }
 
-.createForm div {
-    padding: 0.5rem 0rem;
-}
-
 .col-12 {
     display: flex;
     justify-content: center;
@@ -41,9 +40,14 @@ main.addProduct {
     margin: 1rem;
 }
 
+.col-12 .products-title i {
+    margin: 0rem 1rem;
+}
+
 .addInput {
     display: flex;
     align-items: start;
+    margin: 1rem 0rem;
 }
 
 .addInput input {
@@ -62,8 +66,7 @@ main.addProduct {
 .addInput {
     display: flex;
     flex-direction: column;
-    margin-top: 5px;
-    width: 100%;
+    width: 80%;
 }
 
 .addInput input {
@@ -72,13 +75,14 @@ main.addProduct {
     width: 100%;
     padding-left: 0.3rem;
 }
-
+.addFormEdit .description1 {
+    display: block;
+}
 .description1 {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
     align-items: center;
-    gap: 10px;
+    margin: 1rem 0rem;
 }
 
 .description1 label {
@@ -89,7 +93,7 @@ main.addProduct {
 
 .description1 textarea {
     width: 250px;
-    height: 50px;
+    height: 40px;
     max-width: 395px;
     max-height: 90px;
     padding-left: 0.4rem;
@@ -104,6 +108,7 @@ main.addProduct {
 .multer {
     position: relative;
     right: 7px;
+    margin: 1rem 0rem;
 }
 
 .multer label {
@@ -124,10 +129,8 @@ main.addProduct {
     padding: 1rem;
     border-radius: 0.5rem;
     cursor: pointer;
-    font-size: 15px;
     font-weight: 600;
     height: 1.8rem;
-    width: 100%;
     border: solid 1px var(--gris);
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
     background:  linear-gradient(45deg, --violeta-chillon 0%,  --violeta-oscuro 50%);
@@ -137,6 +140,8 @@ main.addProduct {
 }
 
 div.sendButton {
+    display: flex;
+    justify-content: center;
     margin: 1rem;
 }
 
