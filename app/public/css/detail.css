@@ -67,7 +67,7 @@ textarea {
   color: var(--gray);
 }
 
-.product-box {
+.bodyDetail .product-box {
   background-color: #ffffff;
   border-radius: 5px;
   overflow: hidden;
@@ -75,15 +75,15 @@ textarea {
   margin: 20px 0;
 }
 
-.product-box a {
+.bodyDetail .product-box a {
   display: block;
 }
 
-.product-box_image {
+.bodyDetail .product-box_image {
   border-bottom: 1px solid var(--light-gray);
 }
 
-.product-box_data {
+.bodyDetail .product-box_data {
   padding: 15px;
   position: relative;
   display: flex;
@@ -91,20 +91,20 @@ textarea {
   flex-wrap: wrap;
 }
 
-.product-box_data h2 {
+.bodyDetail .product-box_data h2 {
   font-size: 2.4em;
   font-weight: 300;
   margin: 0;
 }
 
-.product-box_data span {
+.bodyDetail .product-box_data span {
   font-size: 1.5em;
   font-weight: 300;
   color: var(--green);
   margin: 0 0 0 10px;
 }
 
-.product-box_data p {
+.bodyDetail .product-box_data p {
   font-size: 1.5em;
   width: 100%;
   color: var(--gray);
@@ -114,7 +114,7 @@ textarea {
   overflow: hidden;
 }
 
-.product-box_data i {
+.bodyDetail .product-box_data i {
   color: var(--green);
   font-size: 1.8em;
   width: 35px;
@@ -132,16 +132,16 @@ textarea {
   transition: 300ms;
 }
 
-.product-box:hover {
+.bodyDetail .product-box:hover {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-.product-box:hover p {
+.bodyDetail .product-box:hover p {
   height: 40px;
   margin-top: 15px;
 }
 
-.product-box:hover i {
+.bodyDetail .product-box:hover i {
   transform: rotate(360deg);
   box-shadow: 0 0 5px var(--green);
 }
