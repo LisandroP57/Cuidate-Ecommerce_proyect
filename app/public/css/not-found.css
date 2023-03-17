@@ -3,9 +3,9 @@
 
 .bodyError {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url(/images/backgrounds/404error3.png);
-    background-size:contain;
-    background-repeat: repeat;
+    background-image: url(/images/backgrounds/error404-.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
