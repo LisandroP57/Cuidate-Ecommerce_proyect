@@ -19,6 +19,7 @@ const uploadAvatar = require("../middlewares/uploadAvatar");
 const registerValidator = require("../validations/registerValidator");
 const loginValidator = require("../validations/loginValidator");
 const updateUserValidator = require("../validations/updateUserValidator");
+const userInSessionCheck = require("../middlewares/userInSessionCheck");
 
 router
 /* POST: creando usuario: createUser*/
@@ -30,8 +31,8 @@ router
 
         .get('/logout', logOut)
 
-        .get('/profile', profile) /* Agregar en ambas el userInSessionCheck** */
-        .get('/profile/edit', editProfile) /* !important */
+        .get('/profile', userInSessionCheck, profile) /* Agregar en ambas el userInSessionCheck** */
+        .get('/profile/edit', userInSessionCheck, editProfile) /* !important */
         .put("/profile/edit", uploadAvatar.single("avatar"), updateUserValidator, updateProfile)
 
         .get('/forgetPassword', forgetPassword)
