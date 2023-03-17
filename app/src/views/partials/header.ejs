@@ -23,10 +23,13 @@
         </div>
 
         <div class="crear">
-            <a href="/users/register">
-                <img src="/images/header/create.png" alt="">
-                <a href="/users/register">Registrarse</a>
-            </a>
+            <% if (typeof session.user != "undefined") { %>
+            <% } else {%>
+                <a href="/users/register">
+                    <img src="/images/header/create.png" alt="">
+                    <a href="/users/register">Registrarse</a>
+                </a>
+            <% } %>
         </div>
 
         <div class="iniciar">
