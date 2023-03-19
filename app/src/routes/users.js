@@ -18,15 +18,16 @@ const {
 const uploadAvatar = require("../middlewares/uploadAvatar");
 const registerValidator = require("../validations/registerValidator");
 const loginValidator = require("../validations/loginValidator");
-const updateUserValidator = require("../validations/updateUserValidator");
 const userInSessionCheck = require("../middlewares/userInSessionCheck");
+const updateUserValidator = require("../validations/updateUserValidator");
+const sessionUserCheck = require("../middlewares/sessionUserCheck");
 
 router
 /* POST: creando usuario: createUser*/
-        .get('/register', register)
+        .get('/register', sessionUserCheck, register)
         .post('/register', uploadAvatar.single("avatar"), registerValidator, processRegister)
         
-        .get('/login', login)
+        .get('/login', sessionUserCheck, login)
         .post('/login', loginValidator, processLogin)
 
         .get('/logout', logOut)

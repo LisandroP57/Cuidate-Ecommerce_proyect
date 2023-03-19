@@ -66,10 +66,14 @@
 
     <nav class="navegador">
         <ul class="menu">
+            <% if (typeof session.user != "undefined") { %>
+                <% if (session.user.type === "ADMIN") { %>
+                    <li><a href="/products/create">Crear prod.</a></li>
+                <% } %>
+            <% } %>
             <li><a href="/products/products">Productos</a></li>
             <li><a href="/#offers">Ofertas</a></li>
             <li><a href="/#redes">Contactanos</a></li>
-            <li><a href="/probandoLaCajaNegra aaAA" class="edit-button edit">a Definir</a></li> 
         </ul>
     </nav>
 </header>
