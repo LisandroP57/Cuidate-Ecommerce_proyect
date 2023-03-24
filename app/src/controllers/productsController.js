@@ -41,19 +41,19 @@ const controller = {
       res.render("products/adminProductCreate", { session: req.session });
     }, 
 
-    store: (req, res) => {
+  store: (req, res) => {
       
-      const id = Math.max(...products.map(el => el.id))
+    const id = Math.max(...products.map(el => el.id))
       
-      const newProduct = {
-        id: id + 1,
-        ...req.body,
-        image: req.file ? req.file.filename : "default-image.png",
-      };
-      products.push(newProduct);
-      writeJson(products)
-      res.redirect('products')
-    },  
+    const newProduct = {
+      id: id + 1,
+      ...req.body,
+      image: req.file ? req.file.filename : "default-image.png",
+    };
+    products.push(newProduct);
+    writeJson(products)
+    res.redirect('products')
+  },  
 
   edit: (req, res) => {
 		let productId = Number(req.params.id);

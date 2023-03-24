@@ -21,7 +21,7 @@
                     <% } %>
                 </div>
                 <div class="form-ad-input">
-                    <input type="email" name="email" placeholder="Ingresá tu email" readonly value="<%= locals.old ? old.email : user.email %>">
+                    <input type="email" name="email" placeholder="Ingresá tu email" readonly value="<%= user.email %>">
                     <% if (locals.errors && errors.email) { %>
                         <small class="text-danger"><%= errors.email.msg %> </small>
                     <% } %>
@@ -43,13 +43,11 @@
                     </select>
                 </div>
                 <div class="input-file">
-                    <p>Cambiar foto de perfil</p>
+                    <p>Editar foto de perfil</p>
                     <input type="file" name="avatar">
                 </div>
                 <div class="btn-edit-profile">
-                    <button type="submit" class="btn-guardar">
-                        GUARDAR
-                    </button>
+                    <button type="submit" class="btn-guardar">GUARDAR</button>
                 </div>
             </form>
         </div>

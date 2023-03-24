@@ -11,7 +11,7 @@ module.exports = {
         let errors = validationResult(req);
 
         if (errors.isEmpty()){
-            /* Si no hay errores en el login el usuario ya fue validado entrando asi en la condicion de la busqueda por find */
+            
             let user = users.find(user => user.email === req.body.email);
 
             req.session.user = {
@@ -87,6 +87,7 @@ module.exports = {
             //return res.send(errors)
             res.render("users/register", {
                 errors: errors.mapped(),
+                old: req.body,
                 session: req.session
         })
         }
@@ -97,11 +98,11 @@ module.exports = {
 
     },
     profile: (req, res) => {
-        const usserInSessionId = req.session.user.id;/*  */
-        let usserInSession = users.find(user => user.id === usserInSessionId);
+        const userInSessionId = req.session.user.id;
+        let userInSession = users.find(user => user.id === userInSessionId);
 
         res.render("users/userProfile", {
-            user: usserInSession,
+            user: userInSession,
             session: req.session
         })
     },
@@ -115,11 +116,14 @@ module.exports = {
         })
     },
     updateProfile: (req, res) => {
+
         let errors = validationResult(req);
 
         if(errors.isEmpty()) {
+
             let userId = req.session.user.id;
             let user = users.find(user => user.id === userId);
+
             const {
                 name,
                 last_name,
@@ -138,10 +142,12 @@ module.exports = {
             user.avatar = req.file ? req.file.filename : user.avatar;
 
             writeUsersJson(users)
+
             delete user.pass;
+
             req.session.user = user;
+
             return res.redirect("/users/profile");
-            
         } else {
             const userInSessionId = req.session.user.id;
             const userInSession = users.find(user => user.id === userInSessionId);

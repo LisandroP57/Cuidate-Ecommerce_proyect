@@ -26,17 +26,16 @@ router
 /* POST: creando usuario: createUser*/
         .get('/register', sessionUserCheck, register)
         .post('/register', uploadAvatar.single("avatar"), registerValidator, processRegister)
+        .get('/processRegister', processRegister)
         
         .get('/login', sessionUserCheck, login)
         .post('/login', loginValidator, processLogin)
 
+        .get('/forgetPassword', forgetPassword)
         .get('/logout', logOut)
 
-        .get('/profile', userInSessionCheck, profile) /* Agregar en ambas el userInSessionCheck** */
-        .get('/profile/edit', userInSessionCheck, editProfile) /* !important */
-        .put("/profile/edit", uploadAvatar.single("avatar"), updateUserValidator, updateProfile)
-
-        .get('/forgetPassword', forgetPassword)
-        .get('/processRegister', processRegister)
+        .get('/profile', userInSessionCheck, profile)
+        .get('/profile/edit', userInSessionCheck, editProfile)
+        .put('/profile/edit', uploadAvatar.single("avatar"), updateUserValidator, updateProfile)
 
 module.exports = router;

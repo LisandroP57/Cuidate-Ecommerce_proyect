@@ -28,7 +28,7 @@ router
         .get('/detail/:id/', detail)
         
         /* Create product */
-        .get('/create', userInSessionCheck, create)
+        .get('/create', userInSessionCheck, userSessionAdmin, create)
         .post("/", uploadImageProduct.single("image"), productValidator, store)
 
         /* Edit product */
