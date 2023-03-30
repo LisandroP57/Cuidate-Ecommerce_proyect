@@ -6,7 +6,7 @@ module.exports = {
 
     login: (req, res) => {
         return res.render('users/login', { session: req.session });
-        },
+    },
     processLogin: (req, res) => {
         let errors = validationResult(req);
 
