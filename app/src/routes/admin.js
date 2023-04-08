@@ -16,7 +16,7 @@ const express = require("express");
 const router = express.Router();
 
 const {
-    allProducts,
+    products,
     create,
     store,
     edit,
@@ -31,17 +31,17 @@ const userSessionAdmin = require("../middlewares/userSessionAdmin");
 
 /* Vistas productos */
 router
-        .get('/all-products', allProducts)
+        .get('/products', products)
 
         /* Create product */
-        .get('/create', userInSessionCheck, userSessionAdmin, create)
-        .post("/", uploadImageProduct.single("image"), productValidator, store)
+        .get('/products/create', userInSessionCheck, userSessionAdmin, create)
+        .post("/products/create", uploadImageProduct.single("image"), productValidator, store)
 
         /* Edit product */
-        .get('/edit/:id', userInSessionCheck, userSessionAdmin, edit)
-        .put('/edit/:id', uploadImageProduct.single("image"), productValidator, update)
+        .get('/products/edit/:id', userInSessionCheck, userSessionAdmin, edit)
+        .put('/products/edit/:id', uploadImageProduct.single("image"), productValidator, update)
 
         /* Delete product*/
-        .delete('/delete/:id', userInSessionCheck, userSessionAdmin,destroy);
+        .delete('/products/delete/:id', userInSessionCheck, userSessionAdmin, destroy);
 
 module.exports = router;

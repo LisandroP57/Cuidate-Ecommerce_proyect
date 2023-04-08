@@ -21,7 +21,7 @@ module.exports = {
                 type: user.type,
             }
 
-            let cookieLifeTime = new Date(Date.now() + 60000);
+            let cookieLifeTime = new Date(Date.now() + 260000);
             let rememberMe = req.body.remember;
 
             if(rememberMe) {
@@ -73,18 +73,18 @@ module.exports = {
         email: req.body.email,
         pass: bcrypt.hashSync(req.body.pass1, 12),
         avatar: req.file ? req.file.filename : "default-image.png",
-        type: "USER",/* address, Lo dejo asi, porque los usuarios que entren a la aplicacion van a ser usuarios */
+        type: "USER",
         address: "",
         postal_code: "",
         province: "",
         city: ""
        };
 
-       users.push(newUser);/* tengo creado el usuario le digo que lo pushe en el json */
-       writeUsersJson(users);/* Los persisto o creo */
+       users.push(newUser);
+       writeUsersJson(users);
        res.redirect("/users/login");
         } else {
-            //return res.send(errors)
+            
             res.render("users/register", {
                 errors: errors.mapped(),
                 old: req.body,

@@ -79,8 +79,8 @@
 									<% if (typeof session.user != "undefined") { %>
 										
 									<% if (session.user.type === "ADMIN") { %>
-									<a href="/admin/edit/<%= product.id %> " class="action-button edit" >EDITAR PRODUCTO</a>
-                                    <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+									<a href="/admin/products/edit/<%= product.id %> " class="action-button edit" >EDITAR PRODUCTO</a>
+                                    <form action="/admin/products/delete/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
                                         <button type="submit" class="action-button delete">ELIMINAR</button><!--  DELETE me lleva a eliminar todo, hace http, GET post -->
                                     </form>
 									<% } %>

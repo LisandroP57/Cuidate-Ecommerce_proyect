@@ -1,29 +1,27 @@
 const fs = require('fs');
 const path = require('path');
 
-const { validationResult } = require("express-validator");
 const productsFilePath = path.join(__dirname, '../data/productsData.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-const writeJson = (products) => {
-  fs.writeFileSync(productsFilePath, JSON.stringify(products), {encoding: "utf-8"})
-}
+const writeProductsJson = (products) => {
+    fs.writeFileSync(productsFilePath, JSON.stringify(products), {encoding: "utf-8"})}
+const { validationResult } = require("express-validator");
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
-    allProducts: (req, res) => {
-		res.render("admin/adminProducts",{
-			products,
+    products: (req, res) => {
+        return res.render("admin/adminProducts",{
+            products,
             session: req.session,
 			toThousand
 		})
 	},
     create: (req, res) => {
-      res.render("admin/adminProductCreate", { session: req.session });
+        return res.render("admin/adminProductCreate", { session: req.session });
     }, 
     
     store: (req, res) => {
-        
         const id = Math.max(...products.map(el => el.id))
         
         const newProduct = {
@@ -31,22 +29,28 @@ module.exports = {
         ...req.body,
         image: req.file ? req.file.filename : "default-image.png",
         };
+
         products.push(newProduct);
-        writeJson(products)
-        res.redirect('/products/allProducts')
+
+        writeProductsJson(products)
+
+        res.redirect('/admin/products')
     },  
 
     edit: (req, res) => {
             let productId = Number(req.params.id);
-            let productToEdit = products.find((product) => {
-        return product.id === productId;
-        });
-            res.render("admin/adminProductEdit", { productToEdit, session: req.session });
+            let productToEdit = products.find(product => product.id === productId)
+
+            res.render("admin/adminProductEdit", {
+                productToEdit,
+                session: req.session
+            });
     },
     
     update: (req, res) => {
         let productId = Number(req.params.id);
-        products.forEach(product => {
+
+        products.forEach( product => {
         if (product.id === productId){
             product.name = req.body.name;
             product.price = req.body.price;
@@ -55,9 +59,11 @@ module.exports = {
             product.description = req.body.description;
             product.image = req.file ? req.file.filename : product.image;
         }
-        }),
-        writeJson(products);
-        res.redirect('/');
+    });
+
+    writeProductsJson(products);
+
+    res.redirect('/admin/products');
     },
 
     destroy : (req, res) => {
@@ -69,7 +75,7 @@ module.exports = {
             products.splice(productToDestroy, 1) 
         }
         })
-        writeJson(products)
+        writeProductsJson(products)
         
         res.send("El producto fue destruido")
     }

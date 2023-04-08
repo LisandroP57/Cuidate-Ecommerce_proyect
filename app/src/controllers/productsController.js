@@ -3,6 +3,7 @@ const path = require('path');
 
 const productsFilePath = path.join(__dirname, '../data/productsData.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
   
@@ -16,7 +17,7 @@ const controller = {
 
 		res.render("products/detail", {
 			product,
-      session: req.session,
+      		session: req.session,
 			toThousand
 		})
 	}, 
