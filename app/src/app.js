@@ -31,13 +31,13 @@ app.set('views', path.join(__dirname, '/views'));
 const indexRouter = require("./routes");
 const productsRouter = require("./routes/products");
 const usersRouter = require('./routes/users');
-/* const adminRouter = require("./routes/admin"); */
+const adminRouter = require("./routes/admin");
 
     /* Routes Middlewares */
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
-/* app.use("/admin", adminRouter); */
+app.use("/admin", adminRouter);
 
         /* Error 404 */
 app.use((req, res, next) => {
