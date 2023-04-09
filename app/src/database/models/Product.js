@@ -1,3 +1,5 @@
+const productCategory = require("./productCategory");
+
 module.exports = (sequelize, dataTypes) => {
     let alias = "Product";
 
@@ -48,6 +50,22 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     const Product = sequelize.define(alias, cols, config);
+
+    Product.associate = (models) => {
+        Product.belongsTo(models.ProductCategory, {
+            as: "productcategory",
+            foreignKey: "product_category_id",
+        })
+        
+        Product.belongsToMany(models.Color, {
+            as: "colors",
+            through: "color_product",
+            foreignKey: "product_id",
+            otherKey: "color_id",
+            timestamps: false,
+        })
+    }
+
 
     return Product;
 }
