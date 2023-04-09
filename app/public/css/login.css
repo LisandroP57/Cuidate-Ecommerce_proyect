@@ -26,6 +26,7 @@
         display: none;
     }
     .input-container, .password-container {
+        position: relative;
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -43,8 +44,9 @@
         width: 30px;
         height: 30px;
         position: absolute;
-        right: 3.5rem;
-        top: 15.8rem;
+        right: 0.5rem;
+        top: 45%;
+        transform: translateY(-50%);
     }
     .button-container-register {
         display: flex;

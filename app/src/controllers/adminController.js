@@ -7,16 +7,7 @@ const writeProductsJson = (products) => {
     fs.writeFileSync(productsFilePath, JSON.stringify(products), {encoding: "utf-8"})}
 const { validationResult } = require("express-validator");
 
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
 module.exports = {
-    products: (req, res) => {
-        return res.render("admin/adminProducts",{
-            products,
-            session: req.session,
-			toThousand
-		})
-	},
     create: (req, res) => {
         return res.render("admin/adminProductCreate", { session: req.session });
     }, 
@@ -38,7 +29,7 @@ module.exports = {
 
             writeProductsJson(products)
 
-            res.redirect('/admin/products')
+            res.redirect('/products/allProducts')
             
         } else {
             res.render("admin/adminProductCreate", {
@@ -78,7 +69,7 @@ module.exports = {
             });
             
             writeProductsJson(products);
-            res.redirect('/admin/products');
+            res.redirect('/products/allProducts');
         
         } else {
             let productToEdit = products.find(product => product.id === +req.params.id)

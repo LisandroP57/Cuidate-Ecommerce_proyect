@@ -16,7 +16,6 @@ const express = require("express");
 const router = express.Router();
 
 const {
-    products,
     create,
     store,
     edit,
@@ -31,8 +30,6 @@ const userSessionAdmin = require("../middlewares/userSessionAdmin");
 
 /* Vistas productos */
 router
-        .get('/products', products)
-
         /* Create product */
         .get('/products/create', userInSessionCheck, userSessionAdmin, create)
         .post("/products/create", uploadImageProduct.single("image"), productValidator, store)

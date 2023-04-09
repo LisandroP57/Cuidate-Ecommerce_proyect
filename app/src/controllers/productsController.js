@@ -6,10 +6,19 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
-  
+
+	products: (req, res) => {
+        return res.render("products/allProducts",{
+            products,
+            session: req.session,
+			toThousand
+		})
+	},
+
   carrito: (req, res) => {
     res.render("products/carrito", { session: req.session });
   },
+  
   detail: (req, res) => {
 		let productId = req.params.id;
 

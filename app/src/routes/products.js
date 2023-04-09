@@ -4,8 +4,9 @@ const router = express.Router();
 
         /* Controller Require */
 const {
+        products,
         carrito,
-        detail,
+        detail
  } = require("../controllers/productsController");
 
 const userInSessionCheck = require("../middlewares/userInSessionCheck");
@@ -13,6 +14,8 @@ const userInSessionCheck = require("../middlewares/userInSessionCheck");
 
         /* Vistas productos */
 router
+        /* All products */
+        .get('/allProducts', products)
         /* Shopping cart */
         .get('/carrito',userInSessionCheck, carrito)
 
