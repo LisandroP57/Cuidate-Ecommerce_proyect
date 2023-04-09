@@ -1,8 +1,0 @@
-Crear  ramas:
-- git branch=> para ver donde se esta parado o que ramas existen ej :*main develop
--git checkout develop => chequear la rama y moverme
--git checkout -b feature/hashing => crea una rama nueva
-
-// guardar y comitear
--git push origin feature/hashing
-
