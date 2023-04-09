@@ -35,12 +35,6 @@ module.exports = (sequelize, dataTypes) => {
             defaultValue: 0.0,
             allowNull: false,
         },
-        color_id: {
-            type: dataTypes.INTEGER(10).UNSIGNED,
-        },
-        product_category_id: {
-            type: dataTypes.INTEGER(10).UNSIGNED,
-        },
     }
     
     let config = {
@@ -64,8 +58,15 @@ module.exports = (sequelize, dataTypes) => {
             otherKey: "color_id",
             timestamps: false,
         })
-    }
 
+        Product.belongsToMany(models.ProductImage, {
+            as: "product_images",
+            through: "image_product",
+            foreignKey: "product_id",
+            otherKey: "image_id",
+            timestamps: false,
+        })
+    }
 
     return Product;
 }

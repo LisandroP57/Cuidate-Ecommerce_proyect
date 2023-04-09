@@ -28,9 +28,6 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(100),
             allowNull: true,
         },
-        user_rol_id: {
-            type: dataTypes.INTEGER(10).UNSIGNED,
-        }
     }
     
     let config = {
