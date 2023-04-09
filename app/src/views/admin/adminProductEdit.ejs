@@ -18,16 +18,25 @@
 				<form action="/admin/products/edit/<%= productToEdit.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
 					<div class="addFormEdit">
 						<div class="addInput">
-							<label for="name" class="form-label">Nombre del producto:</label>
-							<input type="text" id="name" name="name" placeholder="Ej: Gas pimienta" value="<%= productToEdit.name %>" class="form-input">
+							<label for="inputName" class="form-label">Nombre del producto:</label>
+							<input type="text" id="inputName" name="name" placeholder="Ej: Gas pimienta" value="<%= locals.old ? old.name : productToEdit.name %>" class="form-input">
+							<% if (locals.errors && errors.name) { %>
+								<small class="text-danger"><%= errors.name.msg %> </small>
+							<% } %>
 						</div>
 						<div class="addInput">
-							<label for="price" class="form-label">Precio del producto:</label>
-							<input type="text" id="price" name="price" placeholder="Ej: $123" value="<%= productToEdit.price %>" class="form-input">
+							<label for="inputPrice" class="form-label">Precio del producto:</label>
+							<input type="text" id="inputPrice" name="price" placeholder="Ej: $123" value="<%= locals.old ? old.price : productToEdit.price %>" class="form-input">
+							<% if (locals.errors && errors.price) { %>
+								<small class="text-danger"><%= errors.price.msg %> </small>
+							<% } %>
 						</div>
 						<div class="addInput">
-							<label for="discount" class="form-label">Descuento:  (Opcional)</label>
-							<input type="text" id="discount" name="discount" placeholder="Ej: 57%" value="<%= productToEdit.discount %>" class="form-input">
+							<label for="inputDiscount" class="form-label">Descuento:  (Opcional)</label>
+							<input type="number" id="inputDiscount" name="discount" placeholder="Ej: 57%" value="<%= locals.old ? old.discount: productToEdit.discount %>" class="form-input">
+							<% if (locals.errors && errors.discount) { %>
+								<small class="text-danger"><%= errors.discount.msg %> </small>
+							<% } %>
 						</div>
 						<div class="addInput">
 							<label for="category" class="form-label">Categoría:</label>
@@ -42,13 +51,14 @@
 							<textarea name="description" id="description" class="form-input"><%= productToEdit.description %></textarea>
 						</div>
 						<div class="edit-img">
-							<label for="image" class="form-label">Imagen del producto:</label>
-							<input class="form-control" type="file" id="image" name="image">
+							<label for="inputImage" class="form-label">Imagen del producto:</label>
+							<input class="form-control" type="file" id="inputImage" name="image">
 						</div>
 
 						<div class="sendButton">
 							<button type="submit" class="buy-now-button" data-bs-toggle="modal" data-bs-target="#miModal">Modificar producto</button>
-							<!-- Modal -->
+
+							<!-- Modal a corregir-->
 							<div class="modal fade" id="miModal" tabindex="-1" aria-hidden="true" aria-labelledby="modalTitle">
 								<div class="modal-dialog">
 									<div class="modal-content">

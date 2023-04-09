@@ -7,12 +7,6 @@ module.exports = [
     .isLength({ min: 5, max: 15 })
     .withMessage("El nombre tiene que tener entre 5 y 15 caracteres"),
     
-    check('description')
-    .notEmpty()
-    .withMessage("Debe contener su descripción")
-    .isLength({ min: 15 })
-    .withMessage("La descripcion tiene que tener un mínimo de 15 caracteres"),
-    
     check('price')
     .notEmpty()
     .withMessage("Debe contener el precio")
@@ -23,5 +17,5 @@ module.exports = [
     
     check('discount')
     .isInt({ min: 0, max: 90 })
-    .withMessage("Error en el descuento, lo recomendable es entre 0 y 90%"),
+    .withMessage("Error en el descuento, lo recomendable es entre 0 y 90%, si no se quiere agregar descuento ingrese 0"),
 ]

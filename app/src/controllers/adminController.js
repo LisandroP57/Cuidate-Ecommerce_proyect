@@ -22,20 +22,32 @@ module.exports = {
     }, 
     
     store: (req, res) => {
-        const id = Math.max(...products.map(el => el.id))
+        let errors = validationResult(req)
         
-        const newProduct = {
-        id: id + 1,
-        ...req.body,
-        image: req.file ? req.file.filename : "default-image.png",
-        };
+        if(errors.isEmpty()){
+            
+            const id = Math.max(...products.map(el => el.id))
+        
+            const newProduct = {
+            id: id + 1,
+            ...req.body,
+            image: req.file ? req.file.filename : "default-image.png",
+            };
 
-        products.push(newProduct);
+            products.push(newProduct);
 
-        writeProductsJson(products)
+            writeProductsJson(products)
 
-        res.redirect('/admin/products')
-    },  
+            res.redirect('/admin/products')
+            
+        } else {
+            res.render("admin/adminProductCreate", {
+                errors: errors.mapped(),
+                old: req.body,
+                session: req.session
+            })
+        }
+    },
 
     edit: (req, res) => {
             let productId = Number(req.params.id);
@@ -48,22 +60,36 @@ module.exports = {
     },
     
     update: (req, res) => {
-        let productId = Number(req.params.id);
+        let errors = validationResult(req);
 
-        products.forEach( product => {
-        if (product.id === productId){
-            product.name = req.body.name;
-            product.price = req.body.price;
-            product.discount = req.body.discount;
-            product.category = req.body.category;
-            product.description = req.body.description;
-            product.image = req.file ? req.file.filename : product.image;
+        if(errors.isEmpty()){
+            
+            let productId = Number(req.params.id);
+            
+            products.forEach( product => {
+                if (product.id === productId){
+                    product.name = req.body.name;
+                    product.price = req.body.price;
+                    product.discount = req.body.discount;
+                    product.category = req.body.category;
+                    product.description = req.body.description;
+                    product.image = req.file ? req.file.filename : product.image;
+                }
+            });
+            
+            writeProductsJson(products);
+            res.redirect('/admin/products');
+        
+        } else {
+            let productToEdit = products.find(product => product.id === +req.params.id)
+
+            res.render("admin/adminProductEdit", {
+                productToEdit,
+                errors: errors.mapped(),
+                old: req.body,
+                session: req.session
+            })
         }
-    });
-
-    writeProductsJson(products);
-
-    res.redirect('/admin/products');
     },
 
     destroy : (req, res) => {
