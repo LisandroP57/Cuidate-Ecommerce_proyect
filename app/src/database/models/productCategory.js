@@ -4,9 +4,9 @@ module.exports = (sequelize, dataTypes) => {
     let cols= {
         id: {
             type: dataTypes.INTEGER(10).UNSIGNED,
-            primaryKey: true,
+            allowNull: false,
             autoIncrement: true,
-            allowNull: false 
+            primaryKey: true,
         },
         name: {
             type: dataTypes.STRING(50),
@@ -15,19 +15,18 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     let config = {
-        tableName: "product_categories",
-        createdAt: "created_at",
-        updatedAt: "updated_at",
+        tableName: "products_categories",
+        timestamps: false
     };
 
-    const ProductCategory = sequelize.define(alias, cols, config);
+    const PRODUCT_CATEGORY = sequelize.define(alias, cols, config);
 
-    ProductCategory.associate = (models) => {
-        ProductCategory.hasMany(models.Product, {
+    PRODUCT_CATEGORY.associate = (models) => {
+        PRODUCT_CATEGORY.hasMany(models.Product, {
             as: "products",
             foreignKey: "product_category_id",
         })
     }
 
-    return ProductCategory
+    return PRODUCT_CATEGORY;
 }

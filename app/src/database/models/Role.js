@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "Color";
+    let alias = "Role";
 
     let cols= {
         id: {
@@ -15,21 +15,18 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     let config = {
-        tableName: "colors",
+        tableName: "users_roles",
         timestamps: false
     };
 
-    const COLOR = sequelize.define(alias, cols, config);
+    const ROLE = sequelize.define(alias, cols, config);
 
-    COLOR.associate = (models) => {
-        COLOR.hasMany(models.Product, {
-            as: "products",
-            through: "color_product",
-            foreignKey: "color_id",
-            otherKey: "product_id",
-            timestamps: false,
+    ROLE.associate = (models) => {
+        ROLE.hasMany(models.User, {
+            as: "users",
+            foreignKey: "user_role_id",
         })
     }
 
-    return COLOR;
+    return ROLE;
 }

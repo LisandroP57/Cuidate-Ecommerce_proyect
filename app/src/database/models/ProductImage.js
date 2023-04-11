@@ -4,33 +4,33 @@ module.exports = (sequelize, dataTypes) => {
     let cols= {
         id: {
             type: dataTypes.INTEGER(10).UNSIGNED,
-            primaryKey: true,
+            allowNull: false,
             autoIncrement: true,
-            allowNull: false 
+            primaryKey: true,
         },
         image: {
             type: dataTypes.STRING(100),
             allowNull: false,
         },
+        product_id: {
+            data: dataTypes.INTEGER(10),
+            allowNull: false,
+        },
     }
 
     let config = {
-        tableName: "product_images",
-        createdAt: "created_at",
-        updatedAt: "updated_at",
-    };
-
-    const ProductImage = sequelize.define(alias, cols, config);
-
-    ProductImage.associate = (models) => {
-        ProductImage.hasMany(models.Product, {
-            as: "products",
-            through: "image_product",
-            foreignKey: "image_id",
-            otherKey: "product_id",
-            timestamps: false,
-        })
+        tableName: "products_images",
+        timestamps: false,
     }
 
-    return ProductImage
+    const PRODUCT_IMAGE = sequelize.define(alias, cols, config);
+
+    PRODUCT_IMAGE.associate = (models) => {
+        PRODUCT_IMAGE.belongsTo(models.Product, {
+            as: "products",
+            foreignKey: "product_id",
+        });
+    }
+
+    return PRODUCT_IMAGE;
 }

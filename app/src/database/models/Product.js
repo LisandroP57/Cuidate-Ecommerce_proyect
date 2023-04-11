@@ -1,14 +1,12 @@
-const productCategory = require("./productCategory");
-
 module.exports = (sequelize, dataTypes) => {
     let alias = "Product";
 
     let cols = {
         id: {
             type: dataTypes.INTEGER(10).UNSIGNED,
-            primaryKey: true,
+            allowNull: false,
             autoIncrement: true,
-            allowNull: false 
+            primaryKey: true,
         },
         name: {
             type: dataTypes.STRING(50),
@@ -17,10 +15,6 @@ module.exports = (sequelize, dataTypes) => {
         description: {
             type: dataTypes.STRING(255),
             allowNull: false 
-        },
-        image: {
-            type: dataTypes.STRING(255),
-            allowNull: true,
         },
         category: {
             type: dataTypes.ENUM('in-sale', 'visited'),
@@ -33,25 +27,24 @@ module.exports = (sequelize, dataTypes) => {
         discount: {
             type: dataTypes.DECIMAL(5,2),
             defaultValue: 0.0,
-            allowNull: false,
         },
     }
     
     let config = {
         tableName: "products",
         createdAt: "created_at",
-        updatedAt: "updated_at",
+        updatedAt: "updated_at" 
     };
 
-    const Product = sequelize.define(alias, cols, config);
+    const PRODUCT = sequelize.define(alias, cols, config);
 
-    Product.associate = (models) => {
-        Product.belongsTo(models.ProductCategory, {
+    PRODUCT.associate = (models) => {
+        PRODUCT.belongsTo(models.ProductCategory, {
             as: "productcategory",
             foreignKey: "product_category_id",
         })
         
-        Product.belongsToMany(models.Color, {
+        PRODUCT.belongsToMany(models.Color, {
             as: "colors",
             through: "color_product",
             foreignKey: "product_id",
@@ -59,7 +52,7 @@ module.exports = (sequelize, dataTypes) => {
             timestamps: false,
         })
 
-        Product.belongsToMany(models.ProductImage, {
+        PRODUCT.belongsToMany(models.ProductImage, {
             as: "product_images",
             through: "image_product",
             foreignKey: "product_id",
@@ -68,5 +61,5 @@ module.exports = (sequelize, dataTypes) => {
         })
     }
 
-    return Product;
+    return PRODUCT;
 }

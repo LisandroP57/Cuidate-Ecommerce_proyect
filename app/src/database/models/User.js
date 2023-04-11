@@ -4,9 +4,9 @@ module.exports = (sequelize, dataTypes) => {
     let cols = {
         id: {
             type: dataTypes.INTEGER(10).UNSIGNED,
-            primaryKey: true,
+            allowNull: false,
             autoIncrement: true,
-            allowNull: false 
+            primaryKey: true,
         },
         name: {
             type: dataTypes.STRING(50),
@@ -17,16 +17,23 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
         },
         email: {
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING(60),
             allowNull: false,
+        },
+        pass: {
+            type: dataTypes.STRING(70),
+            allowNull: false,
+        },
+        role: {
+            type: dataTypes.STRING(2),
+            allowNull: false,
+            defaultValue: 0,
         },
         avatar: {
             type: dataTypes.STRING(255),
-            allowNull: true,
         },
         address: {
-            type: dataTypes.STRING(100),
-            allowNull: true,
+            type: dataTypes.STRING(50),
         },
     }
     
@@ -36,14 +43,14 @@ module.exports = (sequelize, dataTypes) => {
         updatedAt: "updated_at",
     };
 
-    const User = sequelize.define(alias, cols, config);
+    const USER = sequelize.define(alias, cols, config);
 
-    User.associate = (models) => {
-        User.belongsTo(models.Rol, {
-            as: "rol",
-            foreignKey: "user_rol_id",
+    USER.associate = (models) => {
+        USER.belongsTo(models.Role, {
+            as: "role",
+            foreignKey: "user_role_id",
         })
     }
 
-    return User
+    return USER;
 }
