@@ -1,16 +1,17 @@
-const fs = require('fs');
-const path = require('path');
-
-const productsFilePath = path.join(__dirname, '../data/productsData.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-const writeProductsJson = (products) => {
-    fs.writeFileSync(productsFilePath, JSON.stringify(products), {encoding: "utf-8"})}
 const { validationResult } = require("express-validator");
+const {
+  Product,
+  Category,
+  Subcategory,
+  ProductImage,
+} = require("../database/models");
 
 module.exports = {
-    create: (req, res) => {
-        return res.render("admin/adminProductCreate", { session: req.session });
-    }, 
+  index: (req, res) => {
+    return res.render("admin/adminIndex", {
+      session: req.session,
+    });
+},
     
     store: (req, res) => {
         let errors = validationResult(req)
