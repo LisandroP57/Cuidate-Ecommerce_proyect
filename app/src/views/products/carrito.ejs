@@ -1,62 +1,152 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="html-cart">
 <%- include ('../partials/head', {title: 'Mi carrito'}) %>
-<body>
+<body class="body-cart">
     <%- include ('../partials/header') %>
 
-    <div class="container1">
-        <div class="carritoFavorito">
-            <button>Carrito</button>
-            <button>Favorito</button>
+    <div class="container cf">
+        <h1 class="mytitle"><span>Cuidate!</span>Seguir comprando</h1>
+        <div class="continue cf">
+          <h1>Mi Carrito</h1>
+          <a href="#" class="continue">Continuar comprando</a>
         </div>
-        <div class="producto">
-            <div class="imagen">
-                <img src="/images/products/manoplagatito.jpeg" alt="">
+        <div class="cart">
+         <ul class="tableHead">
+            <li class="prodHeader">Producto</li>
+            <li>Cantidad</li>
+            <li>Total</li>
+            <li>Borrar</li>
+          </ul>
+          <ul class="cartWrap">
+            <li class="items odd">
+              
+          <div class="infoWrap"> 
+              <div class="cartSection">
+              <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" class="itemImg" />
+                <p class="itemNumber">#QUE-007544-002</p>
+                <h3>Item 1</h3>
+              
+                 <p> <input type="text"  class="qty" placeholder="3"/> x $5.00</p>
+              
+                <p class="stockStatus"> En Stock</p>
+              </div>  
+          
+              
+              <div class="prodTotal cartSection">
+                <p>$3750.00</p>
+              </div>
+                    <div class="cartSection removeWrap">
+                 <a href="#" class="remove">x</a>
+              </div>
             </div>
-            <div class="descripcion">
-                <span>Manopla</span>
-                <div class="comprar-eliminar">
-                    <button>Comprar Ahora</button>
-                    <button>Eliminar</button>
-                </div>
+            </li>
+            <li class="items even">
+              
+             <div class="infoWrap"> 
+              <div class="cartSection">
+               
+              <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" class="itemImg" />
+                <p class="itemNumber">#QUE-007544-002</p>
+                <h3>Item 1</h3>
+              
+                 <p> <input type="text"  class="qty" placeholder="3"/> x $5.00</p>
+              
+                <p class="stockStatus"> En Stock</p>
+              </div>  
+          
+              
+              <div class="prodTotal cartSection">
+                <p>$1500.00</p>
+              </div>
+                    <div class="cartSection removeWrap">
+                 <a href="#" class="remove">x</a>
+              </div>
             </div>
-            <div class="controladores-precio">
-                <div class="masmenos">
-                    <button>-</button>
-                    <span>1</span>
-                    <button>+</button>
-                </div>
-                <span>$X.XXX</span>
-            </div>
+            </li>
+            
+                  <li class="items odd">
+                   <div class="infoWrap"> 
+              <div class="cartSection">
+                  
+              <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" class="itemImg" />
+                <p class="itemNumber">#QUE-007544-002</p>
+                <h3>Item 1</h3>
+              
+                 <p> <input type="text"  class="qty" placeholder="3"/> x $5.00</p>
+              
+                <p class="stockStatus out"> Fuera de Stock</p>
+              </div>  
+          
+              
+              <div class="prodTotal cartSection">
+                <p>$2000.00</p>
+              </div>
+                          <div class="cartSection removeWrap">
+                 <a href="#" class="remove">x</a>
+              </div>
+                    </div>
+            </li>
+            <li class="items even">
+             <div class="infoWrap"> 
+              <div class="cartSection info">
+                   
+              <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" class="itemImg" />
+                <p class="itemNumber">#QUE-007544-002</p>
+                <h3>Item 1</h3>
+              
+                <p> <input type="text"  class="qty" placeholder="3"/> x $5.00</p>
+              
+                <p class="stockStatus"> En Stock</p>
+                
+              </div>  
+          
+              
+              <div class="prodTotal cartSection">
+                <p>$1850.00</p>
+              </div>
+          
+                  <div class="cartSection removeWrap">
+                 <a href="#" class="remove">x</a>
+              </div>
+               </div>
+            </li>
+            
+            
+            <!--<li class="items even">Item 2</li>-->
+       
+          </ul>
         </div>
-
-        <div class="producto">
-            <div class="imagen">
-                <img src="/images/products/gaspimienta.jpeg" alt="">
-            </div>
-            <div class="descripcion">
-                <span>Gas Pimienta</span>
-                <div class="comprar-eliminar">
-                    <button>Comprar Ahora</button>
-                    <button>Eliminar</button>
-                </div>
-            </div>
-            <div class="controladores-precio">
-                <div class="masmenos">
-                    <button>-</button>
-                    <span>1</span>
-                    <button>+</button>
-                </div>
-                <span>$X.XXX</span>
-            </div>
+        
+        <div class="promoCode"><label for="promo">Tenes un cupon de descuento?</label><input type="text"="promo" value="Ingresalo!" placholder="Enter Code" />
+        <a href="#" class="btn"></a></div>
+        
+        <div class="subtotal cf">
+          <ul>
+            <li class="totalRow"><span class="label">Subtotal</span><span class="value">$3500.00</span></li>
+            
+                <li class="totalRow"><span class="label">Shipping</span><span class="value">$500.00</span></li>
+            
+                  <li class="totalRow"><span class="label">Tax</span><span class="value">$1500.00</span></li>
+                  <li class="totalRow final"><span class="label">Total</span><span class="value">$5500.00</span></li>
+            <li class="totalRow"><a href="#" class="btn continue">Verificar</a></li>
+          </ul>
         </div>
-
-    </div>
- <!--    <div class="comprar">
-        <button>COMPRAR</button>
-    </div> -->
+      </div>
     
     <%- include ('../partials/footer') %>
 
+    <script>
+      // Remove Items From Cart
+$('a.remove').click(function(){
+  event.preventDefault();
+  $( this ).parent().parent().parent().hide( 400 );
+ 
+})
+
+// Just for testing, show all items
+  $('a.btn.continue').click(function(){
+    $('li.items').show(400);
+  })
+    </script>
 </body>
 </html>
