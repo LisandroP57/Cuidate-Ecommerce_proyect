@@ -99,12 +99,11 @@ module.exports = {
 
         res.redirect("/");
 
-    },//HASTA ACA... 
+    },
 
     profile: (req, res) => {
         const userInSessionId = req.session.user.id;
 
-        //let userInSession = users.find(user => user.id === userInSessionId);
         User.findByPk(userInSessionId)
             .then((user) => {
                 res.render("users/userProfile", {
