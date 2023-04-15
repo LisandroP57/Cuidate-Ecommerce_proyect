@@ -3,7 +3,7 @@ module.exports = (sequelize, dataTypes) => {
 
     let cols= {
         id: {
-            type: dataTypes.INTEGER(10).UNSIGNED,
+            type: dataTypes.INTEGER(10),
             allowNull: false,
             autoIncrement: true,
             primaryKey: true,
@@ -16,7 +16,7 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         tableName: "colors",
-        timestamps: false
+        timestamps: false,
     };
 
     const COLOR = sequelize.define(alias, cols, config);

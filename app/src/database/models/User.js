@@ -3,7 +3,7 @@ module.exports = (sequelize, dataTypes) => {
 
     let cols = {
         id: {
-            type: dataTypes.INTEGER(10).UNSIGNED,
+            type: dataTypes.INTEGER(10),
             allowNull: false,
             autoIncrement: true,
             primaryKey: true,
@@ -25,16 +25,16 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
         },
         role: {
-            type: dataTypes.STRING(2),
+            type: dataTypes.INTEGER(2),
             allowNull: false,
             defaultValue: 0,
         },
         avatar: {
-            type: dataTypes.STRING(255),
+            type: dataTypes.STRING(100),
         },
-        address: {
+/*         address: {
             type: dataTypes.STRING(50),
-        },
+        }, */
     }
     
     let config = {

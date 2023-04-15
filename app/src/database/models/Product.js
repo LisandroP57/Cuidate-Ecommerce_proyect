@@ -3,7 +3,7 @@ module.exports = (sequelize, dataTypes) => {
 
     let cols = {
         id: {
-            type: dataTypes.INTEGER(10).UNSIGNED,
+            type: dataTypes.INTEGER(10),
             allowNull: false,
             autoIncrement: true,
             primaryKey: true,
@@ -14,19 +14,18 @@ module.exports = (sequelize, dataTypes) => {
         },
         description: {
             type: dataTypes.STRING(255),
-            allowNull: false 
-        },
-        category: {
-            type: dataTypes.ENUM('in-sale', 'visited'),
-            allowNull: false,
         },
         price: {
             type: dataTypes.DECIMAL(10,2),
             allowNull: false,
         },
         discount: {
-            type: dataTypes.DECIMAL(5,2),
+            type: dataTypes.INTEGER(10),
             defaultValue: 0.0,
+        },
+        subcategory_id: {
+            type: dataTypes.INTEGER(10),
+            allowNull: false,
         },
     }
     
@@ -39,26 +38,23 @@ module.exports = (sequelize, dataTypes) => {
     const PRODUCT = sequelize.define(alias, cols, config);
 
     PRODUCT.associate = (models) => {
-        PRODUCT.belongsTo(models.ProductCategory, {
-            as: "productcategory",
-            foreignKey: "product_category_id",
-        })
+        PRODUCT.belongsTo(models.Subcategory, {
+            as: "subcategory",
+            foreignKey: "subcategory_id",
+        });
         
+        PRODUCT.hasMany(models.ProductImage, {
+            as: "images",
+            foreignKey: "product_id",
+        });
+
         PRODUCT.belongsToMany(models.Color, {
             as: "colors",
             through: "color_product",
             foreignKey: "product_id",
             otherKey: "color_id",
             timestamps: false,
-        })
-
-        PRODUCT.belongsToMany(models.ProductImage, {
-            as: "product_images",
-            through: "image_product",
-            foreignKey: "product_id",
-            otherKey: "image_id",
-            timestamps: false,
-        })
+        });
     }
 
     return PRODUCT;
