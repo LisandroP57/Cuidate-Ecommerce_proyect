@@ -5,7 +5,7 @@ const router = express.Router();
         /* Controller Require */
 const {
         products,
-        carrito,
+        shoppingcart,
         detail
  } = require("../controllers/productsController");
 
@@ -17,7 +17,7 @@ router
         /* All products */
         .get('/allProducts', products)
         /* Shopping cart */
-        .get('/carrito',userInSessionCheck, carrito)
+        .get('/shoppingcart', userInSessionCheck, shoppingcart)
 
         /* Detail product */
         .get('/detail/:id/', detail)

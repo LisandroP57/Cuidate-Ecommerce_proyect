@@ -32,9 +32,9 @@ module.exports = (sequelize, dataTypes) => {
         avatar: {
             type: dataTypes.STRING(100),
         },
-/*         address: {
+        address: {
             type: dataTypes.STRING(50),
-        }, */
+        },
     }
     
     let config = {

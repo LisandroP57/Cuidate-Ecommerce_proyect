@@ -1,10 +1,8 @@
-//const { users, writeUsersJson } = require("../data");
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const { User } = require("../database/models");
 
 module.exports = {
-
     login: (req, res) => {
         return res.render('users/login', { session: req.session });
     },
@@ -18,35 +16,31 @@ module.exports = {
                     email: req.body.email
                 }
             })
-                .then((user) => {
-                    req.session.user = {
-                        id: user.id,
-                        name: user.name,
-                        email: user.email,
-                        password: user.password
-                    }
-                    let cookieLifeTime = new Date(Date.now() + 260000);
+            .then((user) => {
+                req.session.user = {
+                    id: user.id,
+                    name: user.name,
+                    email: user.email,
+                    password: user.password
+                }
 
-                    if (rememberMe) {
-                        res.cookie(
-                            "userCuidate",
-                            req.session.user,
-                            {
-                                expires: cookieLifeTime,
-                                httpOnly: true
-                            });
-                    } else {
-                        res.clearCookie("userCuidate");
-                    }
+                let cookieLifeTime = new Date(Date.now() + 60000);
+                
+                if (req.body.remember) {
+                    res.cookie(
+                        "userCuidate",
+                        req.session.user,
+                        {
+                            expires: cookieLifeTime,
+                            httpOnly: true
+                        })
+                }
 
-                    res.locals.user = req.session.user
-
-                    res.redirect("/");
-
-                })
-                .catch(error => console.log())
-
-
+                res.locals.user = req.session.user
+                
+                res.redirect("/");
+            })
+            .catch(error => console.log())
         } else {
             return res.render("users/login", {
                 errors: errors.mapped(),
@@ -54,16 +48,17 @@ module.exports = {
             })
         }
     },
-
     register: (req, res) => {
-        return res.render('users/register', { session: req.session })
+        return res.render('users/register', {
+            session: req.session
+        })
     },
     forgetPassword: (req, res) => {
-        return res.render('users/forgetPassword', { session: req.session });
+        return res.render('users/forgetPassword', {
+            session: req.session
+        })
     },
-
     processRegister: (req, res) => {
-
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
@@ -75,15 +70,15 @@ module.exports = {
                 pass: bcrypt.hashSync(req.body.pass1, 12),
                 avatar: req.file ? req.file.filename : "default-image.png",
                 role: 0,
+                adress: "",
             };
 
             User.create(newUser)
-                .then(() => {
-                    return res.redirect("/users/login");
-                })
-                .catch(error => console.log(error))
+            .then(() => {
+                return res.redirect("/users/login");
+            })
+            .catch(error => console.log(error))
         } else {
-
             res.render("users/register", {
                 errors: errors.mapped(),
                 old: req.body,
@@ -94,13 +89,12 @@ module.exports = {
     logout: (req, res) => {
         req.session.destroy();
         if (req.cookies.userCuidate) {
-            res.cookie("userCuidate", "", { maxAge: 1 })
+            res.cookie("userCuidate", "", { maxAge: -1})
         }
 
         res.redirect("/");
 
     },
-
     profile: (req, res) => {
         const userInSessionId = req.session.user.id;
 
@@ -115,6 +109,7 @@ module.exports = {
     },
     editProfile: (req, res) => {
         let userInSessionId = req.session.user.id;
+
         let userInSession = users.find(user => user.id === userInSessionId);
 
         res.render("users/userProfileEdit", {
@@ -123,7 +118,6 @@ module.exports = {
         })
     },
     updateProfile: (req, res) => {
-
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {

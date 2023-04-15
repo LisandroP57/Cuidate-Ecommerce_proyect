@@ -7,37 +7,84 @@ const {
 } = require("../database/models");
 
 module.exports = {
-  index: (req, res) => {
-    return res.render("admin/adminIndex", {
-      session: req.session,
-    });
-},
-    
+    index: (req, res) => {
+        return res.render("admin/adminIndex", {
+            session: req.session,
+        });
+    },
+    create: (req, res) => {
+        const CATEGORIES_PROMISE = Category.findAll();
+        const SUBCATEGORIES_PROMISE = Subcategory.findAll();
+
+        Promise.all([CATEGORIES_PROMISE, SUBCATEGORIES_PROMISE])
+        .then(([categories, subcategories]) => {
+            return res.render("admin/adminProductCreate", {
+                session: req.session,
+                categories,
+                subcategories,
+            });
+        })
+        .catch((error) => console.log(error));
+    },
     store: (req, res) => {
         let errors = validationResult(req)
         
         if(errors.isEmpty()){
-            
-            const id = Math.max(...products.map(el => el.id))
-        
-            const newProduct = {
-            id: id + 1,
-            ...req.body,
-            image: req.file ? req.file.filename : "default-image.png",
+            let {
+                name,
+                price,
+                discount,
+                subcategory,
+                description
+            } = req.body;
+
+            let newProduct = {
+                name,
+                price,
+                description,
+                discount,
+                subcategory_id: subcategory,
             };
 
-            products.push(newProduct);
-
-            writeProductsJson(products)
-
-            res.redirect('/products/allProducts')
-            
+            Product.create(newProduct)
+            .then((product) => {
+                if (req.files.length === 0) {
+                    ProductImage.create({
+                        image: "default-image.png",
+                        product_id: product.id,
+                    })
+                    .then(() => {
+                        return res.redirect("/products/allProducts")
+                    });
+                } else {
+                    const files = req.files.map((file) => {
+                        return {
+                            image: file.filename,
+                            product_id: product.id,
+                        };
+                });
+                ProductImage.bulkCreate(files)
+                .then(() => {
+                    return res.redirect("/products/allProducts");
+                });
+            }
+        })
+        .catch((error) => console.log(error)); 
         } else {
-            res.render("admin/adminProductCreate", {
-                errors: errors.mapped(),
-                old: req.body,
-                session: req.session
+            const CATEGORIES_PROMISE = Category.findAll();
+            const SUBCATEGORIES_PROMISE = Subcategory.findAll();
+            
+            Promise.all([CATEGORIES_PROMISE, SUBCATEGORIES_PROMISE])
+            .then(([categories, subcategories]) => {
+                return res.render("admin/adminProductCreate", {
+                    session: req.session,
+                    categories,
+                    subcategories,
+                    errors: errors.mapped(),
+                    old: req.body,
+                });
             })
+            .catch((error) => console.log(error));
         }
     },
 

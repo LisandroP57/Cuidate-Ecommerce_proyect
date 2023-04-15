@@ -12,7 +12,7 @@ const {
         profile,
         editProfile,
         updateProfile,
-        logOut
+        logout
  } = require('../controllers/usersController');
 
 const uploadAvatar = require("../middlewares/uploadAvatar");
@@ -32,7 +32,7 @@ router
         .post('/login', loginValidator, processLogin)
 
         .get('/forgetPassword', forgetPassword)
-        .get('/logout', logOut)
+        .get('/logout', logout)
 
         .get('/profile', userInSessionCheck, profile)
         .get('/profile/edit', userInSessionCheck, editProfile)
