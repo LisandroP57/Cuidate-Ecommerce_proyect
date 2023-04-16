@@ -10,7 +10,6 @@ module.exports = {
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
-
             Users.findOne({
                 where: {
                     email: req.body.email
@@ -62,7 +61,6 @@ module.exports = {
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
-
             let newUser = {
                 name: req.body.name,
                 last_name: req.body.last_name,
