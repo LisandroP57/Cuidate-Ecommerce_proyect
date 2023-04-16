@@ -35,18 +35,17 @@ module.exports = {
 		})
 		.catch((error) => console.log(error));
 	} */
-	
+
 	shoppingcart: (req, res) => {
 		res.render("products/shoppingcart", { session: req.session });
 	},
-
 	detail: (req, res) => {
 		let productId = Number(req.params.id);
 
 		const PRODUCT_PROMISE = Product.findByPk(productId, {
 			include: [{ association: "images" }],
 		});
-
+		
 		const ALL_PRODUCTS_PROMISE = Product.findAll({
 			where: {
 				discount: {
@@ -65,24 +64,24 @@ module.exports = {
 				});
 			})
 			.catch((error) => console.log(error));
-		},
-		category: (req, res) => {
-			const categoryId = req.params.id;
-
-			Category.findByPk(categoryId, {
-				include: [
-					{
-						association: "subcategories",
-						include: {
-							association: "products",
-							include: { association: "images" },
-						},
+	},
+	category: (req, res) => {
+		const categoryId = req.params.id;
+		
+		Category.findByPk(categoryId, {
+			include: [
+				{
+					association: "subcategories",
+					include: {
+						association: "products",
+						include: { association: "images" },
 					},
-				],
-			})
-			.then((category) => {
-				const PRODUCTS = category.subcategories.map(
-					(subcategory) => subcategory.products
+				},
+			],
+		})
+		.then((category) => {
+			const PRODUCTS = category.subcategories.map(
+				(subcategory) => subcategory.products
 				);
 				return res.render("categories", {
 					category,
@@ -92,5 +91,5 @@ module.exports = {
 				});
 			})
 			.catch((error) => console.log(error));
-		},
-	};
+	},
+};

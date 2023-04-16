@@ -10,7 +10,7 @@ const cookieCheck = require("./middlewares/cookieCheck");
     /* Express */
 const app = express();
 
-/* Template engine */
+    /* Template engine */
 app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, '/views'));
 
@@ -39,7 +39,7 @@ app.use("/users", usersRouter);
 app.use("/products", productsRouter);
 app.use("/admin", adminRouter);
 
-        /* Error 404 */
+    /* Error 404 */
 app.use((req, res, next) => {
     res.status(404).render('not-found', { session: req.session })
 })

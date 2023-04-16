@@ -12,9 +12,6 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(50),
             allowNull: false,
         },
-        description: {
-            type: dataTypes.STRING(255),
-        },
         price: {
             type: dataTypes.INTEGER(10),
             allowNull: false,
@@ -22,6 +19,9 @@ module.exports = (sequelize, dataTypes) => {
         discount: {
             type: dataTypes.INTEGER(10),
             defaultValue: 0.0,
+        },
+        description: {
+            type: dataTypes.STRING(255),
         },
         subcategory_id: {
             type: dataTypes.INTEGER(10),
