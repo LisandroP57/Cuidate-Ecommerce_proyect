@@ -7,8 +7,7 @@ module.exports = {
             include: [{association: "images"}]
         })
         .then(products => {
-            return res.render("index", {
-                carousel,
+            return res.render("home", {
                 sliderTitle: "Productos en oferta",
                 sliderProducts: products,
                 session: req.session
