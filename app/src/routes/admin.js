@@ -1,17 +1,3 @@
-/* const express = require("express");
-const router = express.Router();
-const {
-    index,
-    products,
-    create,
-    store,
-    edit,
-    update,
-    destroy
-} = require("../controllers/adminController");
-const uploadProductFile = require("../middlewares/uploadProductFile")
-const productValidator = require("../validations/productValidator"); */
-
 const express = require("express");
 const router = express.Router();
 
@@ -19,8 +5,8 @@ const {
     create,
     store,
     edit,
-    update,
-    destroy
+    /* update,
+    destroy */
 } = require("../controllers/adminController");
 
 const {uploadImageProduct} = require("../middlewares/upload");
@@ -36,9 +22,9 @@ router
 
         /* Edit product */
         .get('/products/edit/:id', userInSessionCheck, userSessionAdmin, edit)
-        .put('/products/edit/:id', uploadImageProduct.single("image"), productValidator, update)
+        //.put('/products/edit/:id', uploadImageProduct.single("image"), productValidator, update)
 
         /* Delete product*/
-        .delete('/products/delete/:id', userInSessionCheck, userSessionAdmin, destroy);
+        //.delete('/products/delete/:id', userInSessionCheck, userSessionAdmin, destroy);
 
 module.exports = router;

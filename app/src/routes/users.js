@@ -10,8 +10,8 @@ const {
         forgetPassword,
         processLogin,
         profile,
-        editProfile,
-        updateProfile,
+        /* editProfile,
+        updateProfile, */
         logout
  } = require('../controllers/usersController');
 
@@ -35,7 +35,7 @@ router
         .get('/logout', logout)
 
         .get('/profile', userInSessionCheck, profile)
-        .get('/profile/edit', userInSessionCheck, editProfile)
-        .put('/profile/edit', uploadAvatar.single("avatar"), updateUserValidator, updateProfile)
+        //.get('/profile/edit', userInSessionCheck, editProfile)
+        //.put('/profile/edit', uploadAvatar.single("avatar"), updateUserValidator, updateProfile)
 
 module.exports = router;

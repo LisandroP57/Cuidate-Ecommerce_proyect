@@ -107,7 +107,7 @@ module.exports = {
             })
             .catch(error => console.log(error))
     },
-    editProfile: (req, res) => {
+    /* editProfile: (req, res) => {
         let userInSessionId = req.session.user.id;
 
         let userInSession = users.find(user => user.id === userInSessionId);
@@ -160,4 +160,5 @@ module.exports = {
             })
         }
     }
+ */
 }
