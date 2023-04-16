@@ -4,23 +4,23 @@ const { User } = require("../database/models");
 
 module.exports = {
     login: (req, res) => {
-        return res.render('users/login', { session: req.session });
+        res.render('users/login', { session: req.session });
     },
     processLogin: (req, res) => {
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
-            Users.findOne({
+            User.findOne({
                 where: {
-                    email: req.body.email
+                    email: req.body.email,
                 }
             })
             .then((user) => {
                 req.session.user = {
                     id: user.id,
                     name: user.name,
-                    email: user.email,
-                    password: user.password
+                    avatar: user.avatar,
+                    role: user.role
                 }
 
                 let cookieLifeTime = new Date(Date.now() + 60000);
@@ -35,7 +35,7 @@ module.exports = {
                         })
                 }
 
-                res.locals.user = req.session.user
+                res.locals.user = req.session.user;
                 
                 res.redirect("/");
             })
@@ -61,6 +61,7 @@ module.exports = {
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
+
             let newUser = {
                 name: req.body.name,
                 last_name: req.body.last_name,
@@ -105,7 +106,7 @@ module.exports = {
             })
             .catch(error => console.log(error))
     },
-    /* editProfile: (req, res) => {
+    editProfile: (req, res) => {
         let userInSessionId = req.session.user.id;
 
         let userInSession = users.find(user => user.id === userInSessionId);
@@ -158,5 +159,5 @@ module.exports = {
             })
         }
     }
- */
+
 }

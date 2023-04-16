@@ -24,16 +24,16 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(70),
             allowNull: false,
         },
+        address: {
+            type: dataTypes.STRING(50),
+        },
         role: {
             type: dataTypes.INTEGER(2),
             allowNull: false,
-            defaultValue: 0,
+            defaultValue: 0
         },
         avatar: {
             type: dataTypes.STRING(100),
-        },
-        address: {
-            type: dataTypes.STRING(50),
         },
     }
     

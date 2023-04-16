@@ -1,5 +1,5 @@
  const { check, body} = require("express-validator");
- const { users } = require("../data");
+ const { User } = require("../database/models");
  
  module.exports = [
      check("name")
@@ -18,12 +18,16 @@
      
      body("email")
      .custom((value) => {
-         let user = users.find(user => user.email === value);
- 
-         return user === undefined;
-     })
- 
-     .withMessage("Email ya registrado"),
+         return User.findOne({
+            where: {
+                email: value
+            }
+         })
+         .then(user => {
+            if(user) return Promise.reject("Email en uso")
+         })
+         .catch(error => console.log(error))
+     }),
  
      check('pass1')
      .notEmpty()
@@ -39,5 +43,5 @@
  
      check('terms')
      .isString('on')
-     .withMessage('Debes aceptar los términos y condiciones')
+     .withMessage('Debes aceptar los términos y condiciones!')
  ]

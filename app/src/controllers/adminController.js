@@ -98,7 +98,7 @@ module.exports = {
             });
     },
     
-    /* update: (req, res) => {
+    update: (req, res) => {
         let errors = validationResult(req);
 
         if(errors.isEmpty()){
@@ -143,5 +143,5 @@ module.exports = {
         writeProductsJson(products)
         
         res.send("El producto fue destruido")
-        } */
+        }
 }
