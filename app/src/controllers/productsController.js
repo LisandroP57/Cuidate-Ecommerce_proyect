@@ -35,7 +35,7 @@ module.exports = {
 		})
 		.catch((error) => console.log(error));
 	} */
-
+	
 	shoppingcart: (req, res) => {
 		res.render("products/shoppingcart", { session: req.session });
 	},
