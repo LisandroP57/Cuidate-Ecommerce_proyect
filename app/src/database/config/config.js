@@ -2,7 +2,7 @@ module.exports = {
     "development": {
       "username": "root",
       "password": '',
-      "database": "cuidate_db",
+      "database": "cuidatedb_test",
       "host": "127.0.0.1",
       "dialect": "mysql"
     },

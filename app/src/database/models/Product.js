@@ -48,13 +48,13 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "product_id",
         });
 
-        PRODUCT.belongsToMany(models.Color, {
+/*         PRODUCT.belongsToMany(models.Color, {
             as: "colors",
             through: "color_product",
             foreignKey: "product_id",
             otherKey: "color_id",
             timestamps: false,
-        });
+        }); */
     }
 
     return PRODUCT;
