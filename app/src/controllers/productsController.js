@@ -1,6 +1,5 @@
 const { Product, Category, Sequelize } = require("../database/models");
 const { Op } = Sequelize;
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
 	products: (req, res) => {
@@ -9,7 +8,6 @@ module.exports = {
 			res.render("products/allProducts", {
 				session: req.session,
 				products,
-				toThousand
 			});
 		})
 		.catch((error) => console.log(error));
@@ -56,10 +54,11 @@ module.exports = {
 		});
 
 		Promise.all([PRODUCT_PROMISE, ALL_PRODUCTS_PROMISE])
-			.then(([product]) => {
+			.then(([product, sliderProducts]) => {
 				res.render("productDetail", {
+					sliderTitle: "Productos en oferta",
+          			sliderProducts,
 					product,
-					toThousand,
 					session: req.session
 				});
 			})

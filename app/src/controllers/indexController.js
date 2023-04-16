@@ -1,20 +1,20 @@
-const fs = require('fs');
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const { Product } = require("../database/models");
 
 module.exports = {
+
 	index: (req, res) => {
-		getProductData()
-			.then((products) => {
-				const productsInSale = products.filter(product => product.Category.name === "in-sale");
-				const productsVisited = products.filter(product => product.Category.name === "visited");
-				res.render('home',{
-					productsVisited,
-					productsInSale,
-					session: req.session,
-					toThousand
-				});
-			})
-			.catch((error) => console.log(error));
+		Product.findAll({
+            include: [{association: "images"}]
+        })
+        .then(products => {
+            return res.render("index", {
+                carousel,
+                sliderTitle: "Productos en oferta",
+                sliderProducts: products,
+                session: req.session
+            })
+        })
+        .catch(error => console.log(error));
 	},
 	search: (req, res) => {
 		let { keywords } = req.query
@@ -23,7 +23,6 @@ module.exports = {
 			keywords,
 			results,
 			session: req.session,
-			toThousand,
 		})
 	},
 };
