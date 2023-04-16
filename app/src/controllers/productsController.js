@@ -55,7 +55,7 @@ module.exports = {
 
 		Promise.all([PRODUCT_PROMISE, ALL_PRODUCTS_PROMISE])
 			.then(([product, sliderProducts]) => {
-				res.render("productDetail", {
+				res.render("products/detail", {
 					sliderTitle: "Productos en oferta",
           			sliderProducts,
 					product,

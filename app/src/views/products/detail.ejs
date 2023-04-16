@@ -34,20 +34,17 @@
 									</p>
 								<% if (product.discount> 0) { %>
 									<p class="product-detail-price small">
-										<span>
-											<%= toThousand(product.price) %>
-										</span>
 										/
 										<b>
 											<%= product.discount %>% OFF
 										</b>
 									</p>
 									<p class="product-detail-price">
-										<%= toThousand(product.price - (product.price * product.discount / 100)) %>
+										Precio
 									</p>
 								<% } else{ %>
 										 <p class="product-detail-price">
-											<%= toThousand(product.price) %>
+											Precio
 										</p>
 									 <% } %> 
 
@@ -94,11 +91,6 @@
 				</div>
 			</div>
 			<!-- /product detail -->
-
-			<section>
-				<!-- /* Slider */ -->  
-				<%- include('partials/slider.ejs') %>
-			</section>
 
 			<!-- footer -->
 			<%- include('../partials/footer') %>
