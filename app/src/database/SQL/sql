@@ -193,6 +193,9 @@ CREATE TABLE `products_size` (
 );
 
 
+select * from products_size;
+
+
 
 
 
