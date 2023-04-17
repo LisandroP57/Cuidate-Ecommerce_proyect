@@ -132,6 +132,10 @@ INSERT INTO `subcategories` VALUES (43,'Combo Mamá Llegue + Navaja Retráctil',
 INSERT INTO `subcategories` VALUES (44,'Pompones',5,NULL,NULL),(45,'Alcohol en Gel',5,NULL,NULL);
 UNLOCK TABLES;
 
+/*5*/
+ DROP TABLE IF EXISTS `products`;
+
+
 
 
 
