@@ -183,7 +183,8 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `*products_size`;
 CREATE TABLE `products_size` (
-    
+    `id` int(10) NOT NULL AUTO_INCREMENT,
+
 );
 
 
