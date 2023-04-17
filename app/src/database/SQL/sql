@@ -5,6 +5,6 @@ USE cuidate_db;
 DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
-
+  `id` int(10) NOT NULL AUTO_INCREMENT,
 );
 
