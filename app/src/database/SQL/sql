@@ -195,6 +195,9 @@ CREATE TABLE `products_size` (
 
 select * from products_size;
 
+/*8*/
+DROP TABLE IF EXISTS `colors`;
+
 
 
 
