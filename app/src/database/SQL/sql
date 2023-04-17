@@ -211,6 +211,7 @@ DROP TABLE IF EXISTS `color_products`;
 CREATE TABLE `color_products` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
+  `products_id` int(11) NOT NULL,
   );
 
 
