@@ -83,7 +83,7 @@ CREATE TABLE `categories` (
 select * from categories; 
 
 LOCK TABLES `categories` WRITE;
-INSERT INTO `categories` VALUES(1, 'Productos' );
+INSERT INTO `categories` VALUES(1, 'Products');
 
 
 
