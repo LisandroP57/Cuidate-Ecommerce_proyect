@@ -69,7 +69,6 @@ module.exports = {
                 pass: bcrypt.hashSync(req.body.pass1, 12),
                 avatar: req.file ? req.file.filename : "default-image.png",
                 role: 0,
-                adress: "",
             };
 
             User.create(newUser)

@@ -1,3 +1,3 @@
 module.exports = (req, res, next) => {
-    req.session.user.type === "ADMIN" ? next() : res.redirect("/");
+    req.session.user.role === 1 ? next() : res.redirect("/");
 }
