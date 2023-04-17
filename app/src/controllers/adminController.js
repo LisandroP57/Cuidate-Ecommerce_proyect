@@ -12,6 +12,25 @@ module.exports = {
             session: req.session,
         });
     },
+    products: (req, res) => {
+        Product.findAll({
+            include: [
+                {
+                    association: "subcategory",
+                    include: {
+                        association: "category",
+                },
+            },
+        ],
+    })
+    .then((products) => {
+        return res.render("admin/adminProducts", {
+            session: req.session,
+            products,
+        });
+    })
+        .catch((error) => console.log(error))
+    },
     create: (req, res) => {
         const CATEGORIES_PROMISE = Category.findAll();
         const SUBCATEGORIES_PROMISE = Subcategory.findAll();
@@ -89,13 +108,15 @@ module.exports = {
     },
 
     edit: (req, res) => {
-            let productId = Number(req.params.id);
-            let productToEdit = products.find(product => product.id === productId)
+        const productId = Number(req.params.id);
+        const product = products.find((product) => product.id === productId);
 
-            res.render("admin/adminProductEdit", {
-                productToEdit,
-                session: req.session
-            });
+        res.render("admin/adminProductEdit", {
+            categories,
+            subcategories,
+            product,
+            session: req.session,
+        });
     },
     
     update: (req, res) => {
@@ -107,12 +128,13 @@ module.exports = {
             
             products.forEach( product => {
                 if (product.id === productId){
-                    product.name = req.body.name;
-                    product.price = req.body.price;
-                    product.discount = req.body.discount;
-                    product.category = req.body.category;
-                    product.description = req.body.description;
-                    product.image = req.file ? req.file.filename : product.image;
+                    (product.id = product.id),
+                    (product.name = req.body.name),
+                    (product.price = req.body.price),
+                    (product.discount = req.body.discount),
+                    (product.category = req.body.category),
+                    (product.description = req.body.description),
+                    (product.image = req.file ? req.file.filename : product.image)
                 }
             });
             
@@ -120,10 +142,12 @@ module.exports = {
             res.redirect('/products/allProducts');
         
         } else {
-            let productToEdit = products.find(product => product.id === +req.params.id)
+            let product = products.find((product) => product.id === +req.params.id);
 
             res.render("admin/adminProductEdit", {
-                productToEdit,
+                subcategories,
+                categories,
+                product,
                 errors: errors.mapped(),
                 old: req.body,
                 session: req.session
