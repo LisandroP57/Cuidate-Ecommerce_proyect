@@ -219,7 +219,12 @@ CREATE TABLE `color_products` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `products_idx` (`products_id`),
   KEY `colors_idx` (`colors_id`),
-  );
+  CONSTRAINT `products` FOREIGN KEY (`products_id`) REFERENCES `products` (`id`),
+  CONSTRAINT `colors` FOREIGN KEY (`colors_id`) REFERENCES `colors` (`id`)
+);
+
+
+select * from color_products;
 
 
 
