@@ -60,24 +60,11 @@ CREATE TABLE `shoppingCart` (
   `created_at` date DEFAULT NULL,
   `updated_at` date DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `shoppingCart_un` (`id`),
-  KEY `shoppingCart_FK` (`userId`),
+  UNIQUE KEY `shoppingCart_un` (`id`), KEY `shoppingCart_FK` (`userId`),
   CONSTRAINT `shoppingCart_FK` FOREIGN KEY (`userId`) REFERENCES `users` (`id`)
 );
 
 select * from shoppingcart;
-
-LOCK TABLES `shoppingCart` WRITE;
-INSERT INTO `shoppingCart` VALUES (1, 3200, 1, 'pago', 5,'2021-09-24 02:05:57','2021-09-24 02:48:31');
-INSERT INTO `shoppingCart` VALUES (2, 880, 2, 'espera', 5,'2021-09-24 02:05:57','2021-09-24 02:48:31');
-UNLOCK TABLES;
-
-LOCK TABLES `shoppingCart` WRITE;
-INSERT INTO `shoppingCart` VALUES (1, 3200, 1, 'pago', 5,'2021-09-24 02:05:57','2021-09-24 02:48:31');
-INSERT INTO `shoppingCart` VALUES (2, 880, 2, 'espera', 5,'2021-09-24 02:05:57','2021-09-24 02:48:31');
-UNLOCK TABLES;
-
-
 
 
 
