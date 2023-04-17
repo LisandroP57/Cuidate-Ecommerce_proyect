@@ -1,9 +1,8 @@
-DROP DATABASE IF EXISTS cuidate_db;
-CREATE DATABASE cuidate_db;
-USE cuidate_db;
+DROP DATABASE IF EXISTS cuidate_db; /*BORRA, si ya una tabla con el mismo nombre */
+CREATE DATABASE cuidate_db;/*crea*/
+USE cuidate_db;/*que la use una vez creada*/
 /*1*/
 DROP TABLE IF EXISTS `users`;
-
 CREATE TABLE `users` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
@@ -20,17 +19,19 @@ CREATE TABLE `users` (
 
 select * from users;
 
+
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` VALUES (1,'camila','milagros','admin@mail.com','$2a$10$g9YXAsgvDDsFzEkSsqi3Fes8e/9mvviTSUYTs13llZf/5/YwpVncO','1','2021-09-24 02:05:57','2021-09-24 02:48:31','1632450586832_img_.jpg');
-INSERT INTO `users` VALUES(2,'camila','milagros','user@mail.com','$2a$10$g9YXAsgvDDsFzEkSsqi3Fes8e/9mvviTSUYTs13llZf/5/YwpVncO','1','2021-09-24 02:05:57','2021-09-24 02:48:31','1632450586832_img_.jpg');
-UNLOCK TABLES;
+INSERT INTO `users` VALUES(2,'camila','milagros','admin@mail.com','$2a$10$g9YXAsgvDDsFzEkSsqi3Fes8e/9mvviTSUYTs13llZf/5/YwpVncO','1','2021-09-24 02:05:57','2021-09-24 02:48:31','1632450586832_img_.jpg');
 
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
 
 /*2*/
 DROP TABLE IF EXISTS `shoppingCart`;
 CREATE TABLE `shoppingCart` (
-  `id` int(10) NOT NULL AUTO_INCREMENT, 
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `price` int(11) NOT NULL,
   `userId` int(11) NOT NULL,
   `state` varchar(100) NOT NULL,/*estado de la compra*/
@@ -38,7 +39,8 @@ CREATE TABLE `shoppingCart` (
   `created_at` date DEFAULT NULL,
   `updated_at` date DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `shoppingCart_un` (`id`), KEY `shoppingCart_FK` (`userId`),
+  UNIQUE KEY `shoppingCart_un` (`id`),
+  KEY `shoppingCart_FK` (`userId`),
   CONSTRAINT `shoppingCart_FK` FOREIGN KEY (`userId`) REFERENCES `users` (`id`)
 );
 
@@ -54,19 +56,22 @@ DROP TABLE IF EXISTS `categories`;
 CREATE TABLE `categories` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
-   PRIMARY KEY (`id`),
-   UNIQUE KEY `id_UNIQUE` (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
 );
 
 select * from categories; 
-
+--
+-- Dumping data for table `categories`
+--
 LOCK TABLES `categories` WRITE;
-INSERT INTO `categories` VALUES(1, 'Products'), (2, 'Defensa Personal' ), (3,'LLaveros'), (4,'KIDS'),(5,'Combos'),(6,'Accesorios');
+INSERT INTO `categories` VALUES(1, 'Productos' ), (2, 'Defensa Personal' ), (3,'LLaveros'), (4,'KIDS'), (5,'Combos'), (6,'Accesorios');
 UNLOCK TABLES;
+
+
 
 /*4*/
 DROP TABLE IF EXISTS `subcategories`;
-
 CREATE TABLE `subcategories` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
@@ -75,48 +80,50 @@ CREATE TABLE `subcategories` (
   `updated_at` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
-   KEY `categoria_idx` (`category_id`),
+  KEY `categoria_idx` (`category_id`),
   CONSTRAINT `categoria` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) 
 );
 
 select * from subcategories; 
 
 LOCK TABLES `subcategories` WRITE;
-INSERT INTO `subcategories` VALUES (1,'Gas pimienta',1,NULL,NULL), (2,'Manopla gatito',1,NULL,NULL),(3,'Rompecristal y Cortacinturon',1,NULL,NULL),
-(4,'Alarma LLavero',1,NULL,NULL)(5,'Kubotan Metálico',1,NULL,NULL),(6,'Tarjeta Navaja',1,NULL,NULL),
+INSERT INTO `subcategories` VALUES 
+/*Cat 1*/
+(1,'Gas pimienta',1,NULL,NULL), (2,'Manopla gatito',1,NULL,NULL),(3,'Rompecristal y Cortacinturon',1,NULL,NULL),
+(4,'Alarma LLavero',1,NULL,NULL),(5,'Kubotan Metálico',1,NULL,NULL),(6,'Tarjeta Navaja',1,NULL,NULL),
 (7,'LLavero Cinta',1,NULL,NULL),(8,'Scrunchie con Cierre + Tapavaso',1,NULL,NULL),(9,'Colgantes Kids',1,NULL,NULL),
 (10,'LLaveros Pop It y Jueguetes',1,NULL,NULL),(11,'Muñequero para niños',1,NULL,NULL), (12,'Mini Llavero ⚡️',1,NULL,NULL),
-(13,'Cinta LLavero Cuidate',1,NULL,NULL),(21,'Pompones',1,NULL,NULL),(22,'Alcohol en Gel',1,NULL,NULL);
-UNLOCK TABLES;
+(13,'Cinta Cuidate',1,NULL,NULL),(21,'Pompones',1,NULL,NULL),(22,'Alcohol en Gel',1,NULL,NULL);
 
 /*Cat 2*/
 INSERT INTO `subcategories` VALUES (23,'Gas pimienta',2,NULL,NULL), (24,'Manopla gatito',2,NULL,NULL),(25,'Rompecristal y Cortacinturon',2,NULL,NULL),
-(26,'Alarma LLavero',2,NULL,NULL),(27,'Kubotan Metálico',2,NULL,NULL),(30,'Tarjeta Navaja',2,NULL,NULL), (31,'LLavero Cinta',2,NULL,NULL),
-(32,'Scrunchie con Cierre + Tapavaso',2,NULL,NULL),(33,'Colgantes Kids',2,NULL,NULL),
+(26,'Alarma LLavero',2,NULL,NULL),(27,'Kubotan Metálico',2,NULL,NULL),(30,'Tarjeta Navaja',2,NULL,NULL),
+(31,'LLavero Cinta',2,NULL,NULL),(32,'Scrunchie con Cierre + Tapavaso',2,NULL,NULL),(33,'Colgantes Kids',2,NULL,NULL),
 (34,'LLaveros Pop It y Jueguetes',2,NULL,NULL),(35,'Muñequero para niños',2,NULL,NULL), (36,'Mini Llavero ⚡️',2,NULL,NULL),
 (37,'Cinta Cuidate',2,NULL,NULL);
 
 /*Cat 3*/
 INSERT INTO `subcategories` VALUES (38,'Colgante Kids',3,NULL,NULL),(39,'LLaveros Pop It y Jueguetes',3,NULL,NULL), 
-(40,'Muñequero para niños',3,NULL,NULL);     
-
+(40,'Muñequero para niños',3,NULL,NULL);                          
 /*Cat 4*/
-INSERT INTO `subcategories` VALUES (40,'Combo Mamá Llegué Premium + Picana',4,NULL,NULL);
+
 INSERT INTO `subcategories` VALUES (41,'Combo Mamá Llegué Premium ',4,NULL,NULL);
 INSERT INTO `subcategories` VALUES (42,'Bolsa Ecológico para Regalo',4,NULL,NULL);
 INSERT INTO `subcategories` VALUES (43,'Combo Mamá Llegue + Navaja Retráctil',4,NULL,NULL);
-
 /*Cat 5*/
 INSERT INTO `subcategories` VALUES (44,'Pompones',5,NULL,NULL),(45,'Alcohol en Gel',5,NULL,NULL);
 UNLOCK TABLES;
 
+
+
 /*5*/
  DROP TABLE IF EXISTS `products`;
- CREATE TABLE `products` (
+CREATE TABLE `products` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   `price` decimal(5,0) NOT NULL,
-  `offer` decimal(5,0) NOT null ,
+  `discount` decimal(5,0) NOT null ,
+  `description` decimal(5,0) NOT null ,
   `subcategory_id` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -126,10 +133,12 @@ UNLOCK TABLES;
   CONSTRAINT `subcategory` FOREIGN KEY (`subcategory_id`) REFERENCES `subcategories` (`id`)
  );
 
- select * from products; 
+select * from products; 
 
- LOCK TABLES `products` WRITE;
-INSERT INTO `products` VALUES (1,'Gas pimienta',1500,5,1,NULL,NULL), (2,'Manopla gatito',1500,5,1,NULL,NULL),(3,'Rompecristal y Cortacinturon',1500,5,1,NULL,NULL),
+LOCK TABLES `products` WRITE;
+INSERT INTO `products` VALUES 
+/*Cat 1*/
+(1,'Gas pimienta',1500,5,1,NULL,NULL), (2,'Manopla gatito',1500,5,1,NULL,NULL),(3,'Rompecristal y Cortacinturon',1500,5,1,NULL,NULL),
 (4,'Alarma LLavero',1500,5,1,NULL,NULL),(5,'Kubotan Metálico',1500,5,1,NULL,NULL),(6,'Tarjeta Navaja',1500,5,1,NULL,NULL),
 (7,'LLavero Cinta',1500,5,1,NULL,NULL),(8,'Scrunchie con Cierre + Tapavaso',1500,5,1,NULL,NULL),(9,'Colgantes Kids',1500,5,1,NULL,NULL),
 (10,'LLaveros Pop It y Jueguetes',1500,5,1,NULL,NULL),(11,'Muñequero para niños',1500,5,1,NULL,NULL), (12,'Mini Llavero ⚡️',1500,5,1,NULL,NULL),
@@ -150,26 +159,22 @@ CREATE TABLE `products_images` (
 select * from products_images;
 
 LOCK TABLES `products_images` WRITE;
-
-INSERT INTO `products_images` VALUES (1,'1635031571585_img_.jpg',70),(2,'1635035926256_img_.jpg',71),(3,'1635035957988_img_.jpg',72),(4,'1635035991058_img_.jpg',73),(5,'1635036018721_img_.jpg',74),(6,'1635036045675_img_.jpg',75),(7,'1635036083342_img_.jpg',76),(8,'1635036121986_img_.jpg',77),(9,'1635036171515_img_.jpg',78),(10,'1635036274526_img_.jpg',79),
-(11,'1635036329078_img_.jpg',80),(12,'1635036352716_img_.jpg',81),(13,'1635036424206_img_.jpg',82),(14,'1635036447309_img_.jpg',83),
-(15,'1635036488384_img_.jpg',84),(16,'1635036520742_img_.jpg',85),(17,'1635036543104_img_.jpg',86),(18,'1635036576010_img_.jpg',87);
-
+INSERT INTO `products_images` VALUES (1,'1635031571585_img_.jpg',1),(2,'1635035926256_img_.jpg',2),(3,'1635035957988_img_.jpg',3),(4,'1635035991058_img_.jpg',4),(5,'1635036018721_img_.jpg',5),(6,'1635036045675_img_.jpg',6),(7,'1635036083342_img_.jpg',7),(8,'1635036121986_img_.jpg',8),(9,'1635036171515_img_.jpg',9),(10,'1635036274526_img_.jpg',10),(11,'1635036329078_img_.jpg',11),(12,'1635036352716_img_.jpg',12),(13,'1635036424206_img_.jpg',13),(14,'1635036447309_img_.jpg',14),(15,'1635036488384_img_.jpg',15),(16,'1635036520742_img_.jpg',16),(17,'1635036543104_img_.jpg',17),(18,'1635036576010_img_.jpg',18);
 UNLOCK TABLES;
+
 
 /*7*/
 
-DROP TABLE IF EXISTS `*products_size`;
+DROP TABLE IF EXISTS `products_size`;
 CREATE TABLE `products_size` (
-     `id` int(10) NOT NULL AUTO_INCREMENT,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   `product_id` int(11) NOT NULL,
-   PRIMARY KEY (`id`),
+  PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
- KEY `products_size_FK` (`product_id`),
+  KEY `products_size_FK` (`product_id`),
   CONSTRAINT `products_size_FK` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 );
-
 
 select * from products_size;
 
@@ -201,25 +206,4 @@ CREATE TABLE `color_products` (
   CONSTRAINT `colors` FOREIGN KEY (`colors_id`) REFERENCES `colors` (`id`)
 );
 
-
 select * from color_products;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
