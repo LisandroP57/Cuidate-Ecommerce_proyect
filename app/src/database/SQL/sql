@@ -103,6 +103,10 @@ CREATE TABLE `subcategories` (
 
 select * from subcategories; 
 
+LOCK TABLES `subcategories` WRITE;
+INSERT INTO `subcategories` VALUES 
+UNLOCK TABLES;
+
 
 
 
