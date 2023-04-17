@@ -71,6 +71,10 @@ INSERT INTO `shoppingCart` VALUES (1, 3200, 1, 'pago', 5,'2021-09-24 02:05:57','
 INSERT INTO `shoppingCart` VALUES (2, 880, 2, 'espera', 5,'2021-09-24 02:05:57','2021-09-24 02:48:31');
 UNLOCK TABLES;
 
+/*3 categories no tiene fk porque guarda dos datos y se relaciona con latable de subcategorias y subcategories es la que recolecta los productos */
+DROP TABLE IF EXISTS `categories`;
+
+
 
 
 
