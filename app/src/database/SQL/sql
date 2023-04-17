@@ -18,3 +18,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `id_UNIQUE` (`id`)
 );
 
+select * from users;
+
+
+
