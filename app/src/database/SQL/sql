@@ -138,6 +138,7 @@ UNLOCK TABLES;
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   `price` decimal(5,0) NOT NULL,
+  `offer` decimal(5,0) NOT null ,
   );
 
 
