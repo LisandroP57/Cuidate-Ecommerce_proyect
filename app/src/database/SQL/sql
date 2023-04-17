@@ -148,6 +148,8 @@ UNLOCK TABLES;
   CONSTRAINT `subcategory` FOREIGN KEY (`subcategory_id`) REFERENCES `subcategories` (`id`)
  );
 
+ select * from products; 
+
 
 
 
