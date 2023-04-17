@@ -199,7 +199,8 @@ select * from products_size;
 DROP TABLE IF EXISTS `colors`;
 CREATE TABLE `colors` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-  
+  `name` varchar(45) NOT NULL,
+
 );
 
 
