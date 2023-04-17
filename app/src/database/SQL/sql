@@ -65,6 +65,8 @@ CREATE TABLE `shoppingCart` (
   CONSTRAINT `shoppingCart_FK` FOREIGN KEY (`userId`) REFERENCES `users` (`id`)
 );
 
+select * from shoppingcart;
+
 
 
 
