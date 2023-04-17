@@ -139,7 +139,8 @@ UNLOCK TABLES;
   `name` varchar(45) NOT NULL,
   `price` decimal(5,0) NOT NULL,
   `offer` decimal(5,0) NOT null ,
-  );
+  `subcategory_id` int(11) NOT NULL,
+);
 
 
 
