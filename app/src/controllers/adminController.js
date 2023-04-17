@@ -109,52 +109,87 @@ module.exports = {
 
     edit: (req, res) => {
         const productId = Number(req.params.id);
-        const product = products.find((product) => product.id === productId);
-
-        res.render("admin/adminProductEdit", {
-            categories,
-            subcategories,
-            product,
-            session: req.session,
-        });
+        Product.findOne({
+            where: { id: productId },
+            include: [
+                {
+                    association: "subcategory",
+                    include: {
+                        association: "category",
+                    },
+                },
+            ],
+        })
+        .then((product) => {
+            if (!product) {
+                return res.render("error404"); // producto no encontrado
+            }
+    
+            return res.render("admin/adminProductEdit", {
+                session: req.session,
+                product,
+            });
+        })
+        .catch((error) => console.log(error))
     },
     
+        
     update: (req, res) => {
         let errors = validationResult(req);
-
-        if(errors.isEmpty()){
+    
+        if (errors.isEmpty()) {
             const productId = Number(req.params.id);
-            let { name, price, discount, category, subcategory, description } = req.body;
-            
-            products.forEach((product) => {
-                if (product.id === productId){
-                    (product.id = product.id),
-                    (product.name = name),
-                    (product.price = price),
-                    (product.description = description),
-                    (product.discount = discount),
-                    (product.category = category),
-                    (product.subcategory = subcategory),
-                    (product.image = req.file ? req.file.filename : product.image)
-                }
-            });
-            
-            writeProductsJson(products);
-            res.redirect('/products/allProducts');
-        
-        } else {
-            let product = products.find((product) => product.id === +req.params.id);
-
-            res.render("admin/adminProductEdit", {
-                subcategories,
-                categories,
-                product,
-                errors: errors.mapped(),
-                old: req.body,
-                session: req.session
+            let { 
+                name, 
+                price, 
+                discount, 
+                category, 
+                subcategory, 
+                description 
+            } = req.body;
+    
+            Product.findByPk(productId)
+            .then((product) => {
+                product.name = name;
+                product.price = price;
+                product.discount = discount;
+                product.subcategory_id = subcategory;
+                product.description = description;
+                product.save()
+                .then(() => {
+                    res.redirect("/products/allProducts");
+                })
+                .catch((error) => console.log(error));
             })
+            .catch((error) => console.log(error));
+        } else {
+            const productId = Number(req.params.id);
+            
+            const CATEGORIES_PROMISE = Category.findAll();
+            const SUBCATEGORIES_PROMISE = Subcategory.findAll();
+    
+            Promise.all([CATEGORIES_PROMISE, SUBCATEGORIES_PROMISE])
+            .then(([categories, subcategories]) => {
+                return res.render("admin/adminProductEdit", {
+                    session: req.session,
+                    categories,
+                    subcategories,
+                    errors: errors.mapped(),
+                    old: req.body,
+                    product: {
+                        id: productId,
+                        name: req.body.name,
+                        price: req.body.price,
+                        discount: req.body.discount,
+                        subcategory_id: req.body.subcategory,
+                        description: req.body.description,
+                    }
+                });
+            })
+            .catch((error) => console.log(error));
         }
     },
+    
 
     destroy : (req, res) => {
         let productId = Number(req.params.id);
