@@ -179,6 +179,10 @@ INSERT INTO `products_images` VALUES (1,'1635031571585_img_.jpg',70),(2,'1635035
 
 UNLOCK TABLES;
 
+/*7*/
+
+DROP TABLE IF EXISTS `*products_size`;
+
 
 
 
