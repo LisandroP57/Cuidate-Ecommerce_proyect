@@ -20,5 +20,7 @@ CREATE TABLE `users` (
 
 select * from users;
 
+LOCK TABLES `users` WRITE;
+
 
 
