@@ -111,6 +111,10 @@ INSERT INTO `subcategories` VALUES (1,'Gas pimienta',1,NULL,NULL), (2,'Manopla g
 (13,'Cinta LLavero Cuidate',1,NULL,NULL),(21,'Pompones',1,NULL,NULL),(22,'Alcohol en Gel',1,NULL,NULL);
 UNLOCK TABLES;
 
+/*Cat 2*/
+INSERT INTO `subcategories` VALUES (23,'Gas pimienta',2,NULL,NULL), (24,'Manopla gatito',2,NULL,NULL),(25,'Rompecristal y Cortacinturon',2,NULL,NULL),
+
+
 
 
 
