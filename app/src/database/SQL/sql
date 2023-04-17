@@ -1,1 +1,1 @@
-cdcsdcsdcsd
+DROP DATABASE IF EXISTS cuidate_db;
