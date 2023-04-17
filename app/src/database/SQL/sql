@@ -89,6 +89,11 @@ UNLOCK TABLES;
 /*4*/
 DROP TABLE IF EXISTS `subcategories`;
 
+CREATE TABLE `subcategories` (
+
+);
+
+
 
 
 
