@@ -163,7 +163,8 @@ DROP TABLE IF EXISTS `products_images`;
 CREATE TABLE `products_images` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `image` varchar(100) NOT NULL,
-);
+  `product_id` int(11) NOT NULL,
+  );
 
 
 
