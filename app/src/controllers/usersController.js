@@ -108,12 +108,16 @@ module.exports = {
     editProfile: (req, res) => {
         let userInSessionId = req.session.user.id;
 
-        let userInSession = users.find(user => user.id === userInSessionId);
-
-        res.render("users/userProfileEdit", {
-            user: userInSession,
-            session: req.session
+        User.findByPk(userInSessionId)
+        .then((userInSession) => {
+            res.render("users/userProfileEdit", {
+                user: userInSession,
+                session: req.session
+            });
         })
+        .catch((error) => {
+            console.log(error)
+        });
     },
     updateProfile: (req, res) => {
         let errors = validationResult(req);
@@ -121,15 +125,16 @@ module.exports = {
         if (errors.isEmpty()) {
 
             let userId = req.session.user.id;
-            let user = users.find(user => user.id === userId);
+
+            /* let user = users.find(user => user.id === userId); */
 
             const {
                 name,
                 last_name,
-                address,
+                /* address,
                 postal_code,
                 province,
-                city,
+                city, */
             } = req.body;
 
             user.name = name;
