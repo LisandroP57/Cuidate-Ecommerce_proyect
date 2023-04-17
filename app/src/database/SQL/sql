@@ -59,6 +59,8 @@ CREATE TABLE `shoppingCart` (
   `quantity` int(11) NOT NULL,
   `created_at` date DEFAULT NULL,
   `updated_at` date DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `shoppingCart_un` (`id`),
 );
 
 
