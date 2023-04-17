@@ -1,1 +1,11 @@
 DROP DATABASE IF EXISTS cuidate_db;
+CREATE DATABASE cuidate_db;
+USE cuidate_db;
+/*1*/
+DROP TABLE IF EXISTS `users`;
+
+CREATE TABLE `users` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+);
+
