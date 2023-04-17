@@ -169,6 +169,8 @@ CREATE TABLE `products_images` (
   CONSTRAINT `products_images_FK` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 );
 
+select * from products_images;
+
 
 
 
