@@ -21,6 +21,29 @@ CREATE TABLE `users` (
 select * from users;
 
 LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'camila','milagros','admin@mail.com','$2a$10$g9YXAsgvDDsFzEkSsqi3Fes8e/9mvviTSUYTs13llZf/5/YwpVncO','1','2021-09-24 02:05:57','2021-09-24 02:48:31','1632450586832_img_.jpg');
+INSERT INTO `users` VALUES(2,'camila','milagros','user@mail.com','$2a$10$g9YXAsgvDDsFzEkSsqi3Fes8e/9mvviTSUYTs13llZf/5/YwpVncO','1','2021-09-24 02:05:57','2021-09-24 02:48:31','1632450586832_img_.jpg');
+UNLOCK TABLES;
+
+/*2*/
+DROP TABLE IF EXISTS `shoppingCart`;
+CREATE TABLE `shoppingCart` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+`price` int(11) NOT NULL,
+  `userId` int(11) NOT NULL,
+  `state` varchar(100) NOT NULL,/*estado de la compra*/
+  `quantity` int(11) NOT NULL,
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
+  PRIMARY KEY (`id`),  
+  UNIQUE KEY `shoppingCart_un` (`id`),
+  KEY `shoppingCart_FK` (`userId`),
+  CONSTRAINT `shoppingCart_FK` FOREIGN KEY (`userId`) REFERENCES `users` (`id`)
+);
+
+select * from users;
+
 
 
 
