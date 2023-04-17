@@ -93,6 +93,8 @@ CREATE TABLE `subcategories` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
   `category_id` int(11) NOT NULL,
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
   );
 
 
