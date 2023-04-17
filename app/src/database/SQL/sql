@@ -86,6 +86,9 @@ LOCK TABLES `categories` WRITE;
 INSERT INTO `categories` VALUES(1, 'Products'), (2, 'Defensa Personal' ), (3,'LLaveros'), (4,'KIDS'),(5,'Combos'),(6,'Accesorios');
 UNLOCK TABLES;
 
+/*4*/
+DROP TABLE IF EXISTS `subcategories`;
+
 
 
 
