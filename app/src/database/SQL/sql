@@ -115,7 +115,8 @@ UNLOCK TABLES;
 INSERT INTO `subcategories` VALUES (23,'Gas pimienta',2,NULL,NULL), (24,'Manopla gatito',2,NULL,NULL),(25,'Rompecristal y Cortacinturon',2,NULL,NULL),
 (26,'Alarma LLavero',2,NULL,NULL),(27,'Kubotan Metálico',2,NULL,NULL),(30,'Tarjeta Navaja',2,NULL,NULL), (31,'LLavero Cinta',2,NULL,NULL),
 (32,'Scrunchie con Cierre + Tapavaso',2,NULL,NULL),(33,'Colgantes Kids',2,NULL,NULL),
-(34,'LLaveros Pop It y Jueguetes',2,NULL,NULL),
+(34,'LLaveros Pop It y Jueguetes',2,NULL,NULL),(35,'Muñequero para niños',2,NULL,NULL), (36,'Mini Llavero ⚡️',2,NULL,NULL),
+(37,'Cinta Cuidate',2,NULL,NULL);
 
 
 
