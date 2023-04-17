@@ -3,3 +3,8 @@ CREATE DATABASE cuidate_db;
 USE cuidate_db;
 /*1*/
 DROP TABLE IF EXISTS `users`;
+
+CREATE TABLE `users` (
+
+);
+
