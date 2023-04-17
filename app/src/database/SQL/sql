@@ -160,6 +160,8 @@ UNLOCK TABLES;
 
 /*6*/
 DROP TABLE IF EXISTS `products_images`;
+CREATE TABLE `products_images` (
+  );
 
 
 
