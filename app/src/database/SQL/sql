@@ -213,6 +213,8 @@ CREATE TABLE `color_products` (
   `name` varchar(45) NOT NULL,
   `products_id` int(11) NOT NULL,
   `colors_id` int(11) NOT NULL,
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
   );
 
 
