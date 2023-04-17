@@ -182,6 +182,7 @@ UNLOCK TABLES;
 /*7*/
 
 DROP TABLE IF EXISTS `*products_size`;
+CREATE TABLE `products_size` 
 
 
 
