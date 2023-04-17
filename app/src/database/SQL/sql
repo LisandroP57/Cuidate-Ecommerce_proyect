@@ -101,6 +101,7 @@ CREATE TABLE `subcategories` (
   CONSTRAINT `categoria` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) 
 );
 
+select * from subcategories; 
 
 
 
