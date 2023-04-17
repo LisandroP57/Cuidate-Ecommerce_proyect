@@ -137,7 +137,8 @@ UNLOCK TABLES;
  CREATE TABLE `products` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
-   );
+  `price` decimal(5,0) NOT NULL,
+  );
 
 
 
