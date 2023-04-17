@@ -118,6 +118,10 @@ INSERT INTO `subcategories` VALUES (23,'Gas pimienta',2,NULL,NULL), (24,'Manopla
 (34,'LLaveros Pop It y Jueguetes',2,NULL,NULL),(35,'Muñequero para niños',2,NULL,NULL), (36,'Mini Llavero ⚡️',2,NULL,NULL),
 (37,'Cinta Cuidate',2,NULL,NULL);
 
+/*Cat 3*/
+INSERT INTO `subcategories` VALUES (38,'Colgante Kids',3,NULL,NULL),(39,'LLaveros Pop It y Jueguetes',3,NULL,NULL), 
+(40,'Muñequero para niños',3,NULL,NULL);                          
+
 
 
 
