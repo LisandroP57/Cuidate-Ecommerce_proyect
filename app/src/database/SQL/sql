@@ -106,7 +106,8 @@ select * from subcategories;
 LOCK TABLES `subcategories` WRITE;
 INSERT INTO `subcategories` VALUES (1,'Gas pimienta',1,NULL,NULL), (2,'Manopla gatito',1,NULL,NULL),(3,'Rompecristal y Cortacinturon',1,NULL,NULL),
 (4,'Alarma LLavero',1,NULL,NULL)(5,'Kubotan Metálico',1,NULL,NULL),(6,'Tarjeta Navaja',1,NULL,NULL),
-(7,'LLavero Cinta',1,NULL,NULL),(8,'Scrunchie con Cierre + Tapavaso',1,NULL,NULL),(9,'Colgantes Kids',1,NULL,NULL),;
+(7,'LLavero Cinta',1,NULL,NULL),(8,'Scrunchie con Cierre + Tapavaso',1,NULL,NULL),(9,'Colgantes Kids',1,NULL,NULL),
+(10,'LLaveros Pop It y Jueguetes',1,NULL,NULL),(11,'Muñequero para niños',1,NULL,NULL), (12,'Mini Llavero ⚡️',1,NULL,NULL),;
 UNLOCK TABLES;
 
 
