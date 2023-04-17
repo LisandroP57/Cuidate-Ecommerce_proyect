@@ -134,6 +134,9 @@ UNLOCK TABLES;
 
 /*5*/
  DROP TABLE IF EXISTS `products`;
+ CREATE TABLE `products` (
+  );
+
 
 
 
