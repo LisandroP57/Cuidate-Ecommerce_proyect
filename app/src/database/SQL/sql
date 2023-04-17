@@ -188,7 +188,10 @@ CREATE TABLE `products_size` (
   `product_id` int(11) NOT NULL,
    PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
+ KEY `products_size_FK` (`product_id`),
+  CONSTRAINT `products_size_FK` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 );
+
 
 
 
