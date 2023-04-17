@@ -125,6 +125,9 @@ INSERT INTO `subcategories` VALUES (38,'Colgante Kids',3,NULL,NULL),(39,'LLavero
 /*Cat 4*/
 INSERT INTO `subcategories` VALUES (40,'Combo Mamá Llegué Premium + Picana',4,NULL,NULL);
 INSERT INTO `subcategories` VALUES (41,'Combo Mamá Llegué Premium ',4,NULL,NULL);
+INSERT INTO `subcategories` VALUES (42,'Bolsa Ecológico para Regalo',4,NULL,NULL);
+INSERT INTO `subcategories` VALUES (43,'Combo Mamá Llegue + Navaja Retráctil',4,NULL,NULL);
+
 
 
 
