@@ -53,7 +53,7 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `shoppingCart`;
 CREATE TABLE `shoppingCart` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-`price` int(11) NOT NULL,
+
 );
 
 
