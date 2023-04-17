@@ -44,6 +44,8 @@ CREATE TABLE `shoppingCart` (
 
 select * from users;
 
+LOCK TABLES `users` WRITE;
+
 
 
 
