@@ -215,7 +215,9 @@ CREATE TABLE `color_products` (
   `colors_id` int(11) NOT NULL,
   `created_at` date DEFAULT NULL,
   `updated_at` date DEFAULT NULL,
-  );
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+);
 
 
 
