@@ -105,7 +105,7 @@ select * from subcategories;
 
 LOCK TABLES `subcategories` WRITE;
 INSERT INTO `subcategories` VALUES (1,'Gas pimienta',1,NULL,NULL), (2,'Manopla gatito',1,NULL,NULL),(3,'Rompecristal y Cortacinturon',1,NULL,NULL),
-(4,'Alarma LLavero',1,NULL,NULL);
+(4,'Alarma LLavero',1,NULL,NULL)(5,'Kubotan Metálico',1,NULL,NULL),(6,'Tarjeta Navaja',1,NULL,NULL),;
 UNLOCK TABLES;
 
 
