@@ -51,6 +51,9 @@ UNLOCK TABLES;
 
 /*2*/
 DROP TABLE IF EXISTS `shoppingCart`;
+CREATE TABLE `shoppingCart` (
+ 
+);
 
 
 
