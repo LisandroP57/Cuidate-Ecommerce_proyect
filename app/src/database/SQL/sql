@@ -144,7 +144,9 @@ UNLOCK TABLES;
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY(`id`), 
   UNIQUE KEY `id_UNIQUE` (`id`),
-  );
+  KEY `subcategory_idx` (`subcategory_id`),
+  CONSTRAINT `subcategory` FOREIGN KEY (`subcategory_id`) REFERENCES `subcategories` (`id`)
+ );
 
 
 
