@@ -206,6 +206,10 @@ CREATE TABLE `colors` (
 
 select * from colors;
 
+/*9*/
+DROP TABLE IF EXISTS `color_products`;
+
+
 
 
 
