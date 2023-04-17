@@ -74,28 +74,22 @@ UNLOCK TABLES;
 
 LOCK TABLES `shoppingCart` WRITE;
 INSERT INTO `shoppingCart` VALUES (1, 3200, 1, 'pago', 5,'2021-09-24 02:05:57','2021-09-24 02:48:31');
-INSERT INTO `shoppingCart` VALUES (2, 880, 2, 'espera', 5,'2021-09-24 02:05:57','2021-09-24 02:48:31');
+INSERT INTO `shoppingCart` VALUES (2, 880, 2, 'espera', 5,'2021-09-24 02:dwedwef09-24 02:48:31');
 UNLOCK TABLES;
 
 
 LOCK TABLES `shoppingCart` WRITE;
-INSERT INTO `shoppingCart` VALUES (1, 3200, 1, 'pago', 5,'2021-09-24 02:05:57','2021-09-24 02:48:31');
-INSERT INTO `shoppingCart` VALUES (2, 880, 2, 'espera', 5,'2021-09-24 02:05:57','2021-09-24 02:48:31');
-UNLOCK TABLES;
+INSERT INTO `shoppingCart` VALUES (1, 3200, 1, 'pago':31');
+INSERT INTO `shoppingCart` VALUES (2, 880, 2, 'espera', 5,'2021-09-2
+UNLOCK TABLES;55555
 
 LOCK TABLES `shoppingCart` WRITE;
-INSERT INTO `shoppingCart` VALUES (1, 3200, 1, 'pago', 5,'2021-09-24 02:05:57','2021-09-24 02:48:31');
-INSERT INTO `shoppingCart` VALUES (2, 880, 2, 'espera', 5,'2021-09-24 02:05:57','2021-09-24 02:48:31');
-UNLOCK TABLES;
+INSERT INTO `shoppingCart` VALUES (1, 3200, 1, 'pag
 LOCK TABLES `shoppingCart` WRITE;
-INSERT INTO `shoppingCart` VALUES (1, 3200, 1, 'pago', 5,'2021-09-24 02:05:57','2021-09-24 02:48:31');
-INSERT INTO `shoppingCart` VALUES (2, 880, 2, 'espera', 5,'2021-09-24 02:05:57','2021-09-24 02:48:31');
+INSERT INTO `shoppingCart` VALUES (1, 320
+INSERT INTO `shoppingCart` VALUES (2, 880, 2, 'espera', 5,');
 UNLOCK TABLES;LOCK TABLES `shoppingCart` WRITE;
-INSERT INTO `shoppingCart` VALUES (1, 3200, 1, 'pago', 5,'2021-09-24 02:05:57','2021-09-24 02:48:31');
-INSERT INTO `shoppingCart` VALUES (2, 880, 2, 'espera', 5,'2021-09-24 02:05:57','2021-09-24 02:48:31');
-UNLOCK TABLES;LOCK TABLES `shoppingCart` WRITE;
-INSERT INTO `shoppingCart` VALUES (1, 3200, 1, 'pago', 5,'2021-09-24 02:05:57','2021-09-24 02:48:31');
-INSERT INTO `shoppingCart` VALUES (2, 880, 2, 'espera', 3,'2021-09-24 02:05:57','2021-09-24 02:48:31');
+INSERT INTO `shoppingCart` VALUES (1, 3200, 1, 'pago', 5,';2021-09-24 02:05:57','2021-09-24 02:48:31');
 UNLOCK TABLES;
 
 
