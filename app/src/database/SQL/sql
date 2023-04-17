@@ -90,7 +90,8 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `subcategories`;
 
 CREATE TABLE `subcategories` (
-
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+ 
 );
 
 
