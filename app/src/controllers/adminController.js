@@ -122,10 +122,11 @@ module.exports = {
         })
         .then((product) => {
             if (!product) {
-                return res.render("error404"); // producto no encontrado
+                return res.render("not-found");
             }
     
             return res.render("admin/adminProductEdit", {
+    
                 session: req.session,
                 product,
             });
