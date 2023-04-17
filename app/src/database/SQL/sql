@@ -73,6 +73,13 @@ UNLOCK TABLES;
 
 /*3 categories no tiene fk porque guarda dos datos y se relaciona con latable de subcategorias y subcategories es la que recolecta los productos */
 DROP TABLE IF EXISTS `categories`;
+CREATE TABLE `categories` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+);
+
 
 
 
