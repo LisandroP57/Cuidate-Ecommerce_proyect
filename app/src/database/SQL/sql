@@ -49,6 +49,9 @@ INSERT INTO `users` VALUES (1,'camila','milagros','user@mail.com','$2a$10$g9YXAs
 INSERT INTO `users` VALUES(2,'camila','milagros','admin@mail.com','$2a$10$g9YXAsgvDDsFzEkSsqi3Fes8e/9mvviTSUYTs13llZf/5/YwpVncO','1','2021-09-24 02:05:57','2021-09-24 02:48:31','1632450586832_img_.jpg');
 UNLOCK TABLES;
 
+/*2*/
+DROP TABLE IF EXISTS `shoppingCart`;
+
 
 
 
