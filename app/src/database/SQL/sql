@@ -56,6 +56,7 @@ CREATE TABLE `shoppingCart` (
 `price` int(11) NOT NULL,
 `userId` int(11) NOT NULL,
   `state` varchar(100) NOT NULL,/*estado de la compra*/
+  `quantity` int(11) NOT NULL,
 );
 
 
