@@ -30,7 +30,7 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `shoppingCart`;
 CREATE TABLE `shoppingCart` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-`price` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
   `userId` int(11) NOT NULL,
   `state` varchar(100) NOT NULL,/*estado de la compra*/
   `quantity` int(11) NOT NULL,
@@ -52,13 +52,13 @@ UNLOCK TABLES;
 /*2*/
 DROP TABLE IF EXISTS `shoppingCart`;
 CREATE TABLE `shoppingCart` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-`price` int(11) NOT NULL,
-`userId` int(11) NOT NULL,
+  `id` int(10) NOT NULL AUTO_INCREMENT, 
+  `price` int(11) NOT NULL,
+  `userId` int(11) NOT NULL,
   `state` varchar(100) NOT NULL,/*estado de la compra*/
   `quantity` int(11) NOT NULL,
-    `created_at` date DEFAULT NULL,
-      `updated_at` date DEFAULT NULL,
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
 );
 
 
