@@ -197,6 +197,11 @@ select * from products_size;
 
 /*8*/
 DROP TABLE IF EXISTS `colors`;
+CREATE TABLE `colors` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  
+);
+
 
 
 
