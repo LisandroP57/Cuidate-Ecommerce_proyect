@@ -11,29 +11,29 @@
 		<div class="createForm">
 			<div class="row">
 				<div class="col-12">
-					<h2 class="products-title">Estas modificando: <i> <%= productToEdit.name %></i></h2>
+					<h2 class="products-title">Estas modificando: <i> <%= product.name %></i></h2>
 				</div>
 			</div>
 			<div class="col-12">
-				<form action="/admin/products/edit/<%= productToEdit.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+				<form action="/admin/products/edit/<%= product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
 					<div class="addFormEdit">
 						<div class="addInput">
 							<label for="inputName" class="form-label">Nombre del producto:</label>
-							<input type="text" id="inputName" name="name" placeholder="Ej: Gas pimienta" value="<%= locals.old ? old.name : productToEdit.name %>" class="form-input">
+							<input type="text" id="inputName" name="name" placeholder="Ej: Gas pimienta" value="<%= locals.old ? old.name : product.name %>" class="form-input">
 							<% if (locals.errors && errors.name) { %>
 								<small class="text-danger"><%= errors.name.msg %> </small>
 							<% } %>
 						</div>
 						<div class="addInput">
 							<label for="inputPrice" class="form-label">Precio del producto:</label>
-							<input type="text" id="inputPrice" name="price" placeholder="Ej: $123" value="<%= locals.old ? old.price : productToEdit.price %>" class="form-input">
+							<input type="text" id="inputPrice" name="price" placeholder="Ej: $123" value="<%= locals.old ? old.price : product.price %>" class="form-input">
 							<% if (locals.errors && errors.price) { %>
 								<small class="text-danger"><%= errors.price.msg %> </small>
 							<% } %>
 						</div>
 						<div class="addInput">
 							<label for="inputDiscount" class="form-label">Descuento:  (Opcional)</label>
-							<input type="number" id="inputDiscount" name="discount" placeholder="Ej: 57%" value="<%= locals.old ? old.discount: productToEdit.discount %>" class="form-input">
+							<input type="number" id="inputDiscount" name="discount" placeholder="Ej: 57%" value="<%= locals.old ? old.discount: product.discount %>" class="form-input">
 							<% if (locals.errors && errors.discount) { %>
 								<small class="text-danger"><%= errors.discount.msg %> </small>
 							<% } %>
@@ -42,13 +42,13 @@
 							<label for="category" class="form-label">Categoría:</label>
 							<select name="category" id="category" class="form-input">
 								<option value="">Elegí</option>
-								<option value="in-sale" <%= productToEdit.category === "in-sale" && "selected" %>>En oferta</option>
-								<option value="visited" <%= productToEdit.category === "visited" && "selected" %> >Últimos agregados</option>
+								<option value="in-sale" <%= product.category === "in-sale" && "selected" %>>En oferta</option>
+								<option value="visited" <%= product.category === "visited" && "selected" %> >Últimos agregados</option>
 							</select>
 						</div>
 						<div class="description1">
 							<label for="description" class="form-label">Descripción:</label>
-							<textarea name="description" id="description" class="form-input"><%= productToEdit.description %></textarea>
+							<textarea name="description" id="description" class="form-input"><%= product.description %></textarea>
 						</div>
 						<div class="edit-img">
 							<label for="inputImage" class="form-label">Imagen del producto:</label>

@@ -43,7 +43,7 @@
                         <a href="/users/profile">Mi perfil</a>
                         <a href="/users/logout">Cerrar sesión</a>
                         <% if (session.user.role === 1) { %>
-                            <a href="/admin/index">Admin</a>
+                            <a href="/admin/index">Modo Admin</a>
                         <% } %>
                     </div>
                 <% } else {%>
@@ -68,7 +68,7 @@
         <ul class="menu">
             <% if (typeof session.user != "undefined") { %>
                 <% if (session.user.role === 1) { %>
-                    <li><a href="/1/products/create">Crear prod.</a></li>
+                    <li><a href="/admin/products/create">Crear prod.</a></li>
                 <% } %>
             <% } %>
             <li><a href="/products/allProducts">Productos</a></li>
