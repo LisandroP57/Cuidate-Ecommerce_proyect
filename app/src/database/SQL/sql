@@ -140,7 +140,9 @@ UNLOCK TABLES;
   `price` decimal(5,0) NOT NULL,
   `offer` decimal(5,0) NOT null ,
   `subcategory_id` int(11) NOT NULL,
-);
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  );
 
 
 
