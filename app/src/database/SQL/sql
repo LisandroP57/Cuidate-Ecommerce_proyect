@@ -60,8 +60,10 @@ CREATE TABLE `shoppingCart` (
   `created_at` date DEFAULT NULL,
   `updated_at` date DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `shoppingCart_un` (`id`),
+  UNIQUE KEY `shoppingCart_un` (`id`), KEY `shoppingCart_FK` (`userId`),
+  CONSTRAINT `shoppingCart_FK` FOREIGN KEY (`userId`) REFERENCES `users` (`id`)
 );
+
 
 
 
