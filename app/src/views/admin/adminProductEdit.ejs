@@ -40,26 +40,11 @@
 						</div>
 						<div class="addInput">
 							<label for="category" class="form-label">Categoría:</label>
-							<select class="form-select" id="specificSizeSelect" name="category">
-								<option selected hidden>Categorias</option>
-							   <% categories.forEach(category => { %>
-								  <option value="<%- category.id %>" <%- locals.old && old.category == category.id ? "selected" : category.id == product.category ? `selected` : ""  %>><%- category.name %></option>
-							   <% }) %>                          <!--  si existe old y coinciden las categorias / selected /si no -> el id de la cat. es igual a la categoria del producto que estoy editando / selected si no null -->               
-							  </select>
-							  <% if (locals.errors && errors.category) { %>
-								  <small class="text-danger"><%= errors.category.msg %> </small>
-							  <% } %>
-						</div>
-						<div class="addInput">
-							<select class="form-select" id="specificSizeSelect" name="subcategory">
-								<option selected hidden>Subcategorias</option>
-							   <% subcategories.forEach(subcategory => { %>
-								  <option value="<%- subcategory%>" <%- locals.old && old.subcategory == subcategory ? "selected" : subcategory == product.subcategory ? `selected` : ""  %>><%- subcategory %></option>
-							   <% }) %>
-							  </select>
-							  <% if (locals.errors && errors.subcategory) { %>
-								  <small class="text-danger"><%= errors.subcategory.msg %> </small>
-							  <% } %>
+							<select name="category" id="category" class="form-input">
+								<option value="">Elegí</option>
+								<option value="in-sale" <%= product.category === "in-sale" && "selected" %>>En oferta</option>
+								<option value="visited" <%= product.category === "visited" && "selected" %> >Últimos agregados</option>
+							</select>
 						</div>
 						<div class="description1">
 							<label for="description" class="form-label">Descripción:</label>
