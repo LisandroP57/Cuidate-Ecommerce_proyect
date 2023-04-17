@@ -123,17 +123,18 @@ module.exports = {
         let errors = validationResult(req);
 
         if(errors.isEmpty()){
+            const productId = Number(req.params.id);
+            let { name, price, discount, category, subcategory, description } = req.body;
             
-            let productId = Number(req.params.id);
-            
-            products.forEach( product => {
+            products.forEach((product) => {
                 if (product.id === productId){
                     (product.id = product.id),
-                    (product.name = req.body.name),
-                    (product.price = req.body.price),
-                    (product.discount = req.body.discount),
-                    (product.category = req.body.category),
-                    (product.description = req.body.description),
+                    (product.name = name),
+                    (product.price = price),
+                    (product.description = description),
+                    (product.discount = discount),
+                    (product.category = category),
+                    (product.subcategory = subcategory),
                     (product.image = req.file ? req.file.filename : product.image)
                 }
             });

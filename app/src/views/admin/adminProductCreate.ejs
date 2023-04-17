@@ -38,12 +38,32 @@
 							<% } %>
 						</div>
 						<div class="addInput">
-							<label for="category" class="form-label">Categoría:</label>
-							<select name="category" id="category" class="form-input">
-								<option value="">Elegí</option>
-								<option value="in-sale">En oferta</option>
-								<option value="visited">Últimos agregados</option>
+							<select class="form-select" id="specificSizeSelect" name="category">
+								<option selected hidden value="">Categorias</option>
+								<% categories.forEach(category => { %>
+									<option value="<%- category.id %>" <%= locals.old && old.category == category.id ? "selected" : null %> ><%- category.name %></option>
+								<% }) %>
+								</select>
+								<% if(locals.errors && errors.category) {%>
+									<small class="text-danger"><%= errors.category.msg %></small>
+								<% } %>
+						</div>
+						<div class="addInput">
+							<select class="form-select" id="specificSizeSelect" name="subcategory">
+								<option selected hidden value="">Subcategorias</option>
+								<% subcategories.forEach(subcategory => { %>
+								<option value="<%- subcategory.id %>" <%= 
+									locals.old && 
+									old.subcategory == 
+									subcategory.id ? 
+									"selected" : null %>>
+									<%- subcategory.name %>
+								</option>
+								<% }) %>
 							</select>
+							<% if(locals.errors && errors.subcategory) {%>
+								<small class="text-danger"><%= errors.subcategory.msg %></small>
+							<% } %>
 						</div>
 						<div class="description1">
 							<label for="validationTextArea" class="form-label">Descripción:</label>
