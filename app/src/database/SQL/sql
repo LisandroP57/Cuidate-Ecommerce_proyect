@@ -57,6 +57,7 @@ CREATE TABLE `shoppingCart` (
 `userId` int(11) NOT NULL,
   `state` varchar(100) NOT NULL,/*estado de la compra*/
   `quantity` int(11) NOT NULL,
+    `created_at` date DEFAULT NULL,
 );
 
 
