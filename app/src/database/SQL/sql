@@ -150,6 +150,10 @@ UNLOCK TABLES;
 
  select * from products; 
 
+ LOCK TABLES `products` WRITE;
+INSERT INTO `products` VALUES 
+UNLOCK TABLES;
+
 
 
 
