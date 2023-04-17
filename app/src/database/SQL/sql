@@ -164,7 +164,10 @@ CREATE TABLE `products_images` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `image` varchar(100) NOT NULL,
   `product_id` int(11) NOT NULL,
-  );
+  PRIMARY KEY (`id`),
+  KEY `products_images_FK` (`product_id`),
+  CONSTRAINT `products_images_FK` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
+);
 
 
 
