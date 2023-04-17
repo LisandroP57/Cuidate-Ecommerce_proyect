@@ -1,2 +1,3 @@
 DROP DATABASE IF EXISTS cuidate_db;
 CREATE DATABASE cuidate_db;
+USE cuidate_db;
