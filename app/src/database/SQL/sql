@@ -80,6 +80,8 @@ CREATE TABLE `categories` (
    UNIQUE KEY `id_UNIQUE` (`id`)
 );
 
+select * from categories; 
+
 
 
 
