@@ -165,7 +165,7 @@ UNLOCK TABLES;
 
 /*7*/
 
-DROP TABLE IF EXISTS `products_size`;
+/* DROP TABLE IF EXISTS `products_size`;
 CREATE TABLE `products_size` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
@@ -174,7 +174,7 @@ CREATE TABLE `products_size` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `products_size_FK` (`product_id`),
   CONSTRAINT `products_size_FK` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
-);
+); */
 
 select * from products_size;
 
