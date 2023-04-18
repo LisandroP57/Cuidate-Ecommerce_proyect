@@ -175,7 +175,7 @@ select * from products_size;
 */
 
 /*8*/
-DROP TABLE IF EXISTS `colors`;
+/* DROP TABLE IF EXISTS `colors`;
 CREATE TABLE `colors` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
@@ -183,7 +183,7 @@ CREATE TABLE `colors` (
   UNIQUE KEY `id_UNIQUE` (`id`)
 );
 
-select * from colors;
+select * from colors; */
 
 /*9*/
 DROP TABLE IF EXISTS `color_products`;
