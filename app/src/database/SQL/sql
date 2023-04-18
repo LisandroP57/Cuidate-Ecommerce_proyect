@@ -29,12 +29,12 @@ INSERT INTO `users` VALUES(2,'camila','milagros','admin@mail.com','$2a$10$g9YXAs
 UNLOCK TABLES;
 
 /*2*/
-DROP TABLE IF EXISTS `shoppingCart`;
+/* DROP TABLE IF EXISTS `shoppingCart`;
 CREATE TABLE `shoppingCart` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `price` int(11) NOT NULL,
   `userId` int(11) NOT NULL,
-  `state` varchar(100) NOT NULL,/*estado de la compra*/
+  `state` varchar(100) NOT NULL,
   `quantity` int(11) NOT NULL,
   `created_at` date DEFAULT NULL,
   `updated_at` date DEFAULT NULL,
@@ -49,7 +49,7 @@ select * from shoppingcart;
 LOCK TABLES `shoppingCart` WRITE;
 INSERT INTO `shoppingCart` VALUES (1, 3200, 1, 'pago', 5,'2021-09-24 02:05:57','2021-09-24 02:48:31');
 INSERT INTO `shoppingCart` VALUES (2, 880, 2, 'espera', 5,'2021-09-24 02:05:57','2021-09-24 02:48:31');
-UNLOCK TABLES;
+UNLOCK TABLES; */
 
 /*3 categories no tiene fk porque guarda dos datos y se relaciona con latable de subcategorias y subcategories es la que recolecta los productos */
 DROP TABLE IF EXISTS `categories`;
