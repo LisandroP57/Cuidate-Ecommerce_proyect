@@ -4,6 +4,7 @@ const {
   Category,
   Subcategory,
   ProductImage,
+  Sequelize,
 } = require("../database/models");
 
 module.exports = {
@@ -106,7 +107,6 @@ module.exports = {
             .catch((error) => console.log(error));
         }
     },
-
     edit: (req, res) => {
         const productId = Number(req.params.id);
         Product.findOne({
@@ -133,65 +133,56 @@ module.exports = {
         })
         .catch((error) => console.log(error))
     },
-    
-        
     update: (req, res) => {
         let errors = validationResult(req);
-    
+        
         if (errors.isEmpty()) {
             const productId = Number(req.params.id);
-            let { 
-                name, 
-                price, 
-                discount, 
-                category, 
-                subcategory, 
-                description 
-            } = req.body;
-    
-            Product.findByPk(productId)
-            .then((product) => {
-                product.name = name;
-                product.price = price;
-                product.discount = discount;
-                product.subcategory_id = subcategory;
-                product.description = description;
-                product.save()
-                .then(() => {
-                    res.redirect("/products/allProducts");
-                })
-                .catch((error) => console.log(error));
-            })
-            .catch((error) => console.log(error));
-        } else {
-            const productId = Number(req.params.id);
+            /* const files = req.files.map((file) => file.filename); */
             
-            const CATEGORIES_PROMISE = Category.findAll();
-            const SUBCATEGORIES_PROMISE = Subcategory.findAll();
-    
-            Promise.all([CATEGORIES_PROMISE, SUBCATEGORIES_PROMISE])
-            .then(([categories, subcategories]) => {
-                return res.render("admin/adminProductEdit", {
-                    session: req.session,
-                    categories,
-                    subcategories,
-                    errors: errors.mapped(),
-                    old: req.body,
-                    product: {
-                        id: productId,
-                        name: req.body.name,
-                        price: req.body.price,
-                        discount: req.body.discount,
-                        subcategory_id: req.body.subcategory,
-                        description: req.body.description,
-                    }
+            let { name, price, discount, category, subcategory, description } = req.body;
+            
+            Product.update(
+                {
+                    name,
+                    price,
+                    discount,
+                    category,
+                    subcategory,
+                    description,
+                    /* image: files.length > 0 ? files : "default-image.png" */
+                },
+                {
+                    where: { id: productId }
+                })
+                .catch(error => {
+                    console.log(error);
                 });
-            })
-            .catch((error) => console.log(error));
-        }
+            } else {
+                Product.findOne({
+                    where: {
+                        id: req.params.id
+                    },
+                    include: [
+                        {
+                            association: "subcategory",
+                            include: {
+                                association: "category",
+                            },
+                        },
+                    ],
+                })
+                .then(product => {
+                    res.render("admin/adminProductEdit", {
+                        session: req.session,
+                        product,
+                    });
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+            }
     },
-    
-
     destroy : (req, res) => {
         let productId = Number(req.params.id);
     
@@ -204,5 +195,5 @@ module.exports = {
         writeProductsJson(products)
         
         res.send("El producto fue destruido")
-        }
+    },
 }
