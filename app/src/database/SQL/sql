@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS cuidate_db; /*BORRA, si ya una tabla con el mismo nombre */
-CREATE DATABASE cuidate_db;/*crea*/
-USE cuidate_db;/*que la use una vez creada*/
+DROP DATABASE  IF exists cuidate11_db; /*BORRA, si ya una tabla con el mismo nombre */
+CREATE DATABASE cuidate11_db;/*crea*/
+USE cuidate11_db;/*que la use una vez creada*
 /*1*/
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
@@ -9,7 +9,7 @@ CREATE TABLE `users` (
   `last_name` varchar(45) NOT NULL,
   `email` varchar(60) NOT NULL,
   `pass` varchar(70) NOT NULL,
-  `roles` int(2) NOT NULL DEFAULT 0,
+  `rol` int(2) NOT NULL DEFAULT 0,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `avatar` varchar(100) DEFAULT NULL,
@@ -21,7 +21,7 @@ select * from users;
 
 
 LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+
 INSERT INTO `users` VALUES (1,'camila','milagros','admin@mail.com','$2a$10$g9YXAsgvDDsFzEkSsqi3Fes8e/9mvviTSUYTs13llZf/5/YwpVncO','1','2021-09-24 02:05:57','2021-09-24 02:48:31','1632450586832_img_.jpg');
 INSERT INTO `users` VALUES(2,'camila','milagros','admin@mail.com','$2a$10$g9YXAsgvDDsFzEkSsqi3Fes8e/9mvviTSUYTs13llZf/5/YwpVncO','1','2021-09-24 02:05:57','2021-09-24 02:48:31','1632450586832_img_.jpg');
 
@@ -158,14 +158,9 @@ CREATE TABLE `products_images` (
 
 select * from products_images;
 
-LOCK TABLES `products_images` WRITE;
-INSERT INTO `products_images` VALUES (1,'1635031571585_img_.jpg',1),(2,'1635035926256_img_.jpg',2),(3,'1635035957988_img_.jpg',3),(4,'1635035991058_img_.jpg',4),(5,'1635036018721_img_.jpg',5),(6,'1635036045675_img_.jpg',6),(7,'1635036083342_img_.jpg',7),(8,'1635036121986_img_.jpg',8),(9,'1635036171515_img_.jpg',9),(10,'1635036274526_img_.jpg',10),(11,'1635036329078_img_.jpg',11),(12,'1635036352716_img_.jpg',12),(13,'1635036424206_img_.jpg',13),(14,'1635036447309_img_.jpg',14),(15,'1635036488384_img_.jpg',15),(16,'1635036520742_img_.jpg',16),(17,'1635036543104_img_.jpg',17),(18,'1635036576010_img_.jpg',18);
-UNLOCK TABLES;
-
-
 /*7*/
 
-DROP TABLE IF EXISTS `products_size`;
+/* DROP TABLE IF EXISTS `products_size`;
 CREATE TABLE `products_size` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
@@ -174,9 +169,10 @@ CREATE TABLE `products_size` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `products_size_FK` (`product_id`),
   CONSTRAINT `products_size_FK` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
-);
+); 
 
 select * from products_size;
+*/
 
 /*8*/
 DROP TABLE IF EXISTS `colors`;
