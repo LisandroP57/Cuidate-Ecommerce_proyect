@@ -184,7 +184,8 @@ module.exports = {
             }
     },
     destroy : (req, res) => {
-        let productId = Number(req.params.id);
+        
+        /* let productId = Number(req.params.id);
     
         products.forEach( product => {
         if(product.id === productId){
@@ -194,6 +195,6 @@ module.exports = {
         })
         writeProductsJson(products)
         
-        res.send("El producto fue destruido")
+        res.send("El producto fue destruido") */
     },
 }
