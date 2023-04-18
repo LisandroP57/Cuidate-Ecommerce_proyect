@@ -158,10 +158,6 @@ CREATE TABLE `products_images` (
 
 select * from products_images;
 
-LOCK TABLES `products_images` WRITE;
-
-
-
 /*7*/
 
 /* DROP TABLE IF EXISTS `products_size`;
