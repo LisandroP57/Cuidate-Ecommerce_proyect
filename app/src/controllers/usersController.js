@@ -123,45 +123,49 @@ module.exports = {
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
-
-            let userId = req.session.user.id;
-
-            /* let user = users.find(user => user.id === userId); */
-
             const {
                 name,
                 last_name,
-                /* address,
+                address,
                 postal_code,
                 province,
-                city, */
+                city,
             } = req.body;
 
-            user.name = name;
-            user.last_name = last_name;
-            user.adress = address;
-            user.postal_code = postal_code;
-            user.province = province;
-            user.city = city;
-            user.avatar = req.file ? req.file.filename : user.avatar;
-
-            writeUsersJson(users)
-
-            delete user.pass;
-
-            req.session.user = user;
-
-            return res.redirect("/users/profile");
+            User.update(
+                {
+                    name,
+                    last_name,
+                    address,
+                    postal_code,
+                    province,
+                    city,
+                    avatar: req.file ? req.file.filename : req.session.user.avatar,
+                },
+                { where: 
+                    { id: req.session.user.id }
+                }
+            )
+            .then(() => {
+                req.session.user.name = name;
+                req.session.user.last_name = last_name;
+                req.session.user.address = address;
+                req.session.user.postal_code = postal_code;
+                req.session.user.province = province;
+                req.session.user.city = city;
+                req.session.user.avatar = req.file ? req.file.filename : req.session.user.avatar;
+                delete req.session.user.pass;
+                return res.redirect("/users/profile");
+            })
+            .catch((error) => {
+                console.log(error);
+            });
         } else {
-            const userInSessionId = req.session.user.id;
-            const userInSession = users.find(user => user.id === userInSessionId);
-
-            return res.render("user/userProfileEdit", {
+            return res.render("users/userProfileEdit", {
                 user: userInSession,
                 session: req.session,
                 errors: errors.mapped(),
             })
         }
     }
-
 }
