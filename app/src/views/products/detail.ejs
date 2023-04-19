@@ -8,69 +8,102 @@
 		<%- include('../partials/header') %>
 			<!-- /Header -->
 			<!-- product detail -->
-			<div class="container products-wrapper">
-				<div class="row">
-					<div class="col-12">
-						<h2 class="products-title">Detalle del producto: <%= product.name %>
-						</h2>
-					</div>
+			<!-- product detail 1 -->
+			<div class="row">
+				<div class="col-12">
+					<h2 class="products-title">Detalle del producto: <%= product.name %>
+					</h2>
 				</div>
-				<section class="containersproductmy-3pt-3">
-				<div class="product-detail">
-					<div class="row">
-						<div class="col-12 col-lg-8">
-							<img src="/images/products/<%= product.image %>" alt="product image"
-								class="product-detail-img">
-							</div>
+			</div>
+			<div class = "card-wrapper">
+				<div class = "card">
+				  <!-- card left -->
+				  <div class = "product-imgs">
+					<div class = "img-display">
+					  <div class = "img-showcase">
+						<img src="/images/products/<%= product.image %>" alt="product image"
+						class="product-detail-img">						
+						<img src = "shoes_images/_2.jpg" alt = "image">
+						<img src = "shoes_images/_3.jpg" alt = "image">
+						<img src = "shoes_images/_4.jpg" alt = "image">
+					  </div>
+					</div>
+					<div class = "img-select">
+					  <div class = "img-item">
+						<a href = "#" data-id = "1">
+						  <img src = "images/1.jpg" alt = "image">
+						</a>
+					  </div>
+					  <div class = "img-item">
+						<a href = "#" data-id = "2">
+						  <img src = "images/_2.jpg" alt = "image">
+						</a>
+					  </div>
+					  <div class = "img-item">
+						<a href = "#" data-id = "3">
+						  <img src = "images/_3.jpg" alt = "image">
+						</a>
+					  </div>
+					  <div class = "img-item">
+						<a href = "#" data-id = "4">
+						  <img src = "images/_4.jpg" alt = "image">
+						</a>
+					  </div>
+					</div>
+				  </div>
+				  <!-- card right -->
+				  <div class = "product-content">
+					<h2 class="product-detail-title">
+						<%= product.name %>
+					</h2>
+					<a href = "/products/allProducts" class = "product-link">Visita nuesta tienda cuidate</a>
+					<div class = "product-rating">
+					  <i class = "fas fa-star"></i>
+					  <i class = "fas fa-star"></i>
+					  <i class = "fas fa-star"></i>
+					  <i class = "fas fa-star"></i>
+					  <i class = "fas fa-star-half-alt"></i>
+					  <span>4.7(21)</span>
+					</div>
+		  
+					<div class = "product-price">
+					  
+					  	<% if (product.discount> 0) { %>
+						<p class="product-detail-price small">
+							<p class = "new-price">Nuevo precio: <span>
+								<b>
+									<%= product.discount %>% OFF
+								</b>
+							</span></p>
 							
-							<div class="col-12 col-lg-4">
-								<article class="product-detail-info">
-									<h2 class="product-detail-title">
-										<%= product.name %>
-									</h2>
-									
-									<p class="product-detail-description">
-										<%= product.description %>
-									</p>
-								<% if (product.discount> 0) { %>
-									<p class="product-detail-price small">
-										/
-										<b>
-											<%= product.discount %>% OFF
-										</b>
-									</p>
-									<p class="product-detail-price">
-										Precio
-									</p>
-								<% } else{ %>
-										 <p class="product-detail-price">
-											Precio
-										</p>
-									 <% } %> 
-
-									<ul class="actions-list">
-										<li>
-											<i class="fas fa-credit-card"></i>
-												<p>Pagá en 12 cuotas sin interes</p>
-										</li>
-										<li>
-											<i class="fas fa-store"></i>
-												<p>Retiro gratis en locales del vendedor</p>
-										</li>
-									</ul>
-
-									<div class="fila">
-										<div class="size">
-											<label for="">Cantidad Por Mayor</label>
-											<select name="" id="">
-												<option value="">5</option>
-												<option value="">10</option>
-												<option value="">15</option>
-												<option value="">20</option>
-											</select>
-										</div>
-									</div>
-									<hr>
+							
+						</p>
+						<p class = "last-price">Precio viejo: </p>
+					<% } else{ %>
+							 <p class="product-detail-price">
+								Precio
+							</p>
+						 <% } %> 
+					</div>
+		  
+					<div class = "product-detail">
+					  <h2>Acerca de este artículo:
+					</h2>
+					  <p class="product-detail-description">
+						<%= product.description %>
+					</p>
+					   <ul>
+						<li>Color: <span>Negro-Violetta-Rosa</span></li>
+						<li>Disponibilidad: <span>En stock</span></li>
+						<li>Category: <span> Defensa personal</span></li>
+					  </ul>
+					</div>
+		  
+					<div class = "purchase-info">
+						<label for="">Ingresa Talle o Cantidad:</label>
+					  <input type = "number" min = "0" value = "1">
+					 
+					  <hr>
 									<a href="#" class="buy-now-button-detail">COMPRAR AHORA</a>
 									<hr>
 									<% if (typeof session.user != "undefined") { %>
@@ -81,15 +114,40 @@
                                         <button type="submit" class="action-button delete">ELIMINAR</button>
                                     </form>
 									<% } %>
-
 									<% } %>
-
-
-							</article>
-						</div>
 					</div>
+		  
+					<ul class="actions-list">
+										<li>
+											<i class="fas fa-credit-card"></i>
+												<p>Pagá en 12 cuotas sin interes</p>
+										</li>
+										<li>
+											<i class="fas fa-store"></i>
+												<p>Retiro gratis en locales del vendedor</p>
+										</li>
+									</ul>
+
+					<div class = "social-links">
+					  <p>Contactanos: </p>
+					  <a href = "#">
+						<i class = "fab fa-facebook-f"></i>
+					  </a>
+					  <a href = "#">
+						<i class = "fab fa-twitter"></i>
+					  </a>
+					  <a href = "#">
+						<i class = "fab fa-instagram"></i>
+					  </a>
+					  <a href = "#">
+						<i class = "fab fa-whatsapp"></i>
+					  </a>
+					  
+					</div>
+				  </div>
 				</div>
-			</div>
+			  </div>
+
 			<!-- /product detail -->
 
 			<!-- footer -->
