@@ -7,89 +7,12 @@
 		<!-- Header -->
 		<%- include('../partials/header') %>
 			<!-- /Header -->
-			<!-- product detail -->
+			
+<!-- ---------------------------------------------------------------------- -->
 			<div class="container products-wrapper">
-				<div class="row">
-					<div class="col-12">
-						<h2 class="products-title">Detalle del producto: <%= product.name %>
-						</h2>
-					</div>
-				</div>
-				<section class="containersproductmy-3pt-3">
-				<div class="product-detail">
-					<div class="row">
-						<div class="col-12 col-lg-8">
-							<img src="/images/products/<%= product.image %>" alt="product image"
-								class="product-detail-img">
-							</div>
-							
-							<div class="col-12 col-lg-4">
-								<article class="product-detail-info">
-									<h2 class="product-detail-title">
-										<%= product.name %>
-									</h2>
-									
-									<p class="product-detail-description">
-										<%= product.description %>
-									</p>
-								<% if (product.discount> 0) { %>
-									<p class="product-detail-price small">
-										/
-										<b>
-											<%= product.discount %>% OFF
-										</b>
-									</p>
-									<p class="product-detail-price">
-										Precio
-									</p>
-								<% } else{ %>
-										 <p class="product-detail-price">
-											Precio
-										</p>
-									 <% } %> 
-
-									<ul class="actions-list">
-										<li>
-											<i class="fas fa-credit-card"></i>
-												<p>Pagá en 12 cuotas sin interes</p>
-										</li>
-										<li>
-											<i class="fas fa-store"></i>
-												<p>Retiro gratis en locales del vendedor</p>
-										</li>
-									</ul>
-
-									<div class="fila">
-										<div class="size">
-											<label for="">Cantidad Por Mayor</label>
-											<select name="" id="">
-												<option value="">5</option>
-												<option value="">10</option>
-												<option value="">15</option>
-												<option value="">20</option>
-											</select>
-										</div>
-									</div>
-									<hr>
-									<a href="#" class="buy-now-button-detail">COMPRAR AHORA</a>
-									<hr>
-									<% if (typeof session.user != "undefined") { %>
-										
-									<% if (session.user.role === 1) { %>
-									<a href="/admin/products/edit/<%= product.id %> " class="action-button edit" >EDITAR PRODUCTO</a>
-                                    <form action="/admin/products/delete/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-                                        <button type="submit" class="action-button delete">ELIMINAR</button>
-                                    </form>
-									<% } %>
-
-									<% } %>
-
-
-							</article>
-						</div>
-					</div>
-				</div>
-			</div>
+				
+				
+			<script src="/js/detail.js"></script>
 			<!-- /product detail -->
 
 			<!-- footer -->
