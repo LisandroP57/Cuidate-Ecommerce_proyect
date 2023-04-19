@@ -254,6 +254,8 @@ img{
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 1.5rem;
+      border: 3px solid rgba(0,0,0,.125);
+      border-radius: 30px,30px;
   }
   .card-wrapper{
       height: 100vh;
