@@ -6,6 +6,7 @@ const {
   ProductImage,
   Sequelize,
 } = require("../database/models");
+/*const { DELETE } = require("sequelize/types/query-types");*/
 
 module.exports = {
     index: (req, res) => {
@@ -183,8 +184,19 @@ module.exports = {
                 });
             }
     },
-    destroy : (req, res) => {
+    destroy: (req, res) => { //destroy from DB
         
+        const productId = req.params.id; //obtengo el id req.params
+        
+        Product.destroy({
+            where: {id:productId}
+        })
+        .then(()=>{
+              return res.redirect("/");
+        })
+        .catch((error=>console.log(error)))        
+
+
         /* let productId = Number(req.params.id);
     
         products.forEach( product => {
