@@ -4,9 +4,7 @@ const {
   Category,
   Subcategory,
   ProductImage,
-  Sequelize,
 } = require("../database/models");
-/*const { DELETE } = require("sequelize/types/query-types");*/
 
 module.exports = {
     index: (req, res) => {
@@ -139,7 +137,6 @@ module.exports = {
         
         if (errors.isEmpty()) {
             const productId = Number(req.params.id);
-            /* const files = req.files.map((file) => file.filename); */
             
             let { name, price, discount, category, subcategory, description } = req.body;
             
@@ -151,7 +148,6 @@ module.exports = {
                     category,
                     subcategory,
                     description,
-                    /* image: files.length > 0 ? files : "default-image.png" */
                 },
                 {
                     where: { id: productId }
@@ -195,18 +191,5 @@ module.exports = {
               return res.redirect("/");
         })
         .catch((error=>console.log(error)))        
-
-
-        /* let productId = Number(req.params.id);
-    
-        products.forEach( product => {
-        if(product.id === productId){
-            let productToDestroy = products.indexOf(product);
-            products.splice(productToDestroy, 1) 
-        }
-        })
-        writeProductsJson(products)
-        
-        res.send("El producto fue destruido") */
     },
 }
