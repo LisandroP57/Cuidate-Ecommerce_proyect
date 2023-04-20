@@ -1,7 +1,7 @@
 @import url('carousel.css');
 /* Productos */
 body.homeBody {
-    background-image: url(/images/backgrounds/backg.jpg);
+    background-image: url(/images/backgrounds/nyh.gif);
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
