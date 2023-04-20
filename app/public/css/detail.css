@@ -46,7 +46,7 @@
   margin: 0 auto;
 /*   border: 21px solid rgba(0,0,0,.125); */
 }
-img{
+.bodyDetail img{
   width: 100%;
   display: block;
 }
