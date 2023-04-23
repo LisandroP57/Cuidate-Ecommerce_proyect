@@ -1,9 +1,7 @@
 @import url('variables.css');
 @import url('general.css');
 @import url('header.css');
-@import url('product-slider.css');
 @import url('footer.css');
-@import url('products.css');
 @import url('detail.css');
 @import url('home.css');
 @import url('login.css');
@@ -16,7 +14,6 @@
 @import url('userProfile.css');
 @import url('userProfileEdit.css');
 @import url('swiper-bundle.min.css');
-
 
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2&family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');

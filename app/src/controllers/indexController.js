@@ -8,8 +8,8 @@ module.exports = {
         })
         .then(products => {
             return res.render("home", {
-                sliderTitle: "Productos en oferta",
-                sliderProducts: products,
+                offerTitle: "Productos en oferta",
+                offerProducts: products,
                 session: req.session
             })
         })

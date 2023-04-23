@@ -206,12 +206,12 @@ header.containerHeader div.primer-menu div.buscador i{
         /* MOBILE */
 @media (max-width: 767px) {
 
-    header.containerHeader div.logo a img {
+    header.containerHeader div.header-logo a img {
         width: 40px;
         height: 40px;
     }
 
-    header.containerHeader div.logo span {
+    header.containerHeader div.header-logo span {
         display: none;
     }
 
@@ -332,12 +332,12 @@ header.containerHeader div.primer-menu div.buscador i{
         display: none;
     }
 
-    header.containerHeader div.primer-menu div.logo img {
+    header.containerHeader div.primer-menu div.header-logo img {
         width: 60px;
         height: 60px;
     }
 
-    header.containerHeader div.primer-menu div.logo span{
+    header.containerHeader div.primer-menu div.header-logo span{
         display: none;
     }
 
@@ -442,7 +442,7 @@ header.containerHeader div.primer-menu div.buscador i{
         display: none;
     }
 
-    header.containerHeader div.primer-menu div.logo img {
+    header.containerHeader div.primer-menu div.header-logo img {
         width: 65px;
         height: 65px;
     }
@@ -470,7 +470,7 @@ header.containerHeader div.primer-menu div.buscador i{
         height: 50%;
     }
 
-    header.containerHeader div.primer-menu div.logo {
+    header.containerHeader div.primer-menu div.header-logo {
         padding: 0.5rem;
     }
 
@@ -518,19 +518,19 @@ header.containerHeader div.primer-menu div.buscador i{
         font-size: 15px;
     }
 
-    header.containerHeader div.primer-menu div.logo span {
+    header.containerHeader div.primer-menu div.header-logo span {
         font-size: 30px;
         font-family: 'Kaushan Script', cursive;
         color: black;
     }
 
-    header.containerHeader div.primer-menu div.logo a {
+    header.containerHeader div.primer-menu div.header-logo a {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
 
-    header.containerHeader div.primer-menu div.logo a img {
+    header.containerHeader div.primer-menu div.header-logo a img {
         margin: 10px 25px 10px 0px;
     }
         /*FOOTER*/
@@ -548,7 +548,7 @@ header.containerHeader div.primer-menu div.buscador i{
         font-size: 15px;
     }
 
-    footer.principal div.footer-logo  img.logo{
+    footer.principal div.footer-logo  img.header-logo{
         width: 100px;
         height: 100px;
         cursor: pointer;

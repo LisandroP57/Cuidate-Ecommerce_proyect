@@ -54,10 +54,10 @@ module.exports = {
 		});
 
 		Promise.all([PRODUCT_PROMISE, ALL_PRODUCTS_PROMISE])
-			.then(([product, sliderProducts]) => {
+			.then(([product, offerProducts]) => {
 				res.render("products/detail", {
-					sliderTitle: "Productos en oferta",
-          			sliderProducts,
+					offerTitle: "Productos en oferta",
+          			offerProducts,
 					product,
 					session: req.session
 				});
