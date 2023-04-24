@@ -1,12 +1,18 @@
 const { Product } = require("../database/models");
 
 module.exports = {
-
 	index: (req, res) => {
 		Product.findAll({
             include: [{association: "images"}]
         })
         .then(products => {
+			products = products.map(product => {
+				product.images = product.images.map(image => {
+					image.image;
+					return image;
+				});
+				return product;
+			});
             return res.render("home", {
                 offerTitle: "Productos en oferta",
                 offerProducts: products,

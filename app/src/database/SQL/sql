@@ -158,6 +158,18 @@ CREATE TABLE `products_images` (
 
 select * from products_images;
 
+INSERT INTO `products_images` VALUES
+(1, 'gaspimienta.jpeg', 1),
+(2, 'manoplagatito.jpeg', 2),
+(3, 'rompe-cristal.jpg',3),
+(4, 'llaveroAlarma.jpg',4),
+(5, 'kubotanmetalico.jpg',5),
+(6, 'LLavero-Navaja.PNG',6),
+(7, 'llaveroCinta.jpg',7),
+(8, 'manoplaVerde.jpg',8),
+(9, 'kitninos.jpg',9),
+(10, 'Mini-LLavero.PNG',10);
+
 /*7*/
 
 /* DROP TABLE IF EXISTS `products_size`;

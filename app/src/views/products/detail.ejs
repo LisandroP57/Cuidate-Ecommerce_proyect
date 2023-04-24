@@ -21,7 +21,9 @@
 				  <div class = "product-imgs">
 					<div class = "img-display">
 					  <div class = "img-showcase">
-						<img src="/images/products/<%= product.image %>" alt="product image"
+						<% product.images.forEach(image => { %>
+								<img src="/images/products/<%= image.image %>" alt="product image"
+						<% }) %>
 						class="product-detail-img">						
 						<img src = "shoes_images/_2.jpg" alt = "image">
 						<img src = "shoes_images/_3.jpg" alt = "image">

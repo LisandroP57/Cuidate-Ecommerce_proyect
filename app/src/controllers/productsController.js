@@ -55,6 +55,10 @@ module.exports = {
 
 		Promise.all([PRODUCT_PROMISE, ALL_PRODUCTS_PROMISE])
 			.then(([product, offerProducts]) => {
+				product.images = product.images.map(image => {
+					image.image;
+					return image;
+				});
 				res.render("products/detail", {
 					offerTitle: "Productos en oferta",
           			offerProducts,
