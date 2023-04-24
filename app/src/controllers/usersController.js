@@ -98,6 +98,7 @@ module.exports = {
 
         User.findByPk(userInSessionId)
             .then((user) => {
+                res.locals.user = user;
                 res.render("users/userProfile", {
                     user: user,
                     session: req.session

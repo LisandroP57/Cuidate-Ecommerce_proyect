@@ -91,8 +91,7 @@ header.containerHeader div.primer-menu div.iniciar .user .img-avatar {
 }
 
 .user .online {
-    color: rgb(31, 148, 31);
-    margin-top: 0.5rem;
+    color: rgb(51, 184, 51);
 }
 
 .menu-user {
@@ -116,6 +115,7 @@ header.containerHeader div.primer-menu div.iniciar .user .img-avatar {
 header.containerHeader div.primer-menu div.iniciar .user img {
     width: 40px;
     height: 40px;
+    border-radius: 50%;
     transition: 1s;
 }
 
@@ -141,7 +141,6 @@ header.containerHeader div.primer-menu div.shoppingcart a {
 
 header.containerHeader div.primer-menu a {
     font-size: 15px;
-    padding-top: 10px;
     font-weight: 600;
 }
 

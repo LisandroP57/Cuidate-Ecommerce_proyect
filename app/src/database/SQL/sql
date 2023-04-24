@@ -22,19 +22,22 @@ select * from users;
 
 LOCK TABLES `users` WRITE;
 
-INSERT INTO `users` VALUES (1,'admin','admin','admin@mail.com','$2a$10$g9YXAsgvDDsFzEkSsqi3Fes8e/9mvviTSUYTs13llZf/5/YwpVncO','1','2021-09-24 02:05:57','2021-09-24 02:48:31','1632450586832_img_.jpg');
-INSERT INTO `users` VALUES(2,'user','user','user@mail.com','$2a$10$g9YXAsgvDDsFzEkSsqi3Fes8e/9mvviTSUYTs13llZf/5/YwpVncO','0','2021-09-24 02:05:57','2021-09-24 02:48:31','1632450586832_img_.jpg');
+INSERT INTO `users` VALUES
+(1,'admin','admin','admin@mail.com','$2a$10$g9YXAsgvDDsFzEkSsqi3Fes8e/9mvviTSUYTs13llZf/5/YwpVncO','1','2021-09-24 02:05:57','2021-09-24 02:48:31','admin.jpeg'),
+(2,'user','user','user@mail.com','$2a$10$g9YXAsgvDDsFzEkSsqi3Fes8e/9mvviTSUYTs13llZf/5/YwpVncO','0','2021-09-24 02:05:57','2021-09-24 02:48:31','aiuda.png'),
+(3,'Lisan', 'test', 'lisan@gmail.com','$2a$12$89txboL21k5g7vYO6ccXSuOElVeBixtqH1AsVLrPi/De07HVUaoh6', '1', '2023-04-18 00:28:22', '2023-04-18 00:28:22', 'default-image.png');
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
 /*2*/
+/*
 DROP TABLE IF EXISTS `shoppingCart`;
 CREATE TABLE `shoppingCart` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `price` int(11) NOT NULL,
   `userId` int(11) NOT NULL,
-  `state` varchar(100) NOT NULL,/*estado de la compra*/
+  `state` varchar(100) NOT NULL,
   `quantity` int(11) NOT NULL,
   `created_at` date DEFAULT NULL,
   `updated_at` date DEFAULT NULL,
@@ -137,11 +140,21 @@ select * from products;
 
 LOCK TABLES `products` WRITE;
 INSERT INTO `products` VALUES 
-(1,'Gas pimienta',1500,5,"lsak",1,NULL,NULL), (2,'Manopla gatito',1500,5,"lsak",1,NULL,NULL),(3,'Rompecristal y Cortacinturon',1500,5,"lsak",1,NULL,NULL),
-(4,'Alarma LLavero',1500,5,"lsak",1,NULL,NULL),(5,'Kubotan Metálico',1500,5,"lsak",1,NULL,NULL),(6,'Tarjeta Navaja',1500,5,"lsak",1,NULL,NULL),
-(7,'LLavero Cinta',1500,5,"lsak",1,NULL,NULL),(8,'Scrunchie con Cierre + Tapavaso',1500,5,"lsak",1,NULL,NULL),(9,'Colgantes Kids',1500,5,"lsak",1,NULL,NULL),
-(10,'LLaveros Pop It y Jueguetes',1500,5,"lsak",1,NULL,NULL),(11,'Muñequero para niños',1500,5,"lsak",1,NULL,NULL), (12,'Mini Llavero ⚡️',1500,5,"lsak",1,NULL,NULL),
-(13,'Cinta Cuidate',1500,5,"lsak",1,NULL,NULL),(21,'Pompones',1500,5,"lsak",1,NULL,NULL),(22,'Alcohol en Gel',1500,5,"lsak",1,NULL,NULL);
+(1,'Gas pimienta',3500,10,"Incapacita al atacante por 10 a 15 minutos. Los efectos son inmediatos, provocando ardor en la piel, los ojos, tos y dificultad para respirar.",1,NULL,NULL),
+(2,'Manopla gatito',500,5,"lsak",1,NULL,NULL),
+(3,'Rompe-cristal',2500,5,"El llavero es un dispositivo que permite cortar un cinturón de seguridad y romper una ventanilla lateral del vehículo. Si te quedas bloqueado después de un accidente, te permitirá salir rápidamente del vehículo.",1,NULL,NULL),
+(4,'Alarma LLavero',5000,50,"Alto decibelio Esta alarma de seguridad personal Guardian Angel para mujeres, niños  y ancianos, utiliza un potenciador más grande de alta precisión para hacer su grito de hasta 100dB.",1,NULL,NULL),
+(5,'Kubotan Metálico',1950,0,"El Kubotan es un arma increíble de autodefensa que ha ayudado a miles de personas a defenderse efectivamente. Hombres, mujeres, agentes de la ley, militares y profesionales de la seguridad, aprecian esta pequeña y discreta herramienta de autodefensa.",1,NULL,NULL),
+(6,'Tarjeta Navaja',1520,15,"Cuchillo súper ligero de supervivencia en formato tarjeta de crédito Totalmente desplegable.Está construido en caucho antideslizante, Con un cierre de seguridad único y a prueba de niños.",1,NULL,NULL),
+(7,'LLavero Cinta',1100,20,"Elegante llavero cinta",1,NULL,NULL),
+(8,'Scrunchie con Cierre + Tapavaso',1500,60,"Scrunchie con Cierre + Tapavaso",1,NULL,NULL),
+(9,'Colgantes Kids',2350,35,"Contiene, localizador Bluetooth, alarma 140db con linterna, llavero de unicarnio, llavero cinta",1,NULL,NULL),
+(10,'LLaveros Pop It y Jueguetes',5500,12,"lsak",1,NULL,NULL),
+(11,'Muñequero para niños',8500,5,"lsak",1,NULL,NULL),
+(12,'Mini Llavero ⚡️',1500,25,"lsak",1,NULL,NULL),
+(13,'Cinta Cuidate',3500,85,"lsak",1,NULL,NULL),
+(21,'Pompones',1225,50,"lsak",1,NULL,NULL),
+(22,'Alcohol en Gel',1715,5,"lsak",10,NULL,NULL);
 UNLOCK TABLES;
 
 /*6*/

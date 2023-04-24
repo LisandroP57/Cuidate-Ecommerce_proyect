@@ -30,4 +30,12 @@ module.exports = {
 			session: req.session,
 		})
 	},
-};
+	header: (req, res) => {
+		const user = res.locals.user;
+		
+		res.render("partials/header", {
+			session: req.session,
+			user: user
+		})
+	},
+}

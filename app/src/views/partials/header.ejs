@@ -35,16 +35,16 @@
         <div class="iniciar">
             <div class="user">
                 <% if (typeof session.user != "undefined") { %>
-                    <img class="session" src="/images/header/login-online.png" alt="">
+                    <img class="session" src="/images/avatar/<%= session.user.avatar %>" alt="">
                     <a class="online" href="#">• Online</a>
                     
                     <!-- Aca insertar a futuro el nombre del usuario logeado -->
                     <div class="menu-user">
                         <a href="/users/profile">Mi perfil</a>
-                        <a href="/users/logout">Cerrar sesión</a>
                         <% if (session.user.role === 1) { %>
-                            <a href="/admin/index">Modo Admin</a>
+                            <a href="/admin/index">ADMIN</a><br>
                         <% } %>
+                        <a href="/users/logout">Cerrar sesión</a>
                     </div>
                 <% } else {%>
                     <a href="/users/login">
