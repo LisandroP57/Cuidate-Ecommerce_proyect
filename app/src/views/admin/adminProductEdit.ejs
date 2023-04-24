@@ -3,7 +3,7 @@
 <!-- Head -->
 <%- include('../partials/head', {title: 'Editar producto'}) %>
 
-<body>
+<body class="create-edit-body">
 	<!-- Header -->
 	<%- include('../partials/header') %>
 	
@@ -39,12 +39,37 @@
 							<% } %>
 						</div>
 						<div class="addInput">
-							<label for="category" class="form-label">Categoría:</label>
-							<select name="category" id="category" class="form-input">
-								<option value="">Elegí</option>
-								<option value="in-sale" <%= product.category === "in-sale" && "selected" %>>En oferta</option>
-								<option value="visited" <%= product.category === "visited" && "selected" %> >Últimos agregados</option>
+							<select class="form-select" id="specificSizeSelect" name="category">
+								<option selected hidden>Categoria :</option>
+								<% categories.forEach(category => { %>
+									<option 
+									value="<%- category.id %>" 
+									<%- locals.old && old.category == category.id ?
+									"selected" : category.id == product.category_id ?
+									`selected` : ""  %>>
+									<%- category.name %>
+								</option>
+								<% }) %>
 							</select>
+							<% if (locals.errors && errors.category) { %>
+								<small class="text-danger"><%= errors.category.msg %> </small>
+							<% } %>
+						</div>
+						<div class="addInput">
+							<select class="form-select" id="specificSizeSelect" name="subcategory">
+								<option selected hidden>Subcategoria :</option>
+								<% subcategories.forEach(subcategory => { %>
+									<option value="<%- subcategory.id %>" 
+									<%- locals.old && old.subcategory == subcategory.id ?
+									"selected" : subcategory.id == product.subcategory ?
+									`selected` : ""  %>>
+									<%- subcategory.name %>
+								</option>
+								<% }) %>
+							</select>
+							<% if (locals.errors && errors.subcategory) { %>
+								<small class="text-danger"><%= errors.subcategory.msg %> </small>
+							<% } %>
 						</div>
 						<div class="description1">
 							<label for="description" class="form-label">Descripción:</label>

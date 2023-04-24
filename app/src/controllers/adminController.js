@@ -107,30 +107,21 @@ module.exports = {
         }
     },
     edit: (req, res) => {
-        const productId = Number(req.params.id);
-        Product.findOne({
-            where: { id: productId },
-            include: [
-                {
-                    association: "subcategory",
-                    include: {
-                        association: "category",
-                    },
-                },
-            ],
+        const productId = req.params.id;
+        const PRODUCT_PROMISE = Product.findByPk(productId);
+        const CATEGORIES_PROMISE = Category.findAll();
+        const SUBCATEGORIES_PROMISE = Subcategory.findAll();
+        
+        Promise.all([PRODUCT_PROMISE, CATEGORIES_PROMISE, SUBCATEGORIES_PROMISE])
+        .then(([product, categories, subcategories]) => {
+          res.render("admin/adminProductEdit", {
+            categories,
+            subcategories,
+            product,
+            session: req.session,
+          });
         })
-        .then((product) => {
-            if (!product) {
-                return res.render("not-found");
-            }
-    
-            return res.render("admin/adminProductEdit", {
-    
-                session: req.session,
-                product,
-            });
-        })
-        .catch((error) => console.log(error))
+        .catch(error => console.log(error))
     },
     update: (req, res) => {
         let errors = validationResult(req);
@@ -170,7 +161,7 @@ module.exports = {
                     ],
                 })
                 .then(product => {
-                    res.render("admin/adminProductEdit", {
+                    res.render("/", {
                         session: req.session,
                         product,
                     });

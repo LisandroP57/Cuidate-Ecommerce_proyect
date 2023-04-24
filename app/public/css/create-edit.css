@@ -10,6 +10,9 @@ main.addProduct {
 .create-edit-body .form-label {
     margin-bottom: 0;
 }
+.create-edit-body .products-title {
+    font-weight:400 ;
+}
 .createForm {
     padding: 0rem 1rem;
     border-radius: 1rem;
@@ -24,8 +27,8 @@ main.addProduct {
 .createForm .row .col-12 h2{
     color: rgb(0, 0, 0);
     text-align: center;
-    margin-top: 1rem;
     font-size: 2rem;
+    margin-top: 3rem;
 }
 
 .col-12 {
