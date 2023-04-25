@@ -2,38 +2,6 @@ const { Product, Category, Sequelize } = require("../database/models");
 const { Op } = Sequelize;
 
 module.exports = {
-	products: (req, res) => {
-		Product.findAll()
-		  .then((products) => {
-			res.render("products/allProducts", {
-				session: req.session,
-				products,
-			});
-		})
-		.catch((error) => console.log(error));
-	},
-	/* 								ALTERNATIVA PARA PRODUCTS
-	products: (req, res) => {
-		Product.findAll({
-			include: [
-				{
-					association: "subcategory",
-					include: {
-						association: "category",
-					},
-				},
-			],
-		})
-		.then((products) => {
-			return res.render("products/allProducts", {
-				session: req.session,
-				products,
-				toThousand
-			});
-		})
-		.catch((error) => console.log(error));
-	} */
-	
 	shoppingcart: (req, res) => {
 		res.render("products/shoppingcart", { session: req.session });
 	},

@@ -19,17 +19,17 @@ module.exports = {
                     association: "subcategory",
                     include: {
                         association: "category",
+                    },
                 },
-            },
-        ],
-    })
-    .then((products) => {
-        return res.render("admin/adminProducts", {
-            session: req.session,
-            products,
-        });
-    })
-        .catch((error) => console.log(error))
+            ],
+        })
+        .then((products) => {
+            return res.render("admin/adminProducts", {
+                session: req.session,
+                products,
+            });
+        })
+        .catch((error) => console.log(error));
     },
     create: (req, res) => {
         const CATEGORIES_PROMISE = Category.findAll();
@@ -46,9 +46,9 @@ module.exports = {
         .catch((error) => console.log(error));
     },
     store: (req, res) => {
-        let errors = validationResult(req)
+        let errors = validationResult(req);
         
-        if(errors.isEmpty()){
+        if (errors.isEmpty()) {
             let {
                 name,
                 price,
@@ -56,7 +56,7 @@ module.exports = {
                 subcategory,
                 description
             } = req.body;
-
+            
             let newProduct = {
                 name,
                 price,
@@ -64,7 +64,7 @@ module.exports = {
                 discount,
                 subcategory_id: subcategory,
             };
-
+            
             Product.create(newProduct)
             .then((product) => {
                 if (req.files.length === 0) {
@@ -73,7 +73,7 @@ module.exports = {
                         product_id: product.id,
                     })
                     .then(() => {
-                        return res.redirect("/products/allProducts")
+                        return res.redirect("/admin/products")
                     });
                 } else {
                     const files = req.files.map((file) => {
@@ -84,7 +84,7 @@ module.exports = {
                 });
                 ProductImage.bulkCreate(files)
                 .then(() => {
-                    return res.redirect("/products/allProducts");
+                    return res.redirect("/admin/products");
                 });
             }
         })

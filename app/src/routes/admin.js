@@ -11,7 +11,7 @@ const {
     destroy
 } = require("../controllers/adminController");
 
-const {uploadImageProduct} = require("../middlewares/upload");
+const uploadImageProduct = require("../middlewares/uploadProductImage");
 const productValidator = require("../validations/productValidator");
 const userInSessionCheck = require("../middlewares/userInSessionCheck");
 const userSessionAdmin = require("../middlewares/userSessionAdmin");
@@ -20,16 +20,17 @@ const userSessionAdmin = require("../middlewares/userSessionAdmin");
 router
         /* Index */
         .get("/", userSessionAdmin, index)
+        
         /* Products list */
         .get("/products", userSessionAdmin, products)
     
         /* Create product */
         .get('/products/create', userInSessionCheck, userSessionAdmin, create)
-        .post("/products/create", uploadImageProduct.single("image"), productValidator, store)
+        .post("/products/create", uploadImageProduct.array("images"), productValidator, store)
 
         /* Edit product */
         .get('/products/edit/:id', userInSessionCheck, userSessionAdmin, edit)
-        .put('/products/edit/:id', uploadImageProduct.single("image"), productValidator, update)
+        .put('/products/edit/:id', uploadImageProduct.array("images"), productValidator, update)
 
         /* Delete product*/
         .delete('/products/delete/:id', userInSessionCheck, userSessionAdmin, destroy);
