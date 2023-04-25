@@ -125,11 +125,18 @@ module.exports = {
     },
     update: (req, res) => {
         let errors = validationResult(req);
+        const productId = Number(req.params.id);
         
         if (errors.isEmpty()) {
-            const productId = Number(req.params.id);
             
-            let { name, price, discount, category, subcategory, description } = req.body;
+            let {
+                name,
+                price,
+                discount,
+                category,
+                subcategory,
+                description
+            } = req.body;
             
             Product.update(
                 {
@@ -137,50 +144,88 @@ module.exports = {
                     price,
                     discount,
                     category,
-                    subcategory,
+                    subcategory_id: subcategory,
                     description,
                 },
                 {
-                    where: { id: productId }
+                    where: { id: productId, }
                 })
                 .catch(error => {
                     console.log(error);
-                });
-            } else {
-                Product.findOne({
-                    where: {
-                        id: req.params.id
-                    },
-                    include: [
-                        {
-                            association: "subcategory",
-                            include: {
-                                association: "category",
-                            },
-                        },
-                    ],
                 })
-                .then(product => {
-                    res.render("/", {
-                        session: req.session,
+                .then((result) => {
+                    if(result){
+                        if(req.files.length === 0){
+                            return res.redirect("/admin/products");
+                        } else {
+                            ProductImage.findAll({
+                                where : {
+                                    product_id: productId
+                                }
+                            })
+                            .then((images) => {
+                                images.forEach((productImage) => {
+                                    const EXIST = fs.existsSync("./public/images/products/", productImage.image);
+                                    if(EXIST){
+                                        try {
+                                            fs.unlinkSync(`./public/images/products/${productImage.image}`)
+                                        } catch (error) {
+                                            throw new Error(error)                    
+                                        }
+                                    }else{
+                                        console.log("No se encontró el archivo");
+                                    }
+                                })            
+                                ProductImage.destroy({
+                                    where: {
+                                        product_id: productId,
+                                    }
+                                })
+                                .then(() => {
+                                    const files = req.files.map((file) => {
+                                        return {
+                                            image: file.filename,
+                                            product_id: productId,
+                                        };
+                                    });
+                                    ProductImage.bulkCreate(files)
+                                    .then(() => {
+                                        return res.redirect("/admin/products");
+                                    });
+                                })
+                            })
+                        }
+                    }
+                })
+            } else {
+                const PRODUCT_PROMISE = Product.findByPk(productId);
+                const CATEGORIES_PROMISE = Category.findAll();
+                const SUBCATEGORIES_PROMISE = Subcategory.findAll();
+                
+                Promise.all([PRODUCT_PROMISE, CATEGORIES_PROMISE, SUBCATEGORIES_PROMISE])
+                .then(([product, categories, subcategories]) => {
+                    res.render("admin/adminProductEdit", {
+                        categories,
+                        subcategories,
                         product,
+                        errors: errors.mapped(),
+                        old: req.body,
+                        session: req.session,
                     });
                 })
-                .catch(error => {
-                    console.log(error);
-                });
+                .catch(error => console.log(error))
             }
-    },
-    destroy: (req, res) => { //destroy from DB
-        
-        const productId = req.params.id; //obtengo el id req.params
-        
-        Product.destroy({
-            where: {id:productId}
-        })
-        .then(()=>{
-              return res.redirect("/");
-        })
-        .catch((error=>console.log(error)))        
-    },
-}
+        },
+        destroy: (req, res) => { //destroy from DB
+            
+            const productId = req.params.id; //obtengo el id req.params
+            
+            Product.destroy({
+                where: {id:productId}
+            })
+            .then(()=>{
+                return res.redirect("/");
+            })
+            .catch((error=>console.log(error)))        
+        },
+    }
