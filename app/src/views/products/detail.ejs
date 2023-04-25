@@ -70,24 +70,16 @@
 		  
 					<div class = "product-price">
 					  
-					  	<% if (product.discount> 0) { %>
-						<p class="product-detail-price small">
-							<p class = "new-price">Nuevo precio: <span>
-								<b>
-									<%= product.discount %>% OFF
-								</b>
-							</span></p>
-							
-							
-						</p>
-						<% } else{ %>
-							<p class = "last-price">
-							 <p class="product-detail-price">
-								Precio Original: <%= product.price %>
-							</p>
-						</p>
-						 <% } %> 
+						<!--  -->
+						<% if (product.discount > 0) { %>
+						<div class="home-product-discount">
+						Nuevo precio: <%- product.discount %>% OFF</div>
+															<% } %>
+						Precio: <%- product.price %>
+
 					</div>
+
+
 		  
 					<div class = "product-detail">
 					  <h2>Acerca de este artículo:
