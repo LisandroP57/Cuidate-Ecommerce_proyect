@@ -25,20 +25,20 @@
 								<img src="/images/products/<%= image.image %>" alt="product image"
 						<% }) %>
 						class="product-detail-img">						
-						<img src = "shoes_images/_2.jpg" alt = "image">
-						<img src = "shoes_images/_3.jpg" alt = "image">
-						<img src = "shoes_images/_4.jpg" alt = "image">
+						<img src = "" alt = "image">
+						<img src = "" alt = "image">
+						<img src = "" alt = "image">
 					  </div>
 					</div>
 					<div class = "img-select">
 					  <div class = "img-item">
 						<a href = "#" data-id = "1">
-						  <img src = "images/1.jpg" alt = "image">
+						  <img src = "" alt = "image">
 						</a>
 					  </div>
 					  <div class = "img-item">
 						<a href = "#" data-id = "2">
-						  <img src = "images/_2.jpg" alt = "image">
+						  <img src = "" alt = "image">
 						</a>
 					  </div>
 					  <div class = "img-item">
@@ -80,11 +80,12 @@
 							
 							
 						</p>
-						<p class = "last-price">Precio viejo: </p>
-					<% } else{ %>
+						<% } else{ %>
+							<p class = "last-price">
 							 <p class="product-detail-price">
-								Precio
+								Precio Original: <%= product.price %>
 							</p>
+						</p>
 						 <% } %> 
 					</div>
 		  
