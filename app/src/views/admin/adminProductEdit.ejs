@@ -9,12 +9,7 @@
 	
 	<main class="addProduct">
 		<div class="createForm">
-			<div class="row">
-				<div class="col-12">
-					<h2 class="products-title">Estas modificando: <i> <%= product.name %></i></h2>
-				</div>
-			</div>
-			<div class="col-12">
+			<p class="title">Estas modificando:<br><i><%= product.name %></p>
 				<form action="/admin/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 					<div class="addFormEdit">
 						<div class="addInput">
@@ -71,17 +66,17 @@
 								<small class="text-danger"><%= errors.subcategory.msg %> </small>
 							<% } %>
 						</div>
-						<div class="description1">
+						<div class="addInput">
 							<label for="description" class="form-label">Descripción:</label>
-							<textarea name="description" id="description" class="form-input"><%= product.description %></textarea>
+							<input type="text" class="description" name="description" value="<%= locals.old ? old.description: product.description %>">
 						</div>
-						<div class="edit-img">
-							<label for="inputImage" class="form-label">Imagen del producto:</label>
-							<input class="form-control" type="file" id="inputImage" name="image">
+						<div class="multer">
+							<label for="inputImage" class="form-label">Imagen de producto:</label>
+							<input type="file" id="inputImage" name="images" placeholder="Ej: 15" class="form-control">
 						</div>
-
+						
 						<div class="sendButton">
-							<button type="submit" class="buy-now-button" data-bs-toggle="modal" data-bs-target="#miModal">Modificar producto</button>
+							<button type="submit" class="editbtn" data-bs-toggle="modal" data-bs-target="#miModal">Modificar producto</button>
 
 							<!-- Modal a corregir-->
 							<div class="modal fade" id="miModal" tabindex="-1" aria-hidden="true" aria-labelledby="modalTitle">
@@ -107,7 +102,6 @@
 					</div>
 				</form>
 			</div>
-		</div>
 	</main>
 
 	<!-- footer -->

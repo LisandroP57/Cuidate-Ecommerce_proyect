@@ -2,20 +2,14 @@
 <html lang="es">
 <!-- Head -->
 <%- include('../partials/head', {title: 'Agregar producto'}) %>
-<title>Cuidate! Agregar Producto</title>
 <body class="create-edit-body">
 	<!-- Header -->
 	<%- include('../partials/header') %>
 	<main class="addProduct">
 		<div class="createForm">
-			<div class="row">
-				<div class="col-12">
-					<h2 class="products-title">Agregar Producto</h2>
-				</div>
-			</div>
-			<div class="col-12">
+			<p class="title">Crear nuevo producto</p>
 				<form action="/admin/products/create" method="POST" enctype="multipart/form-data">
-					<div class="Addform">
+					<div class="addForm">
 						<div class="addInput">
 							<label for="inputName" class="form-label">Nombre:</label>
 							<input type="text" id="name" name="name" placeholder="Ej: Gas pimienta" class="form-input" value="<%= locals.old && old.name %>">
@@ -39,7 +33,7 @@
 						</div>
 						<div class="addInput">
 							<select class="form-select" id="specificSizeSelect" name="category">
-								<option selected hidden value="">Categorias</option>
+								<option selected hidden value="">Categoria</option>
 								<% categories.forEach(category => { %>
 									<option value="<%- category.id %>" <%= locals.old && old.category == category.id ? "selected" : null %> ><%- category.name %></option>
 								<% }) %>
@@ -50,7 +44,7 @@
 						</div>
 						<div class="addInput">
 							<select class="form-select" id="specificSizeSelect" name="subcategory">
-								<option selected hidden value="">Subcategorias</option>
+								<option selected hidden value="">Subcategoria</option>
 								<% subcategories.forEach(subcategory => { %>
 								<option value="<%- subcategory.id %>" <%= 
 									locals.old && 
@@ -65,21 +59,20 @@
 								<small class="text-danger"><%= errors.subcategory.msg %></small>
 							<% } %>
 						</div>
-						<div class="description1">
-							<label for="validationTextArea" class="form-label">Descripción:</label>
-							<textarea name="description" id="validationTextArea" class="form-input" placeholder="Descripción"></textarea>
+						<div class="addInput">
+							<label for="description" class="form-label">Descripción:</label>
+							<input type="text" class="description" name="description" placeholder="Esta es la descripción de tu futuro producto!">
 						</div>
 						<div class="multer">
 							<label for="inputImage" class="form-label">Imagen de producto:</label>
 							<input type="file" id="inputImage" name="images" placeholder="Ej: 15" class="form-control">
 						</div>
 						<div class="sendButton">
-							<button type="submit" class="buy-now-button">Agregar producto</button>
+							<button type="submit" class="editbtn">Agregar producto</button>
 						</div>
 					</div>
 				</form>
 			</div>
-		</div>
 	</main>
 	<!-- footer -->
 	<%- include('../partials/footer') %>

@@ -63,7 +63,7 @@
     #btn-mas{
         display: none;
     }
-    .container{
+    .homeBody .container{
         position: fixed;
         bottom: 20px;
         right: 20px;
