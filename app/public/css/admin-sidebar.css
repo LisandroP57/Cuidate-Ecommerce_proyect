@@ -22,7 +22,7 @@ overflow:visible;
 .admin-nav {
 background:#212121;
 border-right:1px solid #e5e5e5;
-position:absolute;
+position:fixed;
 top:0;
 bottom:0;
 left:0;
