@@ -14,15 +14,57 @@
         </div>
         <div class="btn-mas">
             <label for="btn-mas" class="fa fa-plus"></label>
+            </div>
         </div>
-        </div>
+		<div class="wrapper">
 			<!--  -->
-			<div class="container-products-wrapper">
-				<div class="offer-title" id="offers">
-					<h2 class="products-title">Nuestras Ofertas</h2>
-				</div>
-				<div class="product-row">
-					
+			<header class="header-mobile">
+				<h1 class="logo">SHOP</h1>
+					<button class="open-menu" id="open-menu">
+						<i class="bi - bi-list"></i>
+					</button>
+			</header>
+			<!--  -->
+			<aside>
+				<button class="close-menu" id="close-menu">
+					<i class="bi bi-x"></i>
+				</button>
+				<header>
+					<h1 class="logo">SHOP</h1>
+				</header>
+				<nav>
+					<ul class="menuProducts">
+						<li>
+							<button id="todos" class="boton-menu boton-categoria active"><i class="bi bi-hand-index-thumb-fill"></i> Todos los productos</button>
+						</li>
+						<li>
+							<button id="movados" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> LLAVEROS </button>
+						</li>
+						<li>
+							<button id="smartWatch" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> KIDS </button>
+						</li>
+						<li>
+							<button id="xiaomi" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> COMBOS </button>
+						</li>
+						<li>
+							<a class="boton-menu boton-carrito" href="./carrito.html">
+								<i class="bi bi-cart-fill"></i> Carrito <span id="numerito" class="numerito">0</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+				<footer>
+					<p class="texto-footer">© 2023 SHOP</p>
+				</footer>
+			</aside>
+
+				<!-- CARD PRODUCTOS -->
+				
+			
+			<main class="mainHome">
+				<h2 class="titulo-principal" id="titulo-principal">Todos los productos</h2>
+				<div id="contenedor-productos" class="contenedor-productos">
+					<!-- Esto se va a rellenar con EJS -->
 					<% offerProducts.forEach(product => { %>
 						<div class="home-card">
 							<a href="/products/detail/<%- product.id %>">
@@ -42,8 +84,8 @@
 									<% if (product.discount > 0) { %>
 										<div class="home-product-discount"><%- product.discount %>% OFF</div>
 									<% } %>
-								<div class="home-card-footer">
-									<h4 class="home-productPrice">$<%- product.price %></h4>
+									<div class="home-card-footer">
+										<h4 class="home-productPrice">$<%- product.price %></h4>
 									<div class="home-card-btns">
 										<div class="home-shopping-btn">
 											<svg class="svg-icon" viewBox="0 0 20 20">
@@ -62,12 +104,16 @@
 							</a>
 						</div>
 					<% }) %>
-					
 				</div>
-			</div>
+			</main>
+		</div>
 		
-		<!-- Footer -->
+	
+			
+			<!-- Footer -->
 	<%- include('partials/footer') %>
-		<!-- Fin Footer -->
-</body>
-</html>
+	<!-- Fin Footer -->
+			<script src="/js/home.js"></script>
+			</html>
+			
+		</body>

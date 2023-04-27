@@ -66,6 +66,13 @@
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     }
+    .user-profile {
+        background: transparent;
+        backdrop-filter: blur(5px);
+        margin-left: 0;
+        border-radius: 2rem;
+    }
+    
     .user-profile-box {
         display: flex;
         justify-content: center;
@@ -76,6 +83,7 @@
         border: 1px solid rgba(137, 43, 226, 0.445);
         width: 100%;
     }
+
     
     .profile-card .info-container .btn-edit {
         color: #ecf0f1;
