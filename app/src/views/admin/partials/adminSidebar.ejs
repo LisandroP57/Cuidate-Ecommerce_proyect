@@ -1,30 +1,45 @@
-<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-    <div class="position-sticky pt-3">
-      <ul class="nav flex-column">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/admin/index">
-            <span data-feather="home"></span>
-            Dashboard
+<div class="prenav">
+  <nav class="admin-nav">
+    <ul>
+        <li>
+            <a href="/admin">
+                <i class="fa fa-home fa-2x"></i>
+                <span class="nav-text"> Inicio Administrador </span>
+            </a>
+        </li>
+        <li class="admin-subnav">
+          <a href="admin/products">
+            <i class="fa fa-shopping-cart fa-2x"></i>
+                <span class="nav-text"> Productos </span>
+              </a>
+            </li>
+        <li class="admin-subnav">
+          <a href="#">
+            <i class="fa fa-user-md fa-2x"></i>
+            <span class="nav-text"> Usuarios </span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/admin/products">
-            <span data-feather="shopping-cart"></span>
-            Products
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <span data-feather="users"></span>
-            Categories
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <span data-feather="bar-chart-2"></span>
-            Subcategories
-          </a>
+        <li>
+          <a href="#">
+            <i class="fa fa-list-ul fa-2x"></i>
+                <span class="nav-text"> Categorías </span>
+              </a>
+            </li>
+            <li>
+            <a href="#">
+              <i class="fa fa-list-ol fa-2x"></i>
+                <span class="nav-text"> Subcategorías </span>
+            </a>
         </li>
       </ul>
-    </div>
+
+    <ul class="logout">
+        <li>
+          <a href="/users/logout">
+                <i class="fa fa-power-off fa-2x"></i>
+                <span class="nav-text"> Cerrar Sesión </span>
+              </a>
+            </li>
+    </ul>
   </nav>
+</div>

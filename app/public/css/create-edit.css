@@ -1,22 +1,15 @@
 main.addProduct {
     display: flex;
     justify-content: center;
-    background-size:60%;
-    background-position: -10rem 3rem; 
-    background-repeat:repeat;
+    background-color: #ebebeb;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.create-edit-body .form-label {
-    margin-bottom: 0;
-}
-.create-edit-body .products-title {
-    font-weight:400 ;
-}
 .createForm {
-    padding: 0rem 1rem;
-    border-radius: 1rem;
-    background-color: white;
+    width: 320px;
+    border-radius: 0.75rem;
+    background-color: rgba(17, 24, 39, 1);
+    padding: 2rem;
     border: 1px solid rgb(80, 67, 67);
     box-shadow: 5px 5px 10px rgb(0 0 0 / 50%);
     margin: 3rem;
@@ -24,88 +17,56 @@ main.addProduct {
     max-width: 500px;
 }
 
-.createForm .row .col-12 h2{
-    color: rgb(0, 0, 0);
+.createForm .title {
+    color: #ffffff;
+}
+  
+.title {
     text-align: center;
-    font-size: 2rem;
-    margin-top: 3rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
 }
-
-.col-12 {
-    display: flex;
-    justify-content: center;
-    font-size: 15px;
+  
+.form {
+    margin-top: 1.5rem;
 }
-
-.col-12 .products-title {
-    display: flex;
-    justify-content: center;
-    margin: 1rem;
-}
-
-.col-12 .products-title i {
-    margin: 0rem 1rem;
-}
-
+  
 .addInput {
-    display: flex;
-    align-items: start;
-    margin: 1rem 0rem;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
 }
 
-.addInput input {
-    display: flex;
-    align-items: start;
-}
-
-.addForm {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 1.5rem;
-}
-
-.addInput {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-}
-
-.addInput input {
-    height: 34px;
-    margin: 3px;
-    width: 100%;
-    padding-left: 0.3rem;
-}
-.addFormEdit .description1 {
+.addInput label {
     display: block;
-}
-.description1 {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin: 1rem 0rem;
+    color: rgb(255, 255, 255);
+    margin-bottom: 4px;
 }
 
-.description1 label {
-    flex-wrap: wrap;
+.multer label {
+    display: block;
+    color: rgb(255, 255, 255);
+    margin-bottom: 4px;
+    font-size: 0.875rem;
+}
+  
+.addInput input {
     width: 100%;
-    margin-bottom: -0.6rem;
+    border-radius: 0.375rem;
+    border: 1px solid rgba(55, 65, 81, 1);
+    outline: 0;
+    background-color: rgba(17, 24, 39, 1);
+    padding: 0.75rem 1rem;
+    color: rgba(243, 244, 246, 1);
+}
+  
+.addInput input:focus {
+    border-color: rgba(167, 139, 250);
 }
 
-.description1 textarea {
-    width: 250px;
-    height: 40px;
-    max-width: 395px;
-    max-height: 90px;
-    padding-left: 0.4rem;
-}
-
-.form-input {
-    border: 1px solid gray;
-    height: 40px;
-    border-radius: 5px;
+.createForm .description {
+    height: 3rem;
 }
 
 .multer {
@@ -126,31 +87,49 @@ main.addProduct {
     padding-left: 0.3rem;
 }
 
-.buy-now-button{
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    font-weight: 600;
-    height: 1.8rem;
-    border: solid 1px var(--gris);
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-    background:  linear-gradient(45deg, --violeta-chillon 0%,  --violeta-oscuro 50%);
-    color: rgb(255, 255, 255);
-    background-color: var(--violeta-oscuro);
-    transition: all 2s ease;
-}
-
 div.sendButton {
     display: flex;
     justify-content: center;
     margin: 1rem;
 }
-
-.buy-now-button:hover {
-    color: black;
-    box-shadow: 5px 5px 10px rgba(45, 34, 61, 0.7);
-    background-color: white;
-    transition: all 1s ease;
+.editbtn {
+ display: inline-block;
+ width: 150px;
+ height: 50px;
+ border-radius: 10px;
+ border: 1px solid #03045e;
+ position: relative;
+ overflow: hidden;
+ transition: all 0.5s ease-in;
+ z-index: 1;
+ color: #03045e;
+ transition: all 0.3s ease-in;
+}
+.editbtn::before,
+.editbtn::after {
+ content: '';
+ position: absolute;
+ top: 0;
+ width: 0;
+ height: 100%;
+ transform: skew(15deg);
+ transition: all 0.5s;
+ overflow: hidden;
+ z-index: -1;
+}
+.editbtn::before {
+ left: -10px;
+ background: #240046;
+}
+.editbtn::after {
+ right: -10px;
+ background: #5a189a;
+}
+.editbtn:hover::before,
+.editbtn:hover::after {
+ width: 58%;
+}
+.editbtn:hover {
+ color: #ffffff;
+ transition: 0.3s;
 }

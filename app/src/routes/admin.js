@@ -33,6 +33,6 @@ router
         .put('/products/edit/:id', uploadImageProduct.array("images"), productValidator, update)
 
         /* Delete product*/
-        .delete('/products/delete/:id', userInSessionCheck, userSessionAdmin, destroy);
+        .delete('/products/delete/:id', userSessionAdmin, destroy);
 
 module.exports = router;

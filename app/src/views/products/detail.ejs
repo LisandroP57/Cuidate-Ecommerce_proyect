@@ -101,15 +101,6 @@
 					  <hr>
 									<a href="#" class="buy-now-button-detail">COMPRAR AHORA</a>
 									<hr>
-									<% if (typeof session.user != "undefined") { %>
-										
-									<% if (session.user.role === 1) { %>
-									<a href="/admin/products/edit/<%= product.id %> " class="action-button edit" >EDITAR PRODUCTO</a>
-                                    <form action="/admin/products/delete/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-                                        <button type="submit" class="action-button delete">ELIMINAR</button>
-                                    </form>
-									<% } %>
-									<% } %>
 					</div>
 		  
 					<ul class="actions-list">
