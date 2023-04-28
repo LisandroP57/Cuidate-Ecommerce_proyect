@@ -521,7 +521,7 @@ svg {
 
     .boton-menu.active::before,
     .boton-menu.active::after {
-        display: none;
+        display: flex;
     }
 
     main {
