@@ -1,18 +1,18 @@
-let productos = [];
+/* let productos = [];
 
 fetch("./js/productos.json")
     .then(response => response.json())
     .then(data => {
         productos = data;
         cargarProductos(productos);
-    })
+    }) */
 
 
 const contenedorProductos = document.querySelector("#contenedor-productos");
 const botonesCategorias = document.querySelectorAll(".boton-categoria");
 const tituloPrincipal = document.querySelector("#titulo-principal");
-let botonesAgregar = document.querySelectorAll(".producto-agregar");
-const numerito = document.querySelector("#numerito");
+/* let botonesAgregar = document.querySelectorAll(".producto-agregar");
+const numerito = document.querySelector("#numerito"); */
 
 
 botonesCategorias.forEach(boton => boton.addEventListener("click", () => {
@@ -20,7 +20,7 @@ botonesCategorias.forEach(boton => boton.addEventListener("click", () => {
 }))
 
 
-function cargarProductos(productosElegidos) {
+/* function cargarProductos(productosElegidos) {
 
     contenedorProductos.innerHTML = "";
 
@@ -41,7 +41,7 @@ function cargarProductos(productosElegidos) {
     })
 
     actualizarBotonesAgregar();
-}
+} */
 
 
 botonesCategorias.forEach(boton => {
@@ -63,15 +63,15 @@ botonesCategorias.forEach(boton => {
     })
 });
 
-function actualizarBotonesAgregar() {
+/* function actualizarBotonesAgregar() {
     botonesAgregar = document.querySelectorAll(".producto-agregar");
 
     botonesAgregar.forEach(boton => {
         boton.addEventListener("click", agregarAlCarrito);
     });
-}
+} */
 
-let productosEnCarrito;
+/* let productosEnCarrito;
 
 let productosEnCarritoLS = localStorage.getItem("productos-en-carrito");
 
@@ -80,9 +80,9 @@ if (productosEnCarritoLS) {
     actualizarNumerito();
 } else {
     productosEnCarrito = [];
-}
+} */
 
-function agregarAlCarrito(e) {
+/* function agregarAlCarrito(e) {
 
     Toastify({
         text: "Producto agregado",
@@ -123,4 +123,4 @@ function agregarAlCarrito(e) {
 function actualizarNumerito() {
     let nuevoNumerito = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
     numerito.innerText = nuevoNumerito;
-}
+} */

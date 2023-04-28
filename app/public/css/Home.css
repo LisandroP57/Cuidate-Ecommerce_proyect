@@ -63,9 +63,10 @@ aside {
     justify-content: space-between;
 }
 
-.logo {
-    font-weight: 400;
-    font-size: 1.3rem;
+.logoHome {
+  width: 50%;
+  font-weight: 400;
+  font-size: 1.3rem;
 }
 
 .menuProducts {
@@ -159,11 +160,14 @@ aside {
     margin-bottom: 2rem;
 }
 
+
 .contenedor-productos {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+ /*  grid-template-columns: repeat(4, 1fr); */
+  gap: 1rem;
 }
+
 
 .producto-imagen {
     max-width: 100%;
@@ -570,6 +574,6 @@ svg {
   .product-row {
     gap: 120px;
     justify-content: space-around;
-    padding: 2rem 5rem;
+    /* padding: 2rem 5rem; */
   }
 }
