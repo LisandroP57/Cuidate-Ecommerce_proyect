@@ -524,7 +524,7 @@ svg {
         display: flex;
     }
 
-    main {
+    .mainHome {
         margin: 1rem;
         margin-top: 0;
         padding: 2rem;
@@ -559,9 +559,9 @@ svg {
         top: 1rem;
         right: 1rem;
         display: none;
-    }
+    } 
 
-    .carrito-producto {
+    /* .carrito-producto {
         gap: 1rem;
         flex-wrap: wrap;
         justify-content: flex-start;
@@ -570,12 +570,12 @@ svg {
 
     .carrito-producto-subtotal {
         display: none;
-    }
+    } 
 
     .carrito-acciones {
         flex-wrap: wrap;
         row-gap: 1rem;
-    }
+    }*/
     
 
 } 
