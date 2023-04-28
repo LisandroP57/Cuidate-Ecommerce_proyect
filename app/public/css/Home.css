@@ -58,15 +58,17 @@ aside {
     position: sticky;
     top: 0;
     height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
+
 .logoHome {
     font-weight: 400;
     font-size: 1.3rem;
-    width: 50%;
+    width: 90%;
 }
 
 .menuProducts {
@@ -86,7 +88,6 @@ aside {
     font-weight: 600;
     padding: 1rem;
     font-size: .85rem;
-    width: 100%;
 }
 
 .boton-menu.active {
@@ -95,6 +96,7 @@ aside {
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
     position: relative;
+    width: 100%;
 }
 
 .boton-menu.active::before {
@@ -162,7 +164,7 @@ aside {
 
 .contenedor-productos {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 3fr 4fr;
     gap: 1rem;
 }
 
@@ -311,6 +313,14 @@ aside {
 
   .contenedor-productos {
     grid-template-columns: 1fr 1fr;
+    width: 50%;
+    
+}
+
+.product-row {
+  gap: 120px;
+  justify-content: space-around;
+  /* padding: 2rem 5rem; */
 }
 }
 
