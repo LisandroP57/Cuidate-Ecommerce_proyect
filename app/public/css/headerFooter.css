@@ -129,8 +129,70 @@ header.containerHeader div.primer-menu a {
     font-size: 15px;
     font-weight: 600;
 }
+    
+/* BUSCADOR */
+.header-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    /* margin: 0rem 10rem 0rem 10rem; */
+  }
+  
+  .home-search-input {
+    width: 35rem;
+    max-width: 530px;
+    height: 100%;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #724A81;
+    caret-color: #f7f7f8;
+    color: #fff;
+    padding: 7px 10px;
+    border: 2px solid transparent;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    margin-right: 1px;
+    transition: all .2s ease;
+  }
+  
+  .home-search-input:hover {
+    border: 2px solid rgba(255, 255, 255, 0.16);
+  }
+  
+  .home-search-input:focus {
+    border: 2px solid #4e4b4e;
+    background-color: #9977A6;
+  }
 
-nav.navegador ul.menu {
+  .home-search-input::placeholder {
+    color: white;
+  }
+  
+  .search__btn {
+    border: none;
+    cursor: pointer;
+    background-color: #724A81;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    height: 100%;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search__btn:hover {
+    background-color: #9977A6;
+  }
+/* FIN BUSCADOR */
+
+
+
+
+/* POR SI SE QUIERE USAR UN NAV DEBAJO DEL BUSCADOR
+ nav.navegador ul.menu {
     display: flex;
     justify-content: center;
 }
@@ -149,43 +211,7 @@ nav.navegador ul.menu li {
 nav.navegador ul.menu li:hover{
     width: 11%;
     transform: scale(1.1);
-}
-
-header.containerHeader div.primer-menu div.buscador {
-    display: flex;
-    align-items: center;
-    border-radius: 20px 2px 20px 2px;
-    background-color: #724A81;
-    margin: 0rem 1rem 0rem 1rem;
-}
-
-header.containerHeader div.primer-menu div.buscador .input-header {
-    background-color: #724A81;
-    border: solid 1px #523574;
-    border-radius: 20px 2px 20px 2px;
-    display: block;
-    width: 100%;
-    padding: 7px 35px 7px 25px;
-}
-
-header.containerHeader div.primer-menu div.buscador .input-header::placeholder {
-    color: white;
-}
-
-header.containerHeader div.primer-menu div.buscador button{
-    background-color: #724A81;
-    color: white;
-    border: none;
-    padding: 1px 1px;
-    margin-right: 15px;
-    cursor: pointer;
-    border-left: solid 1px white;
-}
-
-header.containerHeader div.primer-menu div.buscador i{
-    margin-left: 10px;
-}
-
+} */
         /* FIN GENERALES */
 
         /* MOBILE */
@@ -325,15 +351,6 @@ header.containerHeader div.primer-menu div.buscador i{
     header.containerHeader div.primer-menu div.header-logo span{
         display: none;
     }
-
-    header.containerHeader div.primer-menu div.buscador {
-        width: 50%;
-    }
-
-    header.containerHeader div.primer-menu div.buscador button{
-        position: absolute;
-        right: 9.8rem;
-    }
     /* FOOTER */
     footer.principal {
         display: flex;
@@ -430,29 +447,6 @@ header.containerHeader div.primer-menu div.buscador i{
     header.containerHeader div.primer-menu div.header-logo img {
         width: 65px;
         height: 65px;
-    }
-    /*  */
-    header.containerHeader div.primer-menu div.buscador{
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 50%;
-        margin: 0rem 2rem 0rem 2rem;
-    }
-
-    header.containerHeader div.primer-menu div.buscador .search-form {
-        background-color: #724A81;
-       /*  border: solid 1px gray; */
-        display: block;
-        width: 100%;
-        border-radius: 20px 2px 20px 2px;
-    }
-
-    header.containerHeader div.primer-menu div.buscador button{
-        position: absolute;
-        right: 2px;
-        height: 50%;
     }
 
     header.containerHeader div.primer-menu div.header-logo {

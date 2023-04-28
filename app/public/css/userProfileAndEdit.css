@@ -1,4 +1,7 @@
 @media (min-width: 320px) {
+    .main-user-profile {
+        backdrop-filter: blur(2px);
+    }
     .body-user-profile {
         height: 100%;
     }
