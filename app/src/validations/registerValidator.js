@@ -17,17 +17,20 @@
      .withMessage("Email inválido"),
      
      body("email")
-     .custom((value) => {
-         return User.findOne({
-            where: {
-                email: value
+     .custom(async (value) => {
+        try {
+            const user = await User.findOne({
+                where: {
+                    email: value
+                }
+            });
+            if (user) {
+                return Promise.reject("El email ya se encuentra registrado");
             }
-         })
-         .then(user => {
-            if(user) return Promise.reject("Email en uso")
-         })
-         .catch(error => console.log(error))
-     }),
+        } catch (error) {
+            return Promise.reject(error.message);
+        }
+    }),
  
      check('pass1')
      .notEmpty()

@@ -10,7 +10,6 @@ footer.principal div.footer-redes-data h3 {
     width: 120%;
     font-size: 12px;
     text-align: center;
-    margin-top: 10px;
 }
 
 footer.principal div.links h3 {
@@ -20,6 +19,7 @@ footer.principal div.links h3 {
     width: 100%;
     font-size: 12px;
     text-align: center;
+    margin-top: 1rem;
 }
 
 header {
@@ -136,7 +136,7 @@ header.containerHeader div.primer-menu a {
     justify-content: center;
     align-items: center;
     height: 35px;
-    /* margin: 0rem 10rem 0rem 10rem; */
+    margin: 0rem 5rem 0rem 5rem;
   }
   
   .home-search-input {
@@ -254,8 +254,8 @@ nav.navegador ul.menu li:hover{
     }
 
     footer.principal div.footer-logo img {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
     }
 
     footer.principal div.footer-logo span {
@@ -331,6 +331,14 @@ nav.navegador ul.menu li:hover{
         /* TABLET */
 @media (min-width: 768px) and (max-width: 1023px) {
 
+    .header-search {
+        width: 25rem;
+    }
+    .home-search-input {
+        width:100%;
+        max-width: 25rem;
+    }
+
     header.containerHeader div.primer-menu div.crear {
         display: none;
     }
@@ -367,8 +375,9 @@ nav.navegador ul.menu li:hover{
     }
 
     footer.principal div.footer-logo img {
-        width: 50px;
-        height: 50px;
+        margin-top: 1rem;
+        width: 70px;
+        height: 70px;
     }
 
     footer.principal div.footer-logo span {
@@ -439,6 +448,14 @@ nav.navegador ul.menu li:hover{
 
         /* DESKTOP */
 @media (min-width: 1024px) {
+
+    .header-search {
+        width: 35rem;
+    }
+    .home-search-input {
+        width:100%;
+        max-width:35rem;
+    }
 
     header.containerHeader div.primer-menu div.menu-hamburguesa {
         display: none;
@@ -527,10 +544,10 @@ nav.navegador ul.menu li:hover{
         font-size: 15px;
     }
 
-    footer.principal div.footer-logo  img.header-logo{
-        width: 100px;
-        height: 100px;
-        cursor: pointer;
+    footer.principal div.footer-logo img {
+        margin-top: 1rem;
+        width: 150px;
+        height: 150px;
     }
 
     footer.principal div.footer-redes-data ul.redes li img {
