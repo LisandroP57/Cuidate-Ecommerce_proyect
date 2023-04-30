@@ -83,18 +83,51 @@ header.containerHeader div.primer-menu div.iniciar .user .img-avatar {
 .menu-user {
     display: none;
     position: absolute;
-    font-size: 1rem;
-    width: 8rem;
-    background-color: #724A81;
-    border: solid 1px rgb(148, 148, 148);
-    padding: 1rem;
-    border-radius: .5rem;
     margin-top: 3rem;
+    width: 200px;   
+}
+
+.menu-user li {
+    display: flex;
+    
+    align-items: center;
+}
+
+.menu-user li i {
+    display: flex;
+    flex-direction:;
+    align-items:center;
+    margin-right: 1rem;
 }
 
 .user:hover .menu-user{
    display: block;
 }
+
+.menu-user-button {
+    font-weight: 500;
+    text-shadow: 1px 1px 1px rgba(#BA6D91,.8);
+    display: block;
+    background-color: #9977A6;
+    padding: .6em;
+    box-shadow: 1px 0px 1px 0px #1a1a1a, inset 1px 1px 2px 1px rgba(#FFC3A7, .6);
+}
+.menu-user .menu-user-button {
+    border-radius: 0;
+    border-bottom: 1px solid #724A81;
+}
+.unread {
+    background-color: #C8ABD0;
+    float: right;
+    width: 1.5em;
+    text-align: center;
+    padding: .1em .3em;
+    border-radius: 6px;
+    font-size: .7em;
+    font-weight: 700;
+    box-shadow: inset 1px 1px 1px 0px rgba(199, 109, 88, 0.8);
+}
+
         /* Fin avatar y session */
 
 

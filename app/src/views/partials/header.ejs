@@ -42,11 +42,14 @@
                     
                     <!-- Aca insertar a futuro el nombre del usuario logeado -->
                     <div class="menu-user">
-                        <a href="/users/profile">Mi perfil</a>
-                        <% if (session.user.role === 1) { %>
-                            <a href="/admin">ADMIN</a><br>
-                        <% } %>
-                        <a href="/users/logout">Cerrar sesión</a>
+                        <ul>
+                            <a href="/users/profile"><li class="menu-user-button"><i class="fa fa-gear fa-fw"></i> Mi perfil</li></a>
+                            <% if (session.user.role === 1) { %>
+                                <a href="/admin"><li class="menu-user-button"><i class="fa fa-lock fa-fw"></i> ADMIN</li></a>
+                            <% } %>
+                            <a href="#"><li class="menu-user-button"><i class="fa fa-envelope fa-fw"></i> Notificaciones <span class="unread">5</span></li></a>
+                            <a href="/users/logout"><li class="menu-user-button"><i class="fa fa-power-off fa-fw"></i>Cerrar sesión</li></a>
+                          </ul>
                     </div>
                 <% } else {%>
                     <a href="/users/login">
