@@ -32,7 +32,6 @@
         width: 100%;
         height: 100%;
         box-sizing: border-box;
-        padding: 0.2rem 0 0.7rem 0;
     }
     .button-container {
         display: flex;
@@ -114,12 +113,15 @@
     .form-two:hover {
         background: linear-gradient(300deg,transparent, #9977a68a 70%);
         transition: all 4s ease;
-        font-size: 17px;
     }
 
     .form-two a {
         color: blue;
         text-shadow:5px 5px 10px rgba(132, 128, 128, 0.762) ;
+        transition: 1s ease;
+    }
+    .form-two a:hover {
+        font-size: 17px;
     }
     .form-two span {
         color: white;

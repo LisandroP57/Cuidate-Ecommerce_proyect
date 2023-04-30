@@ -56,12 +56,13 @@
                             <input class="form-control" type="file" id="image" name="avatar">
                         </div>
                         <div class="terms-conditions">
-                            <label for="recordar">  Acepto los <a href="">términos y condiciones</a> </label>
-                            <input type="checkbox" name="terms" id="recordar"> 
+                            <div class="checkbox-slider">
+                                <input type="checkbox" name="remember" id="my-slider"> 
+                                <label for="my-slider">  Acepto los <a href="">términos y condiciones</a> </label>
+                            </div>
                             <% if (locals.errors && errors.terms) { %>
                                 <small class="text-danger"><%= errors.terms.msg %> </small>
                             <% } %>
-                            
                         </div>
                         <div class="button-container">
                             <button type="submit" class="btn-submit-register">Registrarme</button>
