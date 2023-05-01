@@ -22,7 +22,7 @@
                         <% } %>
                     </div>
                     <div class="addInput">
-                        <input type="email" name="email" placeholder="Ingresá tu email" readonly value="<%= user.email %>">
+                        <input type="email" name="email" placeholder="Ingresá tu email" readonly value="<%= locals.old ? old.email : user.email %>">
                         <% if (locals.errors && errors.email) { %>
                             <small class="text-danger"><%= errors.email.msg %> </small>
                         <% } %>

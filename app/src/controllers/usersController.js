@@ -163,9 +163,13 @@ module.exports = {
             });
         } else {
             return res.render("users/userProfileEdit", {
-                user: userInSession,
+                user: req.session.user,
                 session: req.session,
                 errors: errors.mapped(),
+                old: {
+                    name: req.body.name,
+                    email: req.body.email,
+                }
             })
         }
     }
