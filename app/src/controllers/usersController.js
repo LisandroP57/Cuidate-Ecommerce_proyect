@@ -49,7 +49,7 @@ module.exports = {
     },
     register: (req, res) => {
         return res.render('users/register', {
-            session: req.session
+            session: req.session,
         })
     },
     forgetPassword: (req, res) => {
