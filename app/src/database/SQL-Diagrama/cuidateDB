@@ -1,6 +1,7 @@
-DROP DATABASE  IF exists cuidate_db; /*BORRA, si ya una tabla con el mismo nombre */
-CREATE DATABASE cuidate_db;/*crea*/
-USE cuidate_db;/*que la use una vez creada*/
+DROP DATABASE  IF exists cuidate_db;
+CREATE DATABASE cuidate_db;
+USE cuidate_db;
+
 /*1*/
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
@@ -17,44 +18,17 @@ CREATE TABLE `users` (
   UNIQUE KEY `id_UNIQUE` (`id`)
 );
 
-select * from users;
-
-
-LOCK TABLES `users` WRITE;
-
 INSERT INTO `users` VALUES
 (1,'admin','admin','admin@mail.com','$2a$10$g9YXAsgvDDsFzEkSsqi3Fes8e/9mvviTSUYTs13llZf/5/YwpVncO','1','2021-09-24 02:05:57','2021-09-24 02:48:31','admin.jpeg'),
 (2,'user','user','user@mail.com','$2a$10$g9YXAsgvDDsFzEkSsqi3Fes8e/9mvviTSUYTs13llZf/5/YwpVncO','0','2021-09-24 02:05:57','2021-09-24 02:48:31','aiuda.png'),
-(3,'Lisan', 'test', 'lisan@gmail.com','$2a$12$89txboL21k5g7vYO6ccXSuOElVeBixtqH1AsVLrPi/De07HVUaoh6', '1', '2023-04-18 00:28:22', '2023-04-18 00:28:22', 'default-image.png');
+(4,'Riky', 'vallejos', 'riky@gmail.com','$2a$12$dHYaISPAKjjJBA.hRkTAB.AUDfPmYS6vXC4lE4snXW5njm1ap3c/C', '1', '2023-04-18 00:28:22', '2023-04-18 00:28:22', 'homer.jpg'),
+(4,'Lisan', 'test', 'lisan@gmail.com','$2a$12$89txboL21k5g7vYO6ccXSuOElVeBixtqH1AsVLrPi/De07HVUaoh6', '1', '2023-04-18 00:28:22', '2023-04-18 00:28:22', 'homer.jpg'),
+(5, 'Jonatan', 'Cespedes', 'jona@mail.com', '$2a$12$O9REJE3v6Ht.6h16sG4mnuFfSccwYqU8KcUHtRs.AnOXTRR4RhGGy', '1', '2023-04-18 00:28:22', '2023-04-18 00:28:22', 'admin.jpeg')
+(6, 'Cosme', 'Fulanito', 'cosme@mail.com', '$2a$12$u3z2ILFm3FNcEBho3g1nqugzwC2sgutqrTWgXRB6mn/nw2nZq3TB6', '0', '2021-09-24 02:05:57','2021-09-24 02:48:31','default-image.png');
 
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
+select * from users;
 
 /*2*/
-/*
-DROP TABLE IF EXISTS `shoppingCart`;
-CREATE TABLE `shoppingCart` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `price` int(11) NOT NULL,
-  `userId` int(11) NOT NULL,
-  `state` varchar(100) NOT NULL,
-  `quantity` int(11) NOT NULL,
-  `created_at` date DEFAULT NULL,
-  `updated_at` date DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `shoppingCart_un` (`id`),
-  KEY `shoppingCart_FK` (`userId`),
-  CONSTRAINT `shoppingCart_FK` FOREIGN KEY (`userId`) REFERENCES `users` (`id`)
-);
-
-select * from shoppingcart;
-
-LOCK TABLES `shoppingCart` WRITE;
-INSERT INTO `shoppingCart` VALUES (1, 3200, 1, 'pago', 5,'2021-09-24 02:05:57','2021-09-24 02:48:31');
-INSERT INTO `shoppingCart` VALUES (2, 880, 2, 'espera', 5,'2021-09-24 02:05:57','2021-09-24 02:48:31');
-UNLOCK TABLES;
-
-/*3 categories no tiene fk porque guarda dos datos y se relaciona con latable de subcategorias y subcategories es la que recolecta los productos */
 DROP TABLE IF EXISTS `categories`;
 CREATE TABLE `categories` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
@@ -63,17 +37,12 @@ CREATE TABLE `categories` (
   UNIQUE KEY `id_UNIQUE` (`id`)
 );
 
-select * from categories; 
---
--- Dumping data for table `categories`
---
-LOCK TABLES `categories` WRITE;
 INSERT INTO `categories` VALUES(1, 'Productos' ), (2, 'Defensa Personal' ), (3,'LLaveros'), (4,'KIDS'), (5,'Combos'), (6,'Accesorios');
-UNLOCK TABLES;
+
+select * from categories; 
 
 
-
-/*4*/
+/*3*/
 DROP TABLE IF EXISTS `subcategories`;
 CREATE TABLE `subcategories` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
@@ -87,9 +56,6 @@ CREATE TABLE `subcategories` (
   CONSTRAINT `categoria` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) 
 );
 
-select * from subcategories; 
-
-LOCK TABLES `subcategories` WRITE;
 INSERT INTO `subcategories` VALUES 
 /*Cat 1*/
 (1,'Gas pimienta',1,NULL,NULL), (2,'Manopla gatito',1,NULL,NULL),(3,'Rompecristal y Cortacinturon',1,NULL,NULL),
@@ -115,11 +81,10 @@ INSERT INTO `subcategories` VALUES (42,'Bolsa Ecológico para Regalo',4,NULL,NUL
 INSERT INTO `subcategories` VALUES (43,'Combo Mamá Llegue + Navaja Retráctil',4,NULL,NULL);
 /*Cat 5*/
 INSERT INTO `subcategories` VALUES (44,'Pompones',5,NULL,NULL),(45,'Alcohol en Gel',5,NULL,NULL);
-UNLOCK TABLES;
 
+select * from subcategories; 
 
-
-/*5*/
+/*4*/
  DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
@@ -136,9 +101,6 @@ CREATE TABLE `products` (
   CONSTRAINT `subcategory` FOREIGN KEY (`subcategory_id`) REFERENCES `subcategories` (`id`)
  );
 
-select * from products; 
-
-LOCK TABLES `products` WRITE;
 INSERT INTO `products` VALUES 
 (1,'Gas pimienta',3500,10,"Incapacita al atacante por 10 a 15 minutos. Los efectos son inmediatos, provocando ardor en la piel, los ojos, tos y dificultad para respirar.",1,NULL,NULL),
 (2,'Manopla gatito',500,5,"lsak",1,NULL,NULL),
@@ -155,10 +117,10 @@ INSERT INTO `products` VALUES
 (13,'Cinta Cuidate',3500,85,"lsak",1,NULL,NULL),
 (21,'Pompones',1225,50,"lsak",1,NULL,NULL),
 (22,'Alcohol en Gel',1715,5,"lsak",10,NULL,NULL);
-UNLOCK TABLES;
 
-/*6*/
+select * from products; 
 
+/*5*/
 DROP TABLE IF EXISTS `products_images`;
 CREATE TABLE `products_images` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
@@ -168,8 +130,6 @@ CREATE TABLE `products_images` (
   KEY `products_images_FK` (`product_id`),
   CONSTRAINT `products_images_FK` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 );
-
-select * from products_images;
 
 INSERT INTO `products_images` VALUES
 (1, 'gaspimienta.jpeg', 1),
@@ -183,48 +143,82 @@ INSERT INTO `products_images` VALUES
 (9, 'kitninos.jpg',9),
 (10, 'Mini-LLavero.PNG',10);
 
-/*7*/
+select * from products_images;
 
-/* DROP TABLE IF EXISTS `products_size`;
-CREATE TABLE `products_size` (
+/*6*/
+DROP TABLE IF EXISTS `carts`;
+CREATE TABLE `carts` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) NOT NULL,
-  `product_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
-  KEY `products_size_FK` (`product_id`),
-  CONSTRAINT `products_size_FK` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
-); 
-
-select * from products_size;
-*/
-
-/*8*/
-/* DROP TABLE IF EXISTS `colors`;
-CREATE TABLE `colors` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`)
-);
-
-select * from colors; */
-
-/*9*/
-/* DROP TABLE IF EXISTS `color_products`;
-CREATE TABLE `color_products` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) NOT NULL,
-  `products_id` int(11) NOT NULL,
-  `colors_id` int(11) NOT NULL,
+  `userId` int(10) NOT NULL,
+  `state` varchar(100) NOT NULL,
   `created_at` date DEFAULT NULL,
   `updated_at` date DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
-  KEY `products_idx` (`products_id`),
-  KEY `colors_idx` (`colors_id`),
-  CONSTRAINT `products` FOREIGN KEY (`products_id`) REFERENCES `products` (`id`),
-  CONSTRAINT `colors` FOREIGN KEY (`colors_id`) REFERENCES `colors` (`id`)
+  UNIQUE KEY `carts_un` (`id`),
+  KEY `carts_FK` (`userId`),
+  CONSTRAINT `carts_FK` FOREIGN KEY (`userId`) REFERENCES `users` (`id`)
 );
 
-select * from color_products; */
+INSERT INTO `carts` VALUES (1, 2, 'Pago','2021-09-24 02:05:57','2021-09-24 02:48:31'),(2, 3, 'En espera','2021-09-24 02:05:57','2021-09-24 02:48:31');
+
+select * from carts;
+
+/*7*/
+DROP TABLE IF EXISTS `cart_items`;
+CREATE TABLE `cart_items` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `cartId` int(10) NOT NULL,
+  `productId` int(10) NOT NULL,
+  `quantity` int(10) NOT NULL,
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `cart_items_un` (`id`),
+  KEY `cart_items_FK` (`productId`),
+  KEY `cart_items_FK_1` (`cartId`),
+  CONSTRAINT `cart_items_FK` FOREIGN KEY (`productId`) REFERENCES `products` (`id`),
+  CONSTRAINT `cart_items_FK_1` FOREIGN KEY (`cartId`) REFERENCES `carts` (`id`)
+);
+
+INSERT INTO `cart_items` VALUES (1,2,7,2,'2021-11-18','2021-11-18');
+
+select * from cart_items;
+
+
+/*8*/
+DROP TABLE IF EXISTS `products_colors`;
+CREATE TABLE `products_colors` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `color` varchar(50) NOT NULL,
+  `product_id` int(10) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `products_colors_FK` (`product_id`),
+  CONSTRAINT `products_colors_FK` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
+);
+
+INSERT INTO `products_colors` VALUES
+(1, 'negro', 1),
+(2, 'violeta', 2),
+(3, 'rosa',3);
+
+select * from products_colors;
+
+
+/*9*/
+DROP TABLE IF EXISTS `products_sizes`;
+CREATE TABLE `products_sizes` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `size` varchar(50) NOT NULL,
+  `product_id` int(10) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  KEY `products_sizes_FK` (`product_id`),
+  CONSTRAINT `products_sizes_FK` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
+);
+
+INSERT INTO `products_sizes` VALUES
+(1, 'chico', 1),
+(2, 'grande', 2),
+(3, 'regular',3);
+
+select * from products_sizes;

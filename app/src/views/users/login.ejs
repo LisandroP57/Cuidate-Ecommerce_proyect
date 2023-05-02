@@ -17,7 +17,7 @@
                     <div class="form">
                         <div class="input-container">
                             <span class="top-message">E-mail</span>
-                            <input class="input-style" type="email" required name="email" placeholder="Ingrese su e-mail">
+                            <input class="input-style" type="email" name="email" placeholder="Ingrese su e-mail">
                             <% if (locals.errors && errors.email) { %>
                                 <small class="text-danger"><%= errors.email.msg %> </small>
                             <% } %>

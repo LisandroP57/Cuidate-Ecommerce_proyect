@@ -5,49 +5,51 @@
     <%- include('../partials/header') %>
 
     <main class="container-users-edit">
-       <div class="edit-user-form">
-            <h3 class="userTitle">Edita tu perfil</h3>
+       <div class="createForm">
+            <h3 class="title">Edita tu perfil</h3>
             <form action="/users/profile/edit?_method=PUT" method="POST" enctype="multipart/form-data" class="form-ad" >
-                <div class="form-ad-input">
-                    <input type="text" name="name" placeholder="Nombre" value="<%= locals.old ? old.name : user.name %>">
-                    <% if (locals.errors && errors.name) { %>
-                        <small class="text-danger"><%= errors.name.msg %> </small>
-                    <% } %>
-                </div>
-                <div class="form-ad-input">
-                    <input type="text" name="last_name" placeholder="Apellido" value="<%= locals.old ? old.last_name : user.last_name %>">
-                    <% if (locals.errors && errors.last_name) { %>
-                        <small class="text-danger"><%= errors.last_name.msg %> </small>
-                    <% } %>
-                </div>
-                <div class="form-ad-input">
-                    <input type="email" name="email" placeholder="Ingresá tu email" readonly value="<%= user.email %>">
-                    <% if (locals.errors && errors.email) { %>
-                        <small class="text-danger"><%= errors.email.msg %> </small>
-                    <% } %>
-                </div>
-                <div class="form-ad-input">
-                    <input type="text" name="address" placeholder="Domicilio" value="<%= user.address ? user.address : "" %>">
-                </div>
-                <div class="form-ad-input">
-                    <input type="text" name="postal_code" placeholder="Código postal" value="<%= user.postal_code ? user.postal_code : "" %>">
-                </div>
-                <div class="form-ad-input">
-                    <select name="province" id="">
-                        <option value="">Provincia</option>
-                    </select>
-                </div>
-                <div class="form-ad-input">
-                    <select name="city" id="">
-                        <option value="">Localidad</option>
-                    </select>
-                </div>
-                <div class="input-file">
-                    <p>Editar foto de perfil</p>
-                    <input type="file" name="avatar">
-                </div>
-                <div class="btn-edit-profile">
-                    <button type="submit" class="btn-guardar">GUARDAR</button>
+                <div class="addFormEdit">
+                    <div class="addInput">
+                        <input type="text" name="name" placeholder="Nombre" value="<%= locals.old ? old.name : user.name %>">
+                        <% if (locals.errors && errors.name) { %>
+                            <small class="text-danger"><%= errors.name.msg %> </small>
+                        <% } %>
+                    </div>
+                    <div class="addInput">
+                        <input type="text" name="last_name" placeholder="Apellido" value="<%= locals.old ? old.last_name : user.last_name %>">
+                        <% if (locals.errors && errors.last_name) { %>
+                            <small class="text-danger"><%= errors.last_name.msg %> </small>
+                        <% } %>
+                    </div>
+                    <div class="addInput">
+                        <input type="email" name="email" placeholder="Ingresá tu email" readonly value="<%= locals.old ? old.email : user.email %>">
+                        <% if (locals.errors && errors.email) { %>
+                            <small class="text-danger"><%= errors.email.msg %> </small>
+                        <% } %>
+                    </div>
+                    <div class="addInput">
+                        <input type="text" name="address" placeholder="Domicilio" value="<%= user.address ? user.address : "" %>">
+                    </div>
+                    <div class="addInput">
+                        <input type="text" name="postal_code" placeholder="Código postal" value="<%= user.postal_code ? user.postal_code : "" %>">
+                    </div>
+                    <div class="addInput">
+                        <select name="province" id="">
+                            <option value="">Provincia</option>
+                        </select>
+                    </div>
+                    <div class="addInput">
+                        <select name="city" id="">
+                            <option value="">Localidad</option>
+                        </select>
+                    </div>
+                    <div class="multer">
+                        <p>Editar foto de perfil</p>
+                        <input type="file" name="avatar" class="form-control">
+                    </div>
+                    <div class="btn-edit-profile">
+                        <button type="submit" class="btn-guardar">GUARDAR</button>
+                    </div>
                 </div>
             </form>
         </div>

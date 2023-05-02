@@ -82,10 +82,15 @@
 
 .register .input-file p {
     margin: 0;
+    padding-top: 10px;
 }
 
 .register .terms-conditions {
     margin-top: 15px;
+}
+
+.register .button-container {
+    margin-top: 3rem;
 }
 
 @media (min-width: 1024px) {

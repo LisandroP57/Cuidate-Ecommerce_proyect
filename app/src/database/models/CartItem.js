@@ -1,5 +1,5 @@
-/* module.exports = (sequelize, dataTypes) => {
-    let alias = "ShoppingCart";
+module.exports = (sequelize, dataTypes) => {
+    let alias = "cartItem";
 
     let cols = {
         id: {
@@ -8,16 +8,12 @@
             autoIncrement: true,
             primaryKey: true,
         },
-        price: {
+        cartId: {
             type: dataTypes.INTEGER(10),
             allowNull: false,
         },
-        userId: {
+        productId: {
             type: dataTypes.INTEGER(10),
-            allowNull: false,
-        },
-        state: {
-            type: dataTypes.STRING(100),
             allowNull: false,
         },
         quantity: {
@@ -27,15 +23,20 @@
     }
 
     let config = {
-        tableName: "users",
+        tableName: "cart_items",
         createdAt: "created_at",
         updatedAt: "updated_at",
     };
 
-    const SHOPPINGCART = sequelize.define(alias, cols, config);
+    const CART_ITEM = sequelize.define(alias, cols, config);
 
-    SHOPPINGCART.associate = (models) => {
-        SHOPPINGCART.hasMany()
+    CART_ITEM.associate = (models) => {
+
+        CART_ITEM.belongsTo(models.Cart, {
+            as: "cart",
+            foreignKey: "cartId",
+        })
+    }
         
-    return SHOPPINGCART;
-} */
+    return CART_ITEM;
+}

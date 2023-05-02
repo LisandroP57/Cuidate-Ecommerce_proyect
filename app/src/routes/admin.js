@@ -3,6 +3,7 @@ const router = express.Router();
 
 const {
     index,
+    users,
     products,
     create,
     store,
@@ -21,6 +22,12 @@ router
         /* Index */
         .get("/", userSessionAdmin, index)
         
+        /* Users list */
+        .get("/users", userSessionAdmin, users)
+
+        /* Delete User */
+        .delete('/users/delete/:id', userSessionAdmin, destroy)
+
         /* Products list */
         .get("/products", userSessionAdmin, products)
     

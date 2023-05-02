@@ -10,7 +10,6 @@ footer.principal div.footer-redes-data h3 {
     width: 120%;
     font-size: 12px;
     text-align: center;
-    margin-top: 10px;
 }
 
 footer.principal div.links h3 {
@@ -20,6 +19,7 @@ footer.principal div.links h3 {
     width: 100%;
     font-size: 12px;
     text-align: center;
+    margin-top: 1rem;
 }
 
 header {
@@ -83,18 +83,51 @@ header.containerHeader div.primer-menu div.iniciar .user .img-avatar {
 .menu-user {
     display: none;
     position: absolute;
-    font-size: 1rem;
-    width: 8rem;
-    background-color: #724A81;
-    border: solid 1px rgb(148, 148, 148);
-    padding: 1rem;
-    border-radius: .5rem;
     margin-top: 3rem;
+    width: 200px;   
+}
+
+.menu-user li {
+    display: flex;
+    
+    align-items: center;
+}
+
+.menu-user li i {
+    display: flex;
+    flex-direction:;
+    align-items:center;
+    margin-right: 1rem;
 }
 
 .user:hover .menu-user{
    display: block;
 }
+
+.menu-user-button {
+    font-weight: 500;
+    text-shadow: 1px 1px 1px rgba(#BA6D91,.8);
+    display: block;
+    background-color: #9977A6;
+    padding: .6em;
+    box-shadow: 1px 0px 1px 0px #1a1a1a, inset 1px 1px 2px 1px rgba(#FFC3A7, .6);
+}
+.menu-user .menu-user-button {
+    border-radius: 0;
+    border-bottom: 1px solid #724A81;
+}
+.unread {
+    background-color: #C8ABD0;
+    float: right;
+    width: 1.5em;
+    text-align: center;
+    padding: .1em .3em;
+    border-radius: 6px;
+    font-size: .7em;
+    font-weight: 700;
+    box-shadow: inset 1px 1px 1px 0px rgba(199, 109, 88, 0.8);
+}
+
         /* Fin avatar y session */
 
 
@@ -136,7 +169,7 @@ header.containerHeader div.primer-menu a {
     justify-content: center;
     align-items: center;
     height: 35px;
-    /* margin: 0rem 10rem 0rem 10rem; */
+    margin: 0rem 5rem 0rem 5rem;
   }
   
   .home-search-input {
@@ -254,8 +287,8 @@ nav.navegador ul.menu li:hover{
     }
 
     footer.principal div.footer-logo img {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
     }
 
     footer.principal div.footer-logo span {
@@ -331,6 +364,14 @@ nav.navegador ul.menu li:hover{
         /* TABLET */
 @media (min-width: 768px) and (max-width: 1023px) {
 
+    .header-search {
+        width: 25rem;
+    }
+    .home-search-input {
+        width:100%;
+        max-width: 25rem;
+    }
+
     header.containerHeader div.primer-menu div.crear {
         display: none;
     }
@@ -367,8 +408,9 @@ nav.navegador ul.menu li:hover{
     }
 
     footer.principal div.footer-logo img {
-        width: 50px;
-        height: 50px;
+        margin-top: 1rem;
+        width: 70px;
+        height: 70px;
     }
 
     footer.principal div.footer-logo span {
@@ -439,6 +481,14 @@ nav.navegador ul.menu li:hover{
 
         /* DESKTOP */
 @media (min-width: 1024px) {
+
+    .header-search {
+        width: 35rem;
+    }
+    .home-search-input {
+        width:100%;
+        max-width:35rem;
+    }
 
     header.containerHeader div.primer-menu div.menu-hamburguesa {
         display: none;
@@ -527,10 +577,10 @@ nav.navegador ul.menu li:hover{
         font-size: 15px;
     }
 
-    footer.principal div.footer-logo  img.header-logo{
-        width: 100px;
-        height: 100px;
-        cursor: pointer;
+    footer.principal div.footer-logo img {
+        margin-top: 1rem;
+        width: 150px;
+        height: 150px;
     }
 
     footer.principal div.footer-redes-data ul.redes li img {

@@ -1,6 +1,7 @@
 const { validationResult } = require("express-validator");
 const fs = require("fs");
 const {
+    User,
     Product,
     Category,
     Subcategory,
@@ -12,6 +13,17 @@ module.exports = {
         return res.render("admin/adminIndex", {
             session: req.session,
         });
+    },
+    users: (req, res) => {
+        User.findAll({
+        })
+        .then((users) => {
+            return res.render("admin/adminUsers", {
+                session: req.session,
+                users,
+            });
+            })
+            .catch((error) => console.log(error));
     },
     products: (req, res) => {
         Product.findAll({
