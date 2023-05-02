@@ -600,7 +600,7 @@ button:hover {
       border-radius: 30px,30px;
   }
   .card-wrapper{
-      height: 100vh;
+      height: 1000vh;
       display: flex;
       justify-content: center;
       align-items: center;
