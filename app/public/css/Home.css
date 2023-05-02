@@ -328,12 +328,12 @@ aside {
 /* MOBIL */
 
 
-@media screen and (max-width: 400px) {
+/* @media screen and (max-width: 400px) {
     .contenedor-productos {
         grid-template-columns: 1fr;
     }
 
-}
+} */
 
 figure {
   margin: 0;
