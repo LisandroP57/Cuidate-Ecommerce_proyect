@@ -23,7 +23,7 @@
 /*  */
 .bodyDetail{
     line-height: 1.5;
-    background-image: url('bg.jpg');
+    background-color: whitesmoke;
 
 
     
@@ -600,7 +600,7 @@ button:hover {
       border-radius: 30px,30px;
   }
   .card-wrapper{
-      height: 1000vh;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
