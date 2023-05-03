@@ -45,7 +45,7 @@ body.homeBody {
 
 .wrapper {
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 2fr;
     background-color: var(--clr-main);
     background-color: rgba(255, 255, 255, 0.30);
     box-shadow: 0.8px 32px 0 rgba(31, 38, 135, alpha);
@@ -155,6 +155,7 @@ aside {
     margin-left: 0;
     border-radius: 2rem;
     padding: 3rem;
+    width: 95%;
 }
 
 .titulo-principal {
@@ -368,7 +369,7 @@ figure {
 }
 .home-card {
   margin-bottom: 20px;
-  width: 220px;
+  width: 180px;
   height: 400px;
   padding: .8em;
   border-radius: 1rem;
