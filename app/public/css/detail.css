@@ -23,7 +23,8 @@
 /*  */
 .bodyDetail{
     line-height: 1.5;
-    background-image: url('/images/bg.jpg');  
+
+    /* background-image: url('/images/bg.jpg');  */ 
 }
 
 
@@ -72,6 +73,7 @@ background: transparent;
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(15px);
+  padding: 90px;
 }
 
 
@@ -424,6 +426,10 @@ button:hover {
   border: none;
 }
 
+.separacion{
+  height: 90px;
+}
+
 /* PRODUCTS */
 .product {
   /* position: relative; */
@@ -612,6 +618,35 @@ button:hover {
   margin-bottom: 10px;
 }
 
+
+.blob {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(200, 171, 208,.42)37.77%, #8C52FF 100%);
+  border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
+  transform: translate(-100px, -50px) rotate(-90deg);
+  transition:1s cubic-bezier(.07, .8, .16, 1);
+  animation: animateBlob 2s infinite alternate;
+}
+
+.blob:hover {
+  width: 50%;
+  height: 50%;
+  filter: blur(30px);
+  box-shadow:
+      inset 0 0 0 5px rgba(255, 255, 255, .6),
+      inset 100px 100px 0 0 #784ba8 ,
+      inset 100px 100px 0 0 #8C52FF ,
+      inset 100px 100px 0 0 #4f00ee ;
+}
+
+@keyframes animateBlob {
+  100% {
+    transform: translate(30px, 500px) rotate(-10deg);
+    border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
+  }
+}
 
 /* ------------------------------------ */
 
