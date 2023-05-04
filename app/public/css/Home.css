@@ -214,7 +214,7 @@ aside {
   border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
   transform: translate(-100px, -50px) rotate(-90deg);
   transition:1s cubic-bezier(.07, .8, .16, 1);
-  animation: animateBlob 2s infinite alternate;
+  animation: animateBlob 12s infinite alternate;
 }
 
 .blob:hover {
@@ -697,3 +697,7 @@ svg {
       grid-template-columns: 2fr 2fr 2fr 2fr;
     }
   }
+
+
+
+  
