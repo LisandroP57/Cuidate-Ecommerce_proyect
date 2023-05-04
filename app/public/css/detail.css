@@ -143,13 +143,15 @@ background: transparent;
   background: #dedbd4;
   padding: 50px;
 }
-.row.col-12 {
+div .col-12 {
   padding-top: 11rem;
   background-color: rgba(255, 255, 255, 0.571);
   -ms-flex: 0 0 100%;
   flex: 0 0 100%;
-  max-width: 100%;
+  max-width: 70%;
 }
+
+
 
 .product-link{
   text-decoration: none;
