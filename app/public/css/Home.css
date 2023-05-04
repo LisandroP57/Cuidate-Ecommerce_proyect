@@ -506,7 +506,7 @@ svg {
 }
 
 
-@media screen and (max-width: 320px) {
+@media screen and (min-width: 720px) {
 
     .wrapper {
         min-height: 100vh;
@@ -547,7 +547,7 @@ svg {
 
 
     .contenedor-productos {
-      grid-template-columns: 2fr 2fr 2fr 2fr;
+      grid-template-columns: 4fr 4fr ;
     }
 
     .header-mobile {
@@ -640,6 +640,7 @@ svg {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      width: 20%;
   }
 
   .header-mobile .logo {
