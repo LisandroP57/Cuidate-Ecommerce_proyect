@@ -1,13 +1,7 @@
 const { check, body} = require("express-validator");
 const bcrypt = require("bcryptjs");
 const { User } = require("../database/models")
-let qs = (elemento) => {
-    return document.querySelector(elemento);
-}
 
-window.addEventListener("load", ()=> {
-    
-})
 
 module.exports = [
     check("email")

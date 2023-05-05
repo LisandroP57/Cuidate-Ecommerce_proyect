@@ -13,11 +13,11 @@
             <div class="form-container">
                 <a href="/"><h2>Cuidate!</h2></a>
                 <hr>
-                <form action="/users/login" method="POST">
+                <form action="/users/login" method="POST" id="form">
                     <div class="form">
                         <div class="input-container">
-                            <span class="top-message">E-mail</span>
-                            <input class="input-style" type="email" name="email" placeholder="Ingrese su e-mail">
+                            <span class="top-message" id="emailErrors">E-mail</span>
+                            <input class="input-style" type="email" name="email" placeholder="Ingrese su e-mail" id="email">
                             <% if (locals.errors && errors.email) { %>
                                 <small class="text-danger"><%= errors.email.msg %> </small>
                             <% } %>
@@ -70,5 +70,6 @@
         }
         </script>
     <%- include("../partials/footer") %>
+    <script src="./validations/loginvalidationsFront-end.js"></script>
 </body>
 </html>

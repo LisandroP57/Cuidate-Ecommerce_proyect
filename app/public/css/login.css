@@ -293,6 +293,9 @@
     .form-two {
         max-width: 400px;
     }
+    .span {
+        color: red;
+    }
 
     .main-log-reg {
         display: flex;
