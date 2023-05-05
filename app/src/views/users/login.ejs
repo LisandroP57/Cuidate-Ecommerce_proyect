@@ -18,6 +18,8 @@
                         <div class="input-container">
                             <span class="top-message" id="emailErrors">E-mail</span>
                             <input class="input-style" type="email" name="email" placeholder="Ingrese su e-mail" id="email">
+                            <span id="passErrors"></span>
+                            
                             <% if (locals.errors && errors.email) { %>
                                 <small class="text-danger"><%= errors.email.msg %> </small>
                             <% } %>
@@ -70,6 +72,6 @@
         }
         </script>
     <%- include("../partials/footer") %>
-    <script src="./validations/loginvalidationsFront-end.js"></script>
+    <script src="/js/login.js"></script>
 </body>
 </html>
