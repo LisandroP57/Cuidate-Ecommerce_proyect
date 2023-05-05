@@ -16,9 +16,8 @@
                 <form action="/users/login" method="POST" id="form">
                     <div class="form">
                         <div class="input-container">
-                            <span class="top-message" id="emailErrors">E-mail u Correo Electronico</span>
+                            <span class="top-message" id="emailErrors">E-mail</span>
                             <input class="input-style" type="email" name="email" placeholder="Ingrese su e-mail" id="email">
-                          
                             
                             <% if (locals.errors && errors.email) { %>
                                 <small class="text-danger"><%= errors.email.msg %> </small>
@@ -26,6 +25,7 @@
                         </div>
                         <div class="input-container">
                             <span class="top-message">Contraseña</span>
+                            <span id="passErrors"></span>
                             <div class="password-container">
                                 <input class="input-style" type="password" name="pass" id="passwordInput" placeholder="Ingrese su contraseña">
                                 <img src="/images/icons/show-password.png" onclick="showPassword()" id="showPasswordImg" alt="">
