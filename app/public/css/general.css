@@ -14,12 +14,12 @@ ul {
     list-style: none;
 }
 
-header {
+.containerHeader {
     position: relative;
     z-index: 1;
 }
 
-footer {
+.principal {
     position: relative;
     z-index: 1;
 }
