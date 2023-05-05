@@ -141,7 +141,13 @@ INSERT INTO `products_images` VALUES
 (7, 'llaveroCinta.jpg',7),
 (8, 'manoplaVerde.jpg',8),
 (9, 'kitninos.jpg',9),
-(10, 'Mini-LLavero.PNG',10);
+(10, 'Mini-LLavero.PNG',10),
+(11, 'default-image.png',11),
+(12, 'default-image.png',12),
+(13, 'default-image.png',13),
+(14, 'default-image.png',21),
+(15, 'default-image.png',22);
+
 
 select * from products_images;
 
