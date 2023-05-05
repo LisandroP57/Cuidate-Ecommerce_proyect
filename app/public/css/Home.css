@@ -91,12 +91,13 @@ aside {
 }
 
 .boton-menu.active {
-    background-color: var(--clr-white);
+    background-color: #ffffff;
     color: var(--clr-main);
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
     position: relative;
     width: 100%;
+    background-repeat: ;
 }
 
 .boton-menu.active::before {
@@ -144,10 +145,7 @@ aside {
     color: var(--clr-white);
 }
 
-.texto-footer {
-    color: var(--clr-main-light);
-    font-size: .85rem;
-}
+
 
 .mainHome {
     background-color: var(--clr-white);
