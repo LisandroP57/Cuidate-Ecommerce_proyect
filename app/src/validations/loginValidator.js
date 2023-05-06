@@ -12,6 +12,7 @@ module.exports = [
     
     check('pass')
     .notEmpty()
+    .isLength({ min: 12 })
     .withMessage('Debes escribir tu contraseña'),
 
     body("pass")
