@@ -29,12 +29,12 @@
                             <div class="password-container">
                                 <input class="input-style" type="password" name="pass" id="passwordInput" placeholder="Ingrese su contraseña">
                                 <img src="/images/icons/show-password.png" onclick="showPassword()" id="showPasswordImg" alt="">
-                                <span id="passErrors" style=" color: red;"></span>
                             </div>
                             <% if (locals.errors && errors.pass) { %>
                                 <small class="text-danger"><%= errors.pass.msg %> </small>
-                            <% } %>
-                        </div>
+                                <% } %>
+                                <span id="passErrors" style=" color: red;"></span>
+                            </div>
 
                         <div class="checkbox-slider">
                             <!-- <span id="checkboxErrors"></span> -->
