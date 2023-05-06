@@ -17,6 +17,7 @@
                     <div class="form">
                         <div class="input-container">
                             <span class="top-message" id="emailErrors">E-mail</span>
+                            <span id="emailErrorss" style=" color: red;"></span>
                             <input class="input-style" type="email" name="email" placeholder="Ingrese su e-mail" id="email">
                             
                             <% if (locals.errors && errors.email) { %>
@@ -25,7 +26,7 @@
                         </div>
                         <div class="input-container">
                             <span class="top-message">Contraseña</span>
-                            <span id="passErrors"></span>
+                            <span id="passErrors" style=" color: red;"></span>
                             <div class="password-container">
                                 <input class="input-style" type="password" name="pass" id="passwordInput" placeholder="Ingrese su contraseña">
                                 <img src="/images/icons/show-password.png" onclick="showPassword()" id="showPasswordImg" alt="">
@@ -34,9 +35,21 @@
                                 <small class="text-danger"><%= errors.pass.msg %> </small>
                             <% } %>
                         </div>
+                      
+                    <div class="form-check mt-3">
+                        <input class="form-check-input" type="checkbox" value=""  id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Acepto los términos y condiciones
+                        </label>
+                        <span id="termsErrors"></span>
+                    </div>
+
+                    
+
                         <div class="checkbox-slider">
+                            <!-- <span id="checkboxErrors"></span> -->
                             <input type="checkbox" name="remember" id="my-slider"> 
-                            <label for="my-slider">Recordar sesión</label>
+                            <label for="my-slider" id="checkbox">Recordar sesión</label>
                         </div>
                         <% if (locals.errorMsg ) { %>
                             <small class="text-danger"><%= errorMsg %> </small>
