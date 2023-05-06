@@ -4,8 +4,12 @@ module.exports = [
     check('name')
     .notEmpty()
     .withMessage("Debe contener el nombre del producto")
-    .isLength({ min: 3 })
-    .withMessage("El nombre tiene que tener mínimo 3 carácteres"),
+    .isLength({ min: 5 })
+    .withMessage("El nombre tiene que tener mínimo 5 carácteres"),
+
+   /*  check ("image")
+    
+    .withMessage("El tipo de archivo debe ser JPG, JPEG, PNG, GIF"), */
 
     check("category")
     .notEmpty()
