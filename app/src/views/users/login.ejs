@@ -17,26 +17,24 @@
                     <div class="form">
                         <div class="input-container">
                             <span class="top-message" id="emailErrors">E-mail</span>
-                            <span id="emailErrorss" style=" color: red;"></span>
                             <input class="input-style" type="email" name="email" placeholder="Ingrese su e-mail" id="email">
                             
                             <% if (locals.errors && errors.email) { %>
                                 <small class="text-danger"><%= errors.email.msg %> </small>
-                            <% } %>
+                                <% } %>
+                                <span id="emailErrorss" style=" color: red;"></span>
                         </div>
                         <div class="input-container">
                             <span class="top-message">Contraseña</span>
-                            <span id="passErrors" style=" color: red;"></span>
                             <div class="password-container">
                                 <input class="input-style" type="password" name="pass" id="passwordInput" placeholder="Ingrese su contraseña">
                                 <img src="/images/icons/show-password.png" onclick="showPassword()" id="showPasswordImg" alt="">
+                                <span id="passErrors" style=" color: red;"></span>
                             </div>
                             <% if (locals.errors && errors.pass) { %>
                                 <small class="text-danger"><%= errors.pass.msg %> </small>
                             <% } %>
                         </div>
-
-                    
 
                         <div class="checkbox-slider">
                             <!-- <span id="checkboxErrors"></span> -->
