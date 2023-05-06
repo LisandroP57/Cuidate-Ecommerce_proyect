@@ -3,6 +3,7 @@ let qs = (elemento) => {
 }
 
 window.addEventListener("load", () => {
+    /* $ hace referencia a un elemento de dom */
     let $form = qs('#form'),
         $email = qs("#email"),
         $emailErrorss = qs('#emailErrorss'),
@@ -79,32 +80,5 @@ window.addEventListener("load", () => {
 
 })
 
-/* 
-let qs = (elemento) => {
-    return document.querySelector(elemento);
-} */
-/* $ hace referencia a un elemento de dom */
-/*  window.addEventListener("load", () => {
-let
-    $email = qs('#email'),
-    $emailErrorss = qs('#passwordInput');
 
-    $email.addEventListener('focus', () => {
-        switch (true) {
-            case !$email.value.trim():
-                $emailErrorss.innerText = 'El campo email es obligatorio';
-                $email.classList.add('is-invalid')
-                break;
-            case !regExEmail.test($email.value):
-                $emailErrorss.innerText = 'Debe ingresar un email válido';
-                $email.classList.add('is-invalid')
-                break
-            default:
-                $email.classList.remove('is-invalid');
-                $email.classList.add('is-valid');
-                $emailErrorss.innerText = ''
-                break;
-        }
-    })
-})  */
 
