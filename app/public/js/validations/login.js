@@ -9,8 +9,6 @@ window.addEventListener("load", () => {
         $emailErrorss = qs('#emailErrorss'),
         $pass = qs('#passwordInput'),
         $passErrors = qs('#passErrors'),
-        $terms = qs('#flexCheckDefault'),
-        $termsErrors = qs('#termsErrors'),
         regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
         regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
 
@@ -49,23 +47,12 @@ window.addEventListener("load", () => {
                 break;
         }
     })
-    $terms.addEventListener('click', () => {
-        $terms.value = 'on'
-        $terms.classList.toggle('is-valid');
-        $terms.classList.remove('is-invalid');
-        $termsErrors.innerHTML = ""
-        console.log(1);
-    })
 
     })
 
        $form.addEventListener("submit", (event) => {
         event.preventDefault();
        
-        if(!$terms.checked){
-            $terms.classList.add('is-invalid');
-            $termsErrors.innerHTML = "Debes aceptar las bases y condiciones"
-        }
 
         let elementosConErrores = document.querySelectorAll(".is-invalid");
         let errores = elementosConErrores.length > 0; 
