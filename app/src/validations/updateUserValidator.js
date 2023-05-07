@@ -14,4 +14,9 @@ module.exports = [
     .withMessage("El email es necesario").bail()
     .isEmail()
     .withMessage("Email inválido"),
+
+    check("postal_code")
+    .isNumeric()
+    .withMessage("Solo puedes ingresar números"),
+
 ]

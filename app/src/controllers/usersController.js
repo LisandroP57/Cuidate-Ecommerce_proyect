@@ -48,9 +48,7 @@ module.exports = {
         }
     },
     register: (req, res) => {
-        return res.render('users/register', {
-            session: req.session,
-        })
+        return res.render('users/register', {session: req.session})
     },
     forgetPassword: (req, res) => {
         return res.render('users/forgetPassword', {
@@ -69,6 +67,8 @@ module.exports = {
                 pass: bcrypt.hashSync(req.body.pass1, 12),
                 avatar: req.file ? req.file.filename : "default-image.png",
                 role: 0,
+                postal_code:"",
+                
             };
 
             User.create(newUser)
@@ -169,6 +169,7 @@ module.exports = {
                 old: {
                     name: req.body.name,
                     email: req.body.email,
+                    postal: req.body.postal_code,
                 }
             })
         }
