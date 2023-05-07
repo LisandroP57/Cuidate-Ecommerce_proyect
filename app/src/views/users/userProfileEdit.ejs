@@ -47,6 +47,9 @@
                         <p>Editar foto de perfil</p>
                         <input type="file" name="avatar" class="form-control">
                     </div>
+                    <span class="error-message">
+                        <%= locals.errors && locals.errors.img ? locals.errors.img.msg : null %>
+                    </span>
                     <div class="btn-edit-profile">
                         <button type="submit" class="btn-guardar">GUARDAR</button>
                     </div>
