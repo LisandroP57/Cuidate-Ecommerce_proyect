@@ -11,18 +11,21 @@
                 <div class="addFormEdit">
                     <div class="addInput">
                         <input type="text" name="name" placeholder="Nombre" value="<%= locals.old ? old.name : user.name %>" id="nombreInput">
+                        <small id="nombreError" class="text-danger" style="display: none;">El campo es obligatorio</small>
                         <% if (locals.errors && errors.name) { %>
                             <small class="text-danger"><%= errors.name.msg %> </small>
                         <% } %>
                     </div>
                     <div class="addInput">
                         <input type="text" name="last_name" placeholder="Apellido" value="<%= locals.old ? old.last_name : user.last_name %>" id="apellidoInput">
+                        <small id="apellidoError" class="text-danger" style="display: none;">El campo es obligatorio</small>
                         <% if (locals.errors && errors.last_name) { %>
                             <small class="text-danger"><%= errors.last_name.msg %> </small>
                         <% } %>
                     </div>
                     <div class="addInput">
                         <input type="email" name="email" placeholder="Ingresá tu email" readonly value="<%= locals.old ? old.email : user.email %>"id="emailInput">
+                        <small id="emailError" class="text-danger" style="display: none;">El email es obligatorio</small>
                         <% if (locals.errors && errors.email) { %>
                             <small class="text-danger"><%= errors.email.msg %> </small>
                         <% } %>
