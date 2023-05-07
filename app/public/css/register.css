@@ -39,7 +39,7 @@
 }
 
 .register .form-two a {
-    color: white;
+    color: black;
     text-decoration:none;
     transition: 1s;
 }
@@ -95,13 +95,10 @@
 
 @media (min-width: 1024px) {
     .register {
-        background-image: url(/images/backgrounds/123.jpg);
+        background-image: url(/images/backgrounds/backg1.jpg);
         background-repeat: no-repeat;
     }
     .register .form-container {
-        max-width: 600px;
-    }
-    .register .form-two {
         max-width: 600px;
     }
     .register .form-two {

@@ -54,6 +54,9 @@
                         <div class="input-file">
                             <p>Agregar foto</p>
                             <input class="form-control" type="file" id="image" name="avatar">
+                            <% if (locals.errors && errors.avatar) { %>
+                                <small class="text-danger"><%= errors.avatar.msg %> </small>
+                            <% } %>
                         </div>
                         <div class="terms-conditions">
                             <label for="recordar">  Acepto los <a href="">términos y condiciones</a> </label>

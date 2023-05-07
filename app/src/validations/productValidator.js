@@ -5,7 +5,7 @@ module.exports = [
   .notEmpty()
   .withMessage("Debe contener el nombre del producto")
   .isLength({ min: 5 })
-  .withMessage("El nombre tiene que mínimo 5 carácteres"),
+  .withMessage("El nombre tiene que tener mínimo 5 carácteres"),
 
   /* check('images')
   .notEmpty()
