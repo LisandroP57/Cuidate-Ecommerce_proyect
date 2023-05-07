@@ -6,13 +6,29 @@
      .notEmpty()
      .withMessage("Nombre es obligatorio")
      .isLength({ min: 2 })
-     .withMessage("El nombre tiene que tener mínimo 2 carácteres"),
+     .withMessage("El nombre tiene que tener mínimo 2 carácteres")
+     .custom((value) => {
+        if (!/^[a-zA-Z]{2,}$/.test(value)) {
+          throw new Error(
+            "Ingrese un nombre válido (mínimo 2 caracteres y sin números ni caracteres especiales)"
+          );
+        }
+        return true;
+      }),
  
      check("last_name")
      .notEmpty()
      .withMessage("El apellido es obligatorio")
      .isLength({ min: 2 })
-     .withMessage("El apellido tiene que tener mínimo 2 carácteres"),
+     .withMessage("El apellido tiene que tener mínimo 2 carácteres")
+     .custom((value) => {
+        if (!/^[a-zA-Z]{2,}$/.test(value)) {
+          throw new Error(
+            "Ingrese un apellido válido (mínimo 2 caracteres y sin números ni caracteres especiales)"
+          );
+        }
+        return true;
+      }),
  
      check("email")
      .notEmpty()
