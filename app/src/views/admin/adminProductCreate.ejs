@@ -37,10 +37,10 @@
 								<% categories.forEach(category => { %>
 									<option value="<%- category.id %>" <%= locals.old && old.category == category.id ? "selected" : null %> ><%- category.name %></option>
 								<% }) %>
-								</select>
-								<% if(locals.errors && errors.category) {%>
-									<small class="text-danger"><%= errors.category.msg %></small>
-								<% } %>
+							</select>
+							<% if(locals.errors && errors.category) {%>
+								<small class="text-danger"><%= errors.category.msg %></small>
+							<% } %>
 						</div>
 						<div class="addInput">
 							<select class="form-select" id="specificSizeSelect" name="subcategory">
@@ -64,8 +64,11 @@
 							<input type="text" class="description" name="description" placeholder="Esta es la descripción de tu futuro producto!">
 						</div>
 						<div class="multer">
-							<label for="inputImage" class="form-label">Imagen de producto:</label>
-							<input type="file" id="inputImage" name="images" placeholder="Ej: 15" class="form-control">
+							<label for="images" class="form-label">Imagen de producto:</label>
+							<input type="file" id="images" name="images" class="form-control">
+							<% if (locals.errors && errors.images) { %>
+								<small class="text-danger"><%= errors.images.msg %></small>
+							<% } %>
 						</div>
 						<div class="sendButton">
 							<button type="submit" class="editbtn">Agregar producto</button>
