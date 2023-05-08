@@ -2,6 +2,29 @@ const { Product, Category, Sequelize } = require("../database/models");
 const { Op } = Sequelize;
 
 module.exports = {
+	search: (req, res) => {
+		let keywords = req.query.keywords;
+		let category = "Resultados para tu busqueda:";
+		Product.findAll({
+			where: {
+				name: { [Op.substring]: keywords },
+			},
+			include: [{
+				association: "subcategory",
+				include: [{
+					association: "category"
+				}] }, {
+					association: "images"
+				}],
+			}).then((products) => {
+				return res.render("/products/results",
+				{
+					products,
+					category,
+					session: req.session
+				});
+			});
+		},
 	shoppingcart: (req, res) => {
 		res.render("products/shoppingcart", { session: req.session });
 	},
