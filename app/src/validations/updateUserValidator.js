@@ -15,8 +15,7 @@ module.exports = [
     .isEmail()
     .withMessage("Email inválido"),
 
-    check("postal_code")
+    /* check("postal_code")
     .isNumeric()
-    .withMessage("Solo puedes ingresar números"),
-
+    .withMessage("Solo puedes ingresar números"), */
 ]
