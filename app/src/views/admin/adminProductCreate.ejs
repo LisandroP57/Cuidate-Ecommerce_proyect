@@ -62,9 +62,10 @@
 						<div class="addInput">
 							<label for="description" class="form-label">Descripción:</label>
 							<input type="text" class="description" name="description" placeholder="Esta es la descripción de tu futuro producto!">
+							<small class="text-danger"></small>
 						</div>
 						<div class="multer">
-							<label for="inputImage" class="form-label">Imagen de producto:</label>
+							<label for="inputImage" class="form-label" id="productoCreate">Imagen de producto:</label>
 							<input type="file" id="inputImage" name="images" class="form-control">
 							<% if(locals.errors && errors.inputImage) {%>
 								<small class="text-danger"><%= errors.inputImage.msg %></small>
@@ -79,5 +80,6 @@
 	</main>
 	<!-- footer -->
 	<%- include('../partials/footer') %>
+	<script src="/js/validations/product.js"></script>
 </body>	
 </html>
