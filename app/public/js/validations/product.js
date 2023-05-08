@@ -1,3 +1,6 @@
+alert("hola")
+
+
 let qs = (elemento) => {
     return document.querySelector(elemento);
 }
