@@ -222,4 +222,8 @@
     background: #3a0ca3;
     transition: background 0s;
 }
+
+.multer p {
+    color: white;
+}
 /* Fin boton editar perfil */

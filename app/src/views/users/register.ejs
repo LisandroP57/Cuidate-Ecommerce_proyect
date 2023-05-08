@@ -30,6 +30,7 @@
                         <div class="input-container">
                             <span class="top-message">E-mail</span>
                             <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
+                            <span id="email-error" class="error"></span>
                             <% if (locals.errors && errors.email) { %>
                                 <small class="text-danger"><%= errors.email.msg %> </small>
                             <% } %>
@@ -38,6 +39,11 @@
                         <div class="input-container">
                             <span class="top-message">Contraseña</span>
                             <input class="input-style" type="password" name="pass1" placeholder="Ingrese su contraseña">
+                            <span class="error-msg" id="error-msg-name"></span>
+                            <span class="error-msg" id="error-msg-lastname"></span>
+                            <span class="error-msg" id="error-msg-email"></span>
+                            <span class="error-msg" id="error-msg-password"></span>
+                            <span class="error-msg" id="error-msg-password2"></span>                            
                             <% if (locals.errors && errors.pass1) { %>
                                 <small class="text-danger"><%= errors.pass1.msg %> </small>
                             <% } %>
