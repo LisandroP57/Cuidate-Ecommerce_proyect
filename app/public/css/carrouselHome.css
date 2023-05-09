@@ -7,29 +7,29 @@
 /* html {
 	font-size: calc(5px + 0.4vw);
 } */
-/* body {
+body {
   font-family: 'Playfair Display', serif;
-} */
-/* a {
+}
+a {
 	text-decoration: none;
-} */
+}
 .intro {
 	position: relative;
 	width: 100%;
 	height: 100vh;
 }
-/* .left {
+.left {
 	float: left;
 	height: 100%;
 	width: 60%;
 	padding: 3rem 3rem 3rem 5rem;
 	display: table;
-} */
-/* .left > div {
+}
+.left > div {
 	display: table-cell;
 	vertical-align: middle;
-} */
-/* span {
+}
+span {
   color: #E8CA2B;
   font-size: 14px;
   font-weight: bold;
@@ -38,7 +38,7 @@
   text-transform: uppercase;
   font-family: sans-serif;
   margin-bottom: 4rem;
-} */
+}
 h1 {
 	font-size: 8rem;
 	margin-bottom: 3rem;
@@ -55,7 +55,7 @@ p + a {
 .slider {
 	float: right;
 	position: relative;
-	width: 100%;
+	width: 40%;
 	height: 100%;
 }
 .slider li {
