@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head', {title: 'Resultados de la busqueda'}) %>
+
+	<body class="BodyResults">
+		<%- include('partials/header') %>
+		<main>
+			<%- include("../partials/cardProducts", {title: category , products: products }) %>
+		</main>
+		
+		<%- include('partials/footer') %>
+	</body>	
+
+</html>

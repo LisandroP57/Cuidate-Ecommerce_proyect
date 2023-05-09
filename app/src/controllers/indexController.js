@@ -21,19 +21,6 @@ module.exports = {
         })
         .catch(error => console.log(error));
 	},
-	search: async (req, res) => {
-		try {
-			const { keywords } = req.query;
-			const results = await Product.find({ name: { $regex: keywords, $options: 'i' } });
-			res.render('results', {
-				keywords,
-				results,
-				session: req.session
-			});
-		} catch
-		(error) { console.error(error);
-		}
-	},
 	header: (req, res) => {
 		const user = res.locals.user;
 		

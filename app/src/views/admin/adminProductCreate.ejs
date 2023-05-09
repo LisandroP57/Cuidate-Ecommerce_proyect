@@ -62,13 +62,15 @@
 						<div class="addInput">
 							<label for="description" class="form-label">Descripción:</label>
 							<input type="text" class="description" name="description" placeholder="Esta es la descripción de tu futuro producto!">
-							<small class="text-danger"></small>
+							<% if(locals.errors && errors.description) {%>
+								<small class="text-danger"><%= errors.description.msg %></small>
+							<% } %>
 						</div>
 						<div class="multer">
 							<label for="inputImage" class="form-label" id="productoCreate">Imagen de producto:</label>
 							<input type="file" id="inputImage" name="images" class="form-control">
-							<% if(locals.errors && errors.inputImage) {%>
-								<small class="text-danger"><%= errors.inputImage.msg %></small>
+							<% if(locals.errors && errors.images) {%>
+								<small class="text-danger"><%= errors.images.msg %></small>
 							<% } %>
 						</div>
 						<div class="sendButton">
