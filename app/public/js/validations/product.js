@@ -7,13 +7,13 @@ window.addEventListener('load', () => {
     let
         $name = qs('#name'),
         $nameErrors = qs('#nameErrors'),
-        $inputPrice = qs('#price'),
+        $inputPrice = qs('#inputPrice'),
         $priceErrors = qs('#priceErrors'),
-        $inputDiscount = qs('#discount'),
+        $inputDiscount = qs('#inputDiscount'),
         $discountErrors = qs('#discountErrors'),
-        $file = qs('#productPhoto'),
-        $fileErrors = qs('#imageErrors'),
-        $imgPreview = qs('#img-preview'),
+        $inputImage = qs('#inputImage'),
+        $imageErrors = qs('#imageErrors'),
+        $imagePreview = qs('img-preview'),
         $description = qs('#description'),
         $descriptionErrors = qs('#descriptionErrors'),
         $form = qs('#form'),
@@ -106,21 +106,20 @@ window.addEventListener('load', () => {
         }
     });
 
-    $file.addEventListener('change', () => {
-        let filePath = $file.value, 
+    $inputImage.addEventListener('change', () => {
+        let filePath = $inputImage.value, 
             allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i //Extensiones permitidas
         if(!allowefExtensions.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
-            $fileErrors.innerText = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
-            $file.value = '';
-            $imgPreview.innerText = '';
+            $imageErrors.innerText = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
+            $inputImage.value = '';
             return false;
         }else{
             // Image previa
             console.log($file.files);
-            if($file.files && $file.files[0]){
+            if($file.files && $inputImage.files[0]){
                 let reader = new FileReader();
                 reader.onload = function(e){
-                    $imgPreview.innerHTML = '<img src="' + e.target.result +'"/>';
+                    $imagePreview.innerHTML = '<img src="' + e.target.result +'"/>';
                 };
                 reader.readAsDataURL($file.files[0]);
                 $fileErrors.innerText = '';
@@ -129,29 +128,6 @@ window.addEventListener('load', () => {
         }
     });
 
-    $file.addEventListener("change", () => {
-        let filePath = $file.value,
-              allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i; 
-        if (!allowefExtensions.exec(filePath)) {
-              //El método exec() ejecuta una busqueda concidencias, o null
-              $fileErrors.innerHTML = "Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif -.web)";
-              $file.value = "";
-              $imgPreview.innerHTML = "";
-              return false;
-        } else {
-              // Imagen previa
-              console.log($file.files);
-              if ($file.files && $file.files[0]) {
-                    let reader = new FileReader();
-                    reader.onload = function (e) {
-                          $imgPreview.innerHTML = '<img class="img-product" src="' + e.target.result + '"/>';
-                    };
-                    reader.readAsDataURL($file.files[0]);
-                    $fileErrors.innerHTML = "";
-                    $file.classList.remove("is-invalid");
-              }
-        }
-  });
   $form.addEventListener("submit", (event) => {
     event.preventDefault();
     const FORM_ELEMENTS = event.target.elements;
