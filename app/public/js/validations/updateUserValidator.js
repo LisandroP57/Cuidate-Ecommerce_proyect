@@ -56,9 +56,7 @@ const addressInput = document.getElementById('addressInput');
 addressInput.addEventListener('blur', () => {
   const addressValue = addressInput.value.trim();
   const regexAddress = /^[a-zA-Z0-9\s]*$/; 
-  if (!addressValue) {
-    addressInput.style.borderColor = 'red';
-  } else if (!regexAddress.test(addressValue)) {
+  if (addressValue && !regexAddress.test(addessValue)) {
     addressInput.style.borderColor = 'red';
   } else {
     addressInput.style.borderColor = 'green';
@@ -69,9 +67,7 @@ const postalCodeInput = document.getElementById('postalCodeInput');
 postalCodeInput.addEventListener('blur', () => {
   const postalCodeValue = postalCodeInput.value.trim();
   const regexPostalCode = /^\d+$/;
-  if (!postalCodeValue) {
-    postalCodeInput.style.borderColor = 'red';
-  } else if (!regexPostalCode.test(postalCodeValue)) {
+  if (postalCodeValue && !regexPostalCode.test(postalCodeValue)) {
     postalCodeInput.style.borderColor = 'red';
   } else {
     postalCodeInput.style.borderColor = 'green';
