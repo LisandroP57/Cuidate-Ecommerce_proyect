@@ -61,7 +61,7 @@
 						</div>
 						<div class="addInput">
 							<label for="description" class="form-label">Descripción:</label>
-							<input type="text" class="description" name="description" placeholder="Esta es la descripción de tu futuro producto!">
+							<input type="text" id= "description" class="description" name="description" placeholder="Esta es la descripción de tu futuro producto!">
 							<% if(locals.errors && errors.description) {%>
 								<small class="text-danger"><%= errors.description.msg %></small>
 							<% } %>
