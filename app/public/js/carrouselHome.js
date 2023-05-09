@@ -3,7 +3,7 @@ showSlides(slideIndex)
 
 // Controles de anterior y siguiente
 function plusSlides(number) {
-    showSlides(slideIndex += number)
+    showSlides(slideIndex += number1)
 }
 
 // Controles de imagen en miniatura
