@@ -12,9 +12,7 @@ module.exports = [
     
     check('pass')
     .notEmpty()
-    .isLength({ min: 8 })
-    .matches(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()_+~\-=`{}\[\]:;"'<>,.?\/\\|]).{8,}$/)
-    .withMessage('Debes escribir tu contraseña y debe tener al menos 1 mayuscula'),
+    .withMessage('Debes escribir tu contraseña'),
 
     body("pass")
     .custom((value, { req }) => {
