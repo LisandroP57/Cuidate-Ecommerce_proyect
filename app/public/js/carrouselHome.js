@@ -6,10 +6,7 @@ function plusSlides(number) {
     showSlides(slideIndex += number1)
 }
 
-// Controles de imagen en miniatura
-function currentSlide (number) {
-    showSlides(slideIndex = number)
-}
+
 
 function showSlides (number) {
     let i;
