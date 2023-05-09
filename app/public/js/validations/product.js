@@ -23,7 +23,7 @@ window.addEventListener('load', () => {
         $form = qs('#form'),
         $submitErrors = qs('#submitErrors'),
         regExNumber = /^[0-9]*$/,
-        regExFloat = /^[0-9]*[.,]?[0-9]*$/,
+        regExFloat = /^[0-9]*[.,]?[0-9]*$/, //expresion reg que valida numero decimal en formato de punto flotante (con coma decimal opcional)
         regExDescription = /^.{20,}$/
 
     $name.addEventListener('blur', function () {
