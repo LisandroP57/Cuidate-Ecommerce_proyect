@@ -1,138 +1,165 @@
-@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic);
+/*==================
+    Base Styles
+===================*/
+
 * {
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
+    box-sizing: border-box;
 }
-/* html {
-	font-size: calc(5px + 0.4vw);
-} */
+
 body {
-  font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
 }
-a {
-	text-decoration: none;
+
+input[type="radio"] {
+    display: none;
 }
-.intro {
-	position: relative;
-	width: 100%;
-	height: 100vh;
+
+.container {
+    background: rgb(255, 255, 255);
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    padding: 2em;
 }
-.left {
-	float: left;
-	height: 100%;
-	width: 60%;
-	padding: 3rem 3rem 3rem 5rem;
-	display: table;
+
+.slide-wrapper {
+    position: relative;
+    margin: 0 auto;
+    padding: 3em;
+    width: 40%;
+    height: 80%;
+    border-radius: 20px;
+    box-shadow: 0px 1px 2px 0px rgb(53, 53, 53);
+    overflow: hidden;
 }
-.left > div {
-	display: table-cell;
-	vertical-align: middle;
+
+/*==================
+    Slides
+===================*/
+
+#slide-role {
+    background: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400%;
+    height: 100%;
+    z-index: 100;
+    transition: left .5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    /* flex */
+    display: flex;
 }
-span {
-  color: #E8CA2B;
-  font-size: 14px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  display: inline-block;
-  text-transform: uppercase;
-  font-family: sans-serif;
-  margin-bottom: 4rem;
+
+.slide {
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
 }
-h1 {
-	font-size: 8rem;
-	margin-bottom: 3rem;
+
+/* backgrounds */
+
+.slide-1 {
+    background-image: url("https://images.pexels.com/photos/1562/italian-landscape-mountains-nature.jpg?auto=compress&cs=tinysrgb&h=650&w=940");
 }
-h1 + p {
-  color: #949494;
-  font-size: 1.6rem;
-  margin-bottom: 4rem;
+
+.slide-2 {
+    background-image: url("https://images.pexels.com/photos/33109/fall-autumn-red-season.jpg?auto=compress&cs=tinysrgb&h=650&w=940");
 }
-p + a {
-  font-size: 1.6rem;
-  color: #000;
+
+.slide-3 {
+    background-image: url("https://images.pexels.com/photos/448714/pexels-photo-448714.jpeg?auto=compress&cs=tinysrgb&h=650&w=940");
 }
-.slider {
-	float: right;
-	position: relative;
-	width: 40%;
-	height: 100%;
+
+.slide-4 {
+    background-image: url("https://images.pexels.com/photos/38136/pexels-photo-38136.jpeg?auto=compress&cs=tinysrgb&h=650&w=940");
 }
-.slider li {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	transition: clip .7s ease-in-out, z-index 0s .7s;
-	clip: rect(0, 100vw, 100vh, 100vw);
-	display: table;
+
+/*===================
+    BUTTONS
+====================*/
+
+.btn,
+.btn::after {
+    border-radius: 50%;
+    transition: all .5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
-.center-y {
-	display: table-cell;
-	vertical-align: middle;
-	text-align: center;
-	color: #fff;
+
+.btn {
+    border: 1px solid rgba(0, 0, 0, 0.281);
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 2px 2px rgba(56, 56, 56, 0.822);
+    position: absolute;
+    bottom: 12%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transform: scale(1.1);
+    z-index: 1000;
 }
-h3 {
-	font-size: 5rem;
-	font-style: italic;
+
+.btn:nth-of-type(1) {
+    left: 38%;
 }
-h3 + a {
-	font-size: 1.6rem;
-	display: inline-block;
-	color: #fff;
-	margin-top: 2rem;
+
+.btn:nth-of-type(2) {
+    left: 45%;
 }
-h3, h3 + a {
-	opacity: 0;
-	transition: opacity .7s 0s, transform .5s .2s;
-	transform: translate3d(0, 50%, 0);
+
+.btn:nth-of-type(3) {
+    left: 52%;
 }
-li.current h3, li.current h3 + a {
-	opacity: 1;
-	transition-delay: 1s;
-	transform: translate3d(0, 0, 0);
+
+.btn:nth-of-type(4) {
+    left: 59%;
 }
-li.current {
-	z-index: 1;
-	clip: rect(0, 100vw, 100vh, 0);
+
+.btn:hover {
+    transform: scale(1.4);
 }
-li.prev {
-	clip: rect(0, 0, 100vh, 0);
+
+/* buttons Atom! */
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    border: 1px solid white;
+    background: rgb(11, 185, 238);
+    width: 20px;
+    height: 20px;
+    margin: 3px 3px;
+    transform: scale(.5, .5);
+    box-shadow: 0px 1px 5px rgba(56, 56, 56, 0.822);
 }
-.slider nav {
-	position: absolute;
-	bottom: 5%;
-	left: 0;
-	right: 0;
-	text-align: center;
-	z-index: 10;
+
+/*====================
+        L O G I C 
+ ===================*/
+
+/* slide logic */
+
+input[type="radio"]:checked#slide-2-trigger~div.slide-wrapper>div#slide-role {
+    left: -100%;
 }
-nav a {
-	display: inline-block;
-	border-radius: 50%;
-	width: 1.2rem;
-	height: 1.2rem;
-  min-width: 12px;
-  min-height: 12px;
-	background: #fff;
-	margin: 0 1rem;
-  transition: transform .3s;
+
+input[type="radio"]:checked#slide-3-trigger~div.slide-wrapper>div#slide-role {
+    left: -200%;
 }
-a.current_dot {
-	transform: scale(1.4);
+
+input[type="radio"]:checked#slide-4-trigger~div.slide-wrapper>div#slide-role {
+    left: -300%;
 }
-@media screen and (max-width: 700px) {
-	.left {
-		width: 100%;
-		height: 30%;
-	}
-	.slider {
-		width: 100%;
-		height: 70%;
-	}
+
+/* button logic */
+
+input[type="radio"]:checked+label.btn {
+    transform: scale(1.2);
+    border: 1px solid rgba(53, 53, 53, 0.308);
 }
+
+input[type="radio"]:checked+label.btn::after {
+    transform: scale(1.1, 1.1);
+    background: lightskyblue;
+}
+
