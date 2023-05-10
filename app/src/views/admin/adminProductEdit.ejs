@@ -29,7 +29,7 @@
 							<span id="priceErrors"></span>
 						</div>
 						<div class="addInput">
-							<label for="inputDiscount" class="form-label">Descuento:  (Opcional)</label>
+							<label for="inputDiscount" class="form-label">Descuento:</label>
 							<input type="number" id="inputDiscount" name="discount" placeholder="Ej: 57%" value="<%= locals.old ? old.discount: product.discount %>" class="form-input">
 							<% if (locals.errors && errors.discount) { %>
 								<small class="text-danger"><%= errors.discount.msg %> </small>
@@ -38,7 +38,7 @@
 						</div>
 						<div class="addInput">
 							<select class="form-select" id="specificSizeSelect" name="category">
-								<option selected hidden>Categoria :</option>
+								<option selected hidden>Categoria</option>
 								<% categories.forEach(category => { %>
 									<option 
 									value="<%- category.id %>" 

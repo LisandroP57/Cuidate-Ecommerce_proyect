@@ -95,7 +95,6 @@ header.containerHeader div.primer-menu div.iniciar .user .img-avatar {
 
 .menu-user li i {
     display: flex;
-    flex-direction:;
     align-items:center;
     margin-right: 1rem;
 }
@@ -302,7 +301,7 @@ nav.navegador ul.menu li:hover{
         align-items: center;
     }
 
-    footer.principal div.footer-redes-data ul.redes {
+    footer.principal div.footer-redes-data ul.footer-redes {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -311,7 +310,7 @@ nav.navegador ul.menu li:hover{
         margin-top: 5px;
     }
 
-    footer.principal div.footer-redes-data ul.redes img {
+    footer.principal div.footer-redes-data ul.footer-redes img {
         width: 30px;
         height: 30px;
     }
@@ -424,7 +423,7 @@ nav.navegador ul.menu li:hover{
         align-items: center;
     }
 
-    footer.principal div.footer-redes-data ul.redes {
+    footer.principal div.footer-redes-data ul.footer-redes {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -433,7 +432,7 @@ nav.navegador ul.menu li:hover{
         margin-top: 5px;
     }
 
-    footer.principal div.footer-redes-data ul.redes img {
+    footer.principal div.footer-redes-data ul.footer-redes img {
         width: 30px;
         height: 30px;
     }
@@ -583,7 +582,7 @@ nav.navegador ul.menu li:hover{
         height: 150px;
     }
 
-    footer.principal div.footer-redes-data ul.redes li img {
+    footer.principal div.footer-redes-data ul.footer-redes li img {
         width: 40px;
         height: 40px;
     }
@@ -601,7 +600,7 @@ nav.navegador ul.menu li:hover{
         order: 3;
     }
 
-    footer.principal div.footer-redes-data ul.redes {
+    footer.principal div.footer-redes-data ul.footer-redes {
         display: flex;
         flex-direction: row;
         gap: 30px;

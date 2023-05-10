@@ -21,12 +21,12 @@ CREATE TABLE `users` (
 );
 
 INSERT INTO `users` VALUES
-(1,'admin','admin','admin@mail.com','$2a$12$6MRlF8tcgnUgpMxDQdKky.82KShnpxfMiRZeTJNwsEgDf930Uk0Oa','','','1','2021-09-24 02:05:57','2021-09-24 02:48:31','admin.jpeg'),
-(2,'user','user','user@mail.com','$2a$12$b4rs.9V7g5ykWQt80n/wEuVnhnkeldqUcC30tdKFnBFVP3bt0eY4C','','','0','2021-09-24 02:05:57','2021-09-24 02:48:31','aiuda.png'),
-(3,'Riky', 'vallejos', 'riky@gmail.com','$2a$12$gIIOxXZhSlTtN.wS2U8Em.ZYvRzwnKjpHTs6X9gsA.DQLS4ME0Mam','','','1', '2023-04-18 00:28:22', '2023-04-18 00:28:22', 'homer.jpg'),
-(4,'Lisan', 'test', 'lisan@gmail.com','$2a$12$gIIOxXZhSlTtN.wS2U8Em.ZYvRzwnKjpHTs6X9gsA.DQLS4ME0Mam','','','1', '2023-04-18 00:28:22', '2023-04-18 00:28:22', 'homer.jpg'),
-(5, 'Jonatan', 'Cespedes', 'jona@mail.com', '$2a$12$aHE6bSZCII8whQoiAfKuo.xaj3b4AllqWAAb2ju7B9DWYfUQINlYK','','','1', '2023-04-18 00:28:22', '2023-04-18 00:28:22', 'admin.jpeg'),
-(6, 'Cosme', 'Fulanito', 'cosme@mail.com', '$2a$12$aHE6bSZCII8whQoiAfKuo.xaj3b4AllqWAAb2ju7B9DWYfUQINlYK','','','0', '2021-09-24 02:05:57','2021-09-24 02:48:31','default-image.png');
+(1,'admin','admin','admin@mail.com','$2a$12$WNu1hncg/JfMlccmaVJ0De5jkQqugojqQGrhe4ajKI8w1I4dIKPAW','','','1','2021-09-24 02:05:57','2021-09-24 02:48:31','admin.jpeg'),
+(2,'user','user','user@mail.com','$2a$12$vyct8Z4WaTtn7W8mP6jJ.eBZiv7cd1HSb1iPLdPn7hlmwNfYddMuO','','','0','2021-09-24 02:05:57','2021-09-24 02:48:31','aiuda.png'),
+(3,'Riky', 'vallejos', 'riky@gmail.com','$2a$12$WNu1hncg/JfMlccmaVJ0De5jkQqugojqQGrhe4ajKI8w1I4dIKPAW','','','1', '2023-04-18 00:28:22', '2023-04-18 00:28:22', 'homer.jpg'),
+(4,'Lisan', 'test', 'lisan@gmail.com','$2a$12$WNu1hncg/JfMlccmaVJ0De5jkQqugojqQGrhe4ajKI8w1I4dIKPAW','','','1', '2023-04-18 00:28:22', '2023-04-18 00:28:22', 'homer.jpg'),
+(5, 'Jonatan', 'Cespedes', 'jona@mail.com', '$2a$12$WNu1hncg/JfMlccmaVJ0De5jkQqugojqQGrhe4ajKI8w1I4dIKPAW','','','1', '2023-04-18 00:28:22', '2023-04-18 00:28:22', 'admin.jpeg'),
+(6, 'Cosme', 'Fulanito', 'cosme@mail.com', '$2a$12$WNu1hncg/JfMlccmaVJ0De5jkQqugojqQGrhe4ajKI8w1I4dIKPAW','','','0', '2021-09-24 02:05:57','2021-09-24 02:48:31','default-image.png');
 
 select * from users;
 
