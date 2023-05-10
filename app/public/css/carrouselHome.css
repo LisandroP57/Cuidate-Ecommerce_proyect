@@ -4,41 +4,13 @@
 	padding: 0;
 	margin: 0;
 }
-/* html {
-	font-size: calc(5px + 0.4vw);
-} */
-/* body {
-  font-family: 'Playfair Display', serif;
-} */
-/* a {
-	text-decoration: none;
-} */
+
 .intro {
 	position: relative;
 	width: 100%;
 	height: 100vh;
 }
-/* .left {
-	float: left;
-	height: 100%;
-	width: 60%;
-	padding: 3rem 3rem 3rem 5rem;
-	display: table;
-} */
-/* .left > div {
-	display: table-cell;
-	vertical-align: middle;
-} */
-/* span {
-  color: #E8CA2B;
-  font-size: 14px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  display: inline-block;
-  text-transform: uppercase;
-  font-family: sans-serif;
-  margin-bottom: 4rem;
-} */
+
 h1 {
 	font-size: 8rem;
 	margin-bottom: 3rem;
@@ -52,7 +24,7 @@ p + a {
   font-size: 1.6rem;
   color: #000;
 }
-.slider {
+.slider section {
 	float: right;
 	position: relative;
 	width: 100%;
