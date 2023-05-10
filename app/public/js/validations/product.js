@@ -19,7 +19,7 @@ window.addEventListener('load', () => {
         $form = qs('#form'),
         $submitErrors = qs('#submitErrors'),
         regExNumber = /^[0-9]*$/,
-        regExFloat = /^[0-9]*[.,]?[0-9]*$/, //expresion reg que valida numero decimal en formato de punto flotante (con coma decimal opcional)
+        regExFloat = /^[0-9]*[.,]?[0-9]*$/, 
         regExDescription = /^.{20,}$/
 
     $name.addEventListener('blur', function () {
@@ -108,13 +108,13 @@ window.addEventListener('load', () => {
 
     $inputImage.addEventListener('change', () => {
         let filePath = $inputImage.value, 
-            allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i //Extensiones permitidas
-        if(!allowefExtensions.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
+            allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i 
+        if(!allowefExtensions.exec(filePath)){ 
             $imageErrors.innerText = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
             $inputImage.value = '';
             return false;
         }else{
-            // Image previa
+            // Imagen previa
             console.log($file.files);
             if($file.files && $inputImage.files[0]){
                 let reader = new FileReader();
