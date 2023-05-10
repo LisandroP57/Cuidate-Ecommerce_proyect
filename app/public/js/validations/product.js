@@ -27,6 +27,7 @@ window.addEventListener('load', () => {
             case !$name.value.trim():
                 $nameErrors.innerHTML = 'El campo nombre es obligatorio';
                 $name.classList.add('is-invalid')
+                $name.nextElementSibling.style.color = 'red';
                 break;
             case $name.value.trim().length < 5:
                 $nameErrors.innerText = 'El campo nombre debe tener al menos 5 caracteres';
@@ -45,6 +46,7 @@ window.addEventListener('load', () => {
             case !$inputPrice.value.trim():
                 $priceErrors.innerText = 'El campo precio es obligatorio';
                 $inputPrice.classList.add('is-invalid')
+                $inputPrice.nextElementSibling.style.color = 'red';
                 break;
             case !regExFloat.test($price.value):
                 $priceErrors.innerText = 'El campo precio debe ser un número';
@@ -67,6 +69,7 @@ window.addEventListener('load', () => {
             case !$inputDiscount.value.trim():
                 $discountErrors.innerText = 'El campo descuento es obligatorio';
                 $inputDiscount.classList.add('is-invalid')
+                $inputDiscount.nextElementSibling.style.color = 'red';
                 break;
             case !regExNumber.test($discount.value):
                 $discountErrors.innerText = 'El campo descuento debe ser un número';
@@ -93,6 +96,7 @@ window.addEventListener('load', () => {
             case !$description.value.trim():
                 $descriptionErrors.innerText = 'El campo descripción es obligatorio';
                 $description.classList.add('is-invalid')
+                $description.nextElementSibling.style.color = 'red';
                 break;
             case !regExDescription.test($description.value):
                 $descriptionErrors.innerText = 'El campo descripción debe tener al menos 20 caracteres';
@@ -108,8 +112,8 @@ window.addEventListener('load', () => {
 
     $inputImage.addEventListener('change', () => {
         let filePath = $inputImage.value, 
-            allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i //Extensiones permitidas
-        if(!allowefExtensions.exec(filePath)){ //El método exec() ejecuta una busqueda sobre las coincidencias de una expresión regular en una cadena especifica. Devuelve el resultado como array, o null.
+            allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i
+        if(!allowefExtensions.exec(filePath)){
             $imageErrors.innerText = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
             $inputImage.value = '';
             return false;
