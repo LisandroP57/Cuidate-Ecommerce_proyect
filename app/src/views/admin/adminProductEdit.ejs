@@ -14,10 +14,11 @@
 					<div class="addFormEdit">
 						<div class="addInput">
 							<label for="inputName" class="form-label">Nombre del producto:</label>
-							<input type="text" id="inputName" name="name" placeholder="Ej: Gas pimienta" value="<%= locals.old ? old.name : product.name %>" class="form-input">
+							<input type="text" id="name" name="name" placeholder="Ej: Gas pimienta" value="<%= locals.old ? old.name : product.name %>" class="form-input">
 							<% if (locals.errors && errors.name) { %>
 								<small class="text-danger"><%= errors.name.msg %> </small>
 							<% } %>
+							<span id="nameErrors"></span>
 						</div>
 						<div class="addInput">
 							<label for="inputPrice" class="form-label">Precio del producto:</label>
@@ -25,6 +26,7 @@
 							<% if (locals.errors && errors.price) { %>
 								<small class="text-danger"><%= errors.price.msg %> </small>
 							<% } %>
+							<span id="priceErrors"></span>
 						</div>
 						<div class="addInput">
 							<label for="inputDiscount" class="form-label">Descuento:  (Opcional)</label>
@@ -32,6 +34,7 @@
 							<% if (locals.errors && errors.discount) { %>
 								<small class="text-danger"><%= errors.discount.msg %> </small>
 							<% } %>
+							<span id="discountErrors"></span>
 						</div>
 						<div class="addInput">
 							<select class="form-select" id="specificSizeSelect" name="category">
@@ -68,11 +71,18 @@
 						</div>
 						<div class="addInput">
 							<label for="description" class="form-label">Descripción:</label>
-							<input type="text" class="description" name="description" value="<%= locals.old ? old.description: product.description %>">
+							<input type="text" id="description" class="description" name="description" value="<%= locals.old ? old.description: product.description %>">
+							<% if(locals.errors && errors.description) {%>
+								<small class="text-danger"><%= errors.description.msg %></small>
+							<% } %>
+							<span id="descriptionErrors"></span>
+						</div>
+						<div class="img-container-product" id="img-preview">
 						</div>
 						<div class="multer">
 							<label for="inputImage" class="form-label">Imagen de producto:</label>
 							<input type="file" id="inputImage" name="images" multiple aria-label="file example" class="form-control">
+							<span id="imageErrors"></span>
 						</div>
 						
 						<div class="sendButton">
@@ -106,5 +116,6 @@
 
 	<!-- footer -->
 	<%- include('../partials/footer') %>
+	<script src="/js/validations/product.js"></script>
 </body>	
 </html>
