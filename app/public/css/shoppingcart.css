@@ -316,7 +316,7 @@ a.remove:hover {
 
 @media screen and (max-width: 600px) {
   .wrapper {
-    width: 98%;
+    width: 100%;
     padding: 2% 0;
   }
 
