@@ -30,7 +30,6 @@ window.addEventListener("load", () => {
         }
         
     $pass.addEventListener('blur', () => {
-        console.log(1);
         switch (true) {
             case !$pass.value.trim():
                 $passErrors.innerText = 'El campo contraseña es obligatorio';

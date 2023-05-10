@@ -29,6 +29,7 @@
 
 
 .titleDetail {
+  text-align: center;
   font-weight: 90;
   font-size: 3rem;
   background: transparent;
@@ -809,17 +810,16 @@ button:hover {
         text-align: center;
     }
 
-      .card-wrapper{
-        max-width: 1000px;
-        margin: 20px;
-        height: 138vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-      
-      /*   border: 21px solid rgba(0,0,0,.125); */
-      }
+    .card-wrapper {
+      max-width: 1000px;
+      margin: 20px;
+      height: 114vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+  }
+  
 
         .productSlide {
             width: 20%;

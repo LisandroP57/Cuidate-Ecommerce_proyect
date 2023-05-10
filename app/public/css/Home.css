@@ -27,6 +27,8 @@ body.homeBody {
   background-image: linear-gradient(rgba(248, 246, 246, 0.2), rgba(0, 0, 0, 0.75)),
   url(/images/backgrounds/back1.jpg);
   /* background-image: url(/images/backgrounds/back1.jpg); */
+  background: rgb(121, 76, 169);
+    background: linear-gradient(111deg, rgba(121, 76, 169,1) 0%, rgba(121, 76, 169,1) 52%, rgba(2121, 76, 169,1) 100%);
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;

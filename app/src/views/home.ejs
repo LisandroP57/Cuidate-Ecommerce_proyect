@@ -4,6 +4,7 @@
 <body class="homeBody">
 		<!-- Header -->
     <%- include('partials/header')%>
+    <%- include('partials/carrousel')%>
 		<!-- Fin Header -->
 		<!-- Blob Fondo -->
 		<div class="blob"></div>
@@ -19,38 +20,14 @@
             </div>
         </div>
 		<!-- ............................. -->
-		<div id="container">
-			<div id="toggleContainer">
-			   <label>Carousel</label>
-			   <div id="toggle">
-				 <div id="outer3">
-					<div id="slider3"></div>
-				 </div>
-				 <label>Tiles</label>
-			  </div>
-			</div>
-			<div id="galleryView">
-			  <div id="galleryContainer">
-				 <div id="leftView"></div>
-				 <button id="navLeft" class="navBtns"><i class="fas fa-arrow-left fa-3x"></i></button>
-				 <a id="linkTag">
-					<div id="mainView"></div>
-				 </a>
-				 <div id="rightView"></div>
-				 <button id="navRight" class="navBtns"><i class="fas fa-arrow-right fa-3x"></i></button>
-			  </div>
-			</div>
-			<div id="tilesView">
-			  <div id="tilesContainer"></div>
-			</div>
-		  </div>
+		
 
 		  <div class="separacionHome"></div>
 		<!-- .-------------------------- -->
 		<div class="wrapper lo">
 			 <!--  -->
 			 <header class="header-mobile">
-				<h1 class="logo">SHOP</h1>
+				<h1 class="logoHome">SHOP</h1>
 					<button class="open-menu" id="open-menu">
 						<i class="bi - bi-list"></i>
 					</button>
@@ -68,16 +45,16 @@
 				<nav>
 					<ul class="menuProducts">
 						<li>
-							<button id="todos" class="boton-menu boton-categoria active"><i class="bi bi-hand-index-thumb-fill"></i> Todos los productos</button>
+							<button id="" class="boton-menu boton-categoria active"><i class="bi bi-hand-index-thumb-fill"></i> Todos los productos</button>
 						</li>
 						<li>
-							<button id="movados" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> LLAVEROS </button>
+							<button id="" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> LLAVEROS </button>
 						</li>
 						<li>
-							<button id="smartWatch" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> KIDS </button>
+							<button id="" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> KIDS </button>
 						</li>
 						<li>
-							<button id="xiaomi" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> COMBOS </button>
+							<button id="" class="boton-menu boton-categoria"><i class="bi bi-hand-index-thumb"></i> COMBOS </button>
 						</li>
 						<li>
 							<a class="boton-menu boton-carrito" href="/products/shoppingcart">
@@ -94,6 +71,11 @@
 			<!-- CARD PRODUCTS -->
 			<%- include('partials/cardProducts') %>
 		</div>
+
+		<!-- .------------- -->
+		<%- include('partials/sliderMarquesina')%>
+		<!-- .------------- -->
+
 			<!-- Footer -->
 		<%- include('partials/footer') %>
 		<!-- Fin Footer -->
@@ -101,10 +83,10 @@
 		<script src="/js/home.js"></script>
 		<script src="/js/menuHome.js"></script>
 		<script src="/js/carrouselHome.js"></script>
+		<script src="/js/sliderMarquesina.js"></script>
 	</body>
 </html>
 
 
+
 	
-</body>
-</html>

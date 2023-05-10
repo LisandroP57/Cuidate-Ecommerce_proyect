@@ -16,6 +16,7 @@
 							<% if(locals.errors && errors.name) {%>
 								<small class="text-danger"><%= errors.name.msg %></small>
 							<% } %>
+							<span id="nameErrors"></span>
 						</div>
 						<div class="addInput">
 							<label for="inputPrice" class="form-label">Precio:</label>
@@ -23,6 +24,7 @@
 							<% if(locals.errors && errors.price) {%>
 								<small class="text-danger"><%= errors.price.msg %></small>
 							<% } %>
+							<span id="priceErrors"></span>
 						</div>
 						<div class="addInput">
 							<label for="inputDiscount" class="form-label">Descuento:</label>
@@ -30,6 +32,7 @@
 							<% if(locals.errors && errors.discount) {%>
 								<small class="text-danger"><%= errors.discount.msg %></small>
 							<% } %>
+							<span id="discountErrors"></span>
 						</div>
 						<div class="addInput">
 							<select class="form-select" id="specificSizeSelect" name="category">
@@ -61,10 +64,13 @@
 						</div>
 						<div class="addInput">
 							<label for="description" class="form-label">Descripción:</label>
-							<input type="text" class="description" name="description" placeholder="Esta es la descripción de tu futuro producto!">
+							<input type="text" id= "description" class="description" name="description" placeholder="Esta es la descripción de tu futuro producto!">
 							<% if(locals.errors && errors.description) {%>
 								<small class="text-danger"><%= errors.description.msg %></small>
 							<% } %>
+							<span id="descriptionErrors"></span>
+						</div>
+						<div class="img-container-product" id="img-preview">
 						</div>
 						<div class="multer">
 							<label for="inputImage" class="form-label" id="productoCreate">Imagen de producto:</label>
@@ -72,6 +78,7 @@
 							<% if(locals.errors && errors.images) {%>
 								<small class="text-danger"><%= errors.images.msg %></small>
 							<% } %>
+							<span id="imageErrors"></span>
 						</div>
 						<div class="sendButton">
 							<button type="submit" class="editbtn">Agregar producto</button>
