@@ -19,7 +19,7 @@ window.addEventListener('load', () => {
         $form = qs('#form'),
         $submitErrors = qs('#submitErrors'),
         regExNumber = /^[0-9]*$/,
-        regExFloat = /^[0-9]*[.,]?[0-9]*$/, //expresion reg que valida numero decimal en formato de punto flotante (con coma decimal opcional)
+        regExFloat = /^[0-9]*[.,]?[0-9]*$/, 
         regExDescription = /^.{20,}$/
 
     $name.addEventListener('blur', function () {
@@ -118,7 +118,7 @@ window.addEventListener('load', () => {
             $inputImage.value = '';
             return false;
         }else{
-            // Image previa
+            // Imagen previa
             console.log($file.files);
             if($file.files && $inputImage.files[0]){
                 let reader = new FileReader();
