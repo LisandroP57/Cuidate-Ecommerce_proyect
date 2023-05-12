@@ -4,11 +4,13 @@
 <body>
     <%- include('../partials/header') %>
     <div class="title_category">
-        <h1>Categoria en cuestion</h1>
+        <h2><%- category.name %></h2>
     </div>
     <main class="mainHome">
         <div id="contenedor-productos" class="contenedor-productos">
             
+
+            <!-- Para poner un listado de subcategorias dentro de la categoria en cuestion proximamente -->
             <!-- <div class="subcategories_list">
                 <div id="sidepanel" class="sidepanel">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -16,14 +18,14 @@
                         <a href="#"><%- subCategory.name %></a>
                     <% }) %>    
                 </div>
-            </div> -->
-    
-                <aside class="subcategories_menu">
-                    <% subcategories.forEach(subCategory => { %>
-                        <a href="#"><%- subCategory.name %></a>
-                    <% }) %>   
-                </aside>
-                    <% products.forEach(product => { %>
+            </div>
+            <aside class="subcategories_menu">
+                <% subcategories.forEach(subCategory => { %>
+                    <a href="#"><%- subCategory.name %></a>
+                <% }) %>
+            </aside> -->
+
+            <% products.forEach(product => { %>
                         <div class="precard">
                             <a href="/products/detail/<%- product.id %>">
                                 <% product.images.forEach(image => { %>
