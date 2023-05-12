@@ -77,7 +77,7 @@ module.exports = {
 			const PRODUCTS = category.subcategories.map(
 				(subcategory) => subcategory.products
 				);
-				return res.render("categories", {
+				return res.render("products/categories", {
 					category,
 					subcategories: category.subcategories,
 					products: PRODUCTS.flat(),

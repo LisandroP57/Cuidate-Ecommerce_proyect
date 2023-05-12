@@ -6,7 +6,8 @@ const router = express.Router();
 const {
         search,
         shoppingcart,
-        detail
+        detail,
+        category
  } = require("../controllers/productsController");
 
 const userInSessionCheck = require("../middlewares/userInSessionCheck");
@@ -20,6 +21,9 @@ router
         .get('/shoppingcart', userInSessionCheck, shoppingcart)
 
         /* Detail product */
-        .get('/detail/:id/', detail);
+        .get('/detail/:id/', detail)
+
+        /* Categories products */
+        .get("/category/:id", category); 
 
 module.exports = router;
