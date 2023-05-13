@@ -11,8 +11,8 @@ window.addEventListener('load', () => {
         $priceErrors = qs('#priceErrors'),
         $inputDiscount = qs('#inputDiscount'),
         $discountErrors = qs('#discountErrors'),
-        $inputImage = qs('#inputImage'),
-        $imageErrors = qs('#imageErrors'),
+        $inputImage = qs('#images'),
+        $imagesErrors = qs('#imagesErrors'),
         $imagePreview = qs('img-preview'),
         $description = qs('#description'),
         $descriptionErrors = qs('#descriptionErrors'),
@@ -26,8 +26,7 @@ window.addEventListener('load', () => {
         switch (true) {
             case !$name.value.trim():
                 $nameErrors.innerHTML = 'El campo nombre es obligatorio';
-                $name.classList.add('is-invalid')
-                $name.nextElementSibling.style.color = 'red';
+                $name.classList.add('is-invalid');
                 break;
             case $name.value.trim().length < 5:
                 $nameErrors.innerText = 'El campo nombre debe tener al menos 5 caracteres';
@@ -36,7 +35,7 @@ window.addEventListener('load', () => {
             default:
                 $name.classList.remove('is-invalid');
                 $name.classList.add('is-valid');
-                $nameErrors.innerHTML = ''
+                $nameErrors.innerHTML = '';
                 break;
         }
     });
@@ -110,27 +109,26 @@ window.addEventListener('load', () => {
         }
     });
 
-    $inputImage.addEventListener('change', () => {
-        let filePath = $inputImage.value, 
-            allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i
-        if(!allowefExtensions.exec(filePath)){
-            $imageErrors.innerText = 'Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)';
-            $inputImage.value = '';
-            return false;
-        }else{
-            // Imagen previa
-            console.log($file.files);
-            if($file.files && $inputImage.files[0]){
-                let reader = new FileReader();
-                reader.onload = function(e){
-                    $imagePreview.innerHTML = '<img src="' + e.target.result +'"/>';
-                };
-                reader.readAsDataURL($file.files[0]);
-                $fileErrors.innerText = '';
-                $file.classList.remove('is-invalid')
+    $inputImage.addEventListener('blur', () => {
+        let filePath = $inputImage.value,
+            allowedExtensions = ['.jpg', '.png', '.jpeg', '.gif'];
+            const fileExtension = filePath.substring(filePath.lastIndexOf('.')).toLowerCase();
+            switch (true) {
+                case !$inputImage.value:
+                    $imagesErrors.innerText = "Debes seleccionar una imagen de producto";
+                    $inputImage.classList.add('is-invalid');
+                    break;
+                case !allowedExtensions.includes(fileExtension):
+                    $imagesErrors.innerText = "Imagen con formato no compatible";
+                    $inputImage.classList.add('is-invalid');
+                    break;
+                default:
+                    $inputImage.classList.remove('is-invalid');
+                    $inputImage.classList.add('is-valid');
+                    $imagesErrors.innerText = '';
+                    break;
             }
-        }
-    });
+        });
 
   $form.addEventListener("submit", (event) => {
     event.preventDefault();

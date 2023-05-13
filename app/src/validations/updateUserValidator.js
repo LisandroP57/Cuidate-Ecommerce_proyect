@@ -1,4 +1,5 @@
 const { check } = require("express-validator");
+const path = require("path");
 
 module.exports = [
     check("name")
@@ -31,4 +32,20 @@ module.exports = [
     .isEmail()
     .withMessage("Email inválido"),
 
+    check("avatar")
+    .custom((value, { req }) => {
+      const file = req.file;
+      if (!file) {
+        return true;
+      }
+      
+      const allowedExtensions = [".jpg", ".png", ".jpeg", ".svg", ".gif"];
+      const fileExtension = path.extname(file.originalname);
+      const isValidExtension = allowedExtensions.includes(fileExtension);
+  
+      if (!isValidExtension) {
+        throw new Error("El avatar tiene que ser .JPG, .PNG, .GIF, .SVG, .JPEG");
+      }
+      return true;
+  }),
 ]

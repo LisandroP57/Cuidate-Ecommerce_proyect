@@ -53,7 +53,10 @@
                     </div>
                     <div class="multer">
                         <p>Editar foto de perfil</p>
-                        <input type="file" name="avatar" class="form-control">
+                        <input type="file" name="avatar" class="form-control" value="<%= user.avatar %>">
+                        <% if (locals.errors && errors.avatar) { %>
+                            <small class="text-danger"><%= errors.avatar.msg %> </small>
+                        <% } %>
                     </div>
                     <span class="error-message">
                         <%= locals.errors && locals.errors.img ? locals.errors.img.msg : null %>

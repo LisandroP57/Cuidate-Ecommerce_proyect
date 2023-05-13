@@ -28,7 +28,7 @@ router
         /* Delete User */
         .delete('/users/delete/:id', userSessionAdmin, destroy)
 
-        /* Products list admin2@gmail.com Admin1234 */
+        /* Products list */
         .get("/products", userSessionAdmin, products)
     
         /* Create product */

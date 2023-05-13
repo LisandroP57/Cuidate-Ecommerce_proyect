@@ -14,8 +14,7 @@ module.exports = {
 				return product;
 			});
             return res.render("home", {
-                offerTitle: "Productos en oferta",
-                offerProducts: products,
+                products: products,
                 session: req.session
             })
         })

@@ -2,29 +2,22 @@ const { Product, Category, Sequelize } = require("../database/models");
 const { Op } = Sequelize;
 
 module.exports = {
-	search: (req, res) => {
-		let keywords = req.query.keywords;
-		let category = "Resultados para tu busqueda:";
-		Product.findAll({
-			where: {
-				name: { [Op.substring]: keywords },
-			},
-			include: [{
-				association: "subcategory",
-				include: [{
-					association: "category"
-				}] }, {
-					association: "images"
-				}],
-			}).then((products) => {
-				return res.render("/products/results",
-				{
-					products,
-					category,
-					session: req.session
-				});
+	search: async (req, res) => {
+		const { keywords } = req.query;
+		try {
+			const products = await Product.findAll({
+				include: [{association: "images"}],
+				where: {
+					name: {[Op.like]: `%${keywords}%`}
+				}
 			});
-		},
+				res.render('products/results', {
+					products,
+					keywords,
+					session: req.session,
+				});
+			} catch (error) { console.error(error); }
+	},
 	shoppingcart: (req, res) => {
 		res.render("products/shoppingcart", { session: req.session });
 	},
@@ -45,14 +38,13 @@ module.exports = {
 		});
 
 		Promise.all([PRODUCT_PROMISE, ALL_PRODUCTS_PROMISE])
-			.then(([product, offerProducts]) => {
+			.then(([product, products]) => {
 				product.images = product.images.map(image => {
 					image.image;
 					return image;
 				});
 				res.render("products/detail", {
-					offerTitle: "Productos en oferta",
-          			offerProducts,
+					products,
 					product,
 					session: req.session
 				});

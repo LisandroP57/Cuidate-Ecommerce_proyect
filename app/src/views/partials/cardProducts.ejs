@@ -1,7 +1,7 @@
 <main class="mainHome">
     <h2 class="titulo-principal" id="titulo-principal">Todos los productos</h2>
     <div id="contenedor-productos" class="contenedor-productos">
-        <% offerProducts.forEach(product => { %>
+        <% products.forEach(product => { %>
             <div class="precard">
                 <a href="/products/detail/<%- product.id %>">
                     <% product.images.forEach(image => { %>

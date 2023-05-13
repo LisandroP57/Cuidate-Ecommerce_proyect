@@ -13,19 +13,20 @@ module.exports = [
   .isLength({ min: 20 })
   .withMessage("La descripcion debe tener mínimo 20 carácteres"),
   
-  check('images')
-      .custom((value, { req }) => {
-        const file = req.files;
-        const allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
-        if (!file) {
-          throw new Error('Debe seleccionar una imagen');
-        }
-        const extension = path.extname(file.originalname);
-        if (!allowedExtensions.test(extension)) {
-          throw new Error('La imagen debe tener una extensión JPG, JPEG, PNG o GIF');
-        }
-        return true;
-      }),
+  check("images")
+        .custom((value, { req }) => {
+            const file = req.file;
+            if (!file) {
+                return true;
+            } else {
+                const allowedExtensions = [".jpg", ".png", ".jpeg", ".svg", ".gif"];
+                const fileExtension = path.extname(file.originalname);
+                if (!allowedExtensions.includes(fileExtension)) {
+                    throw new Error("La imagen tiene que ser .JPG, .PNG, .GIF, .SVG, .JPEG");
+                }
+                return true;
+            }
+        }),
 
   check("category")
   .notEmpty()
