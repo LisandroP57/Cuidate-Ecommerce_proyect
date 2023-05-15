@@ -68,6 +68,11 @@
         border-top-right-radius: 8px;
         border-bottom-right-radius: 8px;
     }
+    .select-city {
+        border-radius: 5px;
+        padding: 5px;
+        width: 250px;
+    }
     .user-profile-box {
         display: flex;
         justify-content: center;

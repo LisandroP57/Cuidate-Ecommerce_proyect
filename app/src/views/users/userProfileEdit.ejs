@@ -42,12 +42,15 @@
                         <% } %>
                     </div>
                     <div class="addInput">
-                        <select name="province" id="">
-                            <option value="">Provincia</option>
+                        <select name="province" id="selectProvincias" class="select-city">
+                            <option value="" selected hidden>Provincia</option>
+                            <% provinces.forEach(province => { %>
+                                <option value="<%- province.id %>"><%- province.nombre %></option>
+                            <% }) %>
                         </select>
                     </div>
                     <div class="addInput">
-                        <select name="city" id="">
+                        <select name="city" id="selectLocalidades" class="select-city">
                             <option value="">Localidad</option>
                         </select>
                     </div>
@@ -69,6 +72,7 @@
         </div>
     </main>
     <%- include('../partials/footer') %>
+    <script src="/js/editProfile.js"></script>
     <script src="/js/validations/updateUserValidator.js"></script>
 </body>
 </html>
