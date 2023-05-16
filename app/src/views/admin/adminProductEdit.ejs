@@ -10,7 +10,7 @@
 	<main class="addProduct">
 		<div class="createForm">
 			<p class="title">Estas modificando:<br><i><%= product.name %></p>
-				<form action="/admin/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+				<form action="/admin/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data" id="form">
 					<div class="addFormEdit">
 						<div class="addInput">
 							<label for="inputName" class="form-label">Nombre del producto:</label>

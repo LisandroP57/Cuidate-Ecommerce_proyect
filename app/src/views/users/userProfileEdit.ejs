@@ -9,7 +9,7 @@
     <main class="container-users-edit">
        <div class="createForm">
             <h3 class="title">Edita tu perfil</h3>
-            <form action="/users/profile/edit?_method=PUT" method="POST" enctype="multipart/form-data" class="form-ad" >
+            <form action="/users/profile/edit?_method=PUT" method="POST" id="form" enctype="multipart/form-data" class="form-ad" >
                 <div class="addFormEdit">
                     <div class="addInput">
                         <input type="text" name="name" placeholder="Nombre" value="<%= locals.old ? old.name : user.name %>" id="nombreInput">
@@ -44,9 +44,7 @@
                     <div class="addInput">
                         <select name="province" id="selectProvincias" class="select-city">
                             <option value="" selected hidden>Provincia</option>
-                            <% provinces.forEach(province => { %>
-                                <option value="<%- province.id %>"><%- province.nombre %></option>
-                            <% }) %>
+                            
                         </select>
                     </div>
                     <div class="addInput">
