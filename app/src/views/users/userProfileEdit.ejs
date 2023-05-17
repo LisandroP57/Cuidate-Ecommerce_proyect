@@ -44,7 +44,9 @@
                     <div class="addInput">
                         <select name="province" id="selectProvincias" class="select-city">
                             <option value="" selected hidden>Provincia</option>
-                            
+                            <% provinces.forEach(province => { %>
+                                <option value="<%- province.id %>"><%- province.nombre %></option>
+                            <% }) %>
                         </select>
                     </div>
                     <div class="addInput">

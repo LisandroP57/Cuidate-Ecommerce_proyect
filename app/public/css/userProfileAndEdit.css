@@ -21,6 +21,7 @@
         border-radius: 8px;
         box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.36);
         margin: 5rem;
+        background-color: white;
     }
     .profile-card .avatar-container {
         display: flex;
@@ -57,6 +58,10 @@
     .profile-card .container-icon .circle-logo img {
         width: 2rem;
         height: 2rem;
+        transition: 1s;
+    }
+    .profile-card .container-icon .circle-logo img:hover {
+        transform: rotateY(360deg);
     }
     .profile-card .info-container .form-info-profile {
         display: flex;
@@ -68,6 +73,9 @@
         border-top-right-radius: 8px;
         border-bottom-right-radius: 8px;
     }
+    .profile-card .info-container {
+        background-color: white;
+    }
     .select-city {
         border-radius: 5px;
         padding: 5px;
@@ -78,6 +86,7 @@
         justify-content: center;
         flex-direction: column;
         align-items: flex-start;
+        margin-bottom: .5rem;
     }
     .user-profile-box hr {
         border: 1px solid rgba(137, 43, 226, 0.445);
@@ -233,3 +242,62 @@
 }
 
 /* Fin boton editar perfil */
+
+
+    /* Btn Eliminar cuenta */
+.delete-account {
+    margin: .5rem;
+}
+.btn-delete-account {
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: red;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    background: #e62222;
+}
+.btn-delete-account, .btn-delete-account span {
+    transition: 200ms;
+}
+.btn-delete-account .text {
+    transform: translateX(5px);
+    color: white;
+    font-weight: bold;
+    font-size: .9rem;
+}
+.btn-delete-account .icon {
+    position: absolute;
+    border-left: 1px solid #c41b1b;
+    transform: translateX(110px);
+    height: 35px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-delete-account svg {
+    width: 15px;
+    fill: #eee;
+}
+.btn-delete-account:hover {
+    background: #ff3636;
+}
+.btn-delete-account:hover .text {
+    color: transparent;
+}
+.btn-delete-account:hover .icon {
+    width: 150px;
+    border-left: none;
+    transform: translateX(0);
+} 
+.btn-delete-account:focus {
+    outline: none;
+} 
+.btn-delete-account:active .icon svg {
+    transform: scale(0.8);
+}
+/* Fin Btn eliminar cuenta */
