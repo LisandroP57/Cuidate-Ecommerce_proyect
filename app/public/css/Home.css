@@ -506,7 +506,8 @@ svg {
     --enhanced-glow-color: rgb(231, 206, 255);
     --btn-color: rgb(100, 61, 136);
     border: .25em solid var(--glow-color);
-    padding: 1em 3em;
+    padding: 0.5em 2em;
+    margin: 1rem;
     color: var(--glow-color);
     font-size: 15px;
     font-weight: bold;
@@ -533,6 +534,12 @@ svg {
     filter: blur(2em);
     opacity: .7;
     transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+}
+
+.category-contain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
    
 .title_category:hover {

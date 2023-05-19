@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('../partials/head', {title: 'Categorias'}) %>
-<body>
+<body class="homeBody">
     <%- include('../partials/header') %>
-    <div class="title_category">
-        <h2><%- category.name %></h2>
+
+    <%- include('../partials/menuProducts') %>
+    <div class="category-contain">
+        <div class="title_category">
+            <h2><%- category.name %></h2>
+        </div>
     </div>
     <main class="mainHome">
         <div id="contenedor-productos" class="contenedor-productos">
@@ -64,5 +68,6 @@
             </div>
     </main>
     <%- include('../partials/footer') %>
+    <script src="/js/menuHome.js"></script>
 </body>
 </html>
