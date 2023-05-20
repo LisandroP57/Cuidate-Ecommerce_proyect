@@ -643,3 +643,43 @@ nav.navegador ul.menu li:hover{
     }
 }
         /* FIN DESKTOP */
+
+        /* INICIO DESPLEGABLE */
+
+
+.menu-hamburguesa ul li {
+    float: left;
+    list-style: none;
+}
+.menu-hamburguesa li a {
+    text-decoration: none;
+    font-size: 14px;
+    padding: 22px 14px;
+    display: block;
+    color: #222;
+}
+.menu{
+    position: relative;
+}
+.submenu{
+    display: block;
+    position: absolute;
+    text-align: center;
+    background: #fff;
+    right: -3.3rem;
+    padding: 10px;
+    display: none;
+    border-radius: 0 0 10px 10px;
+}
+.menu:hover .submenu{
+    display: block;
+}
+.submenu a{
+    padding: 8px 14px;
+}
+.submenu a:hover{
+    background: #f1f1f1;
+}
+.submenu li{
+    width: 100px;
+}

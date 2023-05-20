@@ -2,68 +2,56 @@
 <html lang="es">
     <%- include('../partials/head', {title: 'Registro'}) %>
     
-<body class="register">
+<body class="register-body">
 
     <%- include('../partials/header') %>
 
-    <main class="main-log-reg">
-        <div class="form-complete">
-            <div class="form-container">
-                <a href="/"><h2>Cuidate!!</h2></a>
+    <main class="main-reg">
+        <div class="register-complete">
+            <form class="register-form" action="/users/register" method="POST" enctype="multipart/form-data">
+                <a href="/"><h1>Cuidate!</h1></a>
                 <hr>
-                <form action="/users/register" method="POST" enctype="multipart/form-data">
-                    <div class="form">
-                        <div class="input-container-names">
-                            <span class="top-message">Nombre</span>
-                            <input class="input-style" type="text" name="name" placeholder="Ingrese su nombre">
-                            <% if (locals.errors && errors.name) { %>
-                                <small class="text-danger"><%= errors.name.msg %> </small>
-                            <% } %>
+                        <label for="name">Nombre:</label>
+                        <input class="input-reg" type="text" name="name" placeholder="Ingrese su nombre">
+                        <% if (locals.errors && errors.name) { %>
+                            <small class="text-danger"><%= errors.name.msg %> </small>
+                        <% } %>
 
-                            <span class="top-message">Apellido</span>
-                            <input class="input-style" type="text" name="last_name" placeholder="Ingrese su apellido">
-                            <% if (locals.errors && errors.last_name) { %>
-                                <small class="text-danger"><%= errors.last_name.msg %> </small>
-                            <% } %>
-                            
-                        </div>
-                        <div class="input-container">
-                            <span class="top-message">E-mail</span>
-                            <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
-                            <span id="email-error" class="error"></span>
-                            <% if (locals.errors && errors.email) { %>
-                                <small class="text-danger"><%= errors.email.msg %> </small>
-                            <% } %>
-                            
-                        </div>
-                        <div class="input-container">
-                            <span class="top-message">Contraseña</span>
-                            <input class="input-style" type="password" name="pass1" placeholder="Ingrese su contraseña">
-                            <span class="error-msg" id="error-msg-name"></span>
-                            <span class="error-msg" id="error-msg-lastname"></span>
-                            <span class="error-msg" id="error-msg-email"></span>
-                            <span class="error-msg" id="error-msg-password"></span>
-                            <span class="error-msg" id="error-msg-password2"></span>                            
-                            <% if (locals.errors && errors.pass1) { %>
-                                <small class="text-danger"><%= errors.pass1.msg %> </small>
-                            <% } %>
-                            
-                        </div>
-                        <div class="input-container">
-                            <span class="top-message">Vuelve a escribir la contraseña</span>
-                            <input class="input-style" type="password" name="pass2" placeholder="Re-ingrese su contraseña">
-                            <% if (locals.errors && errors.pass2) { %>
-                                <small class="text-danger"><%= errors.pass2.msg %> </small>
-                            <% } %>
-                        </div>
+                        <label for="lastname">Apellido:</label>
+                        <input class="input-reg" type="text" name="last_name" placeholder="Ingrese su apellido">
+                        <% if (locals.errors && errors.last_name) { %>
+                            <small class="text-danger"><%= errors.last_name.msg %> </small>
+                        <% } %>
 
-                        <div class="input-file">
-                            <p>Agregar foto</p>
+                        <label for="mail">E-mail:</label>
+                        <input class="input-reg" type="email" name="email" placeholder="Ingrese su email">
+                        <span id="email-error" class="error"></span>
+                        <% if (locals.errors && errors.email) { %>
+                            <small class="text-danger"><%= errors.email.msg %> </small>
+                        <% } %>
+
+                        <label for="password">Contraseña:</label>
+                        <input class="input-reg" type="password" name="pass1" placeholder="Ingrese su contraseña">
+                        <span class="error-msg" id="error-msg-name"></span>
+                        <span class="error-msg" id="error-msg-lastname"></span>
+                        <span class="error-msg" id="error-msg-email"></span>
+                        <span class="error-msg" id="error-msg-password"></span>
+                        <span class="error-msg" id="error-msg-password2"></span>                            
+                        <% if (locals.errors && errors.pass1) { %>
+                            <small class="text-danger"><%= errors.pass1.msg %> </small>
+                        <% } %>
+                            
+                        <label for="repassword">Vuelve a ingresar la contraseña:</label>
+                        <input class="input-reg" type="password" name="pass2" placeholder="Re-ingrese su contraseña">
+                        <% if (locals.errors && errors.pass2) { %>
+                            <small class="text-danger"><%= errors.pass2.msg %> </small>
+                        <% } %>
+
+                            <label for="multer">Agregar foto</label>
                             <input class="form-control" type="file" id="image" name="avatar">
                             <% if (locals.errors && errors.avatar) { %>
                                 <small class="text-danger"><%= errors.avatar.msg %> </small>
                             <% } %>
-                        </div>
                         <div class="terms-conditions">
                             <label for="recordar">  Acepto los <a href="">términos y condiciones</a> </label>
                             <input type="checkbox" name="terms" id="recordar"> 
@@ -71,16 +59,12 @@
                                 <small class="text-danger"><%= errors.terms.msg %> </small>
                             <% } %>
                         </div>
-                        <div class="button-container">
+                        <div class="btn-reg">
                             <button type="submit" class="btn-submit-register">Registrarme</button>
                         </div> 
                     </div>
-                </div>
+                    <span><a href="login">Ya tengo una cuenta</a></span>
             </form>
-            <div class="form-two">
-                <span><a href="login">Ya tengo una cuenta</a></span>
-            </div>
-        </div>
     </main>
 
     <%- include('../partials/footer') %>
