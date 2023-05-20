@@ -651,10 +651,16 @@ nav.navegador ul.menu li:hover{
     float: left;
     list-style: none;
 }
+.menu-hamburguesa hr {
+    background-color: #724A81;
+    opacity: 0.6;
+    height: 1px;
+    margin: 0;
+}
 .menu-hamburguesa li a {
     text-decoration: none;
     font-size: 14px;
-    padding: 22px 14px;
+    padding: 10px 17px;
     display: block;
     color: #222;
 }
@@ -667,7 +673,7 @@ nav.navegador ul.menu li:hover{
     text-align: center;
     background: #fff;
     right: -3.3rem;
-    padding: 10px;
+    padding: 0px 10px;
     display: none;
     border-radius: 0 0 10px 10px;
 }

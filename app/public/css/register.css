@@ -8,6 +8,12 @@
 .register-complete {
     margin-top: 3rem;
 }
+.register-complete hr {
+  background-color: #9977A6;
+  opacity: 0.6;
+  height: 1px;
+  margin: 1.5rem;
+}
 
 .register-body {
   font-family: 'Nunito', sans-serif;
@@ -72,7 +78,38 @@
 }
 
 @media screen and (min-width: 480px) {
-    .register-form {
-    max-width: 480px;
-  }
+  .register-form {
+  max-width: 480px;
+}
+}
+
+  /* Has olvidado tu contraseña vista */
+
+.body-forget {
+  background-image: url(/images/backgrounds/123.jpg);
+  background-repeat: no-repeat;
+}
+.forget-contain {
+  margin: 3.5rem 1rem;
+}
+.forget-content h2{
+  margin: 1rem;
+  text-align: center;
+}
+.forget-content p {
+  margin: 1rem;
+}
+.forget-content {
+  margin: 2rem 1rem;
+}
+
+.forget-content .btn-reg {
+  align-items: center;
+  margin: 1.5rem 0rem;
+}
+
+.forget-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }

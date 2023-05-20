@@ -8,7 +8,7 @@
         <source src="/images/backgrounds/mar.mp4" type="video/mp4">
     </video>
 
-    <main class="main-log-reg">
+    <main class="main-log">
         <div class="form-complete">
             <div class="form-container">
                 <a href="/"><h2>Cuidate!</h2></a>
@@ -21,7 +21,7 @@
                             
                             <% if (locals.errors && errors.email) { %>
                                 <small class="text-danger"><%= errors.email.msg %> </small>
-                                <% } %>
+                            <% } %>
                                 <span id="emailErrorss" style=" color: red;"></span>
                         </div>
                         <div class="input-container">
@@ -63,6 +63,6 @@
     </main>
     <script src="/js/showPassword.js"></script>
     <%- include("../partials/footer") %>
-    <script src="/js/validations/login.js"></script>
+    <script src="/js/validations/loginValidation.js"></script>
 </body>
 </html>

@@ -6,9 +6,17 @@
             <ul class="navigation">
                 <li class="menu"> <img src="/images/header/menu.png" alt="">
                     <ul class="submenu">
-                            <li> <a href="/users/register">Registrarme</a></li>
-                            <li> <a href="/users/login">Iniciar sesión</a></li>
+                        <% if (typeof session.user != "undefined") { %>
+                            <li> <a href="/users/profile"><i class="fa fa-gear fa-fw"></i><br>Mi perfil</a><hr></li>
+                            <% if (session.user.role === 1) { %>
+                                <li><a href="/admin"><i class="fa fa-lock fa-fw"></i>Admin mode</a><hr></li>
+                            <% } %>
+                            <li> <a href="/users/logout"><i class="fa fa-power-off fa-fw"></i>Cerrar sesión</a></li>
+                        <% } else {%>
+                            <li> <a href="/users/register">Registrarme</a><hr></li>
+                            <li> <a href="/users/login">Iniciar sesión</a><hr></li>
                             <li> <a href="/#links">Ayuda-info</a></li>
+                        <% } %>
                     </ul>
                 </li>
             </ul>

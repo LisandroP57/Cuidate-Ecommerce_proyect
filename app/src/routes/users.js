@@ -21,6 +21,7 @@ const registerValidator = require("../validations/registerValidator");
 const loginValidator = require("../validations/loginValidator");
 const userInSessionCheck = require("../middlewares/userInSessionCheck");
 const updateUserValidator = require("../validations/updateUserValidator");
+const forgetPassValidator = require("../validations/forgetPassValidator");
 const sessionUserCheck = require("../middlewares/sessionUserCheck");
 
 router
@@ -32,7 +33,7 @@ router
         .get('/processRegister', processRegister)
         
 
-        .get('/forgetPassword', forgetPassword)
+        .get('/forgetPassword', forgetPassValidator, forgetPassword)
         .get('/logout', logout)
 
         .get('/profile', userInSessionCheck, profile)
