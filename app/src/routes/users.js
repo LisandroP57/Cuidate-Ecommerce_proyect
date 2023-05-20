@@ -33,7 +33,7 @@ router
         .get('/processRegister', processRegister)
         
 
-        .get('/forgetPassword', forgetPassValidator, forgetPassword)
+        .get('/forgetPassword', sessionUserCheck, forgetPassValidator, forgetPassword)
         .get('/logout', logout)
 
         .get('/profile', userInSessionCheck, profile)
