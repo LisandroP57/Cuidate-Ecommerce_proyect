@@ -12,8 +12,10 @@ window.addEventListener('load', () => {
     $lastnameErrors = qs('#lastnameErrors'),
     $email = qs('#email'),
     $emailErrors = qs('#emailErrors'),
-    $pass = qs('#pass'),
-    $passErrors = qs('#passErrors'),
+    $pass1 = qs('#pass1'),
+    $pass1Errors = qs('#pass1Errors'),
+    $pass2 = qs('#pass2'),
+    $pass2Errors = qs('#pass2Errors'),
     $avatar = qs('#avatar'),
     $avatarErrors = qs('#avatarErrors'),
     $terms = qs('#terms'),
@@ -101,27 +103,49 @@ $email.addEventListener('blur', () => {
     }
 })
 //Validando contraseñas
-$pass.addEventListener('blur', () => {
+$pass1.addEventListener('blur', () => {
   switch (true) {
-      case !$pass.value.trim():
-          $passErrors.innerText = 'La contraseña es obligatoria';
-          $pass.classList.add('is-invalid');
-          $pass.style.borderColor = 'red';
-          $passErrors.style.display = 'block';
+      case !$pass1.value.trim():
+          $pass1Errors.innerText = 'La contraseña es obligatoria';
+          $pass1.classList.add('is-invalid');
+          $pass1.style.borderColor = 'red';
+          $pass1Errors.style.display = 'block';
           break;
-      case !$regExPass.test($pass.value):
-          $passErrors.innerText = 'La contraseña debe tener: al menos 8 caracteres, al menos una mayúscula, una minúscula y un número';
-          $pass.classList.add('is-invalid');
-          $pass.style.borderColor = 'red';
-          $passErrors.style.display = 'block';
+      case !$regExPass.test($pass1.value):
+          $pass1Errors.innerText = 'La contraseña debe tener: al menos 8 caracteres, al menos una mayúscula, una minúscula y un número';
+          $pass1.classList.add('is-invalid');
+          $pass1.style.borderColor = 'red';
+          $pass1Errors.style.display = 'block';
           break
       default:
-          $pass.classList.remove('is-invalid');
-          $pass.classList.add('is-valid');
-          $pass.style.borderColor = 'green';
-          $passErrors.innerText = ''
+          $pass1.classList.remove('is-invalid');
+          $pass1.classList.add('is-valid');
+          $pass1.style.borderColor = 'green';
+          $pass1Errors.innerText = ''
           break;
   }
+})
+  $pass2.addEventListener('blur', () => {
+    switch (true) {
+        case !$pass2.value.trim():
+            $pass2Errors.innerText = 'La contraseña es obligatoria';
+            $pass2.classList.add('is-invalid');
+            $pass2.style.borderColor = 'red';
+            $pass2Errors.style.display = 'block';
+            break;
+        case !$regExPass.test($pass2.value):
+            $pass2Errors.innerText = 'La contraseña debe tener: al menos 8 caracteres, al menos una mayúscula, una minúscula y un número';
+            $pass2.classList.add('is-invalid');
+            $pass2.style.borderColor = 'red';
+            $pass2Errors.style.display = 'block';
+            break
+        default:
+            $pass2.classList.remove('is-invalid');
+            $pass2.classList.add('is-valid');
+            $pass2.style.borderColor = 'green';
+            $pass2Errors.innerText = ''
+            break;
+    }
 })
   // Validando terminos
   $terms.addEventListener('blur', () => {

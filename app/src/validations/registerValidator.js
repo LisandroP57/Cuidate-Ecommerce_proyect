@@ -79,5 +79,5 @@
  
      check('terms')
      .isString('on')
-     .withMessage('Debes aceptar los términos y condiciones!')
+     .withMessage('Debes aceptar los términos!')
  ]
