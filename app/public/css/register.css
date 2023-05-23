@@ -49,6 +49,10 @@
   font-family: 'Kaushan Script', cursive;
 }
 
+.btn-reg {
+  display: flex;
+  justify-content: center;
+}
 .btn-reg button {
   padding: 19px 39px 18px 39px;
   color: #FFF;
@@ -61,11 +65,13 @@
   box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
   margin-bottom: 10px;
   font-weight: 700;
+  max-width: 250px;
 }
 
 .register-form label {
   display: block;
   margin-bottom: 8px;
+  margin-right: 5px;
 }
 
 .register-form label.light {
@@ -75,6 +81,18 @@
 
 .terms-conditions {
     margin: 10px 0;
+    width: 16rem;
+}
+
+.span-account {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0.5rem;
+}
+.span-account a {
+  color: rgb(24, 60, 221);
+  font-size: 13px;
+  font-weight: 600;
 }
 
 @media screen and (min-width: 480px) {

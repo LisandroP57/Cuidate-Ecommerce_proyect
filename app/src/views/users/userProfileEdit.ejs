@@ -12,34 +12,31 @@
             <form action="/users/profile/edit?_method=PUT" method="POST" id="form" enctype="multipart/form-data" class="form-ad" >
                 <div class="addFormEdit">
                     <div class="addInput">
-                        <input type="text" name="name" placeholder="Nombre" value="<%= locals.old ? old.name : user.name %>" id="nombreInput">
-                        <small id="nombreError" class="text-danger" style="display: none;">El campo es obligatorio</small>
-                        <% if (locals.errors && errors.name) { %>
-                            <small class="text-danger"><%= errors.name.msg %> </small>
-                        <% } %>
+                        <input type="text" name="name" placeholder="Nombre" value="<%= locals.old ? old.name : user.name %>" id="name">
+                        <small class="text-danger" id="nameErrors">
+                            <%= locals.errors && errors.name ? errors.name.msg : '' %>
+                        </small>
                     </div>
                     <div class="addInput">
-                        <input type="text" name="last_name" placeholder="Apellido" value="<%= locals.old ? old.last_name : user.last_name %>" id="apellidoInput">
-                        <small id="apellidoError" class="text-danger" style="display: none;">El campo es obligatorio</small>
-                        <% if (locals.errors && errors.last_name) { %>
-                            <small class="text-danger"><%= errors.last_name.msg %> </small>
-                        <% } %>
+                        <input type="text" name="last_name" placeholder="Apellido" value="<%= locals.old ? old.last_name : user.last_name %>" id="last_name">
+                        <small class="text-danger" id="lastnameErrors">
+                            <%= locals.errors && errors.last_name ? errors.last_name.msg : '' %>
+                        </small>
                     </div>
                     <div class="addInput">
-                        <input type="email" name="email" placeholder="Ingresá tu email" readonly value="<%= locals.old ? old.email : user.email %>"id="emailInput">
-                        <small id="emailError" class="text-danger" style="display: none;">El email es obligatorio</small>
-                        <% if (locals.errors && errors.email) { %>
-                            <small class="text-danger"><%= errors.email.msg %> </small>
-                        <% } %>
+                        <input type="email" name="email" placeholder="Ingresá tu email" readonly value="<%= locals.old ? old.email : user.email %>"id="email">
+                        <small class="text-danger" id="emailErrors">
+                            <%= locals.errors && errors.email ? errors.email.msg : '' %>
+                        </small>
                     </div>
                     <div class="addInput">
-                        <input type="text" name="address" placeholder="Domicilio" value="<%= user.address ? user.address : "" %>"id="addressInput">
+                        <input type="text" name="address" placeholder="Domicilio" value="<%= user.address ? user.address : "" %>"id="address">
                     </div>
                     <div class="addInput">
-                        <input type="text" name="postal_code" placeholder="Código postal" value="<%= user.postal_code ? user.postal_code : "" %>"id="postalCodeInput">
-                        <% if (locals.errors && errors.postal_code) { %>
-                            <small class="text-danger"><%= errors.postal_code.msg %> </small>
-                        <% } %>
+                        <input type="text" name="postal_code" placeholder="Código postal" value="<%= user.postal_code ? user.postal_code : "" %>"id="postal_code">
+                        <small class="text-danger" id="postal_code">
+                            <%= locals.errors && errors.postal_code ? errors.postal_code.msg : '' %>
+                        </small>
                     </div>
                     <div class="addInput">
                         <select name="province" id="selectProvincias" class="select-city">
@@ -57,9 +54,9 @@
                     <div class="multer">
                         <p>Editar foto de perfil</p>
                         <input type="file" name="avatar" class="form-control" value="<%= user.avatar %>">
-                        <% if (locals.errors && errors.avatar) { %>
-                            <small class="text-danger"><%= errors.avatar.msg %> </small>
-                        <% } %>
+                        <small class="text-danger" id="avatar">
+                            <%= locals.errors && errors.avatar ? errors.avatar.msg : '' %>
+                        </small>
                     </div>
                     <span class="error-message">
                         <%= locals.errors && locals.errors.img ? locals.errors.img.msg : null %>
