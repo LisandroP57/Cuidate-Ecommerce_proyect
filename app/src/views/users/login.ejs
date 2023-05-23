@@ -27,17 +27,16 @@
                         <div class="input-container">
                             <span class="top-message">Contraseña</span>
                             <div class="password-container">
-                                <input class="input-style" type="password" name="pass" id="passwordInput" placeholder="Ingrese su contraseña">
+                                <input class="input-style" type="password" name="pass" id="pass1" placeholder="Ingrese su contraseña">
                                 <img src="/images/icons/show-password.png" onclick="showPassword()" id="showPasswordImg" alt="">
                             </div>
                             <% if (locals.errors && errors.pass) { %>
                                 <small class="text-danger"><%= errors.pass.msg %> </small>
-                                <% } %>
-                                <span id="passErrors" style=" color: red;"></span>
-                            </div>
+                            <% } %>
+                            <span id="passErrors" style=" color: red;"></span>
+                        </div>
 
                         <div class="checkbox-slider">
-                            <!-- <span id="checkboxErrors"></span> -->
                             <input type="checkbox" name="remember" id="my-slider"> 
                             <label for="my-slider" id="checkbox">Recordar sesión</label>
                         </div>

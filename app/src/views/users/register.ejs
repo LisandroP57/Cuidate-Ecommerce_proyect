@@ -32,8 +32,11 @@
                             <%= locals.errors && errors.email ? errors.email.msg : '' %>
                         </small>
 
-                        <label>Contraseña:</label>
-                        <input class="input-reg" type="password" name="pass1" placeholder="Ingrese su contraseña" id="pass1">
+                        <div class="div-password">
+                            <label>Contraseña:</label>
+                            <input class="input-reg" type="password" name="pass1" placeholder="Ingrese su contraseña" id="pass1">
+                            <img src="/images/icons/show-password.png" onclick="showPassword()" id="showPasswordImg" alt="">
+                        </div>
                         <small class="text-danger" id="pass1Errors">
                             <%= locals.errors && errors.pass ? errors.pass.msg : '' %>
                         </small>
@@ -64,8 +67,10 @@
         </div>
     </main>
 
+    <script src="/js/showPassword.js"></script>
     <%- include('../partials/footer') %>
     <script src="/js/validations/registerValidation.js"></script>
-    
 </body>
+</body>
+
 </html>

@@ -79,9 +79,26 @@
   font-weight: 300;
   display: inline;
 }
+.div-password {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.div-password img {
+  width: 22px;
+  height: 25px;
+  position: absolute;
+  right: 0.5rem;
+  top: 73%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
 
 .terms-conditions {
     margin-bottom: 15px;
+}
+.terms-conditions input {
+  margin-top: 18px;
 }
 
 .span-account {
