@@ -145,7 +145,7 @@ aside {
 }
 .mainHome {
     background-color: var(--clr-white);
-    margin: 1rem;
+    margin: 3rem;
     margin-left: 0;
     border-radius: 2rem;
     padding: 3rem;
@@ -578,7 +578,7 @@ svg {
     }
 
     .mainHome {
-        margin: 1rem;
+        margin: 3rem;
         margin-top: 0;
         padding: 2rem;
     }
@@ -658,7 +658,7 @@ svg {
     }
 
     .mainHome {
-        margin: 1rem;
+        margin: 3rem;
         margin-top: 0;
         padding: 2rem;
     }
