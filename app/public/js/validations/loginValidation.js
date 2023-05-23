@@ -7,7 +7,7 @@ window.addEventListener("load", () => {
     let $form = qs('#form'),
         $email = qs("#email"),
         $emailErrorss = qs('#emailErrorss'),
-        $pass = qs('#passwordInput'),
+        $pass = qs('#pass1'),
         $passErrors = qs('#passErrors'),
         regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
         regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;

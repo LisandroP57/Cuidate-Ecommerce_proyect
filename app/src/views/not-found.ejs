@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('partials/head', {title: 'Error 404'}) %>
-<body class="error-body">
-    <%- include('partials/header') %>
-
-    <div class="error-container">
-        <h1 class="numerror">404</h1>
-        <p class="p-error">Pagina no encontrada!</p>
-        <a class="backhome" href="/"><i class="icon-home"></i> Volver a la página inicial (recomendado)</a>
-    </div>
-
-</body>
+    <body class="error-body">
+        <%- include('partials/header') %>
+        <div class="error-container">
+            <div id="404background"></div>
+            <div class="error-message">
+                <h1>404</h1>
+                <h3>Pagina no encontrada</h3>
+            </div>
+            <div class="ghost-container">
+                <div class="ghost-copy">
+                    <div class="one"></div>
+                    <div class="two"></div>
+                    <div class="three"></div>
+                    <div class="four"></div>
+                </div>
+                <div class="ghost">
+                    <div class="face">
+                        <div class="eye"></div>
+                        <div class="eye-right"></div>
+                        <div class="mouth"></div>
+                    </div>
+                </div>
+                <div class="shadow"></div>
+            </div>
+            <div class="error-p">
+                <p>Lo sentimos! no se encontró la pagina, prueba mejor:</p>
+                <div class="error-div-btn">
+                    <a href="#" onclick="goBack()"><button class="btn-error">Volver</button></a>
+                    <a href="/"><button class="btn-error">Inicio</button></a>
+                </div>
+            </div>
+        </div>
+        <%- include('partials/footer') %>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </body>
 </html>

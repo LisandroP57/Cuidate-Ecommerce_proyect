@@ -1,27 +1,3 @@
-let qs = (elemento) => {
-  return document.querySelector(elemento);
-}
-
-window.addEventListener('load', () => {
-
-  let
-    $form = qs('#form'),
-    $name = qs('#name'),
-    $nameErrors = qs('#nameErrors'),
-    $lastname = qs('#last_name'),
-    $lastnameErrors = qs('#lastnameErrors'),
-    $email = qs('#email'),
-    $emailErrors = qs('#emailErrors'),
-    $pass = qs('#pass'),
-    $passErrors = qs('#passErrors'),
-    $avatar = qs('#avatar'),
-    $avatarErrors = qs('#avatarErrors'),
-    $terms = qs('#terms'),
-    $termsErrors = qs('#termsErrors'),
-    $regexSoloLetras = /^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ]{2,}$/,
-    $regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8}$/;
-    $regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-
 //Validando el Nombre
 $name.addEventListener('blur', () => {
   switch (true) {
@@ -77,64 +53,24 @@ $lastname.addEventListener('blur', () => {
       $lastnameErrors.innerHTML = '';
       break;
   }
-// Validando email
-$email.addEventListener('blur', () => {
-  switch (true) {
-    case !$email.value.trim():
-      $emailErrors.innerText = 'El campo email es obligatorio';
-      $email.classList.add('is-invalid');
-      $email.style.borderColor = 'red';
-      $emailErrors.style.display = 'block';
-      break;
-    case !$regExEmail.test($email.value):
-      $email.style.borderColor = 'red';
-      $emailErrors.style.display = 'block';
-      $emailErrors.innerText = 'Debe ingresar un email válido';
-      $email.classList.add('is-invalid');
-      break
-      default:
-        $email.classList.remove('is-invalid');
-        $email.classList.add('is-valid');
-        $email.style.borderColor = 'green';
-        $emailErrors.innerText = '';
-        break;
-    }
-})
-//Validando contraseñas
-$pass.addEventListener('blur', () => {
-  switch (true) {
-      case !$pass.value.trim():
-          $passErrors.innerText = 'La contraseña es obligatoria';
-          $pass.classList.add('is-invalid');
-          $pass.style.borderColor = 'red';
-          $passErrors.style.display = 'block';
-          break;
-      case !$regExPass.test($pass.value):
-          $passErrors.innerText = 'La contraseña debe tener: al menos 8 caracteres, al menos una mayúscula, una minúscula y un número';
-          $pass.classList.add('is-invalid');
-          $pass.style.borderColor = 'red';
-          $passErrors.style.display = 'block';
-          break
-      default:
-          $pass.classList.remove('is-invalid');
-          $pass.classList.add('is-valid');
-          $pass.style.borderColor = 'green';
-          $passErrors.innerText = ''
-          break;
+});
+
+//Validando el Apellido
+const lastNameInput = document.querySelector('input[name="last_name"]');
+const lastNameRegex = /^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ]{2,}$/;
+
+lastNameInput.insertAdjacentHTML('afterend', '<span class="error-msg"></span>');
+
+lastNameInput.addEventListener('blur', () => {
+  if (!lastNameRegex.test(lastNameInput.value)) {
+    lastNameInput.style.borderColor = 'red';
+    lastNameInput.nextElementSibling.innerHTML = 'Ingrese un apellido válido (mínimo 2 caracteres y sin números ni caracteres especiales)';
+    lastNameInput.nextElementSibling.style.color = 'red';
+  } else {
+    lastNameInput.style.borderColor = 'green';
+    lastNameInput.nextElementSibling.innerHTML = '';
   }
-})
-  // Validando terminos
-  $terms.addEventListener('blur', () => {
-    switch (true) {
-      case !$terms.value.trim():
-        $termsErrors.innerText = 'Debes aceptar los términos';
-        $terms.classList.add('is-invalid');
-        $terms.style.borderColor = 'red';
-        $termsErrors.style.display = 'block';
-        break;
-      }
-    })
-  })
+});
 
   $form.addEventListener("submit", (event) => {
     event.preventDefault();

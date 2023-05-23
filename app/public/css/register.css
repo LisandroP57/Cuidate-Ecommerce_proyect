@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 .register-complete {
-    margin-top: 3rem;
+    margin: 3rem 0rem;
 }
 .register-complete hr {
   background-color: #9977A6;
@@ -30,9 +30,8 @@
     padding: 15px;
     width: 100%;
     background-color: #e8eeef;
-    color: #8a97a0;
+    color: black;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
-    margin-bottom: 15px;
 }
 .register-form {
   border: 1px solid #c9cdce;
@@ -42,13 +41,15 @@
   background: #f4f7f8;
   border-radius: 8px;
 }
-
 .register-form h1 {
   text-align: center;
   color: #384047;
   font-family: 'Kaushan Script', cursive;
+  transition: 1s;
 }
-
+.register-form h1:hover {
+  transform: rotateX(360deg);
+}
 .btn-reg {
   display: flex;
   justify-content: center;
@@ -70,7 +71,7 @@
 
 .register-form label {
   display: block;
-  margin-bottom: 8px;
+  margin-top: 15px;
   margin-right: 5px;
 }
 
@@ -78,10 +79,26 @@
   font-weight: 300;
   display: inline;
 }
+.div-password {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.div-password img {
+  width: 22px;
+  height: 25px;
+  position: absolute;
+  right: 0.5rem;
+  top: 73%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
 
 .terms-conditions {
-    margin: 10px 0;
-    width: 16rem;
+    margin-bottom: 15px;
+}
+.terms-conditions input {
+  margin-top: 18px;
 }
 
 .span-account {

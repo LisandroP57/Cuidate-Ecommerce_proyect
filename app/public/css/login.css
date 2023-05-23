@@ -38,8 +38,9 @@
         width: 100%;
     }
     .password-container img {
-        width: 30px;
-        height: 30px;
+        cursor: pointer;
+        width: 22px;
+        height: 25px;
         position: absolute;
         right: 0.5rem;
         top: 45%;

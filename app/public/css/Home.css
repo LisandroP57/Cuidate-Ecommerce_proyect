@@ -133,21 +133,16 @@ aside {
 .boton-carrito {
     margin-top: 2rem;
 }
-
 .numerito {
     background-color: var(--clr-white);
     color: var(--clr-main);
     padding: .15rem .25rem;
     border-radius: .25rem;
 }
-
 .boton-carrito.active .numerito {
     background-color: var(--clr-main);
     color: var(--clr-white);
 }
-
-
-
 .mainHome {
     background-color: var(--clr-white);
     margin: 1rem;
@@ -155,25 +150,21 @@ aside {
     border-radius: 2rem;
     padding: 3rem;
 }
-
 .titulo-principal {
     display: flex;
     justify-content: center;
     color: var(--clr-main);
     margin-bottom: 2rem;
 }
-
 .contenedor-productos {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 20px;
 }
-
 .producto-imagen {
     max-width: 100%;
     border-radius: 1rem;
 }
-
 .producto-detalles {
     background-color: var(--clr-main);
     color: var(--clr-white);
@@ -185,11 +176,9 @@ aside {
     flex-direction: column;
     gap: .25rem;
 }
-
 .producto-titulo {
     font-size: 1rem;
 }
-
 .producto-agregar {
     border: 0;
     background-color: var(--clr-white);
@@ -201,12 +190,10 @@ aside {
     border: 2px solid var(--clr-white);
     transition: background-color .2s, color .2s;
 }
-
 .producto-agregar:hover {
     background-color: var(--clr-main);
     color: var(--clr-white);
 }
-
 .blob {
   position: absolute;
   width: 50%;
@@ -217,7 +204,6 @@ aside {
   transition:1s cubic-bezier(.07, .8, .16, 1);
   animation: animateBlob 12s infinite alternate;
 }
-
 .blob:hover {
   width: 50%;
   height: 50%;
@@ -228,16 +214,12 @@ aside {
       inset 100px 100px 0 0 #8C52FF ,
       inset 100px 100px 0 0 #4f00ee ;
 }
-
 @keyframes animateBlob {
   100% {
     transform: translate(30px, 500px) rotate(-10deg);
     border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
   }
 }
-
-
-
 /** CARRITO **/
 
 /* .contenedor-carrito {
@@ -352,8 +334,9 @@ aside {
 
         /* CARD HOME */
 
+        
 html, .adminIndexBody {
-  height: 100%;
+    height: 100%;
 }
 .precard {
   font-family: 'Poppins', sans-serif;
@@ -415,6 +398,10 @@ figure {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+.homeproduct-info2 img {
+    width: 23px;
+    height: 23px;
 }
 .homeproduct-price {
 	font-weight: 600;
