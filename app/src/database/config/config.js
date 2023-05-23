@@ -1,10 +1,8 @@
-const process = require("process");
-
 module.exports = {
     "development": {
       "username": "root",
-      "password": null,
-      "database": process.env.DATABASE,
+      "password": '',
+      "database": "cuidate_db",
       "host": "127.0.0.1",
       "dialect": "mysql"
     },

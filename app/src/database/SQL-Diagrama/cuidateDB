@@ -176,7 +176,7 @@ select * from cart_items;
 
 
 /*8*/
-/* DROP TABLE IF EXISTS `products_colors`;
+DROP TABLE IF EXISTS `products_colors`;
 CREATE TABLE `products_colors` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `color` varchar(50) NOT NULL,
@@ -191,4 +191,24 @@ INSERT INTO `products_colors` VALUES
 (2, 'violeta', 2),
 (3, 'rosa',3);
 
-select * from products_colors; */
+select * from products_colors;
+
+
+/*9*/
+DROP TABLE IF EXISTS `products_sizes`;
+CREATE TABLE `products_sizes` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `size` varchar(50) NOT NULL,
+  `product_id` int(10) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  KEY `products_sizes_FK` (`product_id`),
+  CONSTRAINT `products_sizes_FK` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
+);
+
+INSERT INTO `products_sizes` VALUES
+(1, 'chico', 1),
+(2, 'grande', 2),
+(3, 'regular',3);
+
+select * from products_sizes;

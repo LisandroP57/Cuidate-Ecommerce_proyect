@@ -48,13 +48,19 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "product_id",
         });
 
-        PRODUCT.hasMany(models.CartItem, {
-            as: "cartItems",
-            foreignKey: "productId"
-        });
-        /* PRODUCT.hasMany(models.ProductColor, {
+        PRODUCT.hasMany(models.ProductColor, {
             as: "colors",
             foreignKey: "product_id",
+        });
+
+        PRODUCT.hasMany(models.ProductSize, {
+            as: "sizes",
+            foreignKey: "product_id",
+        });
+
+        /*  PRODUCT.belongsTo(models.CartItem, {
+            as: "cartItem",
+            foreignKey: "productId"
         }); */
     }
 

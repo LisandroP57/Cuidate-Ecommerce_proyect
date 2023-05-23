@@ -1,4 +1,4 @@
-/* module.exports = (sequelize, dataTypes) => {
+module.exports = (sequelize, dataTypes) => {
     let alias = "ProductColor";
 
     let cols = {
@@ -33,4 +33,4 @@
     }
  
     return PRODUCT_COLOR;
-} */
+}

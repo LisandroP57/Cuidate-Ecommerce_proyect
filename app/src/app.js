@@ -3,19 +3,9 @@ const express = require("express");
 const path = require("path");
 const PORT = 3000;
 const methodOverride = require('method-override');
-require('dotenv').config();
-const cors = require('cors');
 const session = require('express-session');
 const cookieParser = require("cookie-parser");
 const cookieCheck = require("./middlewares/cookieCheck");
-
-    // Rutas
-const [ 
-    userRouter, 
-    productRouter, 
-    cartRouter, 
-    categoryRouter
-] = require("./routes");
 
     /* Express */
 const app = express();
@@ -28,7 +18,6 @@ app.set('views', path.join(__dirname, '/views'));
     app.use(express.json());
     app.use(express.urlencoded({ extended: false }));
     app.use(methodOverride("_method"));
-    app.use(cors());
     app.use(express.static(path.join(__dirname, '../public')));
     app.use(session({
         secret: "Cuidate",
@@ -44,12 +33,6 @@ const productsRouter = require("./routes/products");
 const usersRouter = require('./routes/users');
 const adminRouter = require("./routes/admin");
 const apiRouter = require("./routes/api");
-
-    /* Routes Apis */
-app.use(`/api/users`, userRouter);
-app.use(`/api/products`, productRouter);
-app.use(`/api/cart`, cartRouter);
-app.use(`/api/categories`, categoryRouter);
 
     /* Routes Middlewares */
 app.use("/", indexRouter);
