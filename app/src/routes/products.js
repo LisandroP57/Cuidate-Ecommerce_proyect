@@ -7,7 +7,8 @@ const {
         search,
         shoppingcart,
         detail,
-        category
+        category,
+        subcategory
  } = require("../controllers/productsController");
 
 const userInSessionCheck = require("../middlewares/userInSessionCheck");
@@ -19,11 +20,11 @@ router
         .get('/search', search)
         /* Shopping cart */
         .get('/shoppingcart', userInSessionCheck, shoppingcart)
-
         /* Detail product */
         .get('/detail/:id/', detail)
-
         /* Categories products */
-        .get("/category/:id", category); 
+        .get("/category/:id", category)
+        /* Subcategories products */
+        .get("/subcategory/:id", subcategory);
 
 module.exports = router;

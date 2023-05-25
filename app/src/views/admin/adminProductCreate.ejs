@@ -32,7 +32,7 @@
 							</small>
 						</div>
 						<div class="addInput">
-							<select class="form-select" id="specificSizeSelect" name="category">
+							<select class="form-select" id="categorySelect" name="category">
 								<option selected hidden value="">Categoria</option>
 								<% categories.forEach(category => { %>
 									<option value="<%- category.id %>" <%= locals.old && old.category == category.id ? "selected" : null %> ><%- category.name %></option>
@@ -43,7 +43,7 @@
 							</small>
 						</div>
 						<div class="addInput">
-							<select class="form-select" id="specificSizeSelect" name="subcategory">
+							<select class="form-select" id="subcategorySelect" name="subcategory">
 								<option selected hidden value="">Subcategoria</option>
 								<% subcategories.forEach(subcategory => { %>
 								<option value="<%- subcategory.id %>" <%= 

@@ -6,13 +6,6 @@ module.exports = {
             include: [{association: "images"}]
         })
         .then(products => {
-			products = products.map(product => {
-				product.images = product.images.map(image => {
-					image.image;
-					return image;
-				});
-				return product;
-			});
             return res.render("home", {
                 products: products,
                 session: req.session

@@ -7,22 +7,21 @@ window.addEventListener('load', () => {
     let
         $name = qs('#name'),
         $nameErrors = qs('#nameErrors'),
-        $inputPrice = qs('#inputPrice'),
+        $price = qs('#inputPrice'),
         $priceErrors = qs('#priceErrors'),
-        $inputDiscount = qs('#inputDiscount'),
-        $discountErrors = qs('#discountErrors'),
-        $inputImage = qs('#images'),
-        $imagesErrors = qs('#imagesErrors'),
-        $imagePreview = qs('img-preview'),
+        $category = qs("#categorySelect"),
+        $categoryErrors = qs("#categoryErrors"),
+        $subcategory = qs("#subcategorySelect"),
+        $subcategoryErrors = qs("#subcategoryErrors"),
         $description = qs('#description'),
         $descriptionErrors = qs('#descriptionErrors'),
         $form = qs('#form'),
-        $submitErrors = qs('#submitErrors'),
-        regExNumber = /^[0-9]*$/,
+        $file = qs("#images"),
+        $fileErrors = qs("#imagesErrors"),
         regExFloat = /^[0-9]*[.,]?[0-9]*$/, 
         regExDescription = /^.{20,}$/
 
-    $name.addEventListener('blur', function () {
+    $name.addEventListener('blur', () => {
         switch (true) {
             case !$name.value.trim():
                 $nameErrors.innerHTML = 'El campo nombre es obligatorio';
@@ -40,53 +39,43 @@ window.addEventListener('load', () => {
         }
     });
 
-    $inputPrice.addEventListener('blur', function () {
+    $price.addEventListener('blur', () => {
         switch (true) {
-            case !$inputPrice.value.trim():
-                $priceErrors.innerText = 'El campo precio es obligatorio';
-                $inputPrice.classList.add('is-invalid')
-                $inputPrice.nextElementSibling.style.color = 'red';
+            case !$price.value.trim():
+                $priceErrors.innerText = 'El precio es obligatorio';
+                $price.classList.add('is-invalid')
                 break;
             case !regExFloat.test($price.value):
-                $priceErrors.innerText = 'El campo precio debe ser un número';
-                $inputPrice.classList.add('is-invalid')
-                break;
-            case $inputPrice.value < 0:
-                $priceErrors.innerText = 'El campo precio debe ser mayor a 0';
-                $inputPrice.classList.add('is-invalid')
+                $priceErrors.innerText = 'El precio debe ser un número';
+                $price.classList.add('is-invalid')
                 break;
             default:
-                $inputPrice.classList.remove('is-invalid');
-                $inputPrice.classList.add('is-valid');
+                $price.classList.remove('is-invalid');
+                $price.classList.add('is-valid');
                 $priceErrors.innerText = ''
                 break;
         }
     });
 
-    $inputDiscount.addEventListener('blur', function () {
-        switch (true) {
-            case !$inputDiscount.value.trim():
-                $discountErrors.innerText = 'El campo descuento es obligatorio';
-                $inputDiscount.classList.add('is-invalid')
-                $inputDiscount.nextElementSibling.style.color = 'red';
-                break;
-            case !regExNumber.test($discount.value):
-                $discountErrors.innerText = 'El campo descuento debe ser un número';
-                $inputDiscount.classList.add('is-invalid')
-                break;
-            case $inputDiscount.value < 0:
-                $discountErrors.innerText = 'El campo descuento debe 0 o mayor';
-                $inputDiscount.classList.add('is-invalid')
-                break;
-            case $inputDiscount.value > 100:
-                $discountErrors.innerText = 'El campo descuento no puede superar el 100%';
-                $inputDiscount.classList.add('is-invalid')
-                break;
-            default:
-                $inputDiscount.classList.remove('is-invalid');
-                $inputDiscount.classList.add('is-valid');
-                $discountErrors.innerText = ''
-                break;
+    $category.addEventListener("blur", () => {
+        if (!$category.value.trim()) {
+          $categoryErrors.innerHTML = "Campo requerido";
+          $category.classList.add("is-invalid");
+        } else {
+          $category.classList.remove("is-invalid");
+          $category.classList.add("is-valid");
+          $categoryErrors.innerHTML = "";
+        }
+      });
+    
+      $subcategory.addEventListener("blur", () => {
+        if (!$subcategory.value.trim()) {
+          $subcategoryErrors.innerHTML = "Campo requerido";
+          $subcategory.classList.add("is-invalid");
+        } else {
+          $subcategory.classList.remove("is-invalid");
+          $subcategory.classList.add("is-valid");
+          $subcategoryErrors.innerHTML = "";
         }
     });
 
@@ -109,38 +98,52 @@ window.addEventListener('load', () => {
         }
     });
 
-    $inputImage.addEventListener('blur', () => {
-        let filePath = $inputImage.value,
-            allowedExtensions = ['.jpg', '.png', '.jpeg', '.gif'];
-            const fileExtension = filePath.substring(filePath.lastIndexOf('.')).toLowerCase();
-            switch (true) {
-                case !$inputImage.value:
-                    $imagesErrors.innerText = "Debes seleccionar una imagen de producto";
-                    $inputImage.classList.add('is-invalid');
-                    break;
-                case !allowedExtensions.includes(fileExtension):
-                    $imagesErrors.innerText = "Imagen con formato no compatible";
-                    $inputImage.classList.add('is-invalid');
-                    break;
-                default:
-                    $inputImage.classList.remove('is-invalid');
-                    $inputImage.classList.add('is-valid');
-                    $imagesErrors.innerText = '';
-                    break;
-            }
-        });
-
   $form.addEventListener("submit", (event) => {
     event.preventDefault();
+    const form_elements = event.target.elements;
+
+    for (let index = 0; index < form_elements.length - 1; index++) {
+      const element = form_elements[index];
+      if (
+        element.value === "" &&
+        element.type !== "file" &&
+        element.name !== "discount" &&
+        element.name !== "description"
+      ) {
+        element.classList.add("is-invalid");
+      }
+    }
 
     let elementosConErrores = document.querySelectorAll(".is-invalid");
     let errores = elementosConErrores.length > 0;
 
     if (errores) {
-          $submitErrors.innerText = "Hay errores en el formulario";
+      submitErrors.innerText = "Hay errores en el formulario";
     } else {
-          $form.submit();
+      $form.submit();
     }
-});
+  });
 
+  $file.addEventListener("change", () => {
+    let filePath = $file.value,
+      allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i;
+    if (!allowefExtensions.exec(filePath)) {
+      $fileErrors.innerHTML =
+        "Las extensiones permitidas son .JPG - .JPEG - .PNG - .GIF)";
+      $file.value = "";
+      $imgPreview.innerHTML = "";
+      return false;
+    } else {
+      console.log($file.files);
+      if ($file.files && $file.files[0]) {
+        let reader = new FileReader();
+        reader.onload = function (e) {
+          $imgPreview.innerHTML = '<img src="' + e.target.result + '"/>';
+        };
+        reader.readAsDataURL($file.files[0]);
+        $fileErrors.innerHTML = "";
+        $file.classList.remove("is-invalid");
+      }
+    }
+  });
 });
