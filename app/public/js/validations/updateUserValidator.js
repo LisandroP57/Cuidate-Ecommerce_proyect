@@ -12,6 +12,8 @@ window.addEventListener('load', () => {
     $lastnameErrors = qs('#lastnameErrors'),
     $email = qs('#email'),
     $emailErrors = qs('#emailErrors'),
+    $file = qs("#avatar"),
+    $fileErrors = qs("#avatarErrors"),
     $regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
     $regexSoloLetras = /^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ]{2,}$/;
 
@@ -43,7 +45,7 @@ window.addEventListener('load', () => {
         $nameErrors.innerHTML = '';
         break;
     }
-  })
+  });
   // Validando apellido
   $lastname.addEventListener('blur', () => {
     switch (true) {
@@ -70,6 +72,7 @@ window.addEventListener('load', () => {
         $lastnameErrors.innerHTML = '';
         break;
     }
+  });
   // Validando email
   $email.addEventListener('blur', () => {
     switch (true) {
@@ -92,9 +95,7 @@ window.addEventListener('load', () => {
           $emailErrors.innerText = '';
           break;
       }
-  })
-})
-  
+  });
     $form.addEventListener("submit", (event) => {
       event.preventDefault();
   
@@ -106,28 +107,22 @@ window.addEventListener('load', () => {
       } else {
         $form.submit();
       }
-    })
-  })
-
-//validando direccion
-/* const addressInput = document.getElementById('addressInput');
-addressInput.addEventListener('blur', () => {
-  const addressValue = addressInput.value.trim();
-  const regexAddress = /^[a-zA-Z0-9\s]*$/; 
-  if (addressValue && !regexAddress.test(addessValue)) {
-    addressInput.style.borderColor = 'red';
-  } else {
-    addressInput.style.borderColor = 'green';
-  }
-});
-//validando codigo postal
-const postalCodeInput = document.getElementById('postalCodeInput');
-postalCodeInput.addEventListener('blur', () => {
-  const postalCodeValue = postalCodeInput.value.trim();
-  const regexPostalCode = /^\d+$/;
-  if (postalCodeValue && !regexPostalCode.test(postalCodeValue)) {
-    postalCodeInput.style.borderColor = 'red';
-  } else {
-    postalCodeInput.style.borderColor = 'green';
-  }
-}); */
+    });
+    $file.addEventListener("change", () => {
+      let filePath = $file.value,
+          allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i;
+      if (!allowefExtensions.exec(filePath)) {
+          $fileErrors.innerHTML =
+              "Las extensiones permitidas son .JPG - .JPEG - .PNG - .GIF)";
+          $file.value = "";
+          $file.classList.add("is-invalid");
+          $file.style.border = "1px solid red";
+          return false;
+      } else {
+          console.log($file.files);
+          $fileErrors.innerHTML = "";
+          $file.classList.remove("is-invalid");
+          $file.style.border = "1px solid green";
+      }
+  });
+  });

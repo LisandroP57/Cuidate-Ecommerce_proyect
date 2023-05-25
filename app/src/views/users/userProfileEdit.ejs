@@ -53,8 +53,8 @@
                     </div>
                     <div class="multer">
                         <p>Editar foto de perfil</p>
-                        <input type="file" name="avatar" class="form-control" value="<%= user.avatar %>">
-                        <small class="text-danger" id="avatar">
+                        <input type="file" name="avatar" id="avatar" class="form-control" value="<%= user.avatar %>">
+                        <small class="text-danger" id="avatarErrors">
                             <%= locals.errors && errors.avatar ? errors.avatar.msg : '' %>
                         </small>
                     </div>
