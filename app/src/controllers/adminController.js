@@ -45,8 +45,10 @@ module.exports = {
             .catch((error) => console.log(error));
     },
     create: (req, res) => {
-        const CATEGORIES_PROMISE = Category.findAll();
-        const SUBCATEGORIES_PROMISE = Subcategory.findAll();
+        const CATEGORIES_PROMISE = fetch(
+            "http://localhost:3000/api/v1/category"
+            ).then((res) => res.json());
+            const SUBCATEGORIES_PROMISE = Subcategory.findAll();
 
         Promise.all([CATEGORIES_PROMISE, SUBCATEGORIES_PROMISE])
             .then(([categories, subcategories]) => {
@@ -252,30 +254,8 @@ module.exports = {
                             where: { id: productId },
                         })
                             .then(() => res.redirect("/admin/products"))
-                            .catch((error) =>
-                                res.status(500).send({
-                                    message:
-                                        "Ocurrió un error al eliminar el producto",
-                                    error,
-                                })
-                            );
+                        });
                     })
-                    .catch((error) =>
-                        res.status(500).send({
-                            message:
-                                "Ocurrió un error al eliminar las imágenes del producto",
-                            error,
-                        })
-                    );
-            })
-            .catch((error) =>
-                res.status(500).send({
-                    message:
-                        "Ocurrió un error al obtener las imágenes del producto",
-                    error,
-                })
-            );
-    },
-};
-
-
+                    .catch((error) => console.log(error));
+                },
+              };

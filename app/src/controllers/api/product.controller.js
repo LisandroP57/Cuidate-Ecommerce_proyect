@@ -1,4 +1,7 @@
-const { getProducts, getProductById } = require("../../services/product.service");
+const {
+  getProducts,
+  getProductById
+} = require("../../services/product.service");
 
 module.exports = {
   getProducts: async (req, res) => {

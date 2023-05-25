@@ -1,4 +1,4 @@
-const { Product, Category, Sequelize } = require("../database/models");
+const { Product, Category, Sequelize, Subcategory, Cart } = require("../database/models");
 const { Op } = Sequelize;
 
 module.exports = {
@@ -78,4 +78,57 @@ module.exports = {
 			})
 			.catch((error) => console.log(error));
 	},
+	subcategory: async (req,res) => {
+		Subcategory.findByPk(req.params.id, {
+		  include: [
+			{
+			  association: "products",
+			  include: [
+				{
+				  association: "images",
+				},
+			  ],
+			},
+		  ],
+		})
+		  .then((subcategory) => {
+			Category.findByPk(subcategory.category_id, {
+			  include: [{ association: "subcategories" }],
+			}).then((category) =>
+			  res.render("subcategory", {
+				category,
+				products: subcategory.products,
+				session: req.session,
+				user: req.session.user?.id || null, 
+			  })
+			);
+		  })
+		  .catch((err) => console.log(err));
+	  },
+	  cart: (req, res) => {
+		let userId = req.session.user.id;
+		Cart.findOne({
+		  where: {
+			userId: userId
+		  },
+		  include: [{association: "cartItems", include: [{association: "product", include: [{association: "images"}]}]}]
+		})
+		  .then((cart) => {
+			let products = cart?.cartItems.map((item) => {
+			  return {
+				product: item.product,
+				quantity: item.quantity,
+				id: item.id
+			  };
+			});
+	
+			res.render("productCart", {
+			  session: req.session,
+			  cart,
+			  products: products !== undefined ? products : [],
+			  user: req.session.user?.id || null,
+			});
+		  })
+		  .catch((error) => console.log(error));
+	  },
 };
