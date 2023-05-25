@@ -36,13 +36,19 @@ const productsRouter = require("./routes/products");
 const usersRouter = require('./routes/users');
 const adminRouter = require("./routes/admin");
 const apiRouter = require("./routes/api");
+const userRouter = require("./routes/api/user");
+const productRouter = require("./routes/api/product");
 
-    /* Routes Middlewares */
+/* Routes Middlewares */
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
 app.use("/admin", adminRouter);
 app.use("/api/v1", apiRouter);
+
+// Routes API
+app.use(`/api/users`, userRouter);
+app.use(`/api/products`, productRouter);
 
     /* Error 404 */
 app.use((req, res, next) => {
