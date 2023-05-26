@@ -18,9 +18,6 @@ module.exports = {
 				});
 			} catch (error) { console.error(error); }
 	},
-	shoppingcart: (req, res) => {
-		res.render("products/shoppingcart", { session: req.session });
-	},
 	detail: (req, res) => {
 		let productId = Number(req.params.id);
 
@@ -122,7 +119,7 @@ module.exports = {
 			  };
 			});
 	
-			res.render("productCart", {
+			res.render("products/shoppingcart", {
 			  session: req.session,
 			  cart,
 			  products: products !== undefined ? products : [],

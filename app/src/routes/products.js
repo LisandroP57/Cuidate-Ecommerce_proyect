@@ -5,7 +5,7 @@ const router = express.Router();
         /* Controller Require */
 const {
         search,
-        shoppingcart,
+        cart,
         detail,
         category,
         subcategory
@@ -19,7 +19,7 @@ router
         /* Search */
         .get('/search', search)
         /* Shopping cart */
-        .get('/shoppingcart', userInSessionCheck, shoppingcart)
+        .get('/shoppingcart', userInSessionCheck, cart)
         /* Detail product */
         .get('/detail/:id/', detail)
         /* Categories products */

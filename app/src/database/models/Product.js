@@ -18,7 +18,6 @@ module.exports = (sequelize, dataTypes) => {
         },
         discount: {
             type: dataTypes.INTEGER(10),
-            defaultValue: 0.0,
         },
         description: {
             type: dataTypes.STRING(255),
@@ -52,11 +51,6 @@ module.exports = (sequelize, dataTypes) => {
             as: "cartItems",
             foreignKey: "productId"
         });
-
-        /* PRODUCT.hasMany(models.ProductColor, {
-            as: "colors",
-            foreignKey: "product_id",
-        }); */
     }
 
     return PRODUCT;

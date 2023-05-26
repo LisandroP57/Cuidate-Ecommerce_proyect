@@ -1,5 +1,19 @@
 @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic|Montserrat:400,700);
 
+
+.body-cart .register-form {
+  margin: 7rem 0rem;
+}
+.products-contain {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.body-cart .register-form {
+  max-width: 60rem;
+}
+
 .html-cart {
   line-height: 1;
 }
@@ -43,14 +57,14 @@
   font-size: 2em;
   padding: 1em 0;
   border-bottom: 1px solid #dadada;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   text-transform: uppercase;
 }
 .mytitle span {
   font-family: "Droid Serif", serif;
   font-weight: normal;
   font-style: italic;
-  text-transform: lowercase;
+  text-transform: initial;
   color: #777;
 }
 
@@ -321,7 +335,7 @@ a.remove:hover {
   }
 
   .mytitle {
-    font-size: 1.5em;
+    font-size: 1.4em;
     padding: 10% 5%;
   }
 

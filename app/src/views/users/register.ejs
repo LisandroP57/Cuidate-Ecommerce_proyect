@@ -40,10 +40,13 @@
                         <small class="text-danger" id="pass1Errors">
                             <%= locals.errors && errors.pass ? errors.pass.msg : '' %>
                         </small>
-                            
-                        <label>Vuelve a ingresar la contraseña:</label>
-                        <input class="input-reg" type="password" name="pass2" placeholder="Re-ingrese su contraseña" id="pass2">
-                        <small class="text-danger" id="pass2Errors">
+                        
+                        <div class="div-password">
+                            <label>Vuelve a ingresar la contraseña:</label>
+                            <input class="input-reg" type="password" name="pass2" placeholder="Re-ingrese su contraseña" id="pass2">
+                            <img src="/images/icons/show-password.png" onclick="showPassword2()" id="showPasswordImg2" alt="">
+                        </div>
+                            <small class="text-danger" id="pass2Errors">
                             <%= locals.errors && errors.pass ? errors.pass.msg : '' %>
                         </small>
 

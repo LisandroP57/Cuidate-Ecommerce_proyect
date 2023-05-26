@@ -173,22 +173,3 @@ CREATE TABLE `cart_items` (
 INSERT INTO `cart_items` VALUES (1,2,7,2,'2021-11-18','2021-11-18');
 
 select * from cart_items;
-
-
-/*8*/
-/* DROP TABLE IF EXISTS `products_colors`;
-CREATE TABLE `products_colors` (
-  `id` int(10) NOT NULL AUTO_INCREMENT,
-  `color` varchar(50) NOT NULL,
-  `product_id` int(10) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `products_colors_FK` (`product_id`),
-  CONSTRAINT `products_colors_FK` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
-);
-
-INSERT INTO `products_colors` VALUES
-(1, 'negro', 1),
-(2, 'violeta', 2),
-(3, 'rosa',3);
-
-select * from products_colors; */

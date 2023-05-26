@@ -36,16 +36,16 @@
 							<span id="discountErrors"></span>
 						</div>
 						<div class="addInput">
-							<select class="form-select" id="specificSizeSelect" name="category">
-								<option selected hidden>Categoria</option>
+							<select class="form-select" id="categorySelect" name="category">
+								<option selected hidden value="">Categoria</option>
 								<% categories.forEach(category => { %>
 									<option 
-									value="<%- category.id %>" 
-									<%- locals.old && old.category == category.id ?
-									"selected" : category.id == product.category_id ?
-									`selected` : ""  %>>
-									<%- category.name %>
-								</option>
+										value="<%- category.id %>" 
+										<%- locals.old && old.category == category.id ?
+										"selected" : category.id == product.category_id ?
+										`selected` : ""  %>>
+										<%- category.name %>
+									</option>
 								<% }) %>
 							</select>
 							<small class="text-danger" id="categoryErrors">
@@ -53,8 +53,8 @@
 							</small>
 						</div>
 						<div class="addInput">
-							<select class="form-select" id="specificSizeSelect" name="subcategory">
-								<option selected hidden>Subcategoria :</option>
+							<select class="form-select" id="subcategorySelect" name="subcategory">
+								<option selected hidden value="">Subcategoria</option>
 								<% subcategories.forEach(subcategory => { %>
 									<option value="<%- subcategory.id %>" 
 									<%- locals.old && old.subcategory == subcategory.id ?
