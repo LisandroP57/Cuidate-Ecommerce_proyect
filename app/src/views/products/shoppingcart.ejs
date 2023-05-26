@@ -22,12 +22,12 @@
                         </a>
                       </div>
                       <div class="title_category">
-                        <a href="/products/category/2">
+                        <a href="/products/category/3">
                           <h2>KIDS</h2>
                         </a>
                       </div>
                       <div class="title_category">
-                        <a href="/products/category/3">
+                        <a href="/products/category/2">
                           <h2>Accesorios+Combos</h2>
                         </a>
                       </div>
@@ -48,7 +48,8 @@
                         <li>Borrar</li>
                     </ul>
                     <ul class="cartWrap">
-                        <li class="items odd">
+                      <li class="items odd">
+                          <% products.forEach(item => { %>
                             <div class="infoWrap">
                                 <div class="cartSection">
                                     <img
@@ -56,28 +57,29 @@
                                         alt=""
                                         class="itemImg"
                                     />
-                                    <p class="itemNumber">#QUE-007544-002</p>
-                                    <h3>Item 1</h3>
+                                    <p class="itemNumber"><%- item.id %></p>
+                                    <h3><%- item.product.name %></h3>
 
                                     <p>
                                         <input
                                             type="text"
                                             class="qty"
-                                            placeholder="3"
+                                            placeholder="<%- item.quantity %>"
                                         />
-                                        x $5.00
+                                        x $<%- item.product.price %>
                                     </p>
 
                                     <p class="stockStatus">En Stock</p>
                                 </div>
 
                                 <div class="prodTotal cartSection">
-                                    <p>$3750.00</p>
+                                    <p><%- (Number(item.product.price) * Number(item.quantity))%></p>
                                 </div>
                                 <div class="cartSection removeWrap">
                                     <a href="#" class="remove">x</a>
                                 </div>
                             </div>
+                            <% }) %>
                         </li>
                         <li class="items even">
                             <div class="infoWrap">
@@ -110,74 +112,6 @@
                                 </div>
                             </div>
                         </li>
-
-                        <li class="items odd">
-                            <div class="infoWrap">
-                                <div class="cartSection">
-                                    <img
-                                        src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg"
-                                        alt=""
-                                        class="itemImg"
-                                    />
-                                    <p class="itemNumber">#QUE-007544-002</p>
-                                    <h3>Item 1</h3>
-
-                                    <p>
-                                        <input
-                                            type="text"
-                                            class="qty"
-                                            placeholder="3"
-                                        />
-                                        x $5.00
-                                    </p>
-
-                                    <p class="stockStatus out">
-                                        Fuera de Stock
-                                    </p>
-                                </div>
-
-                                <div class="prodTotal cartSection">
-                                    <p>$2000.00</p>
-                                </div>
-                                <div class="cartSection removeWrap">
-                                    <a href="#" class="remove">x</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="items even">
-                            <div class="infoWrap">
-                                <div class="cartSection info">
-                                    <img
-                                        src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg"
-                                        alt=""
-                                        class="itemImg"
-                                    />
-                                    <p class="itemNumber">#QUE-007544-002</p>
-                                    <h3>Item 1</h3>
-
-                                    <p>
-                                        <input
-                                            type="text"
-                                            class="qty"
-                                            placeholder="3"
-                                        />
-                                        x $5.00
-                                    </p>
-
-                                    <p class="stockStatus">En Stock</p>
-                                </div>
-
-                                <div class="prodTotal cartSection">
-                                    <p>$1850.00</p>
-                                </div>
-
-                                <div class="cartSection removeWrap">
-                                    <a href="#" class="remove">x</a>
-                                </div>
-                            </div>
-                        </li>
-
-                        <!--<li class="items even">Item 2</li>-->
                     </ul>
                 </div>
 
@@ -219,6 +153,7 @@
                 </div>
             </form>
             <% } %>
+            
         </div>
         <script src="/js/cart.js"></script>
         <%- include ('../partials/footer') %>
