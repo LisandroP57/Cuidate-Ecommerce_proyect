@@ -7,11 +7,6 @@
 .products-contain {
   display: flex;
   justify-content: center;
-  flex-direction: row;
-}
-
-.body-cart .register-form {
-  max-width: 60rem;
 }
 
 .html-cart {
