@@ -62,8 +62,10 @@ CREATE TABLE `subcategories` (
 );
 
 INSERT INTO `subcategories` VALUES 
-(1,'Armas',1,NULL,NULL), (2,'Escape-rescate',1,NULL,NULL),
-(3,'Llaveros-niños',3,NULL,NULL),(4,'Muñequeras-Complementos',2,NULL,NULL),
+(1,'Armas',1,NULL,NULL),
+(2,'Escape-rescate',1,NULL,NULL),
+(3,'Llaveros-niños',3,NULL,NULL),
+(4,'Muñequeras-Complementos',2,NULL,NULL),
 (5,'Higiene',2,NULL,NULL);
 
 select * from subcategories; 
@@ -96,10 +98,10 @@ INSERT INTO `products` VALUES
 (8,'Scrunchie con Cierre + Tapavaso',1500,60,"Scrunchie con Cierre + Tapavaso",3,NULL,NULL),
 (9,'Colgantes Kids',2350,35,"Contiene, localizador Bluetooth, alarma 140db con linterna, llavero de unicarnio, llavero cinta",3,NULL,NULL),
 (10,'LLaveros Pop It y Juguetes',5500,12,"lsak",3,NULL,NULL),
-(11,'Muñequero para niños',8500,5,"lsak",3,NULL,NULL),
-(12,'Mini Llavero ⚡️',1500,25,"lsak",4,NULL,NULL),
-(13,'Cinta Cuidate',3500,85,"lsak",4,NULL,NULL),
-(14,'Pompones',1225,50,"lsak",4,NULL,NULL),
+(11,'Lapicera Navaja',8500,5,"lsak",1,NULL,NULL),
+(12,'Localizador',1500,25,"lsak",2,NULL,NULL),
+(13,'Kit basico',3500,85,"lsak",2,NULL,NULL),
+(14,'Kit Guerra',1225,50,"lsak",1,NULL,NULL),
 (15,'Alcohol en Gel',1715,5,"lsak",5,NULL,NULL);
 
 select * from products; 
@@ -122,15 +124,15 @@ INSERT INTO `products_images` VALUES
 (4, 'llaveroAlarma.jpg',4),
 (5, 'kubotanmetalico.jpg',5),
 (6, 'LLavero-Navaja.PNG',6),
-(7, 'llaveroCinta.jpg',7),
+(7, 'kitllavero.PNG',7),
 (8, 'manoplaVerde.jpg',8),
 (9, 'kitninos.jpg',9),
 (10, 'Mini-LLavero.PNG',10),
-(11, 'default-image.png',11),
-(12, 'default-image.png',12),
-(13, 'default-image.png',13),
-(14, 'default-image.png',14),
-(15, 'default-image.png',15);
+(11, 'lapiceranavaja.jpg',11),
+(12, 'localizador.jpg',12),
+(13, 'kitBasico.jpg',13),
+(14, 'kitGuerra.jpg',14),
+(15, 'alcoholengel.jpg',15);
 
 
 select * from products_images;

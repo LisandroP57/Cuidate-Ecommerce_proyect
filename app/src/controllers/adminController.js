@@ -15,13 +15,12 @@ module.exports = {
         });
     },
     users: (req, res) => {
-        User.findAll({
-        })
-        .then((users) => {
-            return res.render("admin/adminUsers", {
-                session: req.session,
-                users,
-            });
+        User.findAll({})
+            .then((users) => {
+                return res.render("admin/adminUsers", {
+                    session: req.session,
+                    users,
+                });
             })
             .catch((error) => console.log(error));
     },
@@ -262,14 +261,43 @@ module.exports = {
                 });
                 ProductImage.destroy({
                     where: { product_id: productId },
-                })
-                    .then(() => {
-                        Product.destroy({
-                            where: { id: productId },
-                        })
-                            .then(() => res.redirect("/admin/products"))
-                        });
-                    })
-                    .catch((error) => console.log(error));
-                },
-              };
+                }).then(() => {
+                    Product.destroy({
+                        where: { id: productId },
+                    }).then(() => res.redirect("/admin/products"));
+                });
+            })
+            .catch((error) => console.log(error));
+    },
+    destroyUser: (req, res) => {
+        const userId = req.params.id;
+      
+        CartItem.destroy({
+          where: { userId: userId },
+        })
+          .then(() => {
+            return User.findByPk(userId);
+          })
+          .then((user) => {
+            if (!user) {
+              throw new Error("El usuario no existe");
+            }
+      
+            if (user.avatar !== "default-image.png") {
+              const avatarPath = `./public/images/avatar/${user.avatar}`;
+              if (fs.existsSync(avatarPath)) {
+                fs.unlinkSync(avatarPath);
+              }
+            }
+      
+            return user.destroy();
+          })
+          .then(() => {
+            return res.json({ success: true, message: 'Usuario eliminado con éxito' });
+          })
+          .catch((error) => {
+            console.log(error);
+            return res.redirect("/admin/users");
+          });
+      },
+};

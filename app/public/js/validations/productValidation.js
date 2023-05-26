@@ -26,14 +26,19 @@ window.addEventListener('load', () => {
             case !$name.value.trim():
                 $nameErrors.innerHTML = 'El campo nombre es obligatorio';
                 $name.classList.add('is-invalid');
+                $name.style.border = "1px solid red";
+                $nameErrors.style.display = "block";
                 break;
             case $name.value.trim().length < 5:
                 $nameErrors.innerText = 'El campo nombre debe tener al menos 5 caracteres';
                 $name.classList.add('is-invalid')
+                $name.style.border = "1px solid red";
+                $nameErrors.style.display = "block";
                 break;
             default:
                 $name.classList.remove('is-invalid');
                 $name.classList.add('is-valid');
+                $name.style.border = "1px solid green";
                 $nameErrors.innerHTML = '';
                 break;
         }
@@ -44,14 +49,19 @@ window.addEventListener('load', () => {
             case !$price.value.trim():
                 $priceErrors.innerText = 'El precio es obligatorio';
                 $price.classList.add('is-invalid')
+                $price.style.border = "1px solid red";
+                $priceErrors.style.display = "block";
                 break;
             case !regExFloat.test($price.value):
                 $priceErrors.innerText = 'El precio debe ser un número';
                 $price.classList.add('is-invalid')
+                $price.style.border = "1px solid red";
+                $priceErrors.style.display = "block";
                 break;
             default:
                 $price.classList.remove('is-invalid');
                 $price.classList.add('is-valid');
+                $price.style.border = "1px solid green";
                 $priceErrors.innerText = ''
                 break;
         }
@@ -61,9 +71,12 @@ window.addEventListener('load', () => {
         if (!$category.value.trim()) {
           $categoryErrors.innerHTML = "Campo requerido";
           $category.classList.add("is-invalid");
+          $category.style.border = "1px solid red";
+          $categoryErrors.style.display = "block";
         } else {
           $category.classList.remove("is-invalid");
           $category.classList.add("is-valid");
+          $category.style.border = "1px solid green";
           $categoryErrors.innerHTML = "";
         }
       });
@@ -72,9 +85,12 @@ window.addEventListener('load', () => {
         if (!$subcategory.value.trim()) {
           $subcategoryErrors.innerHTML = "Campo requerido";
           $subcategory.classList.add("is-invalid");
+          $subcategory.style.border = "1px solid red";
+          $subcategoryErrors.style.display = "block";
         } else {
           $subcategory.classList.remove("is-invalid");
           $subcategory.classList.add("is-valid");
+          $subcategory.style.border = "1px solid green";
           $subcategoryErrors.innerHTML = "";
         }
     });
@@ -84,15 +100,19 @@ window.addEventListener('load', () => {
             case !$description.value.trim():
                 $descriptionErrors.innerText = 'El campo descripción es obligatorio';
                 $description.classList.add('is-invalid')
-                $description.nextElementSibling.style.color = 'red';
+                $description.style.border = "1px solid red";
+                $descriptionErrors.style.display = "block";
                 break;
             case !regExDescription.test($description.value):
                 $descriptionErrors.innerText = 'El campo descripción debe tener al menos 20 caracteres';
                 $description.classList.add('is-invalid')
+                $description.style.border = "1px solid red";
+                $descriptionErrors.style.display = "block";
                 break;
             default:
                 $description.classList.remove('is-invalid');
                 $description.classList.add('is-valid');
+                $description.style.border = "1px solid green";
                 $descriptionErrors.innerText = ''
                 break;
         }
@@ -131,7 +151,8 @@ window.addEventListener('load', () => {
       $fileErrors.innerHTML =
         "Las extensiones permitidas son .JPG - .JPEG - .PNG - .GIF)";
       $file.value = "";
-      $imgPreview.innerHTML = "";
+      $file.classList.add("is-invalid");
+      $file.style.border = "1px solid red";
       return false;
     } else {
       console.log($file.files);
@@ -143,6 +164,7 @@ window.addEventListener('load', () => {
         reader.readAsDataURL($file.files[0]);
         $fileErrors.innerHTML = "";
         $file.classList.remove("is-invalid");
+        $file.style.border = "1px solid green";
       }
     }
   });

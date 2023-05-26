@@ -22,7 +22,13 @@ module.exports = {
 		let productId = Number(req.params.id);
 
 		const PRODUCT_PROMISE = Product.findByPk(productId, {
-			include: [{ association: "images" }],
+			include: [
+				{
+					association: "subcategory",
+					include: [{ association: "category" }],
+				},
+				{ association: "images" },
+			],
 		});
 		
 		const ALL_PRODUCTS_PROMISE = Product.findAll({

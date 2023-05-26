@@ -9,7 +9,8 @@ const {
     store,
     edit,
     update,
-    destroy
+    destroy,
+    destroyUser
 } = require("../controllers/adminController");
 
 const uploadImageProduct = require("../middlewares/uploadProductImage");
@@ -40,6 +41,8 @@ router
         .put('/products/edit/:id', uploadImageProduct.array("images"), productValidator, update)
 
         /* Delete product*/
-        .delete('/products/delete/:id', userSessionAdmin, destroy);
+        .delete('/products/delete/:id', userSessionAdmin, destroy)
+        /* Delete User */
+        .delete('/user/delete/:id', userSessionAdmin, destroyUser);
 
 module.exports = router;

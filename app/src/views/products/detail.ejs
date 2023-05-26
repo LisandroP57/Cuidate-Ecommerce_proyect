@@ -7,20 +7,16 @@
 		<!-- Header -->
 		<%- include('../partials/header') %>
 		<!-- /Header -->
-		<!-- Blob Fondo -->
-		<div class="blob"></div>
-		<!-- Blob Fondo -->
+
 			<!-- product detail -->
 
 			
 				<div class="col-12">
 					<div class="">
-						<h2 class="titleDetail">Detalle del productos: <%= product.name %>
+						<h2 class="titleDetail">Detalle de producto: <%= product.name %>
 						</h2>		
 				</div>
 			</div>
-
-			<div class="separacion"></div>
 
 			<div class = "card-wrapper">
 				<div class = "card">
@@ -31,41 +27,15 @@
 						<% product.images.forEach(image => { %>
 								<img src="/images/products/<%= image.image %>" alt="product image"
 						<% }) %>
-						class="product-detail-img">						
-						<img src = "" alt = "image">
-						<img src = "" alt = "image">
-						<img src = "" alt = "image">
+						class="product-detail-img">
 					  </div>
 					</div>
-					<!-- <div class = "img-select">
-					  <div class = "img-item">
-						<a href = "#" data-id = "1">
-						  <img src = "" alt = "image">
-						</a>
-					  </div>
-					  <div class = "img-item">
-						<a href = "#" data-id = "2">
-						  <img src = "" alt = "image">
-						</a>
-					  </div>
-					  <div class = "img-item">
-						<a href = "#" data-id = "3">
-						  <img src = "images/_3.jpg" alt = "image">
-						</a>
-					  </div>
-					  <div class = "img-item">
-						<a href = "#" data-id = "4">
-						  <img src = "images/_4.jpg" alt = "image">
-						</a>
-					  </div>
-					</div> -->
 				  </div>
 				  <!-- card right -->
 				  <div class = "product-content">
 					<h2 class="product-detail-title">
 						<%= product.name %>
 					</h2>
-					<a href = "/products/allProducts" class = "product-link">Visita nuesta tienda cuidate</a>
 					<div class = "product-rating">
 					  <i class = "fas fa-star"></i>
 					  <i class = "fas fa-star"></i>
@@ -80,9 +50,9 @@
 						<!--  -->
 						<% if (product.discount > 0) { %>
 						<div class="home-product-discount">
-						Nuevo precio: <%- product.discount %>% OFF</div>
+						Descuento: <%- product.discount %>% OFF</div>
 															<% } %>
-						Precio: <%- product.price %>
+						Precio: $<%- product.price %>
 
 					</div>
 
@@ -95,14 +65,13 @@
 						<%= product.description %>
 					</p>
 					   <ul>
-						<li>Color: <span>Negro-Violetta-Rosa</span></li>
 						<li>Disponibilidad: <span>En stock</span></li>
-						<li>Category: <span> Defensa personal</span></li>
+						<li>Categoria: <span><%= product.subcategory.category.name %></span></li>
 					  </ul>
 					</div>
 		  
 					<div class = "purchase-info">
-						<label for="">Ingresa Talle o Cantidad:</label>
+						<label for="">Ingrese Cantidad:</label>
 					  <input type = "number" min = "0" value = "1">
 					 
 					  <hr>
@@ -146,8 +115,7 @@
 				</div>
 			  </div>
 
-			<!-- /product detail -->
-            <div class="separacion"></div>
+
 			<!-- card products oferts -->
 			
 			
