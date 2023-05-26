@@ -69,6 +69,7 @@ module.exports = {
 				(subcategory) => subcategory.products
 				);
 				return res.render("products/categories", {
+					title: `Categoría - ${category.name}`,
 					category,
 					subcategories: category.subcategories,
 					products: PRODUCTS.flat(),
