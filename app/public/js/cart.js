@@ -59,7 +59,7 @@ const deleteData = async (url, token) => {
 };
 
 const addToCart = async (productId) => {
-  const ENDPOINT = `${API_BASE_URL}/cart`;
+  const ENDPOINT = `${API_BASE_URL}/carts`;
   const data = {
     productId,
     quantity: 0,
@@ -70,21 +70,21 @@ const addToCart = async (productId) => {
 };
 
 const removeOneProduct = async (itemId) => {
-    const ENDPOINT = `${API_BASE_URL}/cart/${itemId}`;
+    const ENDPOINT = `${API_BASE_URL}/carts/${itemId}`;
     const response = await  putData(ENDPOINT, token);
     alert(response)
     window.location.reload();
 };
 
 const removeAllOfOneProduct = async (itemId) => {
-    const ENDPOINT = `${API_BASE_URL}/cart/${itemId}`;
+    const ENDPOINT = `${API_BASE_URL}/carts/${itemId}`;
     const response = await  deleteData(ENDPOINT, token);
     alert(response)
     window.location.reload();
 };
 
 const clearCart = async (cartId) => {
-    const ENDPOINT = `${API_BASE_URL}/cart/clear/${cartId}`;
+    const ENDPOINT = `${API_BASE_URL}/carts/clear/${cartId}`;
     const response = await  deleteData(ENDPOINT, token);
     alert(response)
     window.location.reload();

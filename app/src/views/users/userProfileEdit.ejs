@@ -30,10 +30,13 @@
                         </small>
                     </div>
                     <div class="addInput">
-                        <input type="text" name="address" placeholder="Domicilio" value="<%= user.address ? user.address : "" %>"id="address">
+                        <input type="text" name="tel" placeholder="Ingresá tu teléfono" value="<%= user.tel ? user.tel : "" %>">
                     </div>
                     <div class="addInput">
-                        <input type="text" name="postal_code" placeholder="Código postal" value="<%= user.postal_code ? user.postal_code : "" %>"id="postal_code">
+                        <input type="text" name="address" placeholder="Domicilio" id="address" value="<%= user.address ? user.address : "" %>">
+                    </div>
+                    <div class="addInput">
+                        <input type="text" name="postal_code" placeholder="Código postal" id="postal_code" value="<%= user.postal_code ? user.postal_code : "" %>">
                         <small class="text-danger" id="postal_code">
                             <%= locals.errors && errors.postal_code ? errors.postal_code.msg : '' %>
                         </small>

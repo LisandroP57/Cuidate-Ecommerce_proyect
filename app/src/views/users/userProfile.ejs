@@ -26,9 +26,10 @@
                                 <hr>
                                 <p class="user-profile-item">Nombre: <%= user.name %></p>
                                 <p class="user-profile-item">Email: <%= user.email %></p>
+                                <p class="userProfile_item">Teléfono: <%= user.tel ? user.tel : "______" %></p>
                             </div>
                             <div class="user-profile-box">
-                                <h3 class="user-profile-title">Datos fiscales</h3>
+                                <h3 class="user-profile-title">Datos de contacto</h3>
                                 <hr>
                                 <p class="userProfile_item">Dirección: <%= user.address ? user.address : "______" %></p>
                                 <p class="userProfile_item">Código postal: <%= user.postal_code ? user.postal_code : "______" %></p>

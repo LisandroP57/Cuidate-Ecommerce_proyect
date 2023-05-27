@@ -24,13 +24,8 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(70),
             allowNull: false,
         },
-        postal_code: {
-            type: dataTypes.INTEGER(10),
-            allowNull: false,
-        },
-        address: {
-            type: dataTypes.STRING(30),
-            allowNull: true,
+        phone: {
+            type: dataTypes.INTEGER(20),
         },
         role: {
             type: dataTypes.INTEGER(2),
@@ -50,11 +45,11 @@ module.exports = (sequelize, dataTypes) => {
 
     const USER = sequelize.define(alias, cols, config);
 
-    USER.associate = (models) => {
+    /* USER.associate = (models) => {
         USER.hasOne(models.Cart, {
             as: "cart",
             foreignKey: "userId",
-        })    
-    };
+        })
+    }; */
     return USER;
 }

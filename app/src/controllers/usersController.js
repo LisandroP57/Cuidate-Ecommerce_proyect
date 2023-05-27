@@ -2,6 +2,7 @@ const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const { User } = require("../database/models");
 const axios = require("axios");
+const {generateToken} = require("../helpers/jwt.helper")
 
 module.exports = {
     login: (req, res) => {
@@ -24,6 +25,8 @@ module.exports = {
                     role: user.role
                 }
 
+                const token = generateToken(user);
+
                 let cookieLifeTime = new Date(Date.now() + 60000);
                 
                 if (req.body.remember) {
@@ -38,7 +41,7 @@ module.exports = {
 
                 res.locals.user = req.session.user;
                 
-                res.redirect("/");
+                res.redirect(`/?token=${token}`);
             })
             .catch(error => console.log())
         } else {
@@ -68,8 +71,7 @@ module.exports = {
                 pass: bcrypt.hashSync(req.body.pass1, 12),
                 avatar: req.file ? req.file.filename : "default-image.png",
                 role: 0,
-                postal_code:"",
-                
+                phone: ""
             };
 
             User.create(newUser)
@@ -101,7 +103,7 @@ module.exports = {
             .then((user) => {
                 res.locals.user = user;
                 res.render("users/userProfile", {
-                    user: user,
+                    user,
                     session: req.session
                 })
             })
@@ -113,10 +115,7 @@ module.exports = {
         try {
             const user = await User.findByPk(userInSessionId);
             const { data } = await axios.get("https://apis.datos.gob.ar/georef/api/provincias?campos=nombre,id")
-            user.cp = "7777"
-            user.tel = "0303456"
-            user.address = "macaco"
-
+            
             res.render("users/userProfileEdit", {
                 user,
                 provinces: data.provincias,
@@ -126,58 +125,58 @@ module.exports = {
             console.log(error)
         }
     },
-    updateProfile: (req, res) => {
+    updateProfile: async (req, res) => {
         let errors = validationResult(req);
-
+      
         if (errors.isEmpty()) {
+          let userId = req.session.user.id;
+      
+          try {
+            const user = await User.findByPk(userId);
+      
             const {
-                name,
-                last_name,
-                address,
-                postal_code,
-                province,
-                city,
+              name,
+              last_name,
+              tel,
+              address,
+              postal_code,
+              province,
+              city,
             } = req.body;
-
-            User.update(
-                {
-                    name,
-                    last_name,
-                    address,
-                    postal_code,
-                    province,
-                    city,
-                    avatar: req.file ? req.file.filename : req.session.user.avatar,
-                },
-                { where: 
-                    { id: req.session.user.id }
-                }
-            )
-            .then(() => {
-                req.session.user.name = name;
-                req.session.user.last_name = last_name;
-                req.session.user.address = address;
-                req.session.user.postal_code = postal_code;
-                req.session.user.province = province;
-                req.session.user.city = city;
-                req.session.user.avatar = req.file ? req.file.filename : req.session.user.avatar;
-                delete req.session.user.pass;
-                return res.redirect("/users/profile");
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+      
+            user.name = name;
+            user.last_name = last_name;
+            user.tel = tel;
+            user.address = address;
+            user.postal_code = postal_code;
+            user.province = province;
+            user.city = city;
+            user.avatar = req.file ? req.file.filename : user.avatar;
+      
+            delete user.password;
+      
+            await user.save();
+      
+            req.session.user = user;
+      
+            return res.redirect("/users/profile");
+          } catch (error) {
+            console.log(error);
+          }
         } else {
+          const userInSessionId = req.session.user.id;
+      
+          try {
+            const userInSession = await User.findByPk(userInSessionId);
+      
             return res.render("users/userProfileEdit", {
-                user: req.session.user,
-                session: req.session,
-                errors: errors.mapped(),
-                old: {
-                    name: req.body.name,
-                    email: req.body.email,
-                    postal: req.body.postal_code,
-                }
-            })
+              user: userInSession,
+              session: req.session,
+              errors: errors.mapped(),
+            });
+          } catch (error) {
+            console.log(error);
+          }
         }
-    }
+      },
 }
