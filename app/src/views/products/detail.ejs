@@ -77,9 +77,9 @@
 					  <hr>
 									<a href="#" class="buy-now-button-detail">COMPRAR AHORA</a>
 									<% if (session.user !== undefined) { %>
-										<div class="btn btn-ad-primary" id="btnAddToCart" onclick="addToCart('<%= product.id %>')">Agregar al carrito</div>
-										<% } else { %>
-										<div class="btn btn-ad-primary" id="btnAddToCartNotLogin">Agregar al carrito Sin log</div>
+										<div class="pre-cart">
+											<div class="btn btn-ad-primary" id="btnAddToCart" onclick="addToCart('<%= product.id %>')">Agregar al carrito</div>
+										</div>
 									<% } %>
 									<hr>
 					</div>

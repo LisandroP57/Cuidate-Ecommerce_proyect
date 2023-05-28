@@ -44,7 +44,7 @@
                     <ul class="tableHead">
                         <li class="prodHeader">Producto</li>
                         <li>Total</li>
-                        <li>Borrar</li>
+                        <li class="delete">Borrar</li>
                     </ul>
                     <ul class="cartWrap">
                       <li class="items odd">
@@ -55,11 +55,11 @@
                                     
                                     <h3><%- item.product.name %></h3>
                                     <p>
-                                        <button type="button" class="btn-subtract" onclick="removeOneProduct('<%- item.id %>')">
+                                        <button type="button" class="btn-rest" onclick="removeOneProduct('<%- item.id %>')">
                                             -
                                         </button>
                                         <input type="text" class="qty" placeholder="<%- item.quantity %>"/>
-                                        <button type="button" id="btn-add" onclick="addToCart('<%= item.product.id %>')">
+                                        <button type="button" class="btn-add id="btn-add" onclick="addToCart('<%= item.product.id %>')">
                                             +
                                         </button>
                                         x $<%- item.product.price %>
@@ -82,13 +82,8 @@
                 </div>
 
                 <div class="promoCode">
-                    <label for="promo">Tenes un cupon de descuento?</label
-                    ><input
-                        type="text"
-                        ="promo"
-                        value="Ingresalo!"
-                        placholder="Enter Code"
-                    />
+                    <label for="promo">Tenes un cupon de descuento?</label>
+                    <input type="text" placeholder="Ingresalo!"/>
                     <a href="#" class="btn"></a>
                 </div>
 

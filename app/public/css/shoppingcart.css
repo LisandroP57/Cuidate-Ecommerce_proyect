@@ -110,12 +110,14 @@
 
 .tableHead {
   display: table;
-  width: 102%;
+  margin-left: 4rem;
+  display: table;
+  width: 100%;
   font-family: "Montserrat", sans-serif;
 }
 .tableHead li {
   display: table-cell;
-  padding: 1em 0;
+  padding: 1em 1em;
   text-align: center;
 }
 
@@ -138,6 +140,7 @@
 .cart .items .cartSection {
   display: table-cell;
   vertical-align: middle;
+  max-width: 9.5rem;
 }
 .cart .items .cartSection .itemNumber {
   font-size: .75em;
@@ -153,6 +156,7 @@
   letter-spacing: .025em;
 }
 .cart .items .cartSection p {
+  padding: 0em 15px;
   display: inline-block;
   font-size: .85em;
   color: #777777;
@@ -184,6 +188,9 @@
   width: 8em;
   display: inline;
   margin-right: 1em;
+}
+.delete {
+  color: transparent;
 }
 
 .remove {
@@ -350,7 +357,7 @@
     display: none;
   }
   .cart .items .cartSection .itemImg {
-    width: 25%;
+    width: 80%;
   }
 
   .promoCode, .subtotal {
@@ -360,5 +367,30 @@
   a.btn.continue {
     width: 100%;
     text-align: center;
+  }
+}
+
+.btn-rest {
+  width: 20px;
+  border: 1px solid red;
+}
+
+.btn-add {
+  width: 20px;
+  border: 1px solid green;
+}
+@media (min-width: 601px) {
+  .delete {
+    color:#333;
+  }
+  .tablehead {
+    margin-left: 7rem;
+    display: table;
+    width: 81%;
+  }
+}
+@media (min-width: 667px) {
+  .tablehead {
+    width: 87%;
   }
 }
