@@ -12,7 +12,7 @@
                 <form class="register-form">
                     <h2 class="title">Actualmente no hay productos en su carrito!</h2>
                     <h4 class="subtitle">
-                        Selecciona alguna de nuestras categorías para encontrar los
+                        Elije alguna de nuestras categorías para encontrar los
                         mejores productos:
                     </h4>
                     <section class="section-categories">
@@ -37,13 +37,12 @@
             <% } else { %>
 
             <div class="continue cf">
-                <a href="#" class="continue">Continuar comprando</a>
+                <a href="#" class="continue" onclick="clearCart('<%= cart.id %>')">Vaciar mi carrito</a>
             </div>
             <form action="">
                 <div class="cart">
                     <ul class="tableHead">
                         <li class="prodHeader">Producto</li>
-                        <li>Cantidad</li>
                         <li>Total</li>
                         <li>Borrar</li>
                     </ul>
@@ -52,65 +51,32 @@
                           <% products.forEach(item => { %>
                             <div class="infoWrap">
                                 <div class="cartSection">
-                                    <img
-                                        src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg"
-                                        alt=""
-                                        class="itemImg"
-                                    />
-                                    <p class="itemNumber"><%- item.id %></p>
+                                    <img class="itemImg" src="/images/products/<%- item.product.images[0] ? item.product.images[0].image : '' %>" alt="">
+                                    
                                     <h3><%- item.product.name %></h3>
-
                                     <p>
-                                        <input
-                                            type="text"
-                                            class="qty"
-                                            placeholder="<%- item.quantity %>"
-                                        />
+                                        <button type="button" class="btn-subtract" onclick="removeOneProduct('<%- item.id %>')">
+                                            -
+                                        </button>
+                                        <input type="text" class="qty" placeholder="<%- item.quantity %>"/>
+                                        <button type="button" id="btn-add" onclick="addToCart('<%= item.product.id %>')">
+                                            +
+                                        </button>
                                         x $<%- item.product.price %>
+                                        
                                     </p>
-
-                                    <p class="stockStatus">En Stock</p>
                                 </div>
-
                                 <div class="prodTotal cartSection">
-                                    <p><%- (Number(item.product.price) * Number(item.quantity))%></p>
+                                    <p>$<%- (Number(item.product.price) * Number(item.quantity))%></p>
                                 </div>
                                 <div class="cartSection removeWrap">
-                                    <a href="#" class="remove">x</a>
+                                    <button class="remove" onclick="removeAllOfOneProduct('<%- item.id %>')">
+                                        x
+                                    </button>
                                 </div>
                             </div>
+                            <br>
                             <% }) %>
-                        </li>
-                        <li class="items even">
-                            <div class="infoWrap">
-                                <div class="cartSection">
-                                    <img
-                                        src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg"
-                                        alt=""
-                                        class="itemImg"
-                                    />
-                                    <p class="itemNumber">#QUE-007544-002</p>
-                                    <h3>Item 1</h3>
-
-                                    <p>
-                                        <input
-                                            type="text"
-                                            class="qty"
-                                            placeholder="3"
-                                        />
-                                        x $5.00
-                                    </p>
-
-                                    <p class="stockStatus">En Stock</p>
-                                </div>
-
-                                <div class="prodTotal cartSection">
-                                    <p>$1500.00</p>
-                                </div>
-                                <div class="cartSection removeWrap">
-                                    <a href="#" class="remove">x</a>
-                                </div>
-                            </div>
                         </li>
                     </ul>
                 </div>
@@ -134,13 +100,8 @@
                         </li>
 
                         <li class="totalRow">
-                            <span class="label">Shipping</span
-                            ><span class="value">$500.00</span>
-                        </li>
-
-                        <li class="totalRow">
-                            <span class="label">Tax</span
-                            ><span class="value">$1500.00</span>
+                            <span class="label">Envio</span
+                            ><span class="value">$1500</span>
                         </li>
                         <li class="totalRow final">
                             <span class="label">Total</span
