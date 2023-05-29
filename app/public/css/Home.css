@@ -144,7 +144,8 @@ aside {
     color: var(--clr-white);
 }
 .mainHome {
-    background-color: var(--clr-white);
+    background: url('/images/backgrounds/blue.jpg');
+    background-size: contain;
     margin: 3rem;
     margin-left: 0;
     border-radius: 2rem;

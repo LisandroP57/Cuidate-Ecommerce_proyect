@@ -6,8 +6,7 @@
         height: 100%;
     }
     .body-user-profile {
-        background-image: url(/images/backgrounds/123.jpg);
-        
+        background-color:#eee;
         font-family: "Roboto", sans-serif;
         margin: 0;
     }
