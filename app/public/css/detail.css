@@ -21,6 +21,7 @@
   justify-content: center;
 }
 .titleDetail {
+  margin-top: 1rem;
   text-align: center;
   font-weight: 90;
   font-size: 3rem;
@@ -77,6 +78,11 @@ background: transparent;
 }
 .img-display{
   overflow: hidden;
+  box-shadow: 5px 5px 10px rgb(0 0 0 / 50%);
+  transition: 1s;
+}
+.img-display:hover{
+  transform: scale(1.1);
 }
 .img-showcase{
   display: flex;
@@ -612,7 +618,7 @@ button:hover {
       border-radius: 30px,30px;
   }
   .card-wrapper{
-      height: 1000vh;
+      height: 265vh;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -689,7 +695,6 @@ button:hover {
       .card-wrapper{
         max-width: 700px;
         margin: 0 auto;
-        height: 265vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -701,7 +706,6 @@ button:hover {
         }
     }
     @media screen and (min-width: 1024px) {
-
       .products-title {
         font-weight: 900;
         font-size: 3rem;

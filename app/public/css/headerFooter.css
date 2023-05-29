@@ -3,6 +3,10 @@ footer.principal {
     background-color: #724A81;
 }
 
+footer ol, ul {
+    padding-left: 0rem;
+}
+
 footer.principal div.footer-redes-data h3 {
     background-color: black;
     border-radius: 10px 0 10px 0;
@@ -43,7 +47,7 @@ header.containerHeader div.primer-menu {
 }
 
 header.containerHeader div.primer-menu div.menu-hamburguesa {
-    margin-right: 1rem;
+    margin-right: 0.5rem;
 }
 
 header.containerHeader div.primer-menu div.menu-hamburguesa img {
@@ -168,7 +172,7 @@ header.containerHeader div.primer-menu a {
     justify-content: center;
     align-items: center;
     height: 35px;
-    margin: 0rem 0.5rem 0rem 0.5rem;
+    margin: 0rem 0.4rem 0rem 0.4rem;
   }
   
   .home-search-input {
