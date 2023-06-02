@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const process = require("process");
 const secret = process.env.JWT_SECRET;
 
-const authToken = (req, res, next) => {
+const verifyToken = (req, res, next) => {
   const token = req.headers.authorization.split(" ")[1];
 
   if (!token) {
@@ -18,4 +18,4 @@ const authToken = (req, res, next) => {
   });
 };
 
-module.exports = authToken;
+module.exports = verifyToken;
