@@ -12,6 +12,7 @@ const {
         forgetPassword,
         editProfile,
         updateProfile,
+        googleLogin
  } = require('../controllers/usersController');
 
 
@@ -22,6 +23,8 @@ const userInSessionCheck = require("../middlewares/userInSessionCheck");
 const updateUserValidator = require("../validations/updateUserValidator");
 const forgetPassValidator = require("../validations/forgetPassValidator");
 const sessionUserCheck = require("../middlewares/sessionUserCheck");
+const passport = require("passport");
+require("../middlewares/passportConfig")(passport);
 
 router
         .get('/login', sessionUserCheck, login)
@@ -38,5 +41,14 @@ router
         .get('/profile', userInSessionCheck, profile)
         .get('/profile/edit', userInSessionCheck, editProfile)
         .put('/profile/edit', uploadAvatar.single("avatar"), updateUserValidator, updateProfile)
+
+        // Google sesion
+        .get('/auth/google',
+        passport.authenticate('google', { scope: ['profile', "email"] }))
+
+        // Redireccionamiento post login
+        .get('/auth/google/callback',
+        passport.authenticate('google', { failureRedirect: '/users/login' }),
+        googleLogin);
 
 module.exports = router;

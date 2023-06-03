@@ -6,6 +6,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const cookieParser = require("cookie-parser");
 const cookieCheck = require("./middlewares/cookieCheck");
+const passport = require("passport");
 
 require('dotenv').config();
 
@@ -28,6 +29,8 @@ app.set('views', path.join(__dirname, '/views'));
     }));
     app.use(cookieParser());
     app.use(cookieCheck);
+    app.use(passport.initialize());
+    app.use(passport.session());
 
     /* Routes  */
 const indexRouter = require("./routes");

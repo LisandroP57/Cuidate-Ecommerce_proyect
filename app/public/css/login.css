@@ -303,3 +303,48 @@
         justify-content: space-evenly;
     }
 }/* FIN Desktop */
+
+/* Login with google */
+.googleSigninButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.googleSigninButton #customBtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    color: #444;
+    border-radius: 5px;
+    border: thin solid #888;
+    box-shadow: 1px 1px 1px grey;
+    width: 250px;
+    padding: 0 1rem;
+}
+  
+.googleSigninButton #customBtn:hover {
+    cursor: pointer;
+}
+  
+.googleSigninButton span.label {
+    font-family: serif;
+    font-weight: normal;
+}
+  
+.googleSigninButton span.icon {
+    background: url("https://developers-dot-devsite-v2-prod.appspot.com/identity/sign-in/g-normal.png")
+      50% no-repeat;
+    background-size: contain;
+    width: 3rem;
+    height: 3rem;
+}
+.googleSigninButton span.buttonText {
+    padding-left: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+}
+#customBtn.bg-primary {
+    background-color: white !important;
+}

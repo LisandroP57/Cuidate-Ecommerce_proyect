@@ -179,5 +179,8 @@ module.exports = {
             console.log(error);
           }
         }
-      },
+    },
+    googleLogin: async (req, res) => {
+        res.redirect("/")
+    }
 }
