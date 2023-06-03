@@ -48,11 +48,11 @@ module.exports = (sequelize, dataTypes) => {
 
     const USER = sequelize.define(alias, cols, config);
 
-    USER.associate = (models) => {
+    /* USER.associate = (models) => {
         USER.hasOne(models.Cart, {
             as: "cart",
             foreignKey: "userId",
         })
-    };
+    }; */
     return USER;
 }

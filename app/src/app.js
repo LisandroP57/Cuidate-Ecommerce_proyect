@@ -18,19 +18,19 @@ app.set("view engine", "ejs");
 app.set('views', path.join(__dirname, '/views'));
 
     /* Middlewares */
-    app.use(express.json());
-    app.use(express.urlencoded({ extended: false }));
-    app.use(methodOverride("_method"));
-    app.use(express.static(path.join(__dirname, '../public')));
-    app.use(session({
-        secret: "cuidate",
-        resave: false,
-        saveUninitialized: true
-    }));
-    app.use(passport.session());
-    app.use(passport.initialize());
-    app.use(cookieParser());
-    app.use(cookieCheck);
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride("_method"));
+app.use(express.static(path.join(__dirname, '../public')));
+app.use(session({
+    secret: "cuidate",
+    resave: false,
+    saveUninitialized: true
+}));
+app.use(passport.session());
+app.use(passport.initialize());
+app.use(cookieParser());
+app.use(cookieCheck);
 
     /* Routes  */
 const indexRouter = require("./routes");
@@ -41,8 +41,8 @@ const apiRouter = require("./routes/api");
 
     /* Routes Middlewares */
 app.use("/", indexRouter);
-app.use("/users", usersRouter);
 app.use("/products", productsRouter);
+app.use("/users", usersRouter);
 app.use("/admin", adminRouter);
 app.use("/api/v1", apiRouter);
 
