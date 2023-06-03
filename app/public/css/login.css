@@ -306,16 +306,17 @@
 
 /* Login with google */
 .googleSigninButton {
+    font-weight: 600;
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+    margin: 1rem 0rem;
 }
 .googleSigninButton #customBtn {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: white;
-    color: #444;
+    color: #000000;
     border-radius: 5px;
     border: thin solid #888;
     box-shadow: 1px 1px 1px grey;
