@@ -12,8 +12,6 @@ module.exports = (passport) => {
   passport.use(
     new Strategy(CONFIGS, async (accessToken, refreshToken, profile, done) => {
       try {
-        console.log(profile)
-        console.log(profile.name.givenName)
         const [user, created] = await User.findOrCreate({
             where: {
               googleId: profile.id,

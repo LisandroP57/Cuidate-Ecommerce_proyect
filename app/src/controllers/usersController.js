@@ -181,6 +181,13 @@ module.exports = {
         }
     },
     googleLogin: async (req, res) => {
+        let user = req.session.passport.user;
+        req.session.user = {
+            id: user.id,
+            name: user.name,
+            avatar: user.avatar,
+            role: user.role
+        }
         res.redirect("/")
-    }
+    },
 }

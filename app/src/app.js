@@ -27,10 +27,10 @@ app.set('views', path.join(__dirname, '/views'));
         resave: false,
         saveUninitialized: true
     }));
+    app.use(passport.session());
+    app.use(passport.initialize());
     app.use(cookieParser());
     app.use(cookieCheck);
-    app.use(passport.initialize());
-    app.use(passport.session());
 
     /* Routes  */
 const indexRouter = require("./routes");

@@ -15,7 +15,6 @@ const {
         googleLogin
  } = require('../controllers/usersController');
 
-
 const uploadAvatar = require("../middlewares/uploadAvatar");
 const registerValidator = require("../validations/registerValidator");
 const loginValidator = require("../validations/loginValidator");
@@ -25,6 +24,8 @@ const forgetPassValidator = require("../validations/forgetPassValidator");
 const sessionUserCheck = require("../middlewares/sessionUserCheck");
 const passport = require("passport");
 require("../middlewares/passportConfig")(passport);
+passport.serializeUser(function(user, done) {done(null, user);});
+passport.deserializeUser(function(user, done) {done(null, user);});
 
 router
         .get('/login', sessionUserCheck, login)
