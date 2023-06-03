@@ -1,19 +1,19 @@
 @import url('variables.css');
 @import url('general.css');
-@import url('header.css');
-@import url('carrousel.css');
-@import url('footer.css');
-@import url('products.css');
+@import url('headerFooter.css');
+@import url('detail.css');
 @import url('home.css');
 @import url('login.css');
 @import url('register.css');
-@import url('forgetPassword.css');
-@import url('carrito.css');
+@import url('shoppingcart.css');
 @import url('create-edit.css');
 @import url('not-found.css');
+@import url('userProfileAndEdit.css');
+@import url('swiper-bundle.min.css');
+@import url('admin-momentaneo');
+@import url('btnFlotante.css');
+@import url('admin.css');
 @import url('searchResults.css');
-@import url('userProfile.css');
-@import url('userProfileEdit.css');
 
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2&family=Poppins&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+/* @import url('sliderMarquesina.css');
+@import url('carrouselHome.css'); */

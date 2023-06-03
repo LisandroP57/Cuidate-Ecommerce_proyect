@@ -1,20 +1,10 @@
-@import url('headerFooter.css');
-
-  /* GENERALES */
-
-header {
-    position: relative;
-    z-index: 1;
-}
-
-footer {
-    position: relative;
-    z-index: 1;
-}
-  
 footer.principal {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #724A81;
+}
+
+footer ol, ul {
+    padding-left: 0rem;
 }
 
 footer.principal div.footer-redes-data h3 {
@@ -24,7 +14,6 @@ footer.principal div.footer-redes-data h3 {
     width: 120%;
     font-size: 12px;
     text-align: center;
-    margin-top: 10px;
 }
 
 footer.principal div.links h3 {
@@ -34,9 +23,10 @@ footer.principal div.links h3 {
     width: 100%;
     font-size: 12px;
     text-align: center;
+    margin-top: 1rem;
 }
 
-header {
+.containerHeader {
     border: 1px solid rgb(166, 166, 166);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -57,7 +47,7 @@ header.containerHeader div.primer-menu {
 }
 
 header.containerHeader div.primer-menu div.menu-hamburguesa {
-    margin-right: 1rem;
+    margin-right: 0.5rem;
 }
 
 header.containerHeader div.primer-menu div.menu-hamburguesa img {
@@ -91,31 +81,63 @@ header.containerHeader div.primer-menu div.iniciar .user .img-avatar {
 }
 
 .user .online {
-    color: rgb(31, 148, 31);
-    margin-top: 0.5rem;
+    color: rgb(51, 184, 51);
 }
 
 .menu-user {
     display: none;
     position: absolute;
-    font-size: 1rem;
-    width: 8rem;
-    background-color: #724A81;
-    border: solid 1px rgb(148, 148, 148);
-    padding: 1rem;
-    border-radius: .5rem;
     margin-top: 3rem;
+    width: 200px;   
+}
+
+.menu-user li {
+    display: flex;
+    
+    align-items: center;
+}
+
+.menu-user li i {
+    display: flex;
+    align-items:center;
+    margin-right: 1rem;
 }
 
 .user:hover .menu-user{
    display: block;
 }
+
+.menu-user-button {
+    font-weight: 500;
+    text-shadow: 1px 1px 1px rgba(#BA6D91,.8);
+    display: block;
+    background-color: #9977A6;
+    padding: .6em;
+    box-shadow: 1px 0px 1px 0px #1a1a1a, inset 1px 1px 2px 1px rgba(#FFC3A7, .6);
+}
+.menu-user .menu-user-button {
+    border-radius: 0;
+    border-bottom: 1px solid #724A81;
+}
+.unread {
+    background-color: #C8ABD0;
+    float: right;
+    width: 1.5em;
+    text-align: center;
+    padding: .1em .3em;
+    border-radius: 6px;
+    font-size: .7em;
+    font-weight: 700;
+    box-shadow: inset 1px 1px 1px 0px rgba(199, 109, 88, 0.8);
+}
+
         /* Fin avatar y session */
 
 
 header.containerHeader div.primer-menu div.iniciar .user img {
     width: 40px;
     height: 40px;
+    border-radius: 50%;
     transition: 1s;
 }
 
@@ -124,28 +146,89 @@ transform: rotateY(360deg);
 cursor: pointer;
 }
 
-header.containerHeader div.primer-menu div.carrito img {
+header.containerHeader div.primer-menu div.shoppingcart img {
     width: 30px;
     height: 30px;
     transition: 1s;
 }
 
-header.containerHeader div.primer-menu div.carrito img:hover {
+header.containerHeader div.primer-menu div.shoppingcart img:hover {
     transform: rotateY(360deg);
     cursor: pointer;
 }
 
-header.containerHeader div.primer-menu div.carrito a {
+header.containerHeader div.primer-menu div.shoppingcart a {
     font-size: 0px   ;
 }
 
 header.containerHeader div.primer-menu a {
     font-size: 15px;
-    padding-top: 10px;
     font-weight: 600;
 }
+    
+/* BUSCADOR */
+.header-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    margin: 0rem 0.4rem 0rem 0.4rem;
+  }
+  
+  .home-search-input {
+    width: 8rem;
+    max-width: 530px;
+    height: 100%;
+    outline: none;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #724A81;
+    caret-color: #f7f7f8;
+    color: #fff;
+    padding: 7px 10px;
+    border: 2px solid transparent;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    margin-right: 1px;
+    transition: all .2s ease;
+  }
+  
+  .home-search-input:hover {
+    border: 2px solid rgba(255, 255, 255, 0.16);
+  }
+  
+  .home-search-input:focus {
+    border: 2px solid #4e4b4e;
+    background-color: #9977A6;
+  }
 
-nav.navegador ul.menu {
+  .home-search-input::placeholder {
+    color: white;
+  }
+  
+  .search__btn {
+    border: none;
+    cursor: pointer;
+    background-color: #724A81;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    height: 100%;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search__btn:hover {
+    background-color: #9977A6;
+  }
+/* FIN BUSCADOR */
+
+
+
+
+/* POR SI SE QUIERE USAR UN NAV DEBAJO DEL BUSCADOR
+ nav.navegador ul.menu {
     display: flex;
     justify-content: center;
 }
@@ -164,55 +247,18 @@ nav.navegador ul.menu li {
 nav.navegador ul.menu li:hover{
     width: 11%;
     transform: scale(1.1);
-}
-
-header.containerHeader div.primer-menu div.buscador {
-    display: flex;
-    align-items: center;
-    border-radius: 20px 2px 20px 2px;
-    box-shadow: #4e4b4e 1px 1px 1px;
-    background-color: #724A81;
-    margin: 0rem 1rem 0rem 1rem;
-}
-
-header.containerHeader div.primer-menu div.buscador .input-header {
-    background-color: #724A81;
-    border: solid 1px var(--light-gray);
-    border-radius: 20px 2px 20px 2px;
-    display: block;
-    width: 100%;
-    padding: 7px 35px 7px 25px;
-}
-
-header.containerHeader div.primer-menu div.buscador .input-header::placeholder {
-    color: white;
-}
-
-header.containerHeader div.primer-menu div.buscador button{
-    background-color: #724A81;
-    color: white;
-    border: none;
-    padding: 1px 1px;
-    margin-right: 15px;
-    cursor: pointer;
-    border-left: solid 1px white;
-}
-
-header.containerHeader div.primer-menu div.buscador i{
-    margin-left: 10px;
-}
-
+} */
         /* FIN GENERALES */
 
         /* MOBILE */
 @media (max-width: 767px) {
 
-    header.containerHeader div.logo a img {
+    header.containerHeader div.header-logo a img {
         width: 40px;
         height: 40px;
     }
 
-    header.containerHeader div.logo span {
+    header.containerHeader div.header-logo span {
         display: none;
     }
 
@@ -244,8 +290,8 @@ header.containerHeader div.primer-menu div.buscador i{
     }
 
     footer.principal div.footer-logo img {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
     }
 
     footer.principal div.footer-logo span {
@@ -259,7 +305,7 @@ header.containerHeader div.primer-menu div.buscador i{
         align-items: center;
     }
 
-    footer.principal div.footer-redes-data ul.redes {
+    footer.principal div.footer-redes-data ul.footer-redes {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -268,7 +314,7 @@ header.containerHeader div.primer-menu div.buscador i{
         margin-top: 5px;
     }
 
-    footer.principal div.footer-redes-data ul.redes img {
+    footer.principal div.footer-redes-data ul.footer-redes img {
         width: 30px;
         height: 30px;
     }
@@ -321,6 +367,14 @@ header.containerHeader div.primer-menu div.buscador i{
         /* TABLET */
 @media (min-width: 768px) and (max-width: 1023px) {
 
+    .header-search {
+        width: 25rem;
+    }
+    .home-search-input {
+        width:100%;
+        max-width: 25rem;
+    }
+
     header.containerHeader div.primer-menu div.crear {
         display: none;
     }
@@ -333,22 +387,13 @@ header.containerHeader div.primer-menu div.buscador i{
         display: none;
     }
 
-    header.containerHeader div.primer-menu div.logo img {
+    header.containerHeader div.primer-menu div.header-logo img {
         width: 60px;
         height: 60px;
     }
 
-    header.containerHeader div.primer-menu div.logo span{
+    header.containerHeader div.primer-menu div.header-logo span{
         display: none;
-    }
-
-    header.containerHeader div.primer-menu div.buscador {
-        width: 50%;
-    }
-
-    header.containerHeader div.primer-menu div.buscador button{
-        position: absolute;
-        right: 9.8rem;
     }
     /* FOOTER */
     footer.principal {
@@ -366,8 +411,9 @@ header.containerHeader div.primer-menu div.buscador i{
     }
 
     footer.principal div.footer-logo img {
-        width: 50px;
-        height: 50px;
+        margin-top: 1rem;
+        width: 70px;
+        height: 70px;
     }
 
     footer.principal div.footer-logo span {
@@ -381,7 +427,7 @@ header.containerHeader div.primer-menu div.buscador i{
         align-items: center;
     }
 
-    footer.principal div.footer-redes-data ul.redes {
+    footer.principal div.footer-redes-data ul.footer-redes {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -390,7 +436,7 @@ header.containerHeader div.primer-menu div.buscador i{
         margin-top: 5px;
     }
 
-    footer.principal div.footer-redes-data ul.redes img {
+    footer.principal div.footer-redes-data ul.footer-redes img {
         width: 30px;
         height: 30px;
     }
@@ -439,39 +485,24 @@ header.containerHeader div.primer-menu div.buscador i{
         /* DESKTOP */
 @media (min-width: 1024px) {
 
+    .header-search {
+        width: 35rem;
+    }
+    .home-search-input {
+        width:100%;
+        max-width:35rem;
+    }
+
     header.containerHeader div.primer-menu div.menu-hamburguesa {
         display: none;
     }
 
-    header.containerHeader div.primer-menu div.logo img {
+    header.containerHeader div.primer-menu div.header-logo img {
         width: 65px;
         height: 65px;
     }
-    /*  */
-    header.containerHeader div.primer-menu div.buscador{
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 50%;
-        margin: 0rem 2rem 0rem 2rem;
-    }
 
-    header.containerHeader div.primer-menu div.buscador .search-form {
-        background-color: #724A81;
-       /*  border: solid 1px gray; */
-        display: block;
-        width: 100%;
-        border-radius: 20px 2px 20px 2px;
-    }
-
-    header.containerHeader div.primer-menu div.buscador button{
-        position: absolute;
-        right: 2px;
-        height: 50%;
-    }
-
-    header.containerHeader div.primer-menu div.logo {
+    header.containerHeader div.primer-menu div.header-logo {
         padding: 0.5rem;
     }
 
@@ -502,7 +533,7 @@ header.containerHeader div.primer-menu div.buscador i{
         margin-bottom: 2px;
     }
 
-    header.containerHeader div.primer-menu div.carrito {
+    header.containerHeader div.primer-menu div.shoppingcart {
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -510,28 +541,28 @@ header.containerHeader div.primer-menu div.buscador i{
         font-size: 12px;
     }
 
-    header.containerHeader div.primer-menu div.carrito img {
+    header.containerHeader div.primer-menu div.shoppingcart img {
         width: 40px;
         height: 40px;
     }
 
-    header.containerHeader div.primer-menu div.carrito a {
+    header.containerHeader div.primer-menu div.shoppingcart a {
         font-size: 15px;
     }
 
-    header.containerHeader div.primer-menu div.logo span {
+    header.containerHeader div.primer-menu div.header-logo span {
         font-size: 30px;
         font-family: 'Kaushan Script', cursive;
         color: black;
     }
 
-    header.containerHeader div.primer-menu div.logo a {
+    header.containerHeader div.primer-menu div.header-logo a {
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
 
-    header.containerHeader div.primer-menu div.logo a img {
+    header.containerHeader div.primer-menu div.header-logo a img {
         margin: 10px 25px 10px 0px;
     }
         /*FOOTER*/
@@ -549,13 +580,13 @@ header.containerHeader div.primer-menu div.buscador i{
         font-size: 15px;
     }
 
-    footer.principal div.footer-logo  img.logo{
-        width: 100px;
-        height: 100px;
-        cursor: pointer;
+    footer.principal div.footer-logo img {
+        margin-top: 1rem;
+        width: 150px;
+        height: 150px;
     }
 
-    footer.principal div.footer-redes-data ul.redes li img {
+    footer.principal div.footer-redes-data ul.footer-redes li img {
         width: 40px;
         height: 40px;
     }
@@ -573,7 +604,7 @@ header.containerHeader div.primer-menu div.buscador i{
         order: 3;
     }
 
-    footer.principal div.footer-redes-data ul.redes {
+    footer.principal div.footer-redes-data ul.footer-redes {
         display: flex;
         flex-direction: row;
         gap: 30px;
@@ -616,3 +647,49 @@ header.containerHeader div.primer-menu div.buscador i{
     }
 }
         /* FIN DESKTOP */
+
+        /* INICIO DESPLEGABLE */
+
+
+.menu-hamburguesa ul li {
+    float: left;
+    list-style: none;
+}
+.menu-hamburguesa hr {
+    background-color: #724A81;
+    opacity: 0.6;
+    height: 1px;
+    margin: 0;
+}
+.menu-hamburguesa li a {
+    text-decoration: none;
+    font-size: 14px;
+    padding: 10px 17px;
+    display: block;
+    color: #222;
+}
+.menu{
+    position: relative;
+}
+.submenu{
+    display: block;
+    position: absolute;
+    text-align: center;
+    background: #fff;
+    right: -3.3rem;
+    padding: 0px 10px;
+    display: none;
+    border-radius: 0 0 10px 10px;
+}
+.menu:hover .submenu{
+    display: block;
+}
+.submenu a{
+    padding: 8px 14px;
+}
+.submenu a:hover{
+    background: #f1f1f1;
+}
+.submenu li{
+    width: 100px;
+}

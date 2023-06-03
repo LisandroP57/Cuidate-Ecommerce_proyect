@@ -8,44 +8,40 @@
         <source src="/images/backgrounds/mar.mp4" type="video/mp4">
     </video>
 
-    <main class="main-log-reg">
+    <main class="main-log">
         <div class="form-complete">
             <div class="form-container">
                 <a href="/"><h2>Cuidate!</h2></a>
                 <hr>
-                <form action="/users/login" method="POST">
+                <form action="/users/login" method="POST" id="form">
                     <div class="form">
                         <div class="input-container">
                             <span class="top-message">E-mail</span>
-                            <input class="input-style" type="email" required name="email" placeholder="Ingrese su e-mail">
-                            <% if (locals.errors && errors.email) { %>
-                                <small class="text-danger"><%= errors.email.msg %> </small>
-                            <% } %>
+                            <input class="input-style" type="email" name="email" placeholder="Ingrese su e-mail" id="email">
                         </div>
+                        <small class="text-danger" id="emailErrors">
+                            <%= locals.errors && errors.pass ? errors.pass.msg : '' %>
+                        </small>
                         <div class="input-container">
                             <span class="top-message">Contraseña</span>
                             <div class="password-container">
-                                <input class="input-style" type="password" name="pass" id="passwordInput" placeholder="Ingrese su contraseña">
+                                <input class="input-style" type="password" name="pass" id="pass1" placeholder="Ingrese su contraseña">
                                 <img src="/images/icons/show-password.png" onclick="showPassword()" id="showPasswordImg" alt="">
                             </div>
-                            <% if (locals.errors && errors.pass) { %>
-                                <small class="text-danger"><%= errors.pass.msg %> </small>
-                            <% } %>
+                            <small class="text-danger" id="passErrors">
+                                <%= locals.errors && errors.pass ? errors.pass.msg : '' %>
+                            </small>
                         </div>
+
                         <div class="checkbox-slider">
                             <input type="checkbox" name="remember" id="my-slider"> 
-                            <label for="my-slider">Recordar sesión</label>
+                            <label for="my-slider" id="checkbox">Recordar sesión</label>
                         </div>
-                        <!-- Agregar la funcion de recordar al usuario -->
-                        
-                        <% if (locals.errorMsg ) { %>
-                            <small class="text-danger"><%= errorMsg %> </small>
-                        <% } %>
                         <div class="button-container">
                             <button type="submit" class="btn-submit">Acceder !</button>
                         </div>
                         <div class="lost-pass">
-                            <a class="link" href="forgetPassword">¿Has olvidado tu contraseña?</a>
+                            <a class="link" href="/users/forgetPassword">¿Has olvidado tu contraseña?</a>
                         </div>
                     </div>
                 </form>
@@ -58,19 +54,8 @@
             <img src="/images/img-login.png" alt="">
         </div>
     </main>
-    <script>
-        function showPassword() {
-          var x = document.getElementById("passwordInput");
-          var y = document.getElementById("showPasswordImg");
-          if (x.type === "password") {
-            x.type = "text";
-            y.src = "/images/icons/hide-password.png";
-          } else {
-            x.type = "password";
-            y.src = "/images/icons/show-password.png";
-          }
-        }
-        </script>
+    <script src="/js/showPassword.js"></script>
     <%- include("../partials/footer") %>
+    <script src="/js/validations/loginValidation.js"></script>
 </body>
 </html>

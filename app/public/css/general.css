@@ -1,19 +1,8 @@
-/* BANNER */
-
-section.banner {
-    display: flex;
-    margin-bottom: 30px;
-}
-
-section.banner img {
-    width: 100%;
-}
-/* END BANNER */
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    cursor: url(/images/cursor/cursor.png), auto;      
 }
 
 a {
@@ -24,4 +13,14 @@ a {
 
 ul {
     list-style: none;
+}
+
+.containerHeader {
+    position: relative;
+    z-index: 1;
+}
+
+.principal {
+    position: relative;
+    z-index: 1;
 }

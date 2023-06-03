@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Head -->
+<%- include('../partials/head', {title: 'Editar producto'}) %>
+
+<body class="create-edit-body">
+	<!-- Header -->
+	<%- include('../partials/header') %>
+	
+	<main class="addProduct">
+		<div class="createForm">
+			<p class="title">Estas modificando:<br><i><%= product.name %></p>
+				<form action="/admin/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data" id="form">
+					<div class="addFormEdit">
+						<div class="addInput">
+							<label for="inputName" class="form-label">Nombre del producto:</label>
+							<input type="text" id="name" name="name" placeholder="Ej: Gas pimienta" value="<%= locals.old ? old.name : product.name %>" class="form-input">
+							<small class="text-danger" id="nameErrors">
+								<%= locals.errors && errors.name ? errors.name.msg : '' %>
+							</small>
+						</div>
+						<div class="addInput">
+							<label for="inputPrice" class="form-label">Precio del producto:</label>
+							<input type="text" id="inputPrice" name="price" placeholder="Ej: $123" value="<%= locals.old ? old.price : product.price %>" class="form-input">
+							<small class="text-danger" id="priceErrors">
+								<%= locals.errors && errors.price ? errors.price.msg : '' %>
+							</small>
+							<span id="priceErrors"></span>
+						</div>
+						<div class="addInput">
+							<label for="inputDiscount" class="form-label">Descuento:</label>
+							<input type="number" id="inputDiscount" name="discount" placeholder="Ej: 57%" value="<%= locals.old ? old.discount: product.discount %>" class="form-input">
+							<small class="text-danger" id="discountErrors">
+								<%= locals.errors && errors.discount ? errors.discount.msg : '' %>
+							</small>
+							<span id="discountErrors"></span>
+						</div>
+						<div class="addInput">
+							<select class="form-select" id="categorySelect" name="category">
+								<option selected hidden value="">Categoria</option>
+								<% categories.forEach(category => { %>
+									<option 
+										value="<%- category.id %>" 
+										<%- locals.old && old.category == category.id ?
+										"selected" : category.id == product.category_id ?
+										`selected` : ""  %>>
+										<%- category.name %>
+									</option>
+								<% }) %>
+							</select>
+							<small class="text-danger" id="categoryErrors">
+								<%= locals.errors && errors.category ? errors.category.msg : '' %>
+							</small>
+						</div>
+						<div class="addInput">
+							<select class="form-select" id="subcategorySelect" name="subcategory">
+								<option selected hidden value="">Subcategoria</option>
+								<% subcategories.forEach(subcategory => { %>
+									<option value="<%- subcategory.id %>" 
+									<%- locals.old && old.subcategory == subcategory.id ?
+									"selected" : subcategory.id == product.subcategory ?
+									`selected` : ""  %>>
+									<%- subcategory.name %>
+								</option>
+								<% }) %>
+							</select>
+							<small class="text-danger" id="subcategoryErrors">
+								<%= locals.errors && errors.subcategory ? errors.subcategory.msg : '' %>
+							</small>
+						</div>
+						<div class="addInput">
+							<label for="description" class="form-label">Descripción:</label>
+							<input type="text" id="description" class="description" name="description" value="<%= locals.old ? old.description: product.description %>">
+							<small class="text-danger" id="descriptionErrors">
+								<%= locals.errors && errors.description ? errors.description.msg : '' %>
+							</small>
+						</div>
+						<div class="multer">
+							<label for="images" class="form-label">Imagen de producto:</label>
+							<input type="file" id="images" name="images" multiple aria-label="file example" class="form-control">
+							<small class="text-danger" id="imagesErrors">
+                                <%= locals.errors && errors.images ? errors.images.msg : '' %>
+                            </small>
+						</div>
+						
+						<div class="sendButton">
+							<button type="submit" class="editbtn" data-bs-toggle="modal" data-bs-target="#miModal">Modificar producto</button>
+						</div>
+					</div>
+				</form>
+			</div>
+	</main>
+
+	<!-- footer -->
+	<%- include('../partials/footer') %>
+	<script src="/js/validations/productValidation.js"></script>
+</body>	
+</html>

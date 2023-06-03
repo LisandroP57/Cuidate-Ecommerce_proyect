@@ -1,58 +1,89 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="htmlDetail">
 <!-- Include Head -->
 <%- include('../partials/head', {title: 'Detalle'}) %>
-	<link rel="stylesheet" href="/css/detail.css">
 
-	<body class=" ">
+	<body class="bodyDetail">
 		<!-- Header -->
 		<%- include('../partials/header') %>
-			<!-- /Header -->
+		<!-- /Header -->
+		<div class="blob"></div>
 			<!-- product detail -->
-			<div class="container products-wrapper">
-				<div class="row">
-					<div class="col-12">
-						<h2 class="products-title">Detalle del producto: <%= product.name %>
-						</h2>
+
+			
+				<div class="col-12">
+					<div>
+						<h2 class="titleDetail">Detalle de producto: <%= product.name %></h2>		
 					</div>
 				</div>
-				<section class="container sproduct my-3 pt-3">
-				<div class="product-detail">
-					<div class="row">
-						<div class="col-12 col-lg-8">
-							<img src="/images/products/<%= product.image %>" alt="product image"
-								class="product-detail-img">
-							</div>
-							
-							<div class="col-12 col-lg-4">
-								<article class="product-detail-info">
-									<h2 class="product-detail-title">
-										<%= product.name %>
-									</h2>
-									
-									<p class="product-detail-description">
-										<%= product.description %>
-									</p>
-								<% if (product.discount> 0) { %>
-									<p class="product-detail-price small">
-										<span>
-											<%= toThousand(product.price) %>
-										</span>
-										/
-										<b>
-											<%= product.discount %>% OFF
-										</b>
-									</p>
-									<p class="product-detail-price">
-										<%= toThousand(product.price - (product.price * product.discount / 100)) %>
-									</p>
-								<% } else{ %>
-										 <p class="product-detail-price">
-											<%= toThousand(product.price) %>
-										</p>
-									 <% } %> 
 
-									<ul class="actions-list">
+			<div class = "card-wrapper">
+				<div class = "card">
+				  <!-- card left -->
+				  <div class = "product-imgs">
+					<div class = "img-display">
+					  <div class = "img-showcase">
+						<% product.images.forEach(image => { %>
+								<img src="/images/products/<%= image.image %>" alt="product image"
+						<% }) %>
+						class="product-detail-img">
+					  </div>
+					</div>
+				  </div>
+				  <!-- card right -->
+				  <div class = "product-content">
+					<h2 class="product-detail-title">
+						<%= product.name %>
+					</h2>
+					<div class = "product-rating">
+					  <i class = "fas fa-star"></i>
+					  <i class = "fas fa-star"></i>
+					  <i class = "fas fa-star"></i>
+					  <i class = "fas fa-star"></i>
+					  <i class = "fas fa-star-half-alt"></i>
+					  <span>4.7(21)</span>
+					</div>
+		  
+					<div class = "product-price">
+					  
+						<!--  -->
+						<% if (product.discount > 0) { %>
+						<div class="home-product-discount">
+						Descuento: <%- product.discount %>% OFF</div>
+															<% } %>
+						Precio: $<%- product.price %>
+
+					</div>
+
+
+		  
+					<div class = "product-detail">
+					  <h2>Acerca de este artículo:
+					</h2>
+					  <p class="product-detail-description">
+						<%= product.description %>
+					</p>
+					   <ul>
+						<li>Disponibilidad: <span>En stock</span></li>
+						<li>Categoria: <span><%= product.subcategory.category.name %></span></li>
+					  </ul>
+					</div>
+		  
+					<div class = "purchase-info">
+						<label for="">Ingrese Cantidad:</label>
+					  <input type = "number" min = "0" value = "1">
+					 
+					  <hr>
+									<a href="#" class="buy-now-button-detail">COMPRAR AHORA</a>
+									<% if (session.user !== undefined) { %>
+										<div class="pre-cart">
+											<div class="btn btn-ad-primary" id="btnAddToCart" onclick="addToCart('<%= product.id %>')">Agregar al carrito</div>
+										</div>
+									<% } %>
+									<hr>
+					</div>
+		  
+					<ul class="actions-list">
 										<li>
 											<i class="fas fa-credit-card"></i>
 												<p>Pagá en 12 cuotas sin interes</p>
@@ -63,37 +94,40 @@
 										</li>
 									</ul>
 
-									<div class="fila">
-										<div class="size">
-											<label for="">Cantidad Por Mayor</label>
-											<select name="" id="">
-												<option value="">5</option>
-												<option value="">10</option>
-												<option value="">15</option>
-												<option value="">20</option>
-											</select>
-										</div>
-									</div>
-									<hr>
-									<a href="#" class="buy-now-button-detail">COMPRAR AHORA</a>
-									<hr>
-
-									<a href="/products/edit/<%= product.id %> " class="action-button edit" >EDITAR PRODUCTO</a>
-                                    <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-                                        <button type="submit" class="action-button delete">ELIMINAR</button><!--  DELETE me lleva a eliminar todo, hace http, GET post -->
-                                    </form>
-							</article>
-						</div>
+					<div class = "social-links">
+					  <p>Contactanos: </p>
+					  <a href = "#">
+						<i class = "fab fa-facebook-f"></i>
+					  </a>
+					  <a href = "#">
+						<i class = "fab fa-twitter"></i>
+					  </a>
+					  <a href = "#">
+						<i class = "fab fa-instagram"></i>
+					  </a>
+					  <a href = "#">
+						<i class = "fab fa-whatsapp"></i>
+					  </a>
+					  
 					</div>
+				  </div>
 				</div>
-			</div>
-			<!-- /product detail -->
+			  </div>
 
+
+			<!-- card products oferts -->
+			
+			
 			<!-- footer -->
 			<%- include('../partials/footer') %>
 				<!-- /footer -->
 				<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+				
+			<!-- SCRIPT EFECTS SLIDER -->
 
+				<script src="/js/detail.js"></script>
+				<script src="/js/product-slider.js"></script>
+				
 	</body>
 
 </html>

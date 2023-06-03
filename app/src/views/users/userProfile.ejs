@@ -3,12 +3,11 @@
     <%- include('../partials/head', {title: 'Mi Perfil'}) %>
 <body class="body-user-profile">
     <%- include('../partials/header') %>
-
-    <main class="user-profile">
+    <main class="main-user-profile">
         <div class="profile-container">
             <div class="profile-card">
                 <div class="avatar-container">
-                    <h3>Mi usuario</h3>
+                    <h3><%= user.name %></h3>
                     <img src="/images/avatar/<%= user.avatar %>" alt="">
                 </div>
                 <div class="container-icon">
@@ -24,21 +23,31 @@
                                 <hr>
                                 <p class="user-profile-item">Nombre: <%= user.name %></p>
                                 <p class="user-profile-item">Email: <%= user.email %></p>
+                                <p class="userProfile_item">Teléfono: <%= user.tel ? user.tel : "______" %></p>
                             </div>
                             <div class="user-profile-box">
-                                <h3 class="user-profile-title">Datos fiscales</h3>
+                                <h3 class="user-profile-title">Datos de contacto</h3>
                                 <hr>
                                 <p class="userProfile_item">Dirección: <%= user.address ? user.address : "______" %></p>
                                 <p class="userProfile_item">Código postal: <%= user.postal_code ? user.postal_code : "______" %></p>
                                 <p class="userProfile_item">Provincia: <%= user.province ? user.province : "______" %></p>
                                 <p class="userProfile_item">Localidad: <%= user.city ? user.city : "______" %></p>
-                                <!-- Una vez que requiramos la informacion de domicilio, usar los p con ejs -->
                             </div>
                             <a href="/users/profile/edit" class="btn-edit">
                                 Editar mis datos
                                 <img src="/images/icons/settings.png" alt="">
                             </a>
                         </div>
+                    </div>
+                    <div class="delete-account">
+                        <button class="btn-delete-account">
+                            <span class="text">Eliminar cuenta</span>
+                            <span class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"></path>
+                                </svg>
+                            </span>
+                        </button>
                     </div>
                 </div>
             </div>

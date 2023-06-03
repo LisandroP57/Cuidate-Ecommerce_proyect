@@ -4,36 +4,27 @@ const router = express.Router();
 
         /* Controller Require */
 const {
-        carrito,
-        index,
+        search,
+        cart,
         detail,
-        create,
-        store,
-        edit,
-        update,
-        destroy
+        category,
+        subcategory
  } = require("../controllers/productsController");
 
-const {uploadImageProduct} = require("../middlewares/upload");
-const productValidator = require("../validations/productValidator");
+const userInSessionCheck = require("../middlewares/userInSessionCheck");
 
         /* Vistas productos */
-router
-        .get('/carrito', carrito)
-        .get('/products', index)
 
+router
+        /* Search */
+        .get('/search', search)
+        /* Shopping cart */
+        .get('/shoppingcart', userInSessionCheck, cart)
         /* Detail product */
         .get('/detail/:id/', detail)
-        
-        /* Create product */
-        .get('/create', create)
-        .post("/", uploadImageProduct.single("image"), productValidator, store)
-
-        /* Edit product */
-        .get('/edit/:id', edit)
-        .put('/edit/:id', uploadImageProduct.single("image"), productValidator, update)
-
-        /* Delete product*/
-        .delete('/delete/:id', destroy); 
+        /* Categories products */
+        .get("/category/:id", category)
+        /* Subcategories products */
+        .get("/subcategory/:id", subcategory);
 
 module.exports = router;

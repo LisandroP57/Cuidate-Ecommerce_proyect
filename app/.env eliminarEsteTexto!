@@ -1,0 +1,3 @@
+PORT=3000
+DATABASE=cuidate_db
+JWT_SECRET=1a2b3c

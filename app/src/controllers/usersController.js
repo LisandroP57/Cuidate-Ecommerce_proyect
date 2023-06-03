@@ -1,134 +1,183 @@
-const { users, writeUsersJson } = require("../data");
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
+const { User } = require("../database/models");
+const axios = require("axios");
+const {generateToken} = require("../helpers/jwt.helper")
 
 
 module.exports = {
-
     login: (req, res) => {
-        return res.render('users/login', { session: req.session });
-        },
+        res.render('users/login', { session: req.session });
+    },
     processLogin: (req, res) => {
         let errors = validationResult(req);
 
-        if (errors.isEmpty()){
-            /* Si no hay errores en el login el usuario ya fue validado entrando asi en la condicion de la busqueda por find */
-            let user = users.find(user => user.email === req.body.email);
+        if (errors.isEmpty()) {
+            User.findOne({
+                where: {
+                    email: req.body.email,
+                }
+            })
+            .then((user) => {
+                req.session.user = {
+                    id: user.id,
+                    name: user.name,
+                    avatar: user.avatar,
+                    role: user.role
+                }
 
-            req.session.user = {
-                id: user.id,
-                name: user.name,
-                avatar: user.avatar,
-                type: user.type,
-            }
+                const token = generateToken(user);
 
-            res.locals.user = req.session.user
+                let cookieLifeTime = new Date(Date.now() + 60000);
+                
+                if (req.body.remember) {
+                    res.cookie(
+                        "userCuidate",
+                        req.session.user,
+                        {
+                            expires: cookieLifeTime,
+                            httpOnly: true
+                        })
+                }
 
-            res.redirect("/")
+                res.locals.user = req.session.user;
+                
+                res.redirect(`/?token=${token}`);
+            })
+            .catch(error => console.log())
         } else {
             return res.render("users/login", {
                 errors: errors.mapped(),
                 session: req.session
             })
         }
-        },
-
+    },
     register: (req, res) => {
-        return res.render('users/register', { session: req.session })
-        },
+        return res.render('users/register', {session: req.session})
+    },
     forgetPassword: (req, res) => {
-        return res.render('users/forgetPassword', { session: req.session });
-        },
-
+        return res.render('users/forgetPassword', {
+            session: req.session
+        })
+    },
     processRegister: (req, res) => {
-        
         let errors = validationResult(req);
 
-        if(errors.isEmpty()) {
-            let lastId = 0;
+        if (errors.isEmpty()) {
 
-                  users.forEach(user => {
-                    if(user.id > lastId) {
-                        lastId = user.id;
-                    }
-                   });
-        let newUser = {
-        id: lastId + 1,
-        name: req.body.name,
-        last_name: req.body.last_name,
-        email: req.body.email,
-        pass: bcrypt.hashSync(req.body.pass1, 10),
-        avatar: req.file ? req.file.filename : "/images/avatar/default-image.png",
-        type: "USER",/* address, Lo dejo asi, porque los usuarios que entren a la aplicacion van a ser usuarios */
-       };
+            let newUser = {
+                name: req.body.name,
+                last_name: req.body.last_name,
+                email: req.body.email,
+                pass: bcrypt.hashSync(req.body.pass1, 12),
+                avatar: req.file ? req.file.filename : "default-image.png",
+                role: 0,
+                phone: ""
+            };
 
-       users.push(newUser);/* tengo creado el usuario le digo que lo pushe en el json */
-       writeUsersJson(users);/* Los persisto o creo */
-       res.redirect("/users/login");
+            User.create(newUser)
+            .then(() => {
+                return res.redirect("/users/login");
+            })
+            .catch(error => console.log(error))
         } else {
-            /* res.send(errors.mapped()) */
-            res.render("/users/register", {
+            res.render("users/register", {
                 errors: errors.mapped(),
+                old: req.body,
                 session: req.session
-        })
+            })
         }
     },
+    logout: (req, res) => {
+        req.session.destroy();
+        if (req.cookies.userCuidate) {
+            res.cookie("userCuidate", "", { maxAge: -1})
+        }
 
+        res.redirect("/");
+
+    },
     profile: (req, res) => {
-        let usserInSessionId = req.session.user.id;
-        let usserInSession = users.find(user => user.id === usserInSessionId);
+        const userInSessionId = req.session.user.id;
 
-        res.render("users/userProfile", {
-            user: usserInSession,
-            session: req.session
-        })
+        User.findByPk(userInSessionId)
+            .then((user) => {
+                res.locals.user = user;
+                res.render("users/userProfile", {
+                    user,
+                    session: req.session
+                })
+            })
+            .catch(error => console.log(error))
     },
-    editProfile: (req, res) => {
+    editProfile: async (req, res) => {
         let userInSessionId = req.session.user.id;
-        let userInSession = users.find(user => user.id === userInSessionId);
-        
-        res.render("users/userProfileEdit", {
-            user: userInSession,
-            session: req.session
-        })
+
+        try {
+            const user = await User.findByPk(userInSessionId);
+            const { data } = await axios.get("https://apis.datos.gob.ar/georef/api/provincias?campos=nombre,id")
+            
+            res.render("users/userProfileEdit", {
+                user,
+                provinces: data.provincias,
+                session: req.session
+            })
+        } catch (error) {
+            console.log(error)
+        }
     },
-    updateProfile: (req, res) => {
+    updateProfile: async (req, res) => {
         let errors = validationResult(req);
-
-        if(errors.isEmpty()) {
-            let userId = req.session.user.id;
-            let user = users.find(user => user.id === userId);
+      
+        if (errors.isEmpty()) {
+          let userId = req.session.user.id;
+      
+          try {
+            const user = await User.findByPk(userId);
+      
             const {
-                name,
-                last_name,
-                address,
-                postal_code,
-                province,
-                city,
+              name,
+              last_name,
+              tel,
+              address,
+              postal_code,
+              province,
+              city,
             } = req.body;
-
+      
             user.name = name;
             user.last_name = last_name;
-            user.adress = address;
+            user.tel = tel;
+            user.address = address;
             user.postal_code = postal_code;
             user.province = province;
             user.city = city;
             user.avatar = req.file ? req.file.filename : user.avatar;
-
-            writeUsersJson(users)
-            delete user.pass;
+      
+            delete user.password;
+      
+            await user.save();
+      
             req.session.user = user;
+      
             return res.redirect("/users/profile");
-            
+          } catch (error) {
+            console.log(error);
+          }
         } else {
-            const userInSessionId = req.session.user.id;
-            const userInSession = users.find(user => user.id === userInSessionId);
-
-            return res.render("user/userProfileEdit", {
-                user: userInSession,
-                session: req.session,
-                errors: errors.mapped(),
-            })
+          const userInSessionId = req.session.user.id;
+      
+          try {
+            const userInSession = await User.findByPk(userInSessionId);
+      
+            return res.render("users/userProfileEdit", {
+              user: userInSession,
+              session: req.session,
+              errors: errors.mapped(),
+            });
+          } catch (error) {
+            console.log(error);
+          }
         }
-    }
+      },
 }

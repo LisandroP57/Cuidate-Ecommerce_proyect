@@ -1,0 +1,176 @@
+DROP DATABASE  IF exists cuidate_db;
+CREATE DATABASE cuidate_db;
+USE cuidate_db;
+
+/*1*/
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `pass` varchar(70) NOT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `role` int(2) NOT NULL DEFAULT 0,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `avatar` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+);
+
+INSERT INTO `users` VALUES
+(1,'admin','admin','admin@mail.com','$2a$12$WNu1hncg/JfMlccmaVJ0De5jkQqugojqQGrhe4ajKI8w1I4dIKPAW','1124545','1','2021-09-24 02:05:57','2021-09-24 02:48:31','admin.jpeg'),
+(2,'user','user','user@mail.com','$2a$12$vyct8Z4WaTtn7W8mP6jJ.eBZiv7cd1HSb1iPLdPn7hlmwNfYddMuO','545185','0','2021-09-24 02:05:57','2021-09-24 02:48:31','aiuda.png'),
+(3,'Riky', 'vallejos', 'riky@gmail.com','$2a$12$WNu1hncg/JfMlccmaVJ0De5jkQqugojqQGrhe4ajKI8w1I4dIKPAW',NULL,'1', '2023-04-18 00:28:22', '2023-04-18 00:28:22', 'homer.jpg'),
+(4,'Lisan', 'test', 'lisan@gmail.com','$2a$12$WNu1hncg/JfMlccmaVJ0De5jkQqugojqQGrhe4ajKI8w1I4dIKPAW','777','1', '2023-04-18 00:28:22', '2023-04-18 00:28:22', 'homer.jpg'),
+(5, 'Jonatan', 'Cespedes', 'jona@mail.com', '$2a$12$WNu1hncg/JfMlccmaVJ0De5jkQqugojqQGrhe4ajKI8w1I4dIKPAW',NULL,'1', '2023-04-18 00:28:22', '2023-04-18 00:28:22', 'admin.jpeg'),
+(6, 'Cosme', 'Fulanito', 'cosme@mail.com', '$2a$12$WNu1hncg/JfMlccmaVJ0De5jkQqugojqQGrhe4ajKI8w1I4dIKPAW',NULL,'0', '2021-09-24 02:05:57','2021-09-24 02:48:31','default-image.png');
+
+select * from users;
+
+/*2*/
+DROP TABLE IF EXISTS `categories`;
+CREATE TABLE `categories` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+);
+
+INSERT INTO `categories` VALUES
+(1,'Defensa Personal'),
+(2,'Accesorios+Combos'),
+(3,'KIDS');
+
+select * from categories; 
+
+
+/*3*/
+DROP TABLE IF EXISTS `subcategories`;
+CREATE TABLE `subcategories` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `category_id` int(10) NOT NULL,
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  KEY `categoria_idx` (`category_id`),
+  CONSTRAINT `categoria` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) 
+);
+
+INSERT INTO `subcategories` VALUES 
+(1,'Armas',1,NULL,NULL),
+(2,'Escape-rescate',1,NULL,NULL),
+(3,'Llaveros-niños',3,NULL,NULL),
+(4,'Muñequeras-Complementos',2,NULL,NULL),
+(5,'Higiene',2,NULL,NULL);
+
+select * from subcategories; 
+
+/*4*/
+DROP TABLE IF EXISTS `products`;
+CREATE TABLE `products` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `price` int(10) NOT NULL,
+  `discount` int(10) NOT NULL ,
+  `description` varchar(255) NOT NULL ,
+  `subcategory_id` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY(`id`), 
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  KEY `subcategory_idx` (`subcategory_id`),
+  CONSTRAINT `subcategory` FOREIGN KEY (`subcategory_id`) REFERENCES `subcategories` (`id`)
+ );
+
+INSERT INTO `products` VALUES 
+(1,'Gas pimienta',3500,10,"Incapacita al atacante por 10 a 15 minutos. Los efectos son inmediatos, provocando ardor en la piel, los ojos, tos y dificultad para respirar.",2,NULL,NULL),
+(2,'Manopla gato',500,5,"lsak",1,NULL,NULL),
+(3,'Rompe-cristal',2500,5,"El llavero es un dispositivo que permite cortar un cinturón de seguridad y romper una ventanilla lateral del vehículo. Si te quedas bloqueado después de un accidente, te permitirá salir rápidamente del vehículo.",2,NULL,NULL),
+(4,'Alarma Llavero',5000,50,"Alto decibelio Esta alarma de seguridad personal Guardian Angel para mujeres, niños  y ancianos, utiliza un potenciador más grande de alta precisión para hacer su grito de hasta 100dB.",2,NULL,NULL),
+(5,'Kubotan Metálico',1950,0,"El Kubotan es un arma increíble de autodefensa que ha ayudado a miles de personas a defenderse efectivamente. Hombres, mujeres, agentes de la ley, militares y profesionales de la seguridad, aprecian esta pequeña y discreta herramienta de autodefensa.",1,NULL,NULL),
+(6,'Tarjeta Navaja',1520,15,"Cuchillo súper ligero de supervivencia en formato tarjeta de crédito Totalmente desplegable.Está construido en caucho antideslizante, Con un cierre de seguridad único y a prueba de niños.",1,NULL,NULL),
+(7,'LLavero Cinta',1100,20,"Elegante llavero cinta",4,NULL,NULL),
+(8,'Scrunchie con Cierre + Tapavaso',1500,60,"Scrunchie con Cierre + Tapavaso",3,NULL,NULL),
+(9,'Colgantes Kids',2350,35,"Contiene, localizador Bluetooth, alarma 140db con linterna, llavero de unicarnio, llavero cinta",3,NULL,NULL),
+(10,'LLaveros Pop It y Juguetes',5500,12,"lsak",3,NULL,NULL),
+(11,'Lapicera Navaja',8500,5,"lsak",1,NULL,NULL),
+(12,'Localizador',1500,25,"lsak",2,NULL,NULL),
+(13,'Kit basico',3500,85,"lsak",2,NULL,NULL),
+(14,'Kit Guerra',1225,50,"lsak",1,NULL,NULL),
+(15,'Alcohol en Gel',1715,5,"lsak",5,NULL,NULL);
+
+select * from products; 
+
+/*5*/
+DROP TABLE IF EXISTS `products_images`;
+CREATE TABLE `products_images` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `image` varchar(100) NOT NULL,
+  `product_id` int(10) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `products_images_FK` (`product_id`),
+  CONSTRAINT `products_images_FK` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
+);
+
+INSERT INTO `products_images` VALUES
+(1, 'gaspimienta.jpeg', 1),
+(2, 'manoplagatito.jpeg', 2),
+(3, 'rompe-cristal.jpg',3),
+(4, 'llaveroAlarma.jpg',4),
+(5, 'kubotanmetalico.jpg',5),
+(6, 'LLavero-Navaja.PNG',6),
+(7, 'kitllavero.PNG',7),
+(8, 'manoplaVerde.jpg',8),
+(9, 'kitninos.jpg',9),
+(10, 'Mini-LLavero.PNG',10),
+(11, 'lapiceranavaja.jpg',11),
+(12, 'localizador.jpg',12),
+(13, 'kitBasico.jpg',13),
+(14, 'kitGuerra.jpg',14),
+(15, 'alcoholengel.jpg',15);
+
+
+select * from products_images;
+
+/*6*/
+DROP TABLE IF EXISTS `carts`;
+CREATE TABLE `carts` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `userId` int(10) NOT NULL,
+  `state` varchar(100) NOT NULL,
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `carts_un` (`id`),
+  KEY `carts_FK` (`userId`),
+  CONSTRAINT `carts_FK` FOREIGN KEY (`userId`) REFERENCES `users` (`id`)
+);
+
+INSERT INTO `carts` VALUES (1, 2, 'Pago','2021-09-24 02:05:57','2021-09-24 02:48:31'),(2, 3, 'En espera','2021-09-24 02:05:57','2021-09-24 02:48:31');
+
+select * from carts;
+
+/*7*/
+DROP TABLE IF EXISTS `cart_items`;
+CREATE TABLE `cart_items` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `cartId` int(10) NOT NULL,
+  `productId` int(10) NOT NULL,
+  `quantity` int(10) NOT NULL,
+  `created_at` date DEFAULT NULL,
+  `updated_at` date DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `cart_items_un` (`id`),
+  KEY `cart_items_FK` (`productId`),
+  KEY `cart_items_FK_1` (`cartId`),
+  CONSTRAINT `cart_items_FK` FOREIGN KEY (`productId`) REFERENCES `products` (`id`),
+  CONSTRAINT `cart_items_FK_1` FOREIGN KEY (`cartId`) REFERENCES `carts` (`id`)
+);
+
+INSERT INTO `cart_items` VALUES (1,2,7,2,'2021-11-18','2021-11-18');
+
+select * from cart_items;

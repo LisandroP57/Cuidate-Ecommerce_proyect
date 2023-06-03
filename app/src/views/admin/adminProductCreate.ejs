@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Head -->
+<%- include('../partials/head', {title: 'Agregar producto'}) %>
+<body class="create-edit-body">
+	<!-- Header -->
+	<%- include('../partials/header') %>
+	<main class="addProduct">
+		<div class="createForm">
+			<p class="title">Crear nuevo producto</p>
+				<form action="/admin/products/create" method="POST" enctype="multipart/form-data" id="form">
+					<div class="addForm">
+						<div class="addInput">
+							<label for="inputName" class="form-label">Nombre:</label>
+							<input type="text" id="name" name="name" placeholder="Ej: Gas pimienta" class="form-input" value="<%= locals.old && old.name %>">
+							<small class="text-danger" id="nameErrors">
+								<%= locals.errors && errors.name ? errors.name.msg : '' %>
+							</small>
+						</div>
+						<div class="addInput">
+							<label for="inputPrice" class="form-label">Precio:</label>
+							<input type="number" id="inputPrice" name="price" placeholder="Ej: $123" class="form-input" value="<%= locals.old && old.price %>">
+							<small class="text-danger" id="priceErrors">
+								<%= locals.errors && errors.price ? errors.price.msg : '' %>
+							</small>
+						</div>
+						<div class="addInput">
+							<label for="inputDiscount" class="form-label">Descuento:</label>
+							<input type="number" id="inputDiscount" name="discount" placeholder="Ej: 57%" class="form-input" value="<%= locals.old && old.discount %>">
+							<small class="text-danger" id="discountErrors">
+								<%= locals.errors && errors.discount ? errors.discount.msg : '' %>
+							</small>
+						</div>
+						<div class="addInput">
+							<select class="form-select" id="categorySelect" name="category">
+								<option selected hidden value="">Categoria</option>
+								<% categories.forEach(category => { %>
+									<option value="<%- category.id %>" <%= locals.old && old.category == category.id ? "selected" : null %> ><%- category.name %></option>
+								<% }) %>
+							</select>
+							<small class="text-danger" id="categoryErrors">
+								<%= locals.errors && errors.category ? errors.category.msg : '' %>
+							</small>
+						</div>
+						<div class="addInput">
+							<select class="form-select" id="subcategorySelect" name="subcategory">
+								<option selected hidden value="">Subcategoria</option>
+								<% subcategories.forEach(subcategory => { %>
+								<option value="<%- subcategory.id %>" <%= 
+									locals.old && 
+									old.subcategory == 
+									subcategory.id ? 
+									"selected" : null %>>
+									<%- subcategory.name %>
+								</option>
+								<% }) %>
+							</select>
+							<small class="text-danger" id="subcategoryErrors">
+								<%= locals.errors && errors.subcategory ? errors.subcategory.msg : '' %>
+							</small>
+						</div>
+						<div class="addInput">
+							<label for="description" class="form-label">Descripción:</label>
+							<input type="text" id= "description" class="description" name="description" placeholder="Esta es la descripción de tu futuro producto!">
+							<small class="text-danger" id="descriptionErrors">
+								<%= locals.errors && errors.description ? errors.description.msg : '' %>
+							</small>
+						</div>
+						<div class="img-container-product" id="img-preview">
+						</div>
+						<div class="multer">
+							<label for="images" class="form-label" id="productoCreate">Imagen de producto:</label>
+							<input type="file" id="images" name="images" class="form-control">
+							<small class="text-danger" id="imagesErrors">
+                                <%= locals.errors && errors.images ? errors.images.msg : '' %>
+                            </small>
+						</div>
+						<div class="sendButton">
+							<button type="submit" class="editbtn">Agregar producto</button>
+						</div>
+					</div>
+				</form>
+			</div>
+	</main>
+	<!-- footer -->
+	<%- include('../partials/footer') %>
+	<script src="/js/validations/productValidation.js"></script>
+</body>	
+</html>

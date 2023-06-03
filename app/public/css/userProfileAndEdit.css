@@ -1,0 +1,302 @@
+@media (min-width: 320px) {
+    .main-user-profile {
+        backdrop-filter: blur(2px);
+    }
+    .body-user-profile {
+        height: 100%;
+    }
+    .body-user-profile {
+        background-color:#eee;
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+    }
+    .profile-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+    .profile-card {
+        border-radius: 8px;
+        box-shadow: 0px 0px 16px 4px rgba(0, 0, 0, 0.36);
+        margin: 5rem;
+        background-color: white;
+    }
+    .profile-card .avatar-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #ffffff;
+        background-color: rgb(112, 58, 112);
+        border-radius: 8px 8px 0px 0px;
+        width: 280px;
+    }
+
+    .profile-card .avatar-container img {
+        width: 7rem;
+        height: 7rem;
+        border-radius: 50%;
+        margin: 1rem;
+    }
+    .profile-card .avatar-container h3 {
+        margin: 0.5rem;
+    }
+    .profile-card .container-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 0;
+    }
+    .profile-card .container-icon .circle-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        border-radius: 50%;
+    }
+    .profile-card .container-icon .circle-logo img {
+        width: 2rem;
+        height: 2rem;
+        transition: 1s;
+    }
+    .profile-card .container-icon .circle-logo img:hover {
+        transform: rotateY(360deg);
+    }
+    .profile-card .info-container .form-info-profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        color: rgb(0, 0, 0);
+        background: rgb(255, 255, 255);
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+    .profile-card .info-container {
+        background-color: white;
+    }
+    .select-city {
+        border-radius: 5px;
+        padding: 5px;
+        width: 250px;
+    }
+    .user-profile-box {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: .5rem;
+    }
+    .user-profile-box hr {
+        border: 1px solid rgba(137, 43, 226, 0.445);
+        width: 100%;
+    }
+
+    .profile-card .info-container .btn-edit {
+        color: #ecf0f1;
+        font-size: 17px;
+        background-color: #8c52ff;
+        border: 1px solid #4e12f3;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0px 6px 0px #9977a6;
+        transition: all 0.1s;
+    }
+
+    .profile-card .info-container .btn-edit:active {
+        box-shadow: 0px 2px 0px #724a81;
+        position: relative;
+        top: 2px;
+    }
+
+    .profile-card .info-container a img {
+        margin-left: 1rem;
+        width: 30px;
+        height: 30px;
+    }
+    .multer p {
+        color: white;
+    }
+}
+@media (min-width: 768px) {
+    .profile-card {
+        display: flex;
+        justify-content: center;
+        width: 0%;
+    }
+    .profile-card .avatar-container {
+        border-radius: 8px 0px 0px 8px;
+    }
+    .profile-card .avatar-container h3 {
+        padding: 1rem;
+        margin: 20px;
+        margin-top: 50px;
+    }
+    .profile-card .avatar-container img {
+        margin: 0rem 5rem;
+    }
+    .profile-card .container-icon .circle-logo img {
+        width: 3rem;
+        height: 3rem;
+    }
+    .profile-card .info-container .form-info-profile {
+        width: 450px;
+    }
+}
+
+/* EDICION DE PERFIL DE USUARIO */
+
+.container-users-edit {
+    display: flex;
+    justify-content: center;
+    background-size: 60%;
+    background-position: -10rem 3rem;
+    background-repeat: repeat;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.edit-user-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0rem 1rem;
+    border-radius: 1rem;
+    background-color: white;
+    border: 1px solid rgb(80, 67, 67);
+    box-shadow: 5px 5px 10px rgb(0 0 0 / 50%);
+    margin: 3rem;
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-ad-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    padding: 0.5rem;
+}
+.form-ad-input input {
+    width: 90%;
+}
+
+.form-ad-input select {
+    width: 90%;
+}
+
+.btn-edit-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+/* Boton de editar perfil */
+.btn-guardar {
+    --color: #560bad;
+    font-family: inherit;
+    display: inline-block;
+    width: 8em;
+    height: 2.6em;
+    line-height: 2.5em;
+    margin: 21px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color 0.5s;
+    z-index: 1;
+    font-size: 18px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--color);
+}
+.btn-guardar:active {
+    box-shadow: 0px 2px 0px #724a81;
+    position: relative;
+    top: 2px;
+}
+.btn-guardar:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+}
+.btn-guardar:hover {
+    color: #fff;
+}
+.btn-guardar:before {
+    top: 100%;
+    left: 100%;
+    transition: all 0.7s;
+}
+.btn-guardar:hover:before {
+    top: -30px;
+    left: -30px;
+}
+.btn-guardar:active:before {
+    background: #3a0ca3;
+    transition: background 0s;
+}
+
+/* Fin boton editar perfil */
+
+
+    /* Btn Eliminar cuenta */
+.delete-account {
+    margin: .5rem;
+}
+.btn-delete-account {
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: red;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    background: #e62222;
+}
+.btn-delete-account, .btn-delete-account span {
+    transition: 200ms;
+}
+.btn-delete-account .text {
+    transform: translateX(5px);
+    color: white;
+    font-weight: bold;
+    font-size: .9rem;
+}
+.btn-delete-account .icon {
+    position: absolute;
+    border-left: 1px solid #c41b1b;
+    transform: translateX(110px);
+    height: 35px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-delete-account svg {
+    width: 15px;
+    fill: #eee;
+}
+.btn-delete-account:hover {
+    background: #ff3636;
+}
+.btn-delete-account:hover .text {
+    color: transparent;
+}
+.btn-delete-account:hover .icon {
+    width: 150px;
+    border-left: none;
+    transform: translateX(0);
+} 
+.btn-delete-account:focus {
+    outline: none;
+} 
+.btn-delete-account:active .icon svg {
+    transform: scale(0.8);
+}
+/* Fin Btn eliminar cuenta */

@@ -1,31 +1,24 @@
-const fs = require('fs');
-const path = require('path');
-
-const productsFilePath = path.join(__dirname, '../data/productsData.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const { Product } = require("../database/models");
 
 module.exports = {
 	index: (req, res) => {
-		let productsInSale = products.filter(product => product.category === "in-sale");
-		let productsVisited = products.filter(product => product.category === "visited");
-		res.render('home',{
-			productsVisited,
-			productsInSale,
-			session: req.session,
-			toThousand
+		Product.findAll({
+            include: [{association: "images"}]
         })
-    },
-
-	search: (req, res) => {
-		let { keywords } = req.query
-		let results = products.filter(product => product.name.toLowerCase() === keywords.toLowerCase())
-		res.render("results", {
-			keywords,
-			results,
+        .then(products => {
+            return res.render("home", {
+                products: products,
+                session: req.session
+            })
+        })
+        .catch(error => console.log(error));
+	},
+	header: (req, res) => {
+		const user = res.locals.user;
+		
+		res.render("partials/header", {
 			session: req.session,
-			toThousand,
+			user: user
 		})
 	},
-};
+}

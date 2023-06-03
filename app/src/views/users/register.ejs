@@ -2,65 +2,78 @@
 <html lang="es">
     <%- include('../partials/head', {title: 'Registro'}) %>
     
-<body class="register">
-
+<body class="register-body">
     <%- include('../partials/header') %>
 
-    <main class="main-log-reg">
-        <div class="form-complete">
-            <div class="form-container">
-                <a href="/"><h2>Cuidate!</h2></a>
+    <video autoplay muted loop id="myVideo">
+        <source src="/images/backgrounds/mountain.mp4" type="video/mp4">
+    </video>
+
+    <main class="main-reg">
+        <div class="register-complete">
+            <form class="register-form" action="/users/register" method="POST" enctype="multipart/form-data" id="form">
+                <a href="/"><h1>Cuidate!</h1></a>
                 <hr>
-                <form action="/users/register" method="POST" enctype="multipart/form-data">
-                    <div class="form">
-                        <div class="input-container-names">
-                            <span class="top-message">Nombre</span>
-                            <input class="input-style" type="firstName" name="firstName" placeholder="Ingrese su nombre">
-                            
+                        <label>Nombre:</label>
+                        <input class="input-reg" type="text" name="name" placeholder="Ingrese su nombre" id="name">
+                        <small class="text-danger" id="nameErrors">
+                            <%= locals.errors && errors.name ? errors.name.msg : '' %>
+                        </small>
 
-                            <span class="top-message">Apellido</span>
-                            <input class="input-style" type="last_name" name="last_name" placeholder="Ingrese su apellido">
-                            
-                        </div>
-                        <div class="input-container">
-                            <span class="top-message">E-mail</span>
-                            <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
-                            
-                        </div>
-                        <div class="input-container">
-                            <span class="top-message">Contraseña</span>
-                            <input class="input-style" type="password" name="pass" placeholder="Ingrese su contraseña">
-                            
-                        </div>
-                        <div class="input-container">
-                            <span class="top-message">Vuelve a escribir la contraseña</span>
-                            <input class="input-style" type="password" name="pass" placeholder="Re-ingrese su contraseña">
-                            
-                        </div>
+                        <label>Apellido:</label>
+                        <input class="input-reg" type="text" name="last_name" placeholder="Ingrese su apellido" id="last_name">
+                        <small class="text-danger" id="lastnameErrors">
+                            <%= locals.errors && errors.last_name ? errors.last_name.msg : '' %>
+                        </small>
 
-                        <div class="input-file">
-                            <p>Agregar foto</p>
-                            <input class="form-control" type="file" id="image" name="avatar">
+                        <label>E-mail:</label>
+                        <input class="input-reg" type="email" name="email" placeholder="Ingrese su email" id="email">
+                        <small class="text-danger" id="emailErrors">
+                            <%= locals.errors && errors.email ? errors.email.msg : '' %>
+                        </small>
+
+                        <div class="div-password">
+                            <label>Contraseña:</label>
+                            <input class="input-reg" type="password" name="pass1" placeholder="Ingrese su contraseña" id="pass1">
+                            <img src="/images/icons/show-password.png" onclick="showPassword()" id="showPasswordImg" alt="">
                         </div>
+                        <small class="text-danger" id="pass1Errors">
+                            <%= locals.errors && errors.pass ? errors.pass.msg : '' %>
+                        </small>
+                        
+                        <div class="div-password">
+                            <label>Vuelve a ingresar la contraseña:</label>
+                            <input class="input-reg" type="password" name="pass2" placeholder="Re-ingrese su contraseña" id="pass2">
+                            <img src="/images/icons/show-password.png" onclick="showPassword2()" id="showPasswordImg2" alt="">
+                        </div>
+                            <small class="text-danger" id="pass2Errors">
+                            <%= locals.errors && errors.pass ? errors.pass.msg : '' %>
+                        </small>
+
+                            <label>Agregar avatar</label>
+                            <input class="form-control" type="file" id="avatar" name="avatar">
+                            <small class="text-danger" id="avatarErrors">
+                                <%= locals.errors && errors.avatar ? errors.avatar.msg : '' %>
+                            </small>
                         <div class="terms-conditions">
-                            <label for="recordar">  Acepto los <a href="">términos y condiciones</a> </label>
-                            <input type="checkbox" name="terms" id="recordar"> 
-                            
+                            <label>  Acepto los <a href="">términos y condiciones</a> </label>
+                            <input type="checkbox" name="terms" id="check">
+                            <small class="text-danger" id="termsErrors">
+                                <%= locals.errors && errors.terms ? errors.terms.msg : '' %>
+                            </small>
                         </div>
-                        <div class="button-container">
-                            <span class="error-message">Credenciales inválidas</span>
+                        <div class="btn-reg">
                             <button type="submit" class="btn-submit-register">Registrarme</button>
                         </div> 
-                    </div>
-                </div>
+                        <span class="span-account"><a href="login">Ya tengo una cuenta</a></span>
             </form>
-            <div class="form-two">
-                <span><a href="login">Ya tengo una cuenta</a></span>
-            </div>
         </div>
     </main>
 
+    <script src="/js/showPassword.js"></script>
     <%- include('../partials/footer') %>
-    
+    <script src="/js/validations/registerValidation.js"></script>
 </body>
+</body>
+
 </html>

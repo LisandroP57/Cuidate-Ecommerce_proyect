@@ -1,0 +1,37 @@
+<main class="mainHome">
+    <h2 class="titulo-principal" id="titulo-principal">Todos los productos</h2>
+    <div id="contenedor-productos" class="contenedor-productos">
+        <% products.forEach(product => { %>
+            <div class="precard">
+                <a href="/products/detail/<%- product.id %>">
+                    <% product.images.forEach(image => { %>
+                        <figure class="homeCard">
+                            <img src="/images/products/<%= image.image %>" alt="img" class="homeproduct-image">
+                        </figure>
+                    <% }) %>
+                    <div class="homeproduct-caption">
+                        <div class="homeproduct-info">
+                            <h2 class="homeproduct-title">
+                                <% if (product.name.length > 30) { %>
+                                    <%- `${product.name.slice(0,30)}...` %>
+                                <% } else { %>
+                                    <%= product.name %>
+                                <% } %>
+                            </h2>
+
+                            <% if (product.discount > 0) { %>
+                                <p class="homeproduct-discount"><%- product.discount %>% OFF</p>
+                            <% } %>
+                        </div>
+                        <div class="homeproduct-info2">
+                            <span class="homeproduct-price">$<%- product.price %></span>
+                            <button class="homeproduct-shoppingcart">
+                                    <img src="/images/header/shoppingcart.png" alt="">
+                            </button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        <% }) %>
+    </div>
+</main>

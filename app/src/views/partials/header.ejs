@@ -3,45 +3,68 @@
     <div class="primer-menu">
 
         <div class="menu-hamburguesa">
-            <a href="#">
-                <img src="/images/header/menu.png" alt="">
-            </a>
+            <ul class="navigation">
+                <li class="menu"> <img src="/images/header/menu.png" alt="">
+                    <ul class="submenu">
+                        <% if (typeof session.user != "undefined") { %>
+                            <li> <a href="/users/profile"><i class="fa fa-user-gear fa-fw"></i><br>Mi perfil</a><hr></li>
+                            <% if (session.user.role === 1) { %>
+                                <li><a href="/admin"><i class="fa fa-user-shield fa-fw"></i>Admin mode</a><hr></li>
+                            <% } %>
+                            <li> <a href="/users/logout"><i class="fa fa-power-off fa-fw"></i>Cerrar sesión</a></li>
+                        <% } else {%>
+                            <li> <a href="/users/register"><i class="fa fa-user-plus fa-fw"></i>Registrarme</a><hr></li>
+                            <li> <a href="/users/login"><i class="fa fa-user fa-fw"></i>Iniciar sesión</a><hr></li>
+                            <li> <a href="/users/forgetPassword"><i class="fa fa-user-large-slash fa-fw"></i>Recuperar contraseña</a></li>
+                        <% } %>
+                    </ul>
+                </li>
+            </ul>
         </div>
 
-        <div class="logo">
+        <div class="header-logo">
             <a href="/">
                 <img src="/images/logo/logo.png" alt="">
                 <span>Cuidate!</span>
             </a>
         </div>
 
-        <div class="buscador">
-            <form action="/search" method="GET" class="search-form">
-                <input class="input-header" type="text" name="keywords" placeholder="Buscar productos, marcas y más">
+        <div class="header-search">
+            <form action="/products/search" method="GET" class="header-search">
+                <input type="text" name="keywords" class="home-search-input" placeholder="Buscar productos...">
+                <button type="submit" class="search__btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22">
+                    <path d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z" fill="#efeff1"></path>
+                  </svg>
+                </button>
             </form>
-            <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
         </div>
 
         <div class="crear">
-            <a href="/users/register">
-                <img src="/images/header/create.png" alt="">
-                <a href="/users/register">Registrarse</a>
-            </a>
+            <% if (typeof session.user != "undefined") { %>
+            <% } else {%>
+                <a href="/users/register">
+                    <img src="/images/header/create.png" alt="">
+                    <a href="/users/register">Registrarse</a>
+                </a>
+            <% } %>
         </div>
 
         <div class="iniciar">
             <div class="user">
                 <% if (typeof session.user != "undefined") { %>
-                    <img class="session" src="/images/header/login-online.png" alt="">
+                    <img class="session" src="/images/avatar/<%= session.user.avatar %>" alt="">
                     <a class="online" href="#">• Online</a>
                     
-                    <!-- Aca insertar a futuro el nombre del usuario logeado -->
                     <div class="menu-user">
-                        <a href="/users/profile">Mi perfil</a>
-                        <a href="/users/logout">Cerrar sesión</a>
-                        <% if (session.user.type === "ADMIN") { %>
-                            <a href="/admin/index">ADMIN</a>
-                        <% } %>
+                        <ul>
+                            <a href="/users/profile"><li class="menu-user-button"><i class="fa fa-user-gear fa-fw"></i> Mi perfil</li></a>
+                            <% if (session.user.role === 1) { %>
+                                <a href="/admin"><li class="menu-user-button"><i class="fa fa-user-shield fa-fw"></i> ADMIN</li></a>
+                            <% } %>
+                            <a href="#notificaciones"><li class="menu-user-button"><i class="fa fa-envelope fa-fw"></i> Notificaciones <span class="unread">5</span></li></a>
+                            <a href="/users/logout"><li class="menu-user-button"><i class="fa fa-power-off fa-fw"></i>Cerrar sesión</li></a>
+                          </ul>
                     </div>
                 <% } else {%>
                     <a href="/users/login">
@@ -52,22 +75,12 @@
             </div>
         </div>
 
-        <div class="carrito">
-            <a href="/products/carrito">
-                <img src="/images/header/carrito.png" alt="">
-                <a href="/products/carrito">Ver compra</a>
+        <div class="shoppingcart">
+            <a href="/products/shoppingcart">
+                <img src="/images/header/shoppingcart.png" alt="">
+                <a href="/products/shoppingcart">Mi carrito</a>
+                <span id="cartItemCount"></span>
             </a>
         </div>
-
     </div>
-
-    <nav class="navegador">
-        <ul class="menu">
-            <li><a href="/products/products">Productos</a></li>
-            <li><a href="/#offers">Ofertas</a></li>
-            <li><a href="/#redes">Contactanos</a></li>
-            <li><a href="/products/create">Vender $</a></li>
-            <li><a href="/probandoLaCajaNegra aaAA" class="edit-button edit">a Definir</a></li> 
-        </ul>
-    </nav>
 </header>

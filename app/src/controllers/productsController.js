@@ -1,101 +1,134 @@
-const fs = require('fs');
-const path = require('path');
+const { Product, Category, Sequelize, Subcategory, Cart } = require("../database/models");
+const { Op } = Sequelize;
 
-const { validationResult } = require("express-validator")
-const productsFilePath = path.join(__dirname, '../data/productsData.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-const writeJson = (products) => {
-  fs.writeFileSync(productsFilePath, JSON.stringify(products), {encoding: "utf-8"})
-}
-
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
-const controller = {
-  
-  index: (req, res) => {
-		res.render("products/products",{
-			products,
-      session: req.session,
-			toThousand
-		})
+module.exports = {
+	search: async (req, res) => {
+		const { keywords } = req.query;
+		try {
+			const products = await Product.findAll({
+				include: [{association: "images"}],
+				where: {
+					name: {[Op.like]: `%${keywords}%`}
+				}
+			});
+				res.render('products/results', {
+					products,
+					keywords,
+					session: req.session,
+				});
+			} catch (error) { console.error(error); }
 	},
-
-  carrito: (req, res) => {
-    res.render("products/carrito", { session: req.session });
-  },
-
-  detail: (req, res) => {
-		let productId = req.params.id;
-
-		let product = products.find(product => product.id == productId);
-
-		res.render("products/detail", {
-			product,
-      session: req.session,
-			toThousand
-		})
-
-	},
-
-  create: (req, res) => {
-      res.render("products/adminProductCreate", { session: req.session });
-    }, 
-
-    store: (req, res) => {
-      
-      const id = Math.max(...products.map(el => el.id))
-      
-      const newProduct = {
-        id: id + 1,
-        ...req.body,
-        image: req.file ? req.file.filename : "default-image.png",
-      };
-      products.push(newProduct);
-      writeJson(products)
-      res.redirect('products')
-    },  
-
-  edit: (req, res) => {
+	detail: (req, res) => {
 		let productId = Number(req.params.id);
-		let productToEdit = products.find((product) => {
-      return product.id === productId;
-    });
-		res.render("products/adminProductEdit", { productToEdit, session: req.session });
-  },
-  
-  update: (req, res) => {
-    let productId = Number(req.params.id);
-    products.forEach(product => {
-      if (product.id === productId){
-        product.name = req.body.name;
-        product.price = req.body.price;
-        product.discount = req.body.discount;
-        product.category = req.body.category;
-        product.description = req.body.description;
-        product.image = req.file ? req.file.filename : product.image;
-      }
-    }),
-    writeJson(products);
-    res.redirect('/');
-  },
 
-  destroy : (req, res) => {
-    // Do the magic:obtener el id del req params
-    let productId = Number(req.params.id); /*  */
-  
-    //Busco el producto eliminar y lo borro del array
-    products.forEach( product => {
-      if(product.id === productId){
-        let productToDestroy = products.indexOf(product);
-        products.splice(productToDestroy, 1) 
-      }
-    })
-    writeJson(products)
-    
-    // retorno un mensaje de exito 
-    res.send("El producto fue destruido")
-  
-    } 
-  };
+		const PRODUCT_PROMISE = Product.findByPk(productId, {
+			include: [
+				{
+					association: "subcategory",
+					include: [{ association: "category" }],
+				},
+				{ association: "images" },
+			],
+		});
+		
+		const ALL_PRODUCTS_PROMISE = Product.findAll({
+			where: {
+				discount: {
+					[Op.gte]: 10,
+				},
+			},
+			include: [{ association: "images" }],
+		});
 
-  module.exports = controller;
+		Promise.all([PRODUCT_PROMISE, ALL_PRODUCTS_PROMISE])
+			.then(([product, products]) => {
+				res.render("products/detail", {
+					products,
+					product,
+					session: req.session
+				});
+			})
+			.catch((error) => console.log(error));
+	},
+	category: (req, res) => {
+		const categoryId = req.params.id;
+		
+		Category.findByPk(categoryId, {
+			include: [
+				{
+					association: "subcategories",
+					include: {
+						association: "products",
+						include: { association: "images" },
+					},
+				},
+			],
+		})
+		.then((category) => {
+			const PRODUCTS = category.subcategories.map(
+				(subcategory) => subcategory.products
+				);
+				return res.render("products/categories", {
+					title: `Categoría - ${category.name}`,
+					category,
+					subcategories: category.subcategories,
+					products: PRODUCTS.flat(),
+					session: req.session
+				});
+			})
+			.catch((error) => console.log(error));
+	},
+	subcategory: async (req,res) => {
+		Subcategory.findByPk(req.params.id, {
+		  include: [
+			{
+			  association: "products",
+			  include: [
+				{
+				  association: "images",
+				},
+			  ],
+			},
+		  ],
+		})
+		  .then((subcategory) => {
+			Category.findByPk(subcategory.category_id, {
+			  include: [{ association: "subcategories" }],
+			}).then((category) =>
+			  res.render("subcategory", {
+				category,
+				products: subcategory.products,
+				session: req.session,
+				user: req.session.user?.id || null, 
+			  })
+			);
+		  })
+		  .catch((err) => console.log(err));
+	  },
+	  cart: (req, res) => {
+		let userId = req.session.user.id;
+		Cart.findOne({
+		  where: {
+			userId: userId
+		  },
+		  include: [{association: "cartItems", include: [{association: "product", include: [{association: "images"}]}]}]
+		})
+		  .then((cart) => {
+			let products = cart?.cartItems.map((item) => {
+			  return {
+				product: item.product,
+				quantity: item.quantity,
+				id: item.id
+			  };
+			});
+	
+			res.render("products/shoppingcart", {
+			  session: req.session,
+			  cart,
+			  products: products !== undefined ? products : [],
+			  user: req.session.user?.id || null,
+			});
+		  })
+		  .catch((error) => console.log(error));
+	  },
+};
