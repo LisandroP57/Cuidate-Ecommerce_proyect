@@ -182,7 +182,7 @@
         cursor: pointer;
         font-size: 17px;
         font-weight: 600;
-        height: 1.8rem;
+        height: 2.2rem;
         width: 100%;
         border: solid 1px var(--gris);
         text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
@@ -337,8 +337,8 @@
     background: url("https://developers-dot-devsite-v2-prod.appspot.com/identity/sign-in/g-normal.png")
       50% no-repeat;
     background-size: contain;
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
 }
 .googleSigninButton span.buttonText {
     padding-left: 12px;
@@ -347,5 +347,7 @@
     font-family: "Roboto", sans-serif;
 }
 #customBtn.bg-primary {
+    height: 70%;
+    width: 70%;
     background-color: white !important;
 }

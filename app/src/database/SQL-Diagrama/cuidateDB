@@ -123,7 +123,7 @@ INSERT INTO `products_images` VALUES
 (3, 'rompe-cristal.jpg',3),
 (4, 'llaveroAlarma.jpg',4),
 (5, 'kubotanmetalico.jpg',5),
-(6, 'LLavero-Navaja.PNG',6),
+(6, 'Llavero-navaja.jpg',6),
 (7, 'kitllavero.PNG',7),
 (8, 'manoplaVerde.jpg',8),
 (9, 'kitninos.jpg',9),
@@ -151,7 +151,10 @@ CREATE TABLE `carts` (
   CONSTRAINT `carts_FK` FOREIGN KEY (`userId`) REFERENCES `users` (`id`)
 );
 
-INSERT INTO `carts` VALUES (1, 2, 'Pago','2021-09-24 02:05:57','2021-09-24 02:48:31'),(2, 3, 'En espera','2021-09-24 02:05:57','2021-09-24 02:48:31');
+INSERT INTO `carts` VALUES
+(1, 2, 'Pago','2021-09-24 02:05:57','2021-09-24 02:48:31'),
+(2, 3, 'En espera','2021-09-24 02:05:57','2021-09-24 02:48:31'),
+(3, 1, 'En espera','2021-09-24 02:05:57','2021-09-24 02:48:31');
 
 select * from carts;
 
@@ -172,6 +175,8 @@ CREATE TABLE `cart_items` (
   CONSTRAINT `cart_items_FK_1` FOREIGN KEY (`cartId`) REFERENCES `carts` (`id`)
 );
 
-INSERT INTO `cart_items` VALUES (1,2,7,2,'2021-11-18','2021-11-18');
-
+INSERT INTO `cart_items` VALUES
+(1,2,7,2,'2021-11-18','2021-11-18'),
+(2,3,7,3,'2021-11-18','2021-11-18'),
+(3,3,9,1,'2021-11-18','2021-11-18');
 select * from cart_items;
