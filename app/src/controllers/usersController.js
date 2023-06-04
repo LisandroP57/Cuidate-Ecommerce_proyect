@@ -179,4 +179,23 @@ module.exports = {
           }
         }
       },
+      destroyUser: async (req, res) => {
+        const userId = req.params.id;
+
+        try {
+
+          const user = await User.findByPk(userId);
+      
+          if (!user) {
+            return res.status(404).json({ error: 'Usuario no encontrado' });
+          }
+      
+          await user.destroy();
+      
+          res.redirect('/');
+        } catch (error) {
+          console.log(error);
+          res.status(500).json({ error: 'Error eliminando su usuario' });
+        }
+      },
 }

@@ -13,6 +13,7 @@ const {
         forgetPassword,
         editProfile,
         updateProfile,
+        destroyUser
  } = require('../controllers/usersController');
 
 
@@ -39,5 +40,6 @@ router
         .get('/profile', userInSessionCheck, profile)
         .get('/profile/edit', userInSessionCheck, editProfile)
         .put('/profile/edit', uploadAvatar.single("avatar"), updateUserValidator, updateProfile)
+        .delete('/profile/delete', userInSessionCheck, destroyUser);
 
 module.exports = router;

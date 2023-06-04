@@ -9,8 +9,7 @@ const {
     store,
     edit,
     update,
-    destroy,
-    destroyUser
+    destroy
 } = require("../controllers/adminController");
 
 const uploadImageProduct = require("../middlewares/uploadProductImage");
@@ -26,9 +25,6 @@ router
         /* Users list */
         .get("/users", userSessionAdmin, users)
 
-        /* Delete User */
-        .delete('/users/delete/:id', userSessionAdmin, destroy)
-
         /* Products list */
         .get("/products", userSessionAdmin, products)
     
@@ -42,7 +38,5 @@ router
 
         /* Delete product*/
         .delete('/products/delete/:id', userSessionAdmin, destroy)
-        /* Delete User */
-        .delete('/user/delete/:id', userSessionAdmin, destroyUser);
 
 module.exports = router;

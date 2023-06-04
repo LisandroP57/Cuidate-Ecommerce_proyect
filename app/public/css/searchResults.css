@@ -5,6 +5,10 @@
     align-items: center;
     justify-content: center;
 }
+.BodyResults .titulo-principal {
+    color: #9977a6;
+    font-weight: 700;
+}
 .results_container {
     display: flex;
     justify-content: center;

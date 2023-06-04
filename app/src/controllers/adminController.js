@@ -269,35 +269,4 @@ module.exports = {
             })
             .catch((error) => console.log(error));
     },
-    destroyUser: (req, res) => {
-        const userId = req.params.id;
-      
-        CartItem.destroy({
-          where: { userId: userId },
-        })
-          .then(() => {
-            return User.findByPk(userId);
-          })
-          .then((user) => {
-            if (!user) {
-              throw new Error("El usuario no existe");
-            }
-      
-            if (user.avatar !== "default-image.png") {
-              const avatarPath = `./public/images/avatar/${user.avatar}`;
-              if (fs.existsSync(avatarPath)) {
-                fs.unlinkSync(avatarPath);
-              }
-            }
-      
-            return user.destroy();
-          })
-          .then(() => {
-            return res.json({ success: true, message: 'Usuario eliminado con éxito' });
-          })
-          .catch((error) => {
-            console.log(error);
-            return res.redirect("/admin/users");
-          });
-      },
 };
