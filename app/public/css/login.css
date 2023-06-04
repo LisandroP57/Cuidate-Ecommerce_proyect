@@ -182,7 +182,7 @@
         cursor: pointer;
         font-size: 17px;
         font-weight: 600;
-        height: 1.8rem;
+        height: 2.2rem;
         width: 100%;
         border: solid 1px var(--gris);
         text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
@@ -303,3 +303,51 @@
         justify-content: space-evenly;
     }
 }/* FIN Desktop */
+
+/* Login with google */
+.googleSigninButton {
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0rem;
+}
+.googleSigninButton #customBtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    color: #000000;
+    border-radius: 5px;
+    border: thin solid #888;
+    box-shadow: 1px 1px 1px grey;
+    width: 250px;
+    padding: 0 1rem;
+}
+  
+.googleSigninButton #customBtn:hover {
+    cursor: pointer;
+}
+  
+.googleSigninButton span.label {
+    font-family: serif;
+    font-weight: normal;
+}
+  
+.googleSigninButton span.icon {
+    background: url("https://developers-dot-devsite-v2-prod.appspot.com/identity/sign-in/g-normal.png")
+      50% no-repeat;
+    background-size: contain;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+.googleSigninButton span.buttonText {
+    padding-left: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+}
+#customBtn.bg-primary {
+    height: 70%;
+    width: 70%;
+    background-color: white !important;
+}

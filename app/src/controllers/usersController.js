@@ -4,6 +4,7 @@ const { User } = require("../database/models");
 const axios = require("axios");
 const {generateToken} = require("../helpers/jwt.helper")
 
+
 module.exports = {
     login: (req, res) => {
         res.render('users/login', { session: req.session });
@@ -198,4 +199,14 @@ module.exports = {
           res.status(500).json({ error: 'Error eliminando su usuario' });
         }
       },
+      googleLogin: async (req, res) => {
+        let user = req.session.passport.user;
+        req.session.user = {
+            id: user.id,
+            name: user.name,
+            avatar: user.avatar,
+            role: user.role
+        }
+        res.redirect("/")
+    },
 }

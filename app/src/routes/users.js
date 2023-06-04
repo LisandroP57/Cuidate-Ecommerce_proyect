@@ -1,4 +1,3 @@
-        /* Require's */
 const express = require('express');
 const router = express.Router();
 
@@ -13,9 +12,9 @@ const {
         forgetPassword,
         editProfile,
         updateProfile,
-        destroyUser
+        destroyUser,
+        googleLogin
  } = require('../controllers/usersController');
-
 
 const uploadAvatar = require("../middlewares/uploadAvatar");
 const registerValidator = require("../validations/registerValidator");
@@ -24,6 +23,10 @@ const userInSessionCheck = require("../middlewares/userInSessionCheck");
 const updateUserValidator = require("../validations/updateUserValidator");
 const forgetPassValidator = require("../validations/forgetPassValidator");
 const sessionUserCheck = require("../middlewares/sessionUserCheck");
+const passport = require("passport");
+require("../middlewares/passportConfig")(passport);
+passport.serializeUser(function(user, done) {done(null, user);});
+passport.deserializeUser(function(user, done) {done(null, user);});
 
 router
         .get('/login', sessionUserCheck, login)
@@ -40,6 +43,13 @@ router
         .get('/profile', userInSessionCheck, profile)
         .get('/profile/edit', userInSessionCheck, editProfile)
         .put('/profile/edit', uploadAvatar.single("avatar"), updateUserValidator, updateProfile)
-        .delete('/profile/delete', userInSessionCheck, destroyUser);
+        .delete('/profile/delete', userInSessionCheck, destroyUser)
+        // Google sesion
+        .get('/auth/google',
+        passport.authenticate('google', { scope: ['profile', "email"] }))
+        // Redireccionamiento post login
+        .get('/auth/google/callback',
+        passport.authenticate('google', { failureRedirect: '/users/login' }),
+        googleLogin);
 
 module.exports = router;
