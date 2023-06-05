@@ -16,17 +16,21 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `avatar` varchar(100) DEFAULT NULL,
   `googleId` varchar(100) DEFAULT NULL,
+  `address` varchar(100) DEFAULT NULL,
+  `postal_code` varchar(10) DEFAULT NULL,
+  `province` varchar(100) DEFAULT NULL,
+  `city` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
 );
 
 INSERT INTO `users` VALUES
-(1,'admin','admin','admin@mail.com','$2a$12$WNu1hncg/JfMlccmaVJ0De5jkQqugojqQGrhe4ajKI8w1I4dIKPAW','1124545','1','2021-09-24 02:05:57','2021-09-24 02:48:31','admin.jpeg',NULL),
-(2,'user','user','user@mail.com','$2a$12$vyct8Z4WaTtn7W8mP6jJ.eBZiv7cd1HSb1iPLdPn7hlmwNfYddMuO','545185','0','2021-09-24 02:05:57','2021-09-24 02:48:31','aiuda.png',NULL),
-(3,'Riky', 'vallejos', 'riky@gmail.com','$2a$12$WNu1hncg/JfMlccmaVJ0De5jkQqugojqQGrhe4ajKI8w1I4dIKPAW',NULL,'1', '2023-04-18 00:28:22', '2023-04-18 00:28:22', 'homer.jpg',NULL),
-(4,'Lisan', 'test', 'lisan@gmail.com','$2a$12$WNu1hncg/JfMlccmaVJ0De5jkQqugojqQGrhe4ajKI8w1I4dIKPAW','777','1', '2023-04-18 00:28:22', '2023-04-18 00:28:22', 'homer.jpg',NULL),
-(5, 'Jonatan', 'Cespedes', 'jona@mail.com', '$2a$12$WNu1hncg/JfMlccmaVJ0De5jkQqugojqQGrhe4ajKI8w1I4dIKPAW',NULL,'1', '2023-04-18 00:28:22', '2023-04-18 00:28:22', 'admin.jpeg',NULL),
-(6, 'Cosme', 'Fulanito', 'cosme@mail.com', '$2a$12$WNu1hncg/JfMlccmaVJ0De5jkQqugojqQGrhe4ajKI8w1I4dIKPAW',NULL,'0', '2021-09-24 02:05:57','2021-09-24 02:48:31','default-image.png',NULL);
+(1,'admin','admin','admin@mail.com','$2a$12$WNu1hncg/JfMlccmaVJ0De5jkQqugojqQGrhe4ajKI8w1I4dIKPAW','1124545','1','2021-09-24 02:05:57','2021-09-24 02:48:31','admin.jpeg',NULL,NULL,NULL,NULL,NULL),
+(2,'user','user','user@mail.com','$2a$12$vyct8Z4WaTtn7W8mP6jJ.eBZiv7cd1HSb1iPLdPn7hlmwNfYddMuO','545185','0','2021-09-24 02:05:57','2021-09-24 02:48:31','aiuda.png',NULL,NULL,NULL,NULL,NULL),
+(3,'Riky', 'vallejos', 'riky@gmail.com','$2a$12$WNu1hncg/JfMlccmaVJ0De5jkQqugojqQGrhe4ajKI8w1I4dIKPAW',NULL,'1', '2023-04-18 00:28:22', '2023-04-18 00:28:22', 'homer.jpg',NULL,NULL,NULL,NULL,NULL),
+(4,'Lisan', 'test', 'lisan@gmail.com','$2a$12$WNu1hncg/JfMlccmaVJ0De5jkQqugojqQGrhe4ajKI8w1I4dIKPAW','777','1', '2023-04-18 00:28:22', '2023-04-18 00:28:22', 'homer.jpg',NULL,NULL,NULL,NULL,NULL),
+(5, 'Jonatan', 'Cespedes', 'jona@mail.com', '$2a$12$WNu1hncg/JfMlccmaVJ0De5jkQqugojqQGrhe4ajKI8w1I4dIKPAW',NULL,'1', '2023-04-18 00:28:22', '2023-04-18 00:28:22', 'admin.jpeg',NULL,NULL,NULL,NULL,NULL),
+(6, 'Cosme', 'Fulanito', 'cosme@mail.com', '$2a$12$WNu1hncg/JfMlccmaVJ0De5jkQqugojqQGrhe4ajKI8w1I4dIKPAW',NULL,'0', '2021-09-24 02:05:57','2021-09-24 02:48:31','aiuda.png',NULL,NULL,NULL,NULL,NULL);
 
 select * from users;
 
@@ -179,4 +183,5 @@ INSERT INTO `cart_items` VALUES
 (1,2,7,2,'2021-11-18','2021-11-18'),
 (2,3,7,3,'2021-11-18','2021-11-18'),
 (3,3,9,1,'2021-11-18','2021-11-18');
+
 select * from cart_items;

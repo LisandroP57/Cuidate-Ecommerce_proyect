@@ -72,7 +72,11 @@ module.exports = {
                 pass: bcrypt.hashSync(req.body.pass1, 12),
                 avatar: req.file ? req.file.filename : "default-image.png",
                 role: 0,
-                phone: ""
+                phone: "",
+                address: "",
+                postal_code: "",
+                province: "",
+                city: ""
             };
 
             User.create(newUser)
@@ -138,7 +142,7 @@ module.exports = {
             const {
               name,
               last_name,
-              tel,
+              phone,
               address,
               postal_code,
               province,
@@ -147,17 +151,16 @@ module.exports = {
       
             user.name = name;
             user.last_name = last_name;
-            user.tel = tel;
+            user.phone = phone;
             user.address = address;
             user.postal_code = postal_code;
             user.province = province;
             user.city = city;
             user.avatar = req.file ? req.file.filename : user.avatar;
       
-            delete user.password;
-      
             await user.save();
-      
+            
+            delete user.password;
             req.session.user = user;
       
             return res.redirect("/users/profile");
