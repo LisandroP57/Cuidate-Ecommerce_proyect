@@ -42,13 +42,20 @@
                         <select name="province" id="selectProvincias" class="select-city">
                             <option value="" selected hidden>Provincia</option>
                             <% provinces.forEach(province => { %>
-                                <option value="<%- province.id %>"><%- province.nombre %></option>
+                                <% if (user.province && user.province === province.nombre) { %>
+                                    <option value="<%- province.nombre %>" selected><%- province.nombre %></option>
+                                <% } else { %>
+                                    <option value="<%- province.nombre %>"><%- province.nombre %></option>
+                                <% } %>
                             <% }) %>
                         </select>
                     </div>
                     <div class="addInput">
                         <select name="city" id="selectLocalidades" class="select-city">
                             <option value="">Localidad</option>
+                            <% if (user.city) { %>
+                                <option value="<%= user.city %>" selected><%= user.city %></option>
+                            <% } %>
                         </select>
                     </div>
                     <div class="multer">
