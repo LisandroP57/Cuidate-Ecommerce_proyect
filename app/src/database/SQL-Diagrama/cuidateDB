@@ -25,7 +25,7 @@ CREATE TABLE `users` (
 );
 
 INSERT INTO `users` VALUES
-(1,'admin','admin','admin@mail.com','$2a$12$WNu1hncg/JfMlccmaVJ0De5jkQqugojqQGrhe4ajKI8w1I4dIKPAW','1124545','1','2021-09-24 02:05:57','2021-09-24 02:48:31','admin.jpeg',NULL,NULL,NULL,NULL,NULL),
+(1,'admin','admin','admin@mail.com','$2a$12$WNu1hncg/JfMlccmaVJ0De5jkQqugojqQGrhe4ajKI8w1I4dIKPAW','1124545','1','2021-09-24 02:05:57','2021-09-24 02:48:31','admin.jpeg',NULL,'calle falsa 1234','0303','Buenos Aires','AVELLANEDA'),
 (2,'user','user','user@mail.com','$2a$12$vyct8Z4WaTtn7W8mP6jJ.eBZiv7cd1HSb1iPLdPn7hlmwNfYddMuO','545185','0','2021-09-24 02:05:57','2021-09-24 02:48:31','aiuda.png',NULL,NULL,NULL,NULL,NULL),
 (3,'Riky', 'vallejos', 'riky@gmail.com','$2a$12$WNu1hncg/JfMlccmaVJ0De5jkQqugojqQGrhe4ajKI8w1I4dIKPAW',NULL,'1', '2023-04-18 00:28:22', '2023-04-18 00:28:22', 'homer.jpg',NULL,NULL,NULL,NULL,NULL),
 (4,'Lisan', 'test', 'lisan@gmail.com','$2a$12$WNu1hncg/JfMlccmaVJ0De5jkQqugojqQGrhe4ajKI8w1I4dIKPAW','777','1', '2023-04-18 00:28:22', '2023-04-18 00:28:22', 'homer.jpg',NULL,NULL,NULL,NULL,NULL),
@@ -147,8 +147,8 @@ CREATE TABLE `carts` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `userId` int(10) NOT NULL,
   `state` varchar(100) NOT NULL,
-  `created_at` date DEFAULT NULL,
-  `updated_at` date DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `carts_un` (`id`),
   KEY `carts_FK` (`userId`),
@@ -169,8 +169,8 @@ CREATE TABLE `cart_items` (
   `cartId` int(10) NOT NULL,
   `productId` int(10) NOT NULL,
   `quantity` int(10) NOT NULL,
-  `created_at` date DEFAULT NULL,
-  `updated_at` date DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `cart_items_un` (`id`),
   KEY `cart_items_FK` (`productId`),

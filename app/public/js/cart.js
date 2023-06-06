@@ -70,10 +70,14 @@ const addToCart = async (productId) => {
 };
 
 const removeOneProduct = async (itemId) => {
-    const ENDPOINT = `${API_BASE_URL}/carts/${itemId}`;
-    const response = await  putData(ENDPOINT, token);
-    alert(response)
+  const ENDPOINT = `${API_BASE_URL}/carts/${itemId}`;
+  const response = await putData(ENDPOINT, token);
+  if (response.success) {
+    alert("Producto eliminado correctamente.");
     window.location.reload();
+  } else {
+    alert("Error al eliminar el producto.");
+  }
 };
 
 const removeAllOfOneProduct = async (itemId) => {

@@ -8,7 +8,8 @@ const {
         cart,
         detail,
         category,
-        subcategory
+        subcategory,
+        addToCart,
  } = require("../controllers/productsController");
 
 const userInSessionCheck = require("../middlewares/userInSessionCheck");
@@ -20,6 +21,7 @@ router
         .get('/search', search)
         /* Shopping cart */
         .get('/shoppingcart', userInSessionCheck, cart)
+        .post("/shoppingcart/:id", addToCart)
         /* Detail product */
         .get('/detail/:id/', detail)
         /* Categories products */

@@ -1,4 +1,4 @@
-const { Product, Category, Sequelize, Subcategory, Cart } = require("../database/models");
+const { Product, Category, Sequelize, Subcategory, Cart, CartItem } = require("../database/models");
 const { Op } = Sequelize;
 
 module.exports = {
@@ -130,5 +130,30 @@ module.exports = {
 			});
 		  })
 		  .catch((error) => console.log(error));
-	  },
-};
+		},
+		addToCart: async (req, res) => {
+			try {
+			  const productId = Number(req.params.id);
+			  const userId = req.session.user.id;
+			  const cart = await Cart.findOne({ where: { userId } });
+		  
+			  if (cart) {
+				const cartItem = await CartItem.findOne({ where: { cartId: cart.id, productId } });
+				if (cartItem) {
+				  cartItem.quantity += 1;
+				  await cartItem.save();
+				} else {
+				  await CartItem.create({ cartId: cart.id, productId, quantity: 1 });
+				}
+			  } else {
+				const newCart = await Cart.create({ userId });
+				await CartItem.create({ cartId: newCart.id, productId, quantity: 1 });
+			  }
+		  
+			  res.redirect("/products/shoppingcart");
+			} catch (error) {
+			  console.error(error);
+			  res.status(500).send('<script>alert("No se pudo agregar el producto al carrito :(");</script>');
+			}
+		  },
+		};

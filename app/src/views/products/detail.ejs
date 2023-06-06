@@ -75,10 +75,13 @@
 					 
 					  <hr>
 									<a href="#" class="buy-now-button-detail">COMPRAR AHORA</a>
+									
 									<% if (session.user !== undefined) { %>
-										<div class="pre-cart">
-											<div class="btn btn-ad-primary" id="btnAddToCart" onclick="addToCart('<%= product.id %>')">Agregar al carrito</div>
-										</div>
+										<form action="/products/shoppingcart/<%- product.id %>" method="POST">
+											<div class="pre-cart">
+											  <button class="btn btn-ad-primary" type="submit">Agregar al carrito</button>
+											</div>
+										</form>
 									<% } %>
 									<hr>
 					</div>
