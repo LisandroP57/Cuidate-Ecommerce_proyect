@@ -36,7 +36,6 @@ router
         .post('/register', uploadAvatar.single("avatar"), registerValidator, processRegister)
         .get('/processRegister', processRegister)
         
-
         .get('/forgetPassword', sessionUserCheck, forgetPassValidator, forgetPassword)
         .get('/logout', logout)
 

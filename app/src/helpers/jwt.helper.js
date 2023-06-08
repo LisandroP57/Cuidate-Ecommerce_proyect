@@ -3,6 +3,7 @@ const process = require("process");
 const secret = process.env.JWT_SECRET;
 
 const generateToken = (user) => {
+
   try {
     const USER_DATA = {
         id: user.id,
