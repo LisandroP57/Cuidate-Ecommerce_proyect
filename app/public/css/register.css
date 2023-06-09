@@ -5,6 +5,15 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+.register-body{
+  background-image: url(/images/backgrounds/fondoMujeres.png);
+  background-attachment: fixed;
+  background-size:cover;
+  background-repeat: no-repeat;
+  min-height: 10vh;
+  margin: 0;
+  font-size: 10px;
+}
 .register-complete {
     margin: 3rem 0rem;
 }
@@ -121,8 +130,13 @@
   /* Has olvidado tu contraseña vista */
 
 .body-forget {
-  background-image: url(/images/backgrounds/123.jpg);
+  background-image: url(/images/backgrounds/fondoMujeres.png);
+  background-attachment: fixed;
+  background-size:cover;
   background-repeat: no-repeat;
+  min-height: 10vh;
+  margin: 0;
+  font-size: 10px;
 }
 .forget-contain {
   margin: 3.5rem 1rem;

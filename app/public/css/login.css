@@ -1,13 +1,21 @@
 
    /* Mobile version */
 @media (min-width: 320px) {
+    .bodylog{
+        background-image: url(/images/backgrounds/fondoMujeres.png);
+        background-attachment: fixed;
+        background-size:cover;
+        background-repeat: no-repeat;
+        min-height: 10vh;
+        margin: 0;
+        font-size: 10px;
+    }
 
     #myVideo {
         display: none;
     }
     .main-log{
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background-image: url(/images/backgrounds/123.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         display: flex;

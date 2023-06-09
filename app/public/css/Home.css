@@ -24,11 +24,8 @@
 }
 
 body.homeBody {
-  background-image: linear-gradient(rgba(248, 246, 246, 0.2), rgba(0, 0, 0, 0.75)),
-  url(/images/backgrounds/back1.jpg);
-  /* background-image: url(/images/backgrounds/back1.jpg); */
-  background: rgb(121, 76, 169);
-    background: linear-gradient(111deg, rgba(121, 76, 169,1) 0%, rgba(121, 76, 169,1) 52%, rgba(2121, 76, 169,1) 100%);
+ /*  background: linear-gradient(111deg, rgb(153, 129, 179) 0%, rgb(92, 0, 191) 52%, rgb(69, 1, 142) 100%); */
+  background-image: url(/images/backgrounds/fondoMujeres.png);
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -60,7 +57,7 @@ aside {
     position: sticky;
     top: 0;
     height: 100vh;
-    width: 100%;
+    width: 56%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -144,10 +141,14 @@ aside {
     color: var(--clr-white);
 }
 .mainHome {
-    background: url('/images/backgrounds/blue.jpg');
+      background: transparent;
+  border: 2px  solid rgba(255, 255, 255, .5);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
     background-size: cover;
-    border-radius: 0rem;
+    border-radius: 50px;
     padding: 3rem;
+    margin: 10px;
 }
 .titulo-principal {
     display: flex;
