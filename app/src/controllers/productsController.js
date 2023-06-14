@@ -146,7 +146,7 @@ module.exports = {
 				  await CartItem.create({ cartId: cart.id, productId, quantity: 1 });
 				}
 			  } else {
-				const newCart = await Cart.create({ userId });
+				const newCart = await Cart.create({ userId, state: "active" });
 				await CartItem.create({ cartId: newCart.id, productId, quantity: 1 });
 			  }
 		  
@@ -156,4 +156,4 @@ module.exports = {
 			  res.status(500).send('<script>alert("No se pudo agregar el producto al carrito :(");</script>');
 			}
 		  },
-		};
+};
