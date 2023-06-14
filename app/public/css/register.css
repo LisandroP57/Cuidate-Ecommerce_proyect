@@ -5,15 +5,6 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-.register-body{
-  background-image: url(/images/backgrounds/fondoMujeres.png);
-  background-attachment: fixed;
-  background-size:cover;
-  background-repeat: no-repeat;
-  min-height: 10vh;
-  margin: 0;
-  font-size: 10px;
-}
 .register-complete {
     margin: 3rem 0rem;
 }
@@ -124,6 +115,17 @@
 @media screen and (min-width: 480px) {
   .register-form {
   max-width: 480px;
+}
+}
+@media screen and (max-width: 1030px) {
+.register-body{
+  background-image: url(/images/backgrounds/fondoMujeres.png);
+  background-attachment: fixed;
+  background-size:cover;
+  background-repeat: no-repeat;
+  min-height: 10vh;
+  margin: 0;
+  font-size: 10px;
 }
 }
 
