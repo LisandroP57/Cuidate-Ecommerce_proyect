@@ -6,9 +6,6 @@
         background-attachment: fixed;
         background-size:cover;
         background-repeat: no-repeat;
-        min-height: 10vh;
-        margin: 0;
-        font-size: 10px;
     }
 
     #myVideo {

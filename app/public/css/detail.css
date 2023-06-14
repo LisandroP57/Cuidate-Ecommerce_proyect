@@ -190,7 +190,8 @@ div .col-12 {
   padding-bottom: 0.6rem;
 }
 .product-detail p{
-  font-size: 0.9rem;
+  font-size: 1.2rem;
+  color: white;
   padding: 0.3rem;
   opacity: 0.8;
 }
@@ -226,6 +227,10 @@ div .col-12 {
 }
 .purchase-info input{
   width: 60px;
+}
+.purchase-info label {
+  font-size: 15px;
+  font-weight: 600;
 }
 .purchase-info .btn{
   cursor: pointer;
@@ -639,7 +644,11 @@ button:hover {
       justify-content: center;
   }
   .product-content{
-      padding-top: 10pc;
+      padding-top: 4pc;
+  }
+  .actions-list{
+    font-size: 15px;
+    font-weight: 600;
   }
 }
       /* PRODUCT SLIDER DE DETAIL */
@@ -692,7 +701,6 @@ button:hover {
       overflow-x: auto;
       scroll-behavior: smooth;
       height: 100%;
-      padding: 90px;
   }
     .flickity-page-dots { display: none;}
     
@@ -723,7 +731,7 @@ button:hover {
     }
     .card-wrapper {
       max-width: 1000px;
-      height: 114vh;
+      height: 87vh;
       display: flex;
       justify-content: center;
       align-items: center;
