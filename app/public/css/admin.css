@@ -189,5 +189,41 @@ height: 100%;
 
 
       /* ADMIN INDEX */
-      
+.body-admin {
+  background-image: url(/images/backgrounds/admin.background.jpg);
+  background-size: cover;
+}
+.admintitle-container {
+  display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+.admintitle-container2 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  opacity: 5;
+  padding: 3rem;
+  border-radius: 15px;
+  border: 3px solid rgb(97, 24, 139);
+}
+.admintitle-container2 img {
+  width: 25rem;
+  height: 25rem;
+}
+.text1 {
+  color: black;
+  text-shadow: 5px 5px 10px rgba(89, 89, 89, 0.5);
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  font-family: 'Kaushan Script', cursive;
+  font-size: 3rem;
+}
       /* FIN ADMIN INDEX */
+
+.productBody .container-fluid {
+  margin: 5rem auto 7.5rem auto;
+}
