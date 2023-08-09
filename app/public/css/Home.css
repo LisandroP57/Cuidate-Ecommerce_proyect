@@ -25,7 +25,7 @@
 
 body.homeBody {
  /*  background: linear-gradient(111deg, rgb(153, 129, 179) 0%, rgb(92, 0, 191) 52%, rgb(69, 1, 142) 100%); */
-  background-image: url(/images/backgrounds/fondoMujeres.png);
+  background-image: url(/images/backgrounds/back1.jpg);
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;

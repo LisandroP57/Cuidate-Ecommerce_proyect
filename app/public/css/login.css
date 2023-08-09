@@ -2,7 +2,7 @@
    /* Mobile version */
 @media (min-width: 320px) {
     .bodylog{
-        background-image: url(/images/backgrounds/fondoMujeres.png);
+        background-image: url(/images/backgrounds/blue.jpg);
         background-attachment: fixed;
         background-size:cover;
         background-repeat: no-repeat;

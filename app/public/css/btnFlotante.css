@@ -18,6 +18,7 @@
     display: none;
 }
 .containerBotonFlotante{
+    z-index: 2;
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -112,8 +113,8 @@
     }
     .containerBotonFlotante{
         position: fixed;
-        bottom: 10px;
-        right: 10px;
+        bottom: 20px;
+        right: 20px;
     }
     .redes a, .btn-mas label{
         display: block;

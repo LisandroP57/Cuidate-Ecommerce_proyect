@@ -656,7 +656,7 @@ nav.navegador ul.menu li:hover{
     height: 1px;
     margin: 0;
 }
-.menu-hamburguesa li a {
+.menu-hamburguesa a {
     text-decoration: none;
     font-size: 14px;
     padding: 10px 17px;
@@ -685,6 +685,6 @@ nav.navegador ul.menu li:hover{
 .submenu a:hover{
     background: #f1f1f1;
 }
-.submenu li{
+.submenu a{
     width: 100px;
 }
