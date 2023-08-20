@@ -21,8 +21,17 @@ Nuestro principal objetivo es crear conciencia sobre la importancia de cuidar y 
     </ul>
     </div>
 
-<h2>Link de trello:</h2>
-<p><a href="https://trello.com/b/tPagskz9/sprint-pi-c19">Cuídate!</a></p>
+<h2>Lenguajes y tecnologias utilizadas:</h2>
+  <ul>
+    <li>Node.js</li>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>Javascript</li>
+    <li>MySQL</li>
+    <li>React</li>
+    <li>Sequelize</li>
+    <li>Postman</li>
+  </ul>
 
 
 <h2>Sitios de inspiración:</h2>
