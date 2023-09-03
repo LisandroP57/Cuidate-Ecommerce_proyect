@@ -13,30 +13,35 @@ Nuestro principal objetivo es crear conciencia sobre la importancia de cuidar y 
   <div>
 <h2>Integrantes del proyecto:</h2><div>
   <ul>
-    <li>Franco Salas</li>
-    <li>Camila Gutierrez</li>
+    <li>Lisandro Palavecino</li>
     <li>Ricardo Vallejos</li>
     <li>Maximiliano Murua</li>
-    <li>Lisandro Palavecino</li>
+    <li>Franco Salas</li>
+    <li>Camila Gutierrez</li>
     </ul>
     </div>
 
-<h2>Link de trello:</h2>
-<p><a href="https://trello.com/b/tPagskz9/sprint-pi-c19">Cuídate!</a></p>
+<h2>Lenguajes y tecnologias utilizadas:</h2>
+  <ul>
+    <li>Node.js</li>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>Javascript</li>
+    <li>MySQL</li>
+    <li>React</li>
+    <li>Sequelize</li>
+    <li>Postman</li>
+  </ul>
 
 
 <h2>Sitios de inspiración:</h2>
 <ul>
   <li><a href="https://mamallegue.com.ar/">Mamá Llegué</a></li>
   <li><a href="https://www.avisamecuandollegues.com.ar/">Avisame cuando llegues</a></li>
-  <li><a href="https://www.instagram.com/defensa_femsj/?hl=es">Llaveros de defensa personal</a></li>
   <li><a href="https://www.instagram.com/siempreseguraar/?hl=es">Siempre segura llaveros</a></li>
 </ul>
       
 <h2>Referentes en cuanto a la estética:</h2>
 https://www.nuskin.com/content/nuskin/es_AR/home.html
-https://mamallegue.com.ar/
-<h2>Referente a las funcionalidades implementadas:</h2>
-https://www.nuskin.com/content/nuskin/es_AR/home.html
-https://amaterasu.com.ar/
+
 Fueron elegidas por los productos que venden ya que son similares para nuestro proyecto. Otras por el diseño y las funcionalidades.
