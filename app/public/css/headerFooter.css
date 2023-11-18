@@ -36,7 +36,6 @@ header.containerHeader {
     flex-direction: column;
     background-color: #C8ABD0;
     padding: 5px;
-    margin-bottom: 0.5rem;
 }
 
 header.containerHeader div.primer-menu {

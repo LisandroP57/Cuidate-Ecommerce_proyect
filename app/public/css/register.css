@@ -18,6 +18,10 @@
 .register-body {
   font-family: 'Nunito', sans-serif;
   color: #384047;
+  background-image: url(/images/backgrounds/one.jpg);
+  background-attachment: fixed;
+  background-size:cover;
+  background-repeat: no-repeat;
 }
 
 .input-reg {

@@ -32,11 +32,6 @@
   clear: both;
 }
 
-.cf {
-  *zoom: 1;
-  padding: 1.5rem 0rem;
-}
-
 .wrapoer {
   width: 75%;
   max-width: 960px;
@@ -322,7 +317,6 @@
 @media screen and (max-width: 600px) {
   .wrapper {
     width: 100%;
-    padding: 2% 0;
   }
 
   .mytitle {

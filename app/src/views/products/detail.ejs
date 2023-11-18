@@ -9,13 +9,6 @@
 		<!-- /Header -->
 		<!-- <div class="blob"></div> -->
 			<!-- product detail -->
-
-			
-				<div class="col-12">
-					<div>
-						<h2 class="titleDetail">Detalle de producto: <%= product.name %></h2>		
-					</div>
-				</div>
 				
 			<div class = "card-wrapper">
 				<div class = "card">
@@ -35,31 +28,19 @@
 					<h2 class="product-detail-title">
 						<%= product.name %>
 					</h2>
-					<div class = "product-rating">
-					  <i class = "fas fa-star"></i>
-					  <i class = "fas fa-star"></i>
-					  <i class = "fas fa-star"></i>
-					  <i class = "fas fa-star"></i>
-					  <i class = "fas fa-star-half-alt"></i>
-					  <span>4.7(21)</span>
-					</div>
-		  
+
 					<div class = "product-price">
-					  
-						<!--  -->
 						<% if (product.discount > 0) { %>
 						<div class="home-product-discount">
 						Descuento: <%- product.discount %>% OFF</div>
 															<% } %>
 						Precio: $<%- product.price %>
-
 					</div>
+					<hr>
 
-
-		  
 					<div class = "product-detail">
-					  <h2>Acerca de este artículo:
-					</h2>
+					  <h3>Acerca de este artículo:
+					</h3>
 					  <p class="product-detail-description">
 						<%= product.description %>
 					</p>
@@ -72,10 +53,8 @@
 					<div class = "purchase-info">
 						<label for="">Ingrese Cantidad:</label>
 					  <input type = "number" min = "0" value = "1">
-					 
 					  <hr>
 									<a href="/users/login" class="buy-now-button-detail">COMPRAR AHORA</a>
-									
 									<% if (session.user !== undefined) { %>
 										<form action="/products/shoppingcart/<%- product.id %>" method="POST">
 											<div class="pre-cart">
@@ -83,35 +62,7 @@
 											</div>
 										</form>
 									<% } %>
-									<hr>
 					</div>
-		  
-					<ul class="actions-list">
-										<li>
-											<i class="fas fa-credit-card"></i>
-												<p>Pagá en 12 cuotas sin interes</p>
-										</li>
-										<li>
-											<i class="fas fa-store"></i>
-												<p>Retiro gratis en locales del vendedor</p>
-										</li>
-									</ul>
-
-					<div class = "social-links">
-					  <p>Contactanos: </p>
-					  <a href = "#">
-						<i class = "fab fa-facebook-f"></i>
-					  </a>
-					  <a href = "#">
-						<i class = "fab fa-twitter"></i>
-					  </a>
-					  <a href = "#">
-						<i class = "fab fa-instagram"></i>
-					  </a>
-					  <a href = "#">
-						<i class = "fab fa-whatsapp"></i>
-					  </a>
-					  
 					</div>
 				  </div>
 				</div>

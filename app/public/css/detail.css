@@ -33,14 +33,14 @@
   margin-top: 1rem;
   text-align: center;
   font-weight: 95%;
-  font-size: 3rem;
+  font-size: 2rem;
   background: transparent;
-  border: 2px  solid rgba(255, 255, 255, .5);
   border-radius: 20px;
   backdrop-filter: blur(15px);
   color: whitesmoke;
 }
 .card-wrapper{
+  margin: 1rem 0.5rem;
   max-width: 1100px;
   background: transparent;
   border: 2px  solid rgba(255, 255, 255, .5);
@@ -114,39 +114,9 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  height: 4px;
   width: 80px;
   background: #dedbd4;
   padding: 50px;
-}
-div .col-12 {
-  padding-top: 11rem;
-  background-color: rgba(255, 255, 255, 0.571);
-  -ms-flex: 0 0 100%;
-  flex: 0 0 100%;
-  max-width: 70%;
-}
-.product-link{
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: 0.9rem;
-  display: inline-block;
-  margin-bottom: 0.5rem;
-  background: #256eff;
-  color: #fff;
-  padding: 0 0.3rem;
-  transition: all 0.5s ease;
-}
-.product-link:hover{
-  opacity: 0.9;
-}
-.product-rating{
-  color: #ffc107;
-}
-.product-rating span{
-  font-weight: 600;
-  color: #252525;
 }
 .product-price{
   margin: 1rem 0;
@@ -222,29 +192,6 @@ div .col-12 {
   opacity: 0.9;
   background: #82ca9c;
   border: 2.5px solid #2d991f;
-}
-.social-links{
-  display: flex;
-  align-items: center;
-}
-.social-links a{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  color: #000;
-  border: 1px solid #000;
-  margin: 0 0.2rem;
-  border-radius: 50%;
-  text-decoration: none;
-  font-size: 0.8rem;
-  transition: all 0.5s ease;
-}
-.social-links a:hover{
-  background: #000;
-  border-color: transparent;
-  color: #fff;
 }
 .buy-now-button-detail {
   background-color: var(--violeta-oscuro);
@@ -522,12 +469,6 @@ button:hover {
       inset 100px 100px 0 0 #8C52FF ,
       inset 100px 100px 0 0 #4f00ee ;
 }
-@keyframes animateBlob {
-  100% {
-    transform: translate(30px, 500px) rotate(-10deg);
-    border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
-  }
-}
 /* ------------------------------------ */
 /*====== Footer ======*/
 .main-footer {
@@ -641,14 +582,9 @@ button:hover {
     .flickity-page-dots { display: none;}
     
     @media screen and (min-width: 768px) {
-      .products-title {
-        font-weight: 900;
-        font-size: 3rem;
-        text-align: center;
-    }
       .card-wrapper{
         max-width: 700px;
-        margin: 0 auto;
+        margin: 1rem auto;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -660,14 +596,9 @@ button:hover {
         }
     }
     @media screen and (min-width: 1024px) {
-      .products-title {
-        font-weight: 900;
-        font-size: 3rem;
-        text-align: center;
-    }
     .card-wrapper {
       max-width: 1000px;
-      height: 87vh;
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
