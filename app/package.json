@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon app.js",
     "start": "nodemon src/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "echo 'No build step needed for this project'",
+    "test": "echo 'No tests available for this project'"
   },
   "author": "",
   "license": "ISC",
