@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon app/src/app.js",
     "start": "nodemon app/src/app.js",
-    "build": "echo 'No build step needed for this project'",
+    "build": "mkdir -p build && cp -r src/* build/",
     "test": "echo 'No tests available for this project'"
   },
   "author": "",
